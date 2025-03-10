@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/huione-labs/docs.git"
+    "url": "git+https://github.com/hello-xone/official_docs.git"
   },
   "author": "xone chain <hello@xone.plus>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/huione-labs/docs/issues"
+    "url": "https://github.com/hello-xone/official_docs/issues"
   },
-  "homepage": "https://github.com/huione-labs/docs#readme",
+  "homepage": "https://github.com/hello-xone/official_docs#readme",
   "dependencies": {
     "@heroui/toast": "^2.0.5",
     "@iconify/tailwind": "^1.1.3",
