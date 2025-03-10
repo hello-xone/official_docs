@@ -39,7 +39,7 @@ const config: DocsThemeConfig = {
     toggleButton: true,
   },
   project: {
-    link: 'https://github.com/huione-labs/docs',
+    link: 'https://github.com/hello-xone/official_docs',
   },
   chat: {
     link: "https://x.com/xone_chain",
@@ -62,7 +62,7 @@ const config: DocsThemeConfig = {
     }
   },
 
-  docsRepositoryBase: 'https://github.com/huione-labs/docs',
+  docsRepositoryBase: 'https://github.com/hello-xone/official_docs',
 
   primaryHue,
 
