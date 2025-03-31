@@ -72,7 +72,7 @@ const NetworkTable = () => {
                         <TableCell><Code>{mainnet.explorer}</Code></TableCell>
                     </TableRow>
                     <TableRow key="6">
-                        <TableCell></TableCell>
+                        <TableCell>—</TableCell>
                         <TableCell>placeholder<AddNetworkButton network="testnet" /></TableCell>
                         <TableCell>placeholder<AddNetworkButton network="mainnet" /></TableCell>
                     </TableRow>
@@ -83,4 +83,3 @@ const NetworkTable = () => {
 };
 
 export default NetworkTable;
-
