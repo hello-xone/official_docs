@@ -33,6 +33,10 @@ We welcome community contributions to make our documentation as comprehensive an
 
 For more information about contributing, please see our [contribution document](https://docs.xone.org/study/contribut).
 
+## Stats
+
+![Alt](https://repobeats.axiom.co/api/embed/c85aaded2d7e9909ea7e6c8fab08988cb709cc80.svg "Repobeats analytics image")
+
 ## Contact
 
 For any questions or support related to Xone Chian, please reach out to our support team:
