@@ -73,8 +73,8 @@ const NetworkTable = () => {
                     </TableRow>
                     <TableRow key="6">
                         <TableCell></TableCell>
-                        <TableCell><AddNetworkButton network="testnet" /></TableCell>
-                        <TableCell><AddNetworkButton network="mainnet" /></TableCell>
+                        <TableCell>placeholder<AddNetworkButton network="testnet" /></TableCell>
+                        <TableCell>placeholder<AddNetworkButton network="mainnet" /></TableCell>
                     </TableRow>
                 </TableBody>
             </Table>
