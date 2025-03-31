@@ -33,7 +33,7 @@ const NetworkTable = () => {
         <div className="overflow-x-auto">
             <Table removeWrapper aria-label="Network Information Table" className="mt-2">
                 <TableHeader>
-                    <TableColumn></TableColumn>
+                    <TableColumn>Placeholder</TableColumn>
                     <TableColumn><strong>{testnet.name}</strong></TableColumn>
                     <TableColumn><strong>{mainnet.name}</strong></TableColumn>
                 </TableHeader>
