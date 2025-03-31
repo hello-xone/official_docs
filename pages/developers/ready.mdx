@@ -2,7 +2,7 @@ import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Button} fr
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/react";
 import {Code} from "@nextui-org/react";
 import { Steps } from 'nextra/components';
-import AddNetworkButton from "@/components/addNetwork";
+import NetworkTable from "@/components/NetworkTable";
 
 # Xone Developer Resources
 
@@ -89,62 +89,16 @@ This guide primarily introduces the basics or manuals for developers building on
   </Card>
 </div>
 
-
 ## Important Information
 
 To ensure a smoother development experience, we recommend familiarizing yourself with the following information and utilizing local development nodes or <Link className='text-primaryHue' isExternal showAnchorIcon href="https://testnet.xscscan.com/">Xone TestNet</Link>. This allows you to immerse yourself in development without worrying about spending real money. If you need XOC on Xone TestNet for testing, <Link className='text-primaryHue' isExternal showAnchorIcon href="https://faucet.xone.org/">you can claim it from the faucet</Link>.
 
-<div className="overflow-x-auto">
-  <Table removeWrapper aria-label="Example static collection table" className="mt-2">
-    <TableHeader>
-      <TableColumn></TableColumn>
-      <TableColumn>**Xone Testnet**</TableColumn>
-      <TableColumn>**Xone Mainnet**</TableColumn>
-    </TableHeader>
-    <TableBody>
-      <TableRow key="1">
-        <TableCell>**Network Name**</TableCell>
-        <TableCell>Xone TestNet</TableCell>
-        <TableCell>Xone Mainnet</TableCell>
-      </TableRow>
-      <TableRow key="2">
-        <TableCell>**New RPC URL**</TableCell>
-        <TableCell>
-        `https://rpc-testnet.xone.plus`\
-        `https://rpc-testnet.xone.org`\
-        `https://rpc-testnet.knight.center`
-        </TableCell>
-        <TableCell>
-        `https://rpc.xone.org`
-        </TableCell>
-      </TableRow>
-      <TableRow key="3">
-        <TableCell>**Chain ID**</TableCell>
-        <TableCell>33772211</TableCell>
-        <TableCell>3721</TableCell>
-      </TableRow>
-      <TableRow key="4">
-        <TableCell>**Symbol**</TableCell>
-        <TableCell>XOC</TableCell>
-        <TableCell>XOC</TableCell>
-      </TableRow>
-      <TableRow key="5">
-        <TableCell>**Block Explorer URL**</TableCell>
-        <TableCell>`https://testnet.xscscan.com/`</TableCell>
-        <TableCell>`https://xscscan.com/`</TableCell>
-      </TableRow>
-      <TableRow key="6">
-        <TableCell></TableCell>
-        <TableCell><AddNetworkButton network="testnet" /></TableCell>
-        <TableCell><AddNetworkButton network="mainnet" /></TableCell>
-      </TableRow>
-    </TableBody>
-  </Table>
-</div>
+<NetworkTable />
 
 ## Contract Verification
 
 In Xone, we provide <Link className='text-primaryHue' isExternal showAnchorIcon href="https://testnet.xscscan.com/contract-verification">Verify & Publish Contract</Link>. In just three steps, you can verify and publish the contract you built. In Xone Mainnet, you need to delete the <Code color="danger">testnet</Code> in the access URL, for example: <Code color="success">xscscan.com/contract-verification</Code>, <Link className='text-primaryHue' isExternal showAnchorIcon href="https://xscscan.com/contract-verification">you can also access it directly here</Link>.
+
 ## Development Tools
 
 As you'll see in the development stack below, deploying contracts and interacting with them on Xone Mainnet or Xone TestNet is almost identical to how you do it on Ethereum L1. **The most notable difference is the requirement to specify different endpoints.**

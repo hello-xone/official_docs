@@ -1,6 +1,6 @@
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Link} from "@nextui-org/react";
 import Image from 'next/image';
-import AddNetworkButton from "@/components/addNetwork";
+import NetworkTable from "@/components/NetworkTable";
 
 # RPC Endpoints
 
@@ -8,53 +8,7 @@ This document provides the necessary details to connect to the Xone Testnet or X
 
 ## Network Details
 
-<div className="overflow-x-auto">
-  <Table removeWrapper aria-label="Example static collection table" className="mt-2">
-    <TableHeader>
-      <TableColumn></TableColumn>
-      <TableColumn>**Xone Testnet**</TableColumn>
-      <TableColumn>**Xone Mainnet**</TableColumn>
-    </TableHeader>
-    <TableBody>
-      <TableRow key="1">
-        <TableCell>**Network Name**</TableCell>
-        <TableCell>Xone TestNet</TableCell>
-        <TableCell>Xone Mainnet</TableCell>
-      </TableRow>
-      <TableRow key="2">
-        <TableCell>**New RPC URL**</TableCell>
-        <TableCell>
-        `https://rpc-testnet.xone.plus`\
-        `https://rpc-testnet.xone.org`\
-        `https://rpc-testnet.knight.center`
-        </TableCell>
-        <TableCell>
-        `https://rpc.xone.org`
-        </TableCell>
-      </TableRow>
-      <TableRow key="3">
-        <TableCell>**Chain ID**</TableCell>
-        <TableCell>33772211</TableCell>
-        <TableCell>3721</TableCell>
-      </TableRow>
-      <TableRow key="4">
-        <TableCell>**Symbol**</TableCell>
-        <TableCell>XOC</TableCell>
-        <TableCell>XOC</TableCell>
-      </TableRow>
-      <TableRow key="5">
-        <TableCell>**Block Explorer URL**</TableCell>
-        <TableCell>`https://testnet.xscscan.com/`</TableCell>
-        <TableCell>`https://xscscan.com/`</TableCell>
-      </TableRow>
-      <TableRow key="6">
-        <TableCell></TableCell>
-        <TableCell><AddNetworkButton network="testnet" /></TableCell>
-        <TableCell><AddNetworkButton network="mainnet" /></TableCell>
-      </TableRow>
-    </TableBody>
-  </Table>
-</div>
+<NetworkTable />
 
 ## How to Connect to Xone
 
