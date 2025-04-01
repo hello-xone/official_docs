@@ -1,6 +1,7 @@
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Link} from "@nextui-org/react";
 import Image from 'next/image';
 import NetworkTable from "@/components/NetworkTable";
+import NetworkListed from "@/components/NetworkListed";
 
 # RPC Endpoints
 
@@ -10,6 +11,12 @@ This document provides the necessary details to connect to the Xone Testnet or X
 
 <NetworkTable />
 
+## Other listed
+
+With the information they list, you can quickly add Xone to your wallet.
+
+<NetworkListed />
+
 ## How to Connect to Xone
 
 ### **For MetaMask**
@@ -17,7 +24,7 @@ This document provides the necessary details to connect to the Xone Testnet or X
 2. Navigate to **Settings** > **Networks** > **Add Network**.
 3. Enter the following details:
 
-<Image src="/images/MetaMask Add Network.png" alt="MetaMask Add Network" width={1200} height={800} layout="responsive" />
+<Image src="/images/MetaMask Add Network.png" alt="MetaMask Add Network" width={1200} height={800} full />
 
 4. Save the network and start interacting with the Xone TestNet.
 

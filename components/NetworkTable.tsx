@@ -33,7 +33,7 @@ const NetworkTable = () => {
         <div className="overflow-x-auto">
             <Table removeWrapper aria-label="Network Information Table" className="mt-2">
                 <TableHeader>
-                    <TableColumn>Placeholder</TableColumn>
+                    <TableColumn>&nbsp;</TableColumn>
                     <TableColumn><strong>{testnet.name}</strong></TableColumn>
                     <TableColumn><strong>{mainnet.name}</strong></TableColumn>
                 </TableHeader>
@@ -72,9 +72,9 @@ const NetworkTable = () => {
                         <TableCell><Code>{mainnet.explorer}</Code></TableCell>
                     </TableRow>
                     <TableRow key="6">
-                        <TableCell>—</TableCell>
-                        <TableCell>placeholder<AddNetworkButton network="testnet" /></TableCell>
-                        <TableCell>placeholder<AddNetworkButton network="mainnet" /></TableCell>
+                        <TableCell>&nbsp;</TableCell>
+                        <TableCell>&nbsp;<AddNetworkButton network="testnet" /></TableCell>
+                        <TableCell>&nbsp;<AddNetworkButton network="mainnet" /></TableCell>
                     </TableRow>
                 </TableBody>
             </Table>
