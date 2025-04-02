@@ -16,6 +16,8 @@
   },
   "guide": "Getting Started",
   "tools": "Developer Kit",
+  "token": "Verification Token",
+  "contracts": "Major Contracts",
   "json": "Json RPC",
   "standard": "Standard",
   "display": "Display Tokens"
