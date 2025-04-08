@@ -14,7 +14,7 @@ const NetworkTable = () => {
         ],
         chainId: 33772211,
         symbol: "XOC",
-        explorer: "https://testnet.xscscan.com/",
+        explorer: "https://testnet.xonescan.com/",
     };
 
     const mainnet = {
@@ -26,7 +26,7 @@ const NetworkTable = () => {
         ],
         chainId: 3721,
         symbol: "XOC",
-        explorer: "https://xscscan.com/",
+        explorer: "https://xonescan.com/",
     };
 
     return (

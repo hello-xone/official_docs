@@ -1,4 +1,4 @@
-const { nextui } = require("@nextui-org/react");
+const { heroui } = require("@heroui/react");
 const { iconsPlugin, getIconCollections } = require("@egoist/tailwindcss-icons")
 
 /***  @type {import('tailwindcss').Config} */
@@ -9,7 +9,7 @@ module.exports = {
   content: {
     relative: true,
     files: [
-      "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx,html}",
+      "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx,html}",
       "./app/**/*.{js,ts,jsx,tsx,mdx,md,html}",
       "./pages/**/*.{js,ts,jsx,tsx,mdx,md,html}",
       "./components/**/*.{js,ts,jsx,tsx,mdx,md,html}",
@@ -47,7 +47,7 @@ module.exports = {
     },
   },
   plugins: [
-    nextui(),
+    heroui(),
     iconsPlugin({
       collections: getIconCollections(["i-carbon-growth", "i-tabler-blocks", "tabler", "streamline", "icon-park-outline", "tabler", "icon-park-outline", "tdesign", "octicon", "la", "carbon", "teenyicons", "solar", "game-icons", "lucide", "carbon", "gis", "ri", "hugeicons", "fluent", "uil", "token", "mdi", "ph", "lineicons", "icon-park-outline", "material-symbols", "icon-park-outline"]),
     }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组</title>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="生态全景" transform="translate(-235.000000, -36.000000)" fill-rule="nonzero">
+            <g id="编组" transform="translate(235.000000, 36.000000)">
+                <circle id="椭圆形" fill="#EF0027" cx="128" cy="128" r="128"></circle>
+                <path d="M175.456,79.304 L60,58.056 L120.76,210.952 L205.424,107.8 L175.456,79.304 Z M173.6,88.664 L191.264,105.456 L142.96,114.2 L173.6,88.664 Z M132.464,112.448 L81.552,70.224 L164.768,85.536 L132.464,112.448 Z M128.84,119.92 L120.536,188.56 L75.776,75.896 L128.84,119.92 Z M136.52,123.56 L190.016,113.88 L128.656,188.624 L136.52,123.56 Z" id="形状" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

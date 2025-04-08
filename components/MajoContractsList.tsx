@@ -26,7 +26,7 @@ const MajoContractsList = () => {
   const renderCell = React.useCallback((user, columnKey) => {
     const cellValue = user[columnKey];
 
-    const addressUrl = `https://xscscan.com/address/${user.address}`
+    const addressUrl = `https://xonescan.com/address/${user.address}`
 
     switch (columnKey) {
       case "name":
@@ -39,7 +39,7 @@ const MajoContractsList = () => {
             isExternal
             showAnchorIcon
             href={addressUrl}
-            className='text-primaryHue'
+            className='text-primaryHue hover:underline'
           >
             {user.address}
           </Link>

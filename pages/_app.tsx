@@ -1,11 +1,12 @@
-import { NextUIProvider } from "@nextui-org/react";
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+// pages/_app.tsx
+import Providers from '@components/providers';
+import * as React from "react";
+import { AppProps } from 'next/app';
 import { Inter } from "next/font/google";
 import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
 import SEO from 'src/next-seo.config';
-
+import '@/styles/globals.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,11 +21,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <DefaultSeo {...SEO} />
-      <NextUIProvider>
-          <Component {...pageProps} />
-      </NextUIProvider>
+      
+      {/* 使用 Providers 包裹应用 */}
+      <Providers>
+        <Component {...pageProps} />
+      </Providers>
     </>
   );
 }
-
-

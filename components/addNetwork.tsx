@@ -19,14 +19,14 @@ const AddNetworkButton = ({ network }) => {
                 "https://rpc-testnet.xone.org",
                 "https://rpc-testnet.knight.center",
               ],
-              blockExplorerUrls: ["https://testnet.xscscan.com/"],
+              blockExplorerUrls: ["https://testnet.xonescan.com/"],
             }
           : {
               chainId: "0xe89", // 3721 转 16 进制
               chainName: "Xone Mainnet",
               nativeCurrency: { name: "XOC", symbol: "XOC", decimals: 18 },
               rpcUrls: ["https://rpc.xone.org"],
-              blockExplorerUrls: ["https://xscscan.com/"],
+              blockExplorerUrls: ["https://xonescan.com/"],
             };
 
         await window.ethereum.request({

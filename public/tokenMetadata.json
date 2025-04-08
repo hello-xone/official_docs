@@ -1,0 +1,152 @@
+{
+  "USDH": {
+    "name": "Huione USD",
+    "website": "https://huione.money/en/home",
+    "description": "USDH(Huione USD)，Stablecoin that Never be Freezed",
+    "type": "ERC20",
+    "symbol": "USDH",
+    "logo": "/tokenlogo/usdh.png",
+    "networks": {
+      "xone": {
+        "testnet": {
+          "address": "0xc69751291E117420065c10bc4ba155448a5e7338",
+          "decimals": 18
+        },
+        "mainnet": {
+          "address": "0x26df50102098C19aB4374b2D5572a1bCde38f160",
+          "decimals": 18
+        }
+      },
+      "bsc": {
+        "testnet": {
+          "address": "",
+          "decimals": 18
+        },
+        "mainnet": {
+          "address": "0xD79021d7E9358f2E5eeC291774a2E22eA904A87B",
+          "decimals": 18
+        }
+      },
+      "tron": {
+        "testnet": {
+          "address": "",
+          "decimals": 18
+        },
+        "mainnet": {
+          "address": "TKjNP4UN1FYDgTuHHnqPHyu517YqdXyPw2",
+          "decimals": 18
+        }
+      },
+      "ethereum": {
+        "testnet": {
+          "address": "",
+          "decimals": 18
+        },
+        "mainnet": {
+          "address": "0xd79021d7e9358f2e5eec291774a2e22ea904a87b",
+          "decimals": 18
+        }
+      }
+    }
+  },
+  "WXOC": {
+    "name": "Wrapped XOC",
+    "website": "https://xone.org",
+    "description": "Xone Chain Native Wrapped Token",
+    "type": "ERC20",
+    "symbol": "XOC",
+    "logo": "/tokenlogo/xoc.png",
+    "networks": {
+      "ethereum": {
+        "testnet": {
+          "address": "0x8ec8702C82D2c85F2Ce77A921A9C02378430A410",
+          "decimals": 18
+        },
+        "mainnet": {
+          "address": "",
+          "decimals": 18
+        }
+      },
+      "tron": {
+        "testnet": {
+          "address": "TKW2bW3Rnaa48ia8YGcuBEBXbnxrfCiQ15",
+          "decimals": 18
+        },
+        "mainnet": {
+          "address": "",
+          "decimals": 18
+        }
+      },
+      "bsc": {
+        "testnet": {
+          "address": "0x482856225111eCc8aC34CcAbC5DAB0Edf7581Bd4",
+          "decimals": 18
+        },
+        "mainnet": {
+          "address": "",
+          "decimals": 18
+        }
+      }
+    }
+  },
+  "TRX": {
+    "name": "TRON",
+    "website": "https://tron.network/",
+    "description": "TRON",
+    "type": "ERC20",
+    "symbol": "TRX",
+    "logo": "/tokenlogo/trx.png",
+    "networks": {
+      "xone": {
+        "testnet": {
+          "address": "0x27b88D1F44871519c52f08ffB3eccF22A135A326",
+          "decimals": 6
+        },
+        "mainnet": {
+          "address": "",
+          "decimals": 18
+        }
+      }
+    }
+  },
+  "BNB": {
+    "name": "BNB",
+    "website": "https://www.binance.com",
+    "description": "BNB",
+    "type": "ERC20",
+    "symbol": "BNB",
+    "logo": "/tokenlogo/bnb.png",
+    "networks": {
+      "xone": {
+        "testnet": {
+          "address": "0x7ee45e3e9b01c876a6E1C741a0F983D0FD66299b",
+          "decimals": 18
+        },
+        "mainnet": {
+          "address": "",
+          "decimals": 18
+        }
+      }
+    }
+  },
+  "ETH": {
+    "name": "Ethereum",
+    "website": "https://ethereum.org",
+    "description": "Ethereum",
+    "type": "ERC20",
+    "symbol": "ETH",
+    "logo": "/tokenlogo/eth.png",
+    "networks": {
+      "xone": {
+        "testnet": {
+          "address": "0x19Cf166FaFC66d724E8cEcC0392867bB9186f6ce",
+          "decimals": 18
+        },
+        "mainnet": {
+          "address": "",
+          "decimals": 18
+        }
+      }
+    }
+  }
+}
