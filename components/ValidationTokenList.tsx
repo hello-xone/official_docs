@@ -25,13 +25,13 @@ const EXPLORER_URLS = {
     xone: "https://xonescan.com/token",
     bsc: "https://bscscan.com/token",
     ethereum: "https://etherscan.io/token",
-    tron: "https://tronscan.org/#/token",
+    tron: "https://tronscan.org/#/token20",
   },
   testnet: {
     xone: "https://testnet.xonescan.com/token",
     bsc: "https://testnet.bscscan.com/token",
-    ethereum: "https://sepolia.etherscan.io//token",
-    tron: "https://testnet.tronscan.org/#/token",
+    ethereum: "https://sepolia.etherscan.io/token",
+    tron: "https://nile.tronscan.org/?_gl=1*1xg7bgc*_ga*MTM2NzI5MDk2OS4xNzM2NzU5OTY5*_ga_TBLE5BZDE8*MTc0NDExODA4Ny40LjEuMTc0NDExODQ4My42MC4wLjA.#/token20",
   },
 };
 

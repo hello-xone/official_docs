@@ -57,6 +57,16 @@
     "symbol": "XOC",
     "logo": "/tokenlogo/xoc.png",
     "networks": {
+      "xone": {
+        "testnet": {
+          "address":"0x593708cF1606C2328fd6f4c5694fe642174eb1AB",
+          "decimals": 18
+        },
+        "mainnet": {
+          "address":"",
+          "decimals": 18
+        }
+      },
       "ethereum": {
         "testnet": {
           "address": "0x8ec8702C82D2c85F2Ce77A921A9C02378430A410",
