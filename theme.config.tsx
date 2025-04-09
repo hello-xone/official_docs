@@ -98,7 +98,8 @@ const config: DocsThemeConfig = {
     text: '© 2025 Xone.',
   },
   toc: {
-    title: 'Table of contents'
+    backToTop: true,
+    title: 'Table of contents',
   },
 
 }

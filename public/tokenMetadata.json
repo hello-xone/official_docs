@@ -99,6 +99,26 @@
       }
     }
   },
+  "USDT": {
+    "name": "Tether USD",
+    "website": "https://tether.to",
+    "description": "Tether USD",
+    "type": "ERC20",
+    "symbol": "USDT",
+    "logo": "/tokenlogo/usdt.png",
+    "networks": {
+      "xone": {
+        "testnet": {
+          "address":"0xdCAa74bF71DCDe6d642137c69ece895b8e2F29A2",
+          "decimals": 6
+        },
+        "mainnet": {
+          "address":"",
+          "decimals": 6
+        }
+      }
+    }
+  },
   "TRX": {
     "name": "TRON",
     "website": "https://tron.network/",
