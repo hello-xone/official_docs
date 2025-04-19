@@ -1,4 +1,7 @@
-import MajoContractsList from "@/components/MajoContractsList";
+import XoneList from "@/components/MajoContractsList/XoneList.tsx";
+import EthereumList from "@/components/MajoContractsList/EthereumList.tsx";
+import BSCList from "@/components/MajoContractsList/BSCList.tsx";
+import TronList from "@/components/MajoContractsList/TronList.tsx";
 import { Callout } from 'nextra/components';
 import { Link } from "@nextui-org/react";
 
@@ -10,9 +13,23 @@ Xone public chain has been committed to building an open, transparent and secure
   We encourage you to review and use these open source contracts to build your applications or smart contracts. Each contract comes with detailed documentation and instructions to help you better understand the functions and interfaces of the contract. Open source smart contracts all follow the open source agreement. For details, please refer to the open source agreement of the contract. We believe that open source can promote community innovation and make the Xone public chain more transparent and credible.
 </Callout>
 
-## Contracts List
+## Mainnet Contracts List
 
-<MajoContractsList />
+### Xone
+
+<XoneList />
+
+### Ethereum
+
+<EthereumList />
+
+### BNB Smart Chain
+
+<BSCList />
+
+### Tron
+
+<TronList />
 
 ## Security and Auditing
 

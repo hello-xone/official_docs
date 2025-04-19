@@ -63,7 +63,7 @@
           "decimals": 18
         },
         "mainnet": {
-          "address":"",
+          "address":"0x0704AF16e5d98A427A595ea83119be08E36938eE",
           "decimals": 18
         }
       },
@@ -119,8 +119,8 @@
       }
     }
   },
-  "TRX": {
-    "name": "TRON",
+  "WTRX": {
+    "name": "Wrapped TRX",
     "website": "https://tron.network/",
     "description": "TRON",
     "type": "ERC20",
@@ -136,11 +136,21 @@
           "address": "",
           "decimals": 18
         }
+      },
+      "tron": {
+        "testnet": {
+          "address": "",
+          "decimals": 18
+        },
+        "mainnet": {
+          "address": "TNUC9Qb1rRpS5CbWLmNMxXBjyFoydXjWFR",
+          "decimals": 6
+        }
       }
     }
   },
-  "BNB": {
-    "name": "BNB",
+  "WBNB": {
+    "name": "Wrapped BNB",
     "website": "https://www.binance.com",
     "description": "BNB",
     "type": "ERC20",
@@ -156,11 +166,21 @@
           "address": "",
           "decimals": 18
         }
+      },
+      "bsc": {
+        "testnet": {
+          "address": "",
+          "decimals": 18
+        },
+        "mainnet": {
+          "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+          "decimals": 18
+        }
       }
     }
   },
-  "ETH": {
-    "name": "Ethereum",
+  "WETH": {
+    "name": "Wrapped ETH",
     "website": "https://ethereum.org",
     "description": "Ethereum",
     "type": "ERC20",
@@ -174,6 +194,16 @@
         },
         "mainnet": {
           "address": "",
+          "decimals": 18
+        }
+      },
+      "ethereum": {
+        "testnet": {
+          "address": "",
+          "decimals": 18
+        },
+        "mainnet": {
+          "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
           "decimals": 18
         }
       }
