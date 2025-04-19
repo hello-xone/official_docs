@@ -81,6 +81,96 @@ export const users = [
     address: "0x7969DA379E4eEe30376a9fc3EDAB2b4A1035271B",
     describe: "Rinlink bridge Packaging multiple token transfers or cross-chain operations.",
   },
+  {
+    id: 13,
+    name: "deployed Uniswap_V2 Factory",
+    address: "0x76bDc5a6190Ea31A6D5C7e93a8a2ff4dD15080A6",
+    describe: "manages the generation of all V2 trading pair contracts.",
+  },
+  {
+    id: 14,
+    name: "deployed Uniswap_V2 Router02",
+    address: "0x89eA27957bb86FBFFC2e0ABfc5a5a64BB0343367",
+    describe: "V2 router is responsible for token swaps, adding/removing liquidity.",
+  },
+  {
+    id: 15,
+    name: "deployed Uniswap_V3 Factory",
+    address: "0xd357373500c6E5ce3A4CfA966b56F5241C7Af3c4",
+    describe: "creates V3 pools, supporting centralized liquidity and multiple fee tiers.",
+  },
+  {
+    id: 16,
+    name: "deployed wxoc9",
+    address: "0x4eabbaBeBbb358660cA080e8F2bb09E4a911AB4E",
+    describe: "is used to solve the application of main currency cross-chain, DEFI and other projects.",
+  },
+  {
+    id: 17,
+    name: "deploy multicall3",
+    address: "0xe39d7BCDdaBBD0526D143185Fb7b459099Fd40c9",
+    describe: "aggregation tool, which can call multiple contract methods in batches.",
+  },
+  {
+    id: 18,
+    name: "deploy proxyAdmin",
+    address: "0x8C38838164A75FA944884e3AECE11A6a91F18348",
+    describe: "is a management contract used to manage all proxy contracts.",
+  },
+  {
+    id: 19,
+    name: "deploy ticklens",
+    address: "0x74AEcb01C49179340B63D242D3F92cb5ff850f86",
+    describe: "Uniswap V3 price ticks.",
+  },
+  {
+    id: 20,
+    name: "deployed SwapX_V3 Quoter",
+    address: "0x75491D0E42D48121D865c6B8beccd70a28Cfff5a",
+    describe: "Estimated transaction results.",
+  },
+  {
+    id: 21,
+    name: "deployed SwapX_V3 SwapRouter",
+    address: "0xCB56f3eDea7272224800C83eE958A4e4C1cb59Be",
+    describe: "Execute Swap Transaction.",
+  },
+  {
+    id: 22,
+    name: "deployed SwapX_V3 NFTDescriptorlibrary",
+    address: "0xA42dD72DCDAB39e31423151cB61109Ba0f98113E",
+    describe: "Help generate NFT information.",
+  },
+  {
+    id: 23,
+    name: "deployed SwapX_V3 NFTPositionDescriptor",
+    address: "0xe44e55b7f57BaEF8064ee06fF6Bccfa16D6a8cAB",
+    describe: "Specific information of each LP NFT.",
+  },
+  {
+    id: 24,
+    name: "deployed SwapX_V3 NFTPositionManager",
+    address: "0x5165486E99227e772bE2f81f595b5d9580BBdeE0",
+    describe: "Creating, modifying, merging, and destroying Uniswap V3 LP positions (NFTs).",
+  },
+  {
+    id: 25,
+    name: "deployed transparentUpgradeableProxy",
+    address: "0x05ADde17e62B04AFA826A19e8435F40AF9Aea5D9",
+    describe: "Transparent Proxy Contract.",
+  },
+  {
+    id: 26,
+    name: "deployed SwapX_V3 v3Migrator",
+    address: "0x2E464880f0aecF7F112b1dc2e7ef9A513878B3dE",
+    describe: "Migrate to v3.",
+  },
+  {
+    id: 27,
+    name: "buysell",
+    address: "0xB395a25034Bf40Da8Ad36BB168f0D3442e1Fac6c",
+    describe: "Sales Contract.",
+  },
 ];
 
 const XoneList = () => {
