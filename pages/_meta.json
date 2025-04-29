@@ -14,6 +14,13 @@
     "title": "Developers 🔧",
     "type": "page"
   },
+  "blog": {
+    "title": "Blog 📚",
+    "type": "page",
+    "theme": {
+      "layout": "full"
+    }
+  },
   "faucet": {
     "title": "Faucet ⛽️",
     "type": "page",

@@ -1,0 +1,18 @@
+{
+  "*": {
+    "title": "Blog",
+    "type": "doc",
+    "theme": {
+      "breadcrumb": false,
+      "collapsed": true,
+      "footer": true,
+      "layout": "default",
+      "navbar": true,
+      "pagination": true,
+      "sidebar": false,
+      "timestamp": false,
+      "toc": true,
+      "typesetting": "article"
+    }
+  }
+}

@@ -1,7 +1,9 @@
 import React from 'react'
+import type { ReactElement } from 'react';
 import { DocsThemeConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
 import { useConfig } from 'nextra-theme-docs'
+import { Article } from "@components/blog"
 
 const primaryHue = 0
 
@@ -90,8 +92,23 @@ const config: DocsThemeConfig = {
           property="og:description"
           content={frontMatter.description || 'The decentralized Layer-1 blockchain platform based on the Ethereum protocol uses leading behavioral value incentives (BVI) to ensure that every interaction of every user participating in Xone will create value, and every contribution will be rewarded.'}
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </>
     )
+  },
+
+  main: ({ children }: { children: React.ReactNode }): ReactElement => {
+    const { pathname } = useRouter();
+    const isBlog = pathname.match(/^\/blog\/(?!tag\/).+/);
+    if (isBlog) {
+      return (
+        <>
+          <Article />
+          {children}
+        </>
+      );
+    }
+    return <>{children}</>;
   },
 
   footer: {

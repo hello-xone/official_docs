@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/hello-xone/official_docs.git"
   },
-  "author": "xone chain <hello@xone.plus>",
+  "author": "xone chain <hello@xone.org>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/hello-xone/official_docs/issues"
@@ -25,10 +25,13 @@
     "@nextui-org/react": "^2.4.8",
     "@theguild/remark-mermaid": "^0.2.0",
     "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
     "framer-motion": "^11.18.2",
+    "libpag": "^4.2.84",
     "next": "^13.0.6",
     "next-seo": "^6.6.0",
     "nextra": "2.13.4",
+    "nextra-theme-blog": "2.13.4",
     "nextra-theme-docs": "2.13.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
