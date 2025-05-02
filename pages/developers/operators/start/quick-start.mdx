@@ -1,0 +1,104 @@
+import { Steps, Tabs } from 'nextra/components';
+
+# Download & Install the Xone Chain Full Node Binary and Configuration
+
+<Steps>
+### 1. Prerequisites
+
+* A Linux server (Ubuntu 22.04+ recommended)
+* `wget` and `unzip` installed
+* `sudo` privileges
+
+
+### 2. Download the Latest Binary and Config Bundle
+
+```bash showLineNumbers copy
+# Change to a temporary directory
+cd /tmp
+
+# Download the Xone Chain node binary (example version v1.0.1)
+wget https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/xoned-v1.0.1-linux-amd64
+
+# Download the official configuration template
+wget https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/config.zip
+```
+
+> **Tip**: Optionally verify the SHA256 checksum to ensure the files haven’t been tampered with.
+
+
+### 3. Install the Binary
+
+```bash showLineNumbers copy
+# Rename the executable
+mv xoned-v1.0.1-linux-amd64 xoned
+
+# Make it executable
+chmod +x xoned
+
+# Move it into your system’s PATH
+sudo mv xoned /usr/bin/xoned
+```
+
+
+### 4. Initialize the Data Directory
+
+<Tabs items={['Miannet', 'Testnet']} defaultValue="Miannet">
+  <Tabs.Tab>
+  ```bash showLineNumbers copy
+  # Initialize your node’s data directory (defaults to ~/.xoned)
+  xoned init mynode --chain-id xone_3721-1
+  ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+  ```bash showLineNumbers copy
+  # Initialize your node’s data directory (defaults to ~/.xoned)
+  xoned init xoned --chain-id xone_33772211-1
+  ```
+  </Tabs.Tab>
+</Tabs>
+
+
+* `mynode` can be replaced with your preferred directory name
+* This creates a `~/.xoned` (or `~/.mynode`) folder in your home directory
+
+
+### 5. Apply the Official Configuration
+
+```bash showLineNumbers copy
+# Unzip the config bundle
+unzip config.zip -d ./config
+
+# Backup your existing config (in case you need to revert)
+cp -r ~/.xoned/config ~/.xoned/config.bak
+
+# Overwrite genesis.json, config.toml, and app.toml
+cp config/genesis.json  ~/.xoned/config/genesis.json
+cp config/config.toml   ~/.xoned/config/config.toml
+cp config/app.toml      ~/.xoned/config/app.toml
+```
+
+> **Note**
+>
+> * Ensure `~/.xoned/config` contains only the official or intentionally customized files—remove any extras.
+> * If you need to tweak settings (RPC ports, firewall rules, etc.), edit the files under `config/` first, then copy them over.
+
+
+### 6. Start the Node and Begin Syncing
+
+```bash showLineNumbers copy
+# Launch the node (use systemd or tmux/screen for background operation)
+xoned start --home ~/.xoned
+```
+
+
+### 7. Verify Sync Status
+
+```bash showLineNumbers copy
+# Check sync info (latest block height, catching up status)
+xoned status --home ~/.xoned --node http://127.0.0.1:26657 | jq .SyncInfo
+
+# Watch logs for “Committed new block” messages
+tail -f ~/.xoned/logs/xoned.log
+```
+
+</Steps>
