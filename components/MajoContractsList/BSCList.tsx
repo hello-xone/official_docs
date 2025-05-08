@@ -48,7 +48,7 @@ export const users = [
   {
     id: 7,
     name: "Messager",
-    address: "0x1A72cecE1422eb94258BA242E2905B187103936f",
+    address: "0x82cda9c9e913a41bb69947b8a672983ca7235b9e",
     describe: "Rinlink bridge Transferring information between chains.",
   },
   {
