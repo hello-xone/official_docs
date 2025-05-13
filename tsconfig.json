@@ -40,8 +40,9 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "pages/_app.mdx",],
+    "**/*.tsx",
+    "pages/_app.mdx"
+  ],
   "exclude": [
     "node_modules"
   ]

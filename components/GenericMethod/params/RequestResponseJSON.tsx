@@ -1,8 +1,6 @@
 import SyntaxHighlighter from "react-syntax-highlighter";
 import highlightStyle from "react-syntax-highlighter/dist/cjs/styles/hljs/atom-one-dark";
 import React from "react";
-import Image from "next/image";
-import IconCopy from "components/icons/IconCopy.svg";
 import classes from "./RequestResponseJSON.module.css";
 import { Group } from "@mantine/core";
 import { Text } from "../../Text";
