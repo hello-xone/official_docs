@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("/components/animatedStars.module.css");
 
 .select2-dropdown {
   @apply rounded-b-lg shadow-md;
@@ -14,6 +15,15 @@
   @apply text-lg font-bold text-gray-900;
 }
 
-/* ... */
+.blur-shadow {
+  box-shadow: 6px -8px 10px rgb(250 245 255);
+}
 
-@tailwind utilities;
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}

@@ -1,8 +1,16 @@
-import YouTube from '@components/YouTube'
+import classes from "./animatedStars.module.css";
+import TypingEffect from "@/components/typewriter/typewriter"
+
 
 export default function Hero() {
   return (
-    <div className="bg-transparent">
+    <div className="bg-transparent relative pointer-events-none">
+      <div className="fixed inset-0 overflow-hidden z-0 pointer-events-none">
+        <div className={classes.stars} />
+        <div className={classes.stars2} />
+        <div className={classes.stars3} />
+        <div className={classes.stars4} />
+      </div>
       <div className="relative isolate px-6 pt-16 pb-20 lg:px-8">
         <div
           aria-hidden="true"
@@ -28,7 +36,9 @@ export default function Hero() {
           </div>
           <div className="text-center mt-16">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl bottom-4">
-              Let’s Embrace The Future Together!
+              Let’s Embrace The {" "}
+              <TypingEffect words={["Future", "Value", "Web3", "Xone"]} />
+              {" "} Together!
             </h1>
             <div className="flex justify-center my-5" style={{ marginTop: "20px", marginBottom: "20px" }}>
               <div
@@ -89,6 +99,6 @@ export default function Hero() {
           />
         </div>
       </div>
-    </div>
+    </div>   
   );
 }

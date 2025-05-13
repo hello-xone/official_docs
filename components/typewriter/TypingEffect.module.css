@@ -1,0 +1,19 @@
+.gradient-text {
+  background: linear-gradient(90deg, #ff6b6b, #f06595, #845ef7, #5c7cfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  vertical-align: baseline;
+  min-height: 1.2em;
+}
+
+.cursor {
+  font-weight: bold;
+  transition: opacity 0.1s ease-in-out;
+}
+.visible {
+  opacity: 1;
+}
+.invisible {
+  opacity: 0;
+}
