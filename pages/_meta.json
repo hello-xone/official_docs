@@ -21,6 +21,13 @@
       "layout": "full"
     }
   },
+  "openapi": {
+    "title": "OpenAPI 📚",
+    "type": "page",
+    "theme": {
+      "layout": "full"
+    }
+  },
   "faucet": {
     "title": "Faucet ⛽️",
     "type": "page",

@@ -1,5 +1,7 @@
 // pages/_app.tsx
 import Providers from '@components/providers';
+import { createTheme, MantineProvider } from "@mantine/core";
+import { theme } from "@/theme";
 import * as React from "react";
 import { AppProps } from 'next/app';
 import { Inter } from "next/font/google";
@@ -22,10 +24,13 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <DefaultSeo {...SEO} />
       
-      {/* 使用 Providers 包裹应用 */}
-      <Providers>
-        <Component {...pageProps} />
-      </Providers>
+      <MantineProvider theme={theme}>
+
+        <Providers>
+          <Component {...pageProps} />
+        </Providers>
+
+      </MantineProvider>
     </>
   );
 }

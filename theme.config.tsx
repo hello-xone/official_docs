@@ -114,6 +114,7 @@ const config: DocsThemeConfig = {
   footer: {
     text: '© 2025 Xone.',
   },
+
   toc: {
     backToTop: true,
     title: 'Table of contents',

@@ -22,6 +22,10 @@
     "@heroui/react": "^2.7.6",
     "@heroui/toast": "^2.0.7",
     "@iconify/tailwind": "^1.1.3",
+    "@mantine/code-highlight": "^7.9.1",
+    "@mantine/core": "^7.9.1",
+    "@mantine/hooks": "^7.9.1",
+    "@mantine/notifications": "^7.9.1",
     "@nextui-org/react": "^2.4.8",
     "@theguild/remark-mermaid": "^0.2.0",
     "clsx": "^2.1.1",
@@ -33,6 +37,7 @@
     "nextra": "2.13.4",
     "nextra-theme-blog": "2.13.4",
     "nextra-theme-docs": "2.13.4",
+    "prism-react-renderer": "^2.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
