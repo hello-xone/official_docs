@@ -18,6 +18,11 @@
   "tools": "Developer Kit",
   "token": "Bridge Tokens",
   "contracts": "Major Contracts",
+  "console": {
+    "title": "Json RPC ↗",
+    "href": "/openapi/overview",
+    "newWindow": false
+  },
   "operators": "Node Operators",
   "standard": "Standard",
   "display": "Display Tokens"

@@ -1,8 +1,9 @@
 import {Link} from "@nextui-org/react";
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/react";
 import { Callout } from 'nextra/components'
+import ErrorCode from "@/components/JsonRPCErrorCode.tsx";
 
-# JSON-RPC
+# JSON RPC API
 
 <Callout emoji="⚡">
   Xone Chain’s public RPC endpoints are your gateway to the network. Every on‑chain action—querying balances, sending transactions, or deploying smart contracts—starts with a JSON‑RPC call.
@@ -48,7 +49,7 @@ Xone Chain provides multiple RPC endpoints for developers to connect to the main
 
 ### Query the latest block (cURL)
 
-```bash
+```bash showLineNumbers copy
 curl -X POST https://rpc.xone.org \
   -H "Content-Type: application/json" \
   -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
@@ -56,7 +57,7 @@ curl -X POST https://rpc.xone.org \
 
 ### Connect with Ethers v6
 
-```js
+```js showLineNumbers copy
 import { JsonRpcProvider } from "ethers";
 
 const provider = new JsonRpcProvider("https://rpc.xone.org");
@@ -66,7 +67,7 @@ console.log(`Current block: ${block}`);
 
 ### Connect with Web3.js v1
 
-```js
+```js showLineNumbers copy
 import Web3 from "web3";
 
 const web3 = new Web3("wss://rpc-wss.xone.org");
@@ -84,11 +85,7 @@ const accounts = await web3.eth.getAccounts();
 
 ## Common error codes
 
-| Code     | Meaning                | Typical fix                                               |
-| -------- | ---------------------- | --------------------------------------------------------- |
-| `-32000` | Invalid input          | Check parameter types and encoding                        |
-| `-32004` | Method not found       | Ensure the method name matches the Ethereum JSON‑RPC spec |
-| `-32005` | Resource not available | Node is syncing; retry later or switch endpoint           |
+<ErrorCode />
 
 ## Troubleshooting
 

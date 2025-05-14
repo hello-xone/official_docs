@@ -4,7 +4,8 @@
     "type": "page",
     "theme": {
       "layout": "full"
-    }
+    },
+    "display": "children"
   },
   "study": {
     "title": "Study 📖",
