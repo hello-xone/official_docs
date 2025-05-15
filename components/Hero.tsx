@@ -4,7 +4,7 @@ import TypingEffect from "@/components/typewriter/typewriter"
 
 export default function Hero() {
   return (
-    <div className="bg-transparent relative pointer-events-none">
+    <div className="bg-transparent relative">
       <div className="fixed inset-0 overflow-hidden z-0 pointer-events-none">
         <div className={classes.stars} />
         <div className={classes.stars2} />

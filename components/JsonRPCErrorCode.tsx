@@ -1,6 +1,5 @@
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell } from '@nextui-org/react';
 
-// ① 所有错误放在一个数组里
 const RPC_ERROR_CODES = [
   {
     code: '-32700',
@@ -83,7 +82,6 @@ export default function ErrorCode() {
           <TableColumn>Typical Fix / Description</TableColumn>
         </TableHeader>
 
-        {/* ② 自动映射生成行 */}
         <TableBody items={RPC_ERROR_CODES}>
           {(item) => (
             <TableRow key={item.code}>
