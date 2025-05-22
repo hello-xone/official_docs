@@ -11,6 +11,10 @@
     "title": "Study 📖",
     "type": "page"
   },
+  "bvi": {
+    "title": "What is BVI 🎯",
+    "type": "page"
+  },
   "developers": {
     "title": "Developers 🔧",
     "type": "page"
@@ -23,7 +27,7 @@
     }
   },
   "openapi": {
-    "title": "OpenAPI 🧰",
+    "title": "API 🧰",
     "type": "page",
     "theme": {
       "layout": "full"

@@ -1,0 +1,211 @@
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Link} from "@nextui-org/react";
+import { Callout } from 'nextra/components'
+
+![Banner](public/images/banner.png)
+
+# Background
+
+With the development of the digital economy and blockchain technology, interactions between individuals and platforms lack a tangible way to be recorded or assigned value. Intangible assets and behaviors are difficult to quantify, while decentralization, transparency, efficiency, and user autonomy are becoming core demands of modern ecosystems. In current Web3 projects, challenges such as low user engagement, fragmented incentive mechanisms, ineffective governance, and limited <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link> freedom often hinder the long-term health of the ecosystem.
+
+To address these issues, Xone's primary goal and vision is to build an ideal BVI (Behavior Value Incentive) system. This system aims to convert every user action into a measurable incentive score and provide users with a free, open, and distinctive <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link> platform—ultimately achieving the goal of **"transforming invisible behaviors into tangible value."** Anchored in behavior, linked by <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link>, and grounded in governance, the BVI system strives to promote a fair, transparent, and efficient ecosystem.
+
+## Philosophy & Goals
+
+### 2.1 Behavior Valuation and Value Accumulation
+
+The core idea of BVI draws inspiration from the concept of <Link className='text-primaryHue' isExternal showAnchorIcon href="https://zh.wikipedia.org/wiki/%E8%8A%9D%E9%BA%BB%E4%BF%A1%E7%94%A8">"credit scoring" (like Sesame Credit)</Link>, but it extends beyond reputation assessment. It is a comprehensive incentive system that quantifies user behavior and contributions on-chain. Every action—be it a transaction, cross-chain interaction, or community participation—can be converted into a corresponding incentive score (GV). This approach gives clear value to otherwise intangible behaviors, with the scores accumulating as rewards in the user's account.
+
+### 2.2 Incentives and Governance
+
+The BVI system introduces two main types of incentives, ensuring both economic returns for participants and decentralized governance to avoid power centralization:
+
+- **Economic Incentives**: Accumulated GV can be exchanged for the native chain token, <Link className='text-primaryHue' showAnchorIcon href="/study/xoc">"XOC</Link>, providing users with tangible financial rewards.
+- **Governance Incentives**: GV can also be converted into voting power (GVOTING), allowing users to take part in major platform decisions and contribute to ecosystem optimization and resource allocation.
+
+### 2.3 Free Identity and Open Organization
+
+In BVI, <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link> is no longer confined to fixed labels, but rather a flexible, open, and extensible <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link> system. Each user's blockchain address serves not just as an account, but as a credential for <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link>, reputation, historical contribution, and DAO or DApp affiliation across the ecosystem. By integrating Decentralized Identity (<Link className='text-primaryHue' isExternal showAnchorIcon href="https://ethereum.org/en/decentralized-identity/">DID</Link>) technology, BVI enhances security, interoperability, and user autonomy—unlocking the full value of <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link>.
+
+- **Freedom of Definition**: Users can freely define and manage their <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link>, enabling personalized expression. This includes customizing avatars, nicknames, credentials, and community tags based on preferences, contribution history, and roles.
+- **Cross-Domain Interoperability**: The unified <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link> system ensures seamless transmission and sharing across DApps and DAOs. After encryption and verification, <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link> data can be used across platforms, solving fragmentation and reducing redundant authentication, ultimately enhancing user experience.
+- **Specialized Organizations**: An <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link> is more than a personal label—it can also serve as the foundation for decentralized, open, and unique organizations. Users can create or join DAOs based on their <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link>, building trustworthy communities and enabling self-governance and collaborative ecosystem management.
+- **<Link className='text-primaryHue' isExternal showAnchorIcon href="https://ethereum.org/en/decentralized-identity/">DID</Link> Integration**: By integrating decentralized <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link> (<Link className='text-primaryHue' isExternal showAnchorIcon href="https://ethereum.org/en/decentralized-identity/">DID</Link>) systems, BVI provides unique, user-friendly, and secure <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link> credentials for decentralized applications. <Link className='text-primaryHue' isExternal showAnchorIcon href="https://ethereum.org/en/decentralized-identity/">DID</Link> ensures privacy and user control over <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link> data, allowing verifiable, secure interactions across platforms and chains. This unlocks the value of <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link> data and enables seamless cross-chain and cross-platform connectivity.
+
+## BVI System Overview
+
+![System](public/images/system.png)
+
+## Gameplay and Rules
+
+![Gameplay](public/images/Gameplay.png)
+
+### 4.1 Choosing an Identity Plan
+
+**Each address (user)** that joins Xone is **by default identified as a regular user**. In this default state, no on-chain behavior generates actual value. Since Xone is an EVM-compatible Layer-1 chain, such addresses are indistinguishable from those on Ethereum, BNB Smart Chain, Arbitrum, and other public blockchains.
+
+What sets Xone apart is its classification of users into three major <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link> categories: **Individuals**, **Organizations**, and **Projects**.
+
+In traditional industries, this would be considered “tagging,” and logically, it is. However, Xone’s intent goes beyond tagging. It aims to provide every user within the Xone ecosystem with a visualized and meaningful **<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link>**, allowing for value rights distribution based on each user's role and expectations.
+
+**Selecting an <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link> is a prerequisite for participating in BVI**—it is a mandatory step. Each address can **only choose one <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link>**, and once selected, **it cannot be changed**.
+
+### 4.2 Participating in Specific Behaviors
+
+To standardize and visualize the contributions of each <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link>-participating address (BVI participant), Xone defines these actions as **behaviors**, or more practically, **tasks**.
+
+Behaviors come in various forms. Some require **specific transactions within designated projects or meeting specific criteria**, while others are **tasks assigned by DApp developers or operators** within the ecosystem. To support developers, **Xone will provide open APIs and SDKs** to enable the creation of personalized and flexible BVI-integrated DApps.
+
+Currently, Xone is still in its early and fragile stage. Compared to established public chains, Xone still lags in tools, ecosystem maturity, and community size. To address this, Xone's operators introduced the concept of **BVI <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/season">Season</Link>s**, where each **season features designated behaviors eligible for BVI rewards**.
+
+Each season assigns **different weights to various behaviors** based on ecosystem goals. For example, in <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/season">Season</Link> 1, three behaviors—A, B, and C—may contribute to GV, weighted at 60%, 25%, and 15% respectively, indicating that behavior A is the season’s focus. **Future seasons (e.g., <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/season">Season</Link> 2)** will adjust behavior weights based on market, operational, and ecosystem feedback—thus defining the dynamic **BVI <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/season">Season</Link> Framework**.
+
+### 4.3 Epoch-Based Settlement
+
+When a **BVI participant completes season-specific tasks**, settlements occur at the beginning of **each new <Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> Epoch </Link>**, based on the behaviors completed in the **previous <Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> Epoch </Link>**.
+
+GV rewards are distributed according to both the **seasonal behavior weightings** and **individual user contributions**. To maintain **a fixed total GV reward pool per <Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> Epoch </Link>**, Xone employs a **cutoff mechanism**: if a user’s behavior contribution accounts for **≤ 0.001%**, they **will not receive a reward**.
+
+Additionally, during **“zero seasons”** (periods with no active BVI season), all XOC tokens **intended for that <Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> Epoch </Link>’s reward pool will be sent to a burn address**—destroyed permanently. This mechanism is designed to regulate XOC’s circulating supply and support price stability.
+
+It is important to note that **GVs have an expiration period**. GVs earned within an <Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> Epoch </Link> must be claimed or used within **20 <Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> Epoch </Link>s**. For example, GVs earned in <Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> Epoch </Link> #1 will be **burned when <Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> Epoch </Link> #21 begins** if left unused.
+
+### 4.4 Gaining Tangible Value
+
+Now that we’ve outlined the core logic of BVI, one major question remains: **What tangible value can users actually gain from participating in BVI?** Why not simply reward XOC or other tokens directly?
+
+This was carefully considered by Xone’s operators and developers. The goal is to build Xone into a **free, open, fair, transparent, and efficient ecosystem**. Directly pegging behavioral value to tokens at the outset would **contradict the BVI design philosophy**.
+
+GV is **not a currency but a placeholder**—a middleware representing potential value. It may take the form of **points, energy, coupons, credentials, loyalty tokens, shares, options**, or any analogous mechanism you’re familiar with. When a user earns GV through BVI, **they are acquiring a credential that can unlock future tangible value**.
+
+Moreover, developers within the ecosystem can leverage GV as a component in their **custom project strategies**, adapting it to suit their own operational or reward frameworks.
+
+## BVI Tokenomics
+
+![Tokenomics](public/images/Tokenomics.png)
+
+As outlined in the **white paper**, **60.00% of the total token supply is allocated to the BVI system**. The distribution within this allocation is as follows:
+
+
+<div className="overflow-x-auto">
+  <Table removeWrapper aria-label="Example static collection table" className="mt-2">
+    <TableHeader>
+      <TableColumn>**Channels**</TableColumn>
+      <TableColumn>**Allocation**</TableColumn>
+      <TableColumn>**Amount**</TableColumn>
+      <TableColumn>**Release**</TableColumn>
+    </TableHeader>
+    <TableBody>
+      <TableRow key="1">
+        <TableCell>GV</TableCell>
+        <TableCell>55.00%</TableCell>
+        <TableCell>3,300,000,000.00</TableCell>
+        <TableCell>Used for GV rewards or linear release.</TableCell>
+      </TableRow>
+      <TableRow key="2">
+        <TableCell>Staking</TableCell>
+        <TableCell>35.00%</TableCell>
+        <TableCell>2,100,000,000.00</TableCell>
+        <TableCell>Used for staking rewards.</TableCell>
+      </TableRow>
+      <TableRow key="3">
+        <TableCell>Foundation</TableCell>
+        <TableCell>10%</TableCell>
+        <TableCell>600,000,000.00</TableCell>
+        <TableCell>Xone Foundation operations and deployment.</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</div>
+
+## How to calculate
+
+In the above content, we know that each participation behavior will be settled according to the specific weight and the proportion of its own participation behavior. So how can we know how much GV can be obtained for each participation behavior?
+
+<div className="overflow-x-auto">
+```math
+GV_{i,b}(E) = \left( \frac{x_{i,b}(E)}{\sum_{u} x_{u,b}(E)} \right) \times w_b \times \text{TotalGV}(E)
+```
+</div>
+
+<Callout>
+**Meaning:**
+
+- **$GV_{i,b}(E)$:** The amount of reward that user $i$ receives for action $b$ in <Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> Epoch </Link> $E$.
+- **${x_{i,b}(E)}$:** The contribution value of user $i$ to behavior $b$ in <Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> Epoch </Link> $E$ (for example, the number of times a task is completed, the amount of data contributed, etc.).
+- **${\sum_{u} x_{u,b}(E)}$:** The total contribution of all users (denoted by subscript $u$) to behavior $b$.
+- **$w_b$:** The weight of behavior $b$ is used to adjust the reward ratio of different behaviors (for example: important behaviors have higher weights).
+- **${TotalGV}(E)$:** The total amount of rewards that can be distributed to all users in the current <Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> Epoch </Link> $E$.
+
+</Callout>
+
+**Logic**:
+
+1. **Calculate user contribution ratio:**
+
+<div className="overflow-x-auto">
+```math
+\frac{x_{i,b}(E)}{\sum_{u} x_{u,b}(E)}
+```
+</div>
+
+The contribution value of user $i$ accounts for the proportion of the total contribution of all users in behavior $b$. (For example: if the user contributed 100 points and the total contribution is 1000 points, the proportion is 10.00%).
+
+2. **Rewards are distributed by weight:**
+
+Multiply the proportion by the weight $w_b$ to reflect the value difference of different behaviors. (For example: if $w_b = 0.5$, the user's reward ratio for this behavior is reduced to 5.00%).
+
+3. **Total reward distribution:**
+
+Finally, multiply by ${TotalGV}(E)$ to convert the ratio into the actual amount of rewards. (For example: if the total reward is 1000 GV, the user will receive $5\% \times 1000 = 50$ GV).
+
+### 1. The sum formula of multiple behaviors
+
+<div className="overflow-x-auto">
+```math
+GV_i(E) = \sum_{b=1}^{B} GV_{i,b}(E) = \sum_{b=1}^{B} \left[ \left( \frac{x_{i,b}(E)}{\sum_{u} x_{u,b}(E)} \right) \times w_b \times \text{TotalGV}(E) \right]
+```
+</div>
+
+<Callout>
+**Meaning:**
+
+- **$GV_i(E)$:** The total reward received by user $i$ for all actions in <Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> Epoch </Link> $E$.
+- **$B$:** The total number of behavior types included in the current epoch (for example, behavior 1 is posting, behavior 2 is commenting, etc.).
+- The other variables were defined as in the individual behavioral formulas.
+
+</Callout>
+
+**Logic**:
+
+1. **Calculate rewards for each action:**
+
+For each action $b$ (from 1 to $B$), calculate the reward $GV_{i,b}(E)$ of user $i$ according to the single action formula.
+
+2. **Accumulate rewards for all actions:**
+
+Add up the rewards of the user in all actions to get the total reward $GV_i(E)$. (For example: the user gets 50.00 GV for action 1 and 30.00 GV for action 2, and the total reward is 80.00 GV).
+
+### 2. Identity and N Dynamic Factors
+
+<div className="overflow-x-auto">
+```math
+GV_i(E) = \sum_{b=1}^{B} GV_{i,b}(E) = \sum_{b=1}^{B} \left[ \left( \frac{x_{i,b}(E) \cdot V_{i,b} \cdot \text{N}_{i,b}}{\sum_{u}(x_{u,b}(E)\cdot V_{i,b} \cdot \text{N}_{i,b})} \right) \times w_b \times \text{TotalGV}(E) \right]
+```
+</div>
+
+For the future, Xone hopes to effectively enjoy differentiated rights and interests through different <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link> systems or corresponding scalable other ecosystems, communities, etc., so the <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link> rights $V$ and other rights and interests factors $N$ are introduced in the calculation of GV. The calculation formula of the ${N}_{i,b}$ dynamic factor is as follows:
+
+<div className="overflow-x-auto">
+```math
+N_{i,b} = 1 + \sum_{k=1}^{K} \gamma_{k,b} \cdot R_{k,i,b}
+```
+</div>
+
+- **$R_{k,i,b}$:** The $k$th equity value of user $i$ in behavior $b$ (for example: NFT equity, community contribution, activity, etc.).
+- **$\gamma_{k,b}$:** The weight coefficient of equity $k$ in behavior $b$ is used to control the impact of different equity on $N$ and can be dynamically adjusted through community voting in the future.
+
+Today, this expectation is the plan and expectation of Xone operators for future development; therefore, users participating in BVI can ignore it. Xone defines this parameter as 1 in the actual settlement process to maintain the state before introduction.
+
+## Vision and Planning
+
+We believe that building a BVI system with behavior as the core, <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link> as the bond, and governance as the driving force will inject new vitality into the Web3 ecosystem, solve existing pain points, and form a future digital economic model with high user participation, transparent incentives, and fair co-governance. Let every on-chain interaction and every contribution receive clear incentives, whether it is transactions, cross-chain, or community interactions, they can all be converted into user value, and with the help of the free <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">identity</Link> system and GVOTING, the governance power will be widely decentralized to every participant, avoiding the monopoly of a single institution or large households, and achieving true co-governance and sharing.
