@@ -41,13 +41,13 @@ export const users = [
   },
   {
     id: 6,
-    name: "Proxy_02",
+    name: "Proxy_03",
     address: "0x4aeDc117527fD270D4d56aA32f2E4e532547c8Dc",
     describe: "Rinlink bridge Agency Contract.",
   },
   {
     id: 7,
-    name: "Proxy_02",
+    name: "Proxy_04",
     address: "0x5B6C580F2Af1eDD51349716f40A9104Bd918aef7",
     describe: "Rinlink bridge Agency Contract.",
   },
