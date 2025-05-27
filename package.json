@@ -27,6 +27,7 @@
     "@mantine/hooks": "^7.9.1",
     "@mantine/notifications": "^7.9.1",
     "@nextui-org/react": "^2.4.8",
+    "@scalar/api-reference-react": "^0.7.3",
     "@theguild/remark-mermaid": "^0.2.0",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",

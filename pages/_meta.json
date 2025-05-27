@@ -27,10 +27,20 @@
     }
   },
   "openapi": {
-    "title": "API 🧰",
-    "type": "page",
+    "title": "Xone API 🧰",
+    "type": "menu",
     "theme": {
       "layout": "full"
+    },
+    "items": {
+      "overview": {
+        "title": "Json RPC",
+        "type": "page",
+        "theme": {
+          "layout": "full"
+        },
+        "display": "children"
+      }
     }
   },
   "faucet": {
