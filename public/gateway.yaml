@@ -4,8 +4,10 @@ info:
   version: 1.0.0
   description: API for querying Xone blockchain epochs (periodic events).
 servers:
-  - url: http://3.0.124.23:1317
-    description: Xone REST server (LCD endpoint)
+  - url: https://gateway.xone.org
+    description: Xone REST server (LCD endpoint).
+  - url: https://testnet-gateway.xone.org
+    description: Xone Testnet REST server (LCD endpoint).
 
 paths:
   # 查询所有 Epoch 信息
@@ -15,18 +17,18 @@ paths:
         - Epochs
       summary: List all epochs
       responses:
-        '200':
+        "200":
           description: Successfully retrieved epochs
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/EpochsResponse'
-        '500':
+                $ref: "#/components/schemas/EpochsResponse"
+        "500":
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: "#/components/schemas/ErrorResponse"
 
   # 查询当前 Epoch 信息
   /evmos/epochs/v1/current_epoch:
@@ -43,18 +45,18 @@ paths:
             type: string
             example: "day"
       responses:
-        '200':
+        "200":
           description: Successfully retrieved current epoch
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CurrentEpochResponse'
-        '500':
+                $ref: "#/components/schemas/CurrentEpochResponse"
+        "500":
           description: Epoch info not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: "#/components/schemas/ErrorResponse"
 
 components:
   schemas:
@@ -93,7 +95,7 @@ components:
         epochs:
           type: array
           items:
-            $ref: '#/components/schemas/Epoch'
+            $ref: "#/components/schemas/Epoch"
         pagination:
           type: object
           properties:

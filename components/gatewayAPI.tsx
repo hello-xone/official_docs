@@ -1,16 +1,20 @@
-import { ApiReferenceReact } from "@scalar/api-reference-react";
-import "@scalar/api-reference-react/style.css";
+import { ApiReferenceReact } from "@scalar/api-reference-react"
+import "@scalar/api-reference-react/style.css"
 
-export default function GatewayAPI() {
+export const getLayout = page => page
+
+export default function GatewayFull() {
   return (
-    <div className="w-full min-h-screen bg-white dark:bg-black px-4 py-10">
-        <ApiReferenceReact
-          configuration={{
-            spec: {
-              url: "/gateway.yaml",
-            },
-          }}
-        />
+    <div className="relative bg-transparent min-h-screen w-full">
+      <ApiReferenceReact
+        configuration={{
+          spec: {
+            url: "/gateway.yaml"
+          }, 
+          hideDarkModeToggle: true,
+          hideSearch: true
+        }}
+      />
     </div>
-  );
+  )
 }

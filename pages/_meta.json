@@ -17,7 +17,24 @@
   },
   "developers": {
     "title": "Developers 🔧",
-    "type": "page"
+    "type": "menu",
+    "items": {
+      "ready": {
+        "title": "Build Xone ↗",
+        "type": "page",
+        "href": "/developers/ready"
+      },
+      "jsonrpc": {
+        "title": "Json RPC ↗",
+        "type": "page",
+        "href": "/openapi/overview"
+      },
+      "gateway": {
+        "title": "Gateway ↗",
+        "type": "page",
+        "href": "/gateway"
+      }
+    }
   },
   "blog": {
     "title": "Blog 📚",
@@ -27,20 +44,19 @@
     }
   },
   "openapi": {
-    "title": "Xone API 🧰",
-    "type": "menu",
+    "title": "API 🧰",
+    "type": "page",
+    "display": "hidden",
     "theme": {
       "layout": "full"
-    },
-    "items": {
-      "overview": {
-        "title": "Json RPC",
-        "type": "page",
-        "theme": {
-          "layout": "full"
-        },
-        "display": "children"
-      }
+    }
+  },
+  "gateway": {
+    "title": "Gateway",
+    "type": "page",
+    "display": "hidden",
+    "theme": {
+      "layout": "full"
     }
   },
   "faucet": {
