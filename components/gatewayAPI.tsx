@@ -12,7 +12,19 @@ export default function GatewayFull() {
             url: "/gateway.yaml"
           }, 
           hideDarkModeToggle: true,
-          hideSearch: true
+          hideSearch: true,
+          baseServerURL: "https://gateway.xone.org",
+          proxyUrl:'https://proxy.scalar.com',
+          servers: [
+            {
+              url: 'https://gateway.xone.org',
+              description: 'API for querying Xone blockchain epochs (periodic events).',
+            },
+            {
+              url: 'https://testnet-gateway.xone.org',
+              description: 'Development API for querying Xone blockchain epochs (periodic events).',
+            },
+          ]
         }}
       />
     </div>

@@ -4,11 +4,6 @@ info:
   version: 1.0.0
   description: API for querying Xone blockchain epochs (periodic events).
 servers:
-  - url: https://gateway.xone.org
-    description: Xone REST server (LCD endpoint).
-  - url: https://testnet-gateway.xone.org
-    description: Xone Testnet REST server (LCD endpoint).
-
 paths:
   # 查询所有 Epoch 信息
   /evmos/epochs/v1/epochs:
