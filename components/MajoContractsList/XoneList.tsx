@@ -13,12 +13,12 @@ export const users = [
     id: 1,
     name: "XOCTeamRelease",
     address: "0x1b553A9B5C47F55F1777f024CaB3038ddbF89c0e",
-    describe: "Team Token Release.",
+    describe: "Team Token Release.(Deprecated)",
   },
   {
     id: 2,
     name: "XOCRelease",
-    address: "0xCB741e27f9C3742636fa8474a981b702FCE6602E",
+    address: "0x08b48c7e6175f1E3BDa4300dC6ee4FbC00ebfC6d",
     describe: "Donate Token Release.",
   },
   {
