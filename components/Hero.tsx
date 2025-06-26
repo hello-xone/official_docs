@@ -1,5 +1,6 @@
 import classes from "./animatedStars.module.css";
 import TypingEffect from "@/components/typewriter/typewriter"
+import { Video } from '@components/Video';
 
 
 export default function Hero() {
@@ -28,7 +29,7 @@ export default function Hero() {
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm dark:text-white leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20" >
               Make all efforts worthwhile.{" "}
-              <a href="/study/nodes" className="font-semibold text-primaryHue">
+              <a href="/bvi/readme" className="font-semibold text-primaryHue">
                 <span aria-hidden="true" className="absolute inset-0" />
                 Read more <span aria-hidden="true">&rarr;</span>
               </a>
@@ -50,21 +51,7 @@ export default function Hero() {
                   height: 0,
                 }}
               >
-                <iframe
-                  src="https://www.youtube.com/embed/h60iIJwvTt0"
-                  title="Hello Xone"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                  }}
-                />
+                <Video src="video/hello_xone.mp4" />
               </div>
             </div>
             <p className="mt-12 text-lg leading-8 text-gray-600 dark:text-gray-300">
@@ -78,10 +65,10 @@ export default function Hero() {
                 Start Learning
               </a>
               <a
-                href="/study/account"
+                href="/developers/ready"
                 className="text-sm font-semibold leading-6 text-primaryHue dark:text-white"
               >
-                Learn More <span aria-hidden="true">→</span>
+                Building <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
