@@ -15,6 +15,12 @@ const ContactInfo = () => {
         </a>
       </p>
       <p>
+        <strong>Work:</strong>{" "}
+        <a href="mailto:hello@xone.org" className="text-primaryHue hover:underline">
+          job@xone.org
+        </a>
+      </p>
+      <p>
         <strong>Business:</strong>{" "}
         <a href="mailto:business@xone.org" className="text-primaryHue hover:underline">
           business@xone.org
