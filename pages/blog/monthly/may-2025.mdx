@@ -1,0 +1,79 @@
+---
+title: Xone Updates | May 2025
+date: 2025-06-10
+description: As the eastern sky first blushes with dawn’s gentle glow, the air around the floating bastion Xone feels charged with possibility.
+draft: false
+tags: [Monthly]
+authors: Xone Chain
+image: /blog/monthly/may_2025/banner.png
+thumbnail: /blog/monthly/may_2025/banner.png
+---
+
+import { Link, Card, CardHeader, CardBody, CardFooter, Divider, Image } from "@nextui-org/react";
+import ContactInfo from "@/components/ContactInfo";
+import FeatureCards from '@/components/blog/FeatureCards';
+import data from '@/pages/blog/monthly/data/202505.json'
+
+**Dear!**
+
+As the eastern sky first blushes with dawn’s gentle glow, the air around the floating bastion Xone feels charged with possibility.
+
+The morning mist, having relinquished its hold, drifts away like dreams at sunrise.
+
+Below, the chain-linked city stirs to life—lamps flicker, nodes awaken, and the hum of consensus grows ever steadier.
+
+On deck, our Lead Validator stands at the rail, watching as a shard of sunlight catches the polished hull.
+
+A subtle nod follows: the network has passed another rigorous performance verification under increased load. Smiles ripple through the team, for with every optimization comes renewed confidence in Xone’s evolution. 
+
+And so begins our May story—a month where stability deepens, new horizons emerge, and every participant’s heartbeat pulses in time with Xone’s advancing rhythm…
+
+## May TL;DR
+
+This month, the Xone ecosystem has ushered in a number of important upgrades and iterations, injecting new vitality into the network stability, product experience and developer ecosystem.
+
+- **Mainnet Hard Fork:** This month, we completed a critical <Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org/blog/bulletin/hard-fork">mainnet hard fork</Link> and officially launched the new <Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org/study/epoch">Epoch module</Link>. By introducing epoch-based cycle management, we can more precisely coordinate core network operations (such as reward distribution and validator rotation), laying a solid foundation for future feature expansions and economic model design.
+
+- **Product Updates:** To ensure the Xone brand, we reconstructed the <Link className='text-primaryHue' isExternal showAnchorIcon href="https://faucet.xone.org/en">faucet page UI</Link> and opened the <Link className='text-primaryHue' isExternal showAnchorIcon href="https://tokenup.org/en/developer">developer platform</Link> during this period, enriching the information channel between developers and users. <Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org/bvi/readme">For BVI</Link>, a dedicated module was added to the official documentation, which detailed the principles and usage of BVI. More importantly, the <Link className='text-primaryHue' isExternal showAnchorIcon href="https://nft.xone.org/en">Xone NFT market</Link> has officially migrated to the main network.
+
+- **Contract Iterations:** Due to the update of Epoch, we upgraded the <Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org/study/release">released contracts</Link> and completed the <Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org/developers/contracts#mainnet-contracts-list">contract update of the cross-chain bridge</Link> to better execute cross-chain assets.
+
+## 🛠 Mainnet Hard Fork
+
+By introducing epoch-based cycle management, This module is based on <Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org/study/release">Evmos epochs</Link> and has more flexible time cycle management capabilities, we can more precisely coordinate core network operations (such as reward distribution and validator rotation), laying a solid foundation for future feature expansions and economic model design.
+
+![hard](/blog/monthly/may_2025/hard.png)
+
+For users, you can view the current Epoch data <Link className='text-primaryHue' isExternal showAnchorIcon href="https://xonescan.com/epochs">through the browser</Link>. If you are a developer, we believe that <Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org/gateway">gateway call</Link> here is more suitable for you.
+
+## 🍾 The product is brand new
+
+- **Faucet Page Redesign:** To give new users a more intuitive introduction to Xone’s brand identity, we completely overhauled the <Link className='text-primaryHue' isExternal showAnchorIcon href="https://faucet.xone.org/en">faucet page</Link>. Both visuals and interactions now align with the official design system, helping users quickly obtain test assets.
+
+![faucet](/blog/monthly/may_2025/faucet.png)
+
+- **Developer Platform Integration:** We incorporated the <Link className='text-primaryHue' isExternal showAnchorIcon href="https://tokenup.org/en/developer">TokenUp developer platform</Link> into the ecosystem. Any DApp developer can now independently upload project information and view operational data on that platform. The uploaded information will be synchronized and displayed across the <Link className='text-primaryHue' isExternal showAnchorIcon href="https://bvi.xone.org/en/ecology">Xone BVI ecosystem</Link> and the <Link className='text-primaryHue' isExternal showAnchorIcon href="https://tokenup.org/en">TokenUp wallet</Link>, further enriching the information flow between developers and users.
+
+![Developer](/blog/monthly/may_2025/developer.png)
+
+- **BVI Introduction in Docs:** The official documentation now includes a dedicated chapter on <Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org/bvi/readme">BVI (Behavioral Value Incentive)</Link>, detailing its principles and usage. This helps developers and community members quickly understand and participate in the incentive system.
+
+![Introduction](/blog/monthly/may_2025/introduction.png)
+
+- **Xone NFT Marketplace Launched on Mainnet:** After validation on the testnet, the <Link className='text-primaryHue' isExternal showAnchorIcon href="https://nft.xone.org/en">Xone NFT marketplace</Link> has officially migrated to the mainnet. All users can now safely mint, trade, and custody NFTs in the mainnet environment, ushering in a brand-new digital-collectible experience.
+
+![nft](/blog/monthly/may_2025/nft.png)
+
+## 📃 Contract Iterations
+
+- **Optimization of Donation and Team Token Release Contracts:** We upgraded the logic of the donation-release contract and the team-token-release contract so that all cycle calculations are now driven by the on-chain Epoch module. This means the release schedule will remain precisely synchronized with block height, further improving transparency and execution stability.
+
+- **Cross-Chain Bridge Contract Update:** To better handle asset transfers in a multi-chain environment, we refactored and enhanced the security of the bridge contracts. The new version introduces more comprehensive verification logic for cross-chain validation and asset custody, significantly reducing potential risks and providing users with a more reliable cross-chain experience.
+
+## 🎉 Ecosystem Expansion
+
+<FeatureCards items={data} />
+
+These updates not only improve the underlying scalability and stability of the network but also deliver a smoother, safer experience for both developers and end users at the product level. Please stay tuned for our next phase of optimizations and ecosystem expansion.
+
+<ContactInfo />
