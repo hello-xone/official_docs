@@ -119,6 +119,26 @@
       }
     }
   },
+  "USDC": {
+    "name": "USD Coin",
+    "website": "https://www.usdc.com/",
+    "description": "Circle Internet Group",
+    "type": "ERC20",
+    "symbol": "USDC",
+    "logo": "/tokenlogo/usdc.png",
+    "networks": {
+      "xone": {
+        "testnet": {
+          "address":"",
+          "decimals": 6
+        },
+        "mainnet": {
+          "address":"0x02D45d684A233F3bA0C55fE941854FC0E5235fE1",
+          "decimals": 18
+        }
+      }
+    }
+  },
   "WTRX": {
     "name": "Wrapped TRX",
     "website": "https://tron.network/",
