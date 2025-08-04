@@ -30,7 +30,7 @@ export function RequestResponseJSON({ json }: Props) {
           </Text>
         </Group>
       </header>
-
+    
       <section className={classes.codeHighlight}>
         {/* @ts-ignore */}
         <SyntaxHighlighter
