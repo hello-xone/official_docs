@@ -41,7 +41,8 @@
     "prism-react-renderer": "^2.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-syntax-highlighter": "15.6.1"
+    "react-syntax-highlighter": "15.6.1",
+    "sharp": "^0.34.3"
   },
   "devDependencies": {
     "@egoist/tailwindcss-icons": "^1.8.1",
