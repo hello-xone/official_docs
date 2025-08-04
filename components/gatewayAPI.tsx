@@ -1,7 +1,7 @@
 import { ApiReferenceReact } from "@scalar/api-reference-react"
 import "@scalar/api-reference-react/style.css"
 import { useTheme } from 'nextra-theme-docs'
-import { useEffect, useState } from 'react'
+import {useEffect, useRef, useState} from 'react'
 
 export const getLayout = page => page
 
@@ -11,8 +11,8 @@ export default function GatewayFull() {
   const [currentTheme, setCurrentTheme] = useState('')
 
   useEffect(() => {
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
       if (theme === 'system') {
-          const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
           setCurrentTheme(systemPrefersDark ? 'dark' : 'light')
       } else {
           setCurrentTheme(theme)
@@ -22,6 +22,7 @@ export default function GatewayFull() {
   if (currentTheme === "") return ;
   return (
     <div
+      id="gatewayAPI"
       className={`relative min-h-screen w-full ${currentTheme === "dark" ? "dark-mode" : "light-mode"}`}
     >
       <ApiReferenceReact
