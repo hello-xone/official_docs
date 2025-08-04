@@ -151,6 +151,10 @@ button,
   color: var(--scalar-color-1);
 }
 
+#gatewayAPI.light-mode .scalar-app-layout .relative .custom-scroll .border-transparent .items-center {
+  color: var(--scalar-color-2);
+}
+
 html.js-focus-visible.light .scalar-app .relative.z-context .rounded{
   --scalar-background-1: #d8d8d8;
   --scalar-background-2: #f6f5f4;
