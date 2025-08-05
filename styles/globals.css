@@ -126,14 +126,31 @@ button,
 #gatewayAPI.light-mode .section-content .scalar-card-header-title{
   color: var(--scalar-color-2);
 }
-#gatewayAPI.light-mode .section-column .examples .scalar-card.request-card{
-  --scalar-background-2: #f6f5f4;
-  --scalar-background-3: #f6f5f4;
+#gatewayAPI.light-mode .section-column .examples .scalar-card.request-card {
+  --scalar-background-2: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 39% / .05);
+  --scalar-background-3: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 39% / .085);
   --scalar-color-1: #2a2f45;
-  --scalar-color-2: #757575;
-  --scalar-color-3: #8e8e8e;
+  --scalar-color-2: rgba(55,65,81,var(--tw-text-opacity));
+  --scalar-color-3: rgba(0,0,0,.8);
   --scalar-color-text: var(--scalar-color-1);
-  --scalar-scrollbar-color: #757575;
+  --scalar-scrollbar-color: rgba(0,0,0,.2);
+  --scalar-border-color: rgba(0,0,0,.04);
+}
+#gatewayAPI.light-mode .section-column .sticky-cards .introduction-card {
+  --scalar-background-1: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 39% / .05);
+  --scalar-background-2: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 39% / .085);
+}
+#gatewayAPI.light-mode .section-column .examples .scalar-card.request-card .scalar-card-content.scalar-card-header {
+  background: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 39% / .085);
+}
+#gatewayAPI.light-mode .section-container .section-content .section-column .scalar-card {
+  --scalar-background-2: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 39% / .05);
+  --scalar-background-3: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 39% / .085);
+  --scalar-color-2: #2a2f45;
+}
+#gatewayAPI.light-mode .section-container .section-content .section-column .scalar-card.response-card.bg-b-2[aria-label="Example Responses"] {
+  --scalar-background-2: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 39% / .050);
+  --scalar-background-3: transparent;
 }
 #gatewayAPI.light-mode .section-column .examples .scalar-card.request-card::selection {
   background-color: #d8d8d8;
@@ -145,6 +162,10 @@ button,
 
 #gatewayAPI.light-mode .section-column .examples .response-card .response-description{
   color: var(--scalar-color-2);
+}
+
+#gatewayAPI.light-mode .section-column .sticky-cards .scalar-reference-intro-server {
+  background-color: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 39% / .05);
 }
 
 #gatewayAPI.light-mode .section-column .sticky-cards .scalar-reference-intro-server .items-center {
