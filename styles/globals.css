@@ -176,6 +176,11 @@ button,
   color: var(--scalar-color-2);
 }
 
+#gatewayAPI.dark-mode .references-layout .references-navigation-list .sidebar,
+#gatewayAPI.dark-mode .references-rendered .narrow-references-container {
+  background: rgba(17,17,17,var(--tw-bg-opacity)) !important;
+}
+
 html.js-focus-visible.light .scalar-app .relative.z-context .rounded{
   --scalar-background-1: #d8d8d8;
   --scalar-background-2: #f6f5f4;
