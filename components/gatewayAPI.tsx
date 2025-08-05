@@ -1,16 +1,36 @@
 import { ApiReferenceReact } from "@scalar/api-reference-react"
 import "@scalar/api-reference-react/style.css"
+import { useTheme } from 'nextra-theme-docs'
+import {useEffect, useRef, useState} from 'react'
 
 export const getLayout = page => page
 
 export default function GatewayFull() {
+  const theme = useTheme().theme
+
+  const [currentTheme, setCurrentTheme] = useState('')
+
+  useEffect(() => {
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+      if (theme === 'system') {
+          setCurrentTheme(systemPrefersDark ? 'dark' : 'light')
+      } else {
+          setCurrentTheme(theme)
+      }
+  }, [theme])
+
+  if (currentTheme === "") return ;
   return (
-    <div className="relative bg-transparent min-h-screen w-full">
+    <div
+      id="gatewayAPI"
+      className={`relative min-h-screen w-full ${currentTheme === "dark" ? "dark-mode" : "light-mode"}`}
+    >
       <ApiReferenceReact
         configuration={{
           spec: {
             url: "/gateway.yaml"
-          }, 
+          },
+          theme: currentTheme,
           hideDarkModeToggle: true,
           hideSearch: true,
           baseServerURL: "https://gateway.xone.org",
@@ -24,9 +44,9 @@ export default function GatewayFull() {
               url: 'https://testnet-gateway.xone.org',
               description: 'Development API for querying Xone blockchain epochs (periodic events).',
             },
-          ]
+          ],
         }}
       />
     </div>
-  )
+  );
 }
