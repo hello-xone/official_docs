@@ -186,3 +186,6 @@ html.js-focus-visible.light .scalar-app .relative.z-context .rounded{
   --scalar-color-text: var(--scalar-color-1);
   --scalar-scrollbar-color: #757575;
 }
+html.js-focus-visible.light .scalar-app .relative.z-context .rounded .shadow-border {
+  border: 1px solid rgba(0,0,0,.08);
+}
