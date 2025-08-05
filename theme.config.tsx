@@ -1,10 +1,10 @@
 import React from 'react'
 import type { ReactElement } from 'react';
 import { HeaderLogo } from './components/HeaderLogo'
-import { DocsThemeConfig } from 'nextra-theme-docs'
+import { DocsThemeConfig, useConfig } from 'nextra-theme-docs'
 import { useRouter } from 'next/router'
-import { useConfig } from 'nextra-theme-docs'
 import { Article } from "@components/blog"
+import ImageViewer from './components/ImageViewer';
 
 const primaryHue = 0
 
@@ -79,7 +79,20 @@ const config: DocsThemeConfig = {
       </>
     )
   },
+  components: {
+    p: (props: any) => {
+      const isMdxImage =
+        typeof props?.children.type === 'function' &&
+        (props?.children.type.name === 'img' || props?.children.type.displayName === 'MDXImage')
+      const isNativeImg = props?.children.type === 'img'
+      if (isMdxImage || isNativeImg) {
+        return <ImageViewer alt = { props?.children.props.alt || '' } src = { props?.children.props.src.src || '' } thumbnailClass = "" ></ImageViewer>
+      } else {
+        return <p {...props} />
+      }
 
+    },
+  },
   main: ({ children }: { children: React.ReactNode }): ReactElement => {
     const { pathname } = useRouter();
     const isBlog = pathname.match(/^\/blog\/(?!tag\/).+/);

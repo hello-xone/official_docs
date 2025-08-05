@@ -1,4 +1,4 @@
-import SyntaxHighlighter from "react-syntax-highlighter";
+import { Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import highlightStyle from "react-syntax-highlighter/dist/cjs/styles/hljs/atom-one-dark";
 import React from "react";
 import classes from "./RequestResponseJSON.module.css";
@@ -13,7 +13,6 @@ type Props = {
 
 export function RequestResponseJSON({ json }: Props) {
   let { copy } = useCopyString({ value: json });
-
   return (
     <section className={classes.root}>
       <header className={classes.header}>
@@ -33,8 +32,9 @@ export function RequestResponseJSON({ json }: Props) {
       </header>
 
       <section className={classes.codeHighlight}>
+        {/* @ts-ignore */}
         <SyntaxHighlighter
-          language={"json"}
+          language="json"
           style={highlightStyle}
           lineProps={{
             style: {

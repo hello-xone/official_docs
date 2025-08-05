@@ -11,7 +11,7 @@ import { useCopyString } from "../../hooks/useCopyString";
 
 // https://github.com/react-syntax-highlighter/react-syntax-highlighter/issues/539
 const SyntaxHighlighter =
-  Prism as typeof React.Component<SyntaxHighlighterProps>;
+  Prism as any as typeof React.Component<SyntaxHighlighterProps>;
 
 type Props = {
   snippet: string;
