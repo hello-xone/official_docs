@@ -12,6 +12,7 @@
   "block":"Block",
   "transaction":"Transaction",
   "epoch":"Epoch",
+  "sequence": { "title": "Sequence ↗", "href": "/study/sequence", "newWindow": true },
 
   "-- ACTIVE": {
     "type": "separator",
