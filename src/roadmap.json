@@ -1,0 +1,194 @@
+{
+  "entries": [
+    {
+      "date": "January - March 2026",
+      "version": "4.0.0",
+      "title": "Q1 Ecosystem Growth Season Launch",
+      "tags": ["Ecosystem Growth", "High-Frequency Scenarios"],
+      "blocks": [
+        {
+          "type": "list",
+          "list": [
+            { "label": "Ecosystem Flywheel Activation", "desc": "Initiated the ecosystem flywheel, solidifying high-frequency on-chain use cases to boost overall network activity" }
+          ]
+        }
+      ]
+    },    
+    {
+      "date": "October - December 2025",
+      "version": "3.2.4",
+      "title": "Q4 Asset Growth Season · Singapore Token2049 · XONE Global Tour",
+      "tags": ["Asset Growth", "RWA", "Token2049", "Global Tour"],
+      "blocks": [
+        {
+          "type": "list",
+          "list": [
+            { "label": "Asset Growth Season Launch", "desc": "Completed the accumulation of real on-chain assets, establishing a solid foundation of asset trust" },
+            { "label": "Singapore Token2049", "desc": "Participated in the largest Web3 industry event, engaging with global leaders and innovators" },
+            { "label": "Europe Tour Fan Events", "desc": "Hosted fan meet-ups and community engagement activities across multiple European cities to strengthen global community connections" }
+          ]
+        }
+      ]
+    },    
+    {
+      "date": "September 2025",
+      "version": "3.1.1",
+      "title": "XONE Global Tour & First On-Chain RWA Asset Launch",
+      "tags": ["Global Tour", "RWA", "Community Event", "Asset Tokenization"],
+      "blocks": [
+        {
+          "type": "list",
+          "list": [
+            { "label": "Asia Tour Fan Events", "desc": "Hosted fan meet-ups and community engagement events across multiple Asian cities to expand XONE’s global presence" },
+            { "label": "First On-Chain RWA Asset Launch", "desc": "Successfully deployed and activated the first Real-World Asset (RWA) on the XONE Chain" }
+          ]
+        }
+      ]
+    },    
+    {
+      "date": "August 2025",
+      "version": "3.0.0",
+      "title": "XONE Ecosystem Multi-Project Launch",
+      "tags": ["Meme", "XZone", "XDAO", "Global Expansion", "Ecosystem Fund", "RWA", "Incubator"],
+      "blocks": [
+        {
+          "type": "list",
+          "list": [
+            { "label": "One Meme Platform Launch", "desc": "Introduced a one-stop Meme token launchpad supporting the full cycle from creation and deployment to trading" },
+            { "label": "XZone", "desc": "A super traffic platform built on Web3 infrastructure" },
+            { "label": "XDAO", "desc": "An all-in-one staking, governance, and lending platform" },
+            { "label": "XONE Global City Ambassador Recruitment", "desc": "Global recruitment program for channels and communities to expand ecosystem influence" },
+            { "label": "XONE Global Tour Launch", "desc": "Asia and Europe fan events to foster community engagement" },
+            { "label": "Dual Ecosystem Fund Strategy", "desc": "Launched the XONE Labs Infrastructure Fund (50M XOC) and the RWA Development Fund (50M XOC)" },
+            { "label": "XONE Labs 10-Country Incubation Center Launch", "desc": "Global recruitment of ecosystem incubators to accelerate project deployment" },
+            { "label": "RWA Research Institute Launch", "desc": "Established a one-stop RWA comprehensive solution research institute for premium assets" }
+          ]
+        }
+      ]
+    },    
+    {
+      "date": "July 2025",
+      "version": "2.3.1",
+      "title": "Grant Program Launch – 100M XOC Ecosystem Funding",
+      "tags": ["Grant", "XOC", "User Growth", "Ecosystem Funding"],
+      "blocks": [
+        {
+          "type": "list",
+          "list": [
+            { "label": "Q3 User Growth Season", "desc": "Established an initial network of genuine users, fostering authentic on-chain behaviors and interactions" }
+          ]
+        }
+      ]
+    },    
+    {
+      "date": "Q3 2025",
+      "version": "2.2.5",
+      "title": "User Growth Season Launch",
+      "tags": ["User Growth", "Real Users", "Engagement"],
+      "blocks": [
+        {
+          "type": "list",
+          "list": [
+            { "label": "Established Initial Real User Network", "desc": "Built a core network of genuine users, fostering authentic on-chain behaviors and interactions" }
+          ]
+        }
+      ]
+    },    
+    {
+      "date": "Q2 2025",
+      "version": "2.1.0",
+      "title": "Brand Upgrade",
+      "tags": ["Brand Upgrade", "XONE 3.0", "Ecosystem IP"],
+      "blocks": [
+        {
+          "type": "list",
+          "list": [
+            { "label": "Brand Revamp", "desc": "Launched XONE 3.0 with a refreshed brand identity, featuring a coordinated debut of three major ecosystem IPs" }
+          ]
+        }
+      ]
+    },    
+    {
+      "date": "Q1 2025",
+      "version": "2.1.4",
+      "title": "Infrastructure Layer",
+      "tags": ["Infrastructure", "Testnet", "XOC", "Web3 Economy"],
+      "blocks": [
+        {
+          "type": "list",
+          "list": [
+            { "label": "Testnet Fully Opened", "desc": "Launched the open testnet alongside the XOC node incentive mechanism, attracting global node participation" },
+            { "label": "Ecosystem Experiments Launched", "desc": "Initiated intensive on-chain ecosystem experiments with developers deploying pilot applications to validate multi-scenario feasibility" }
+          ]
+        }
+      ]
+    },    
+    {
+      "date": "March 6, 2024",
+      "version": "2.0.3",
+      "title": "Mainnet Launch",
+      "tags": ["Mainnet Launch", "BVI", "Global Expansion"],
+      "blocks": [
+        {
+          "type": "list",
+          "list": [
+            { "label": "Closed Series B Funding", "desc": "Raised $50M in Series B financing with backing from top-tier global investors" },
+            { "label": "Mainnet Deployment Completed", "desc": "Successfully launched the XONE Chain core protocol, marking the start of a new era for real on-chain value" },
+            { "label": "BVI System Integrated", "desc": "Fully integrated the BVI (Behavior-as-Mining) mechanism into the mainnet, enabling the tokenization of on-chain behaviors" },
+            { "label": "Global Community Expansion", "desc": "Launched the Knight & Ambassador program, establishing communities in over 50 countries" }
+          ]
+        }
+      ]
+    },    
+    {
+      "date": "June 26, 2023",
+      "version": "1.0.4",
+      "title": "Technological Fusion",
+      "tags": ["Consensus Upgrade", "RWA", "DID", "AI Identity"],
+      "blocks": [
+        {
+          "type": "list",
+          "list": [
+            { "label": "Assembled a Global Expert Team", "desc": "Brought together system architects, economic model designers, and core engineers from around the world, forming a diverse R&D force" },
+            { "label": "Reengineered the Consensus Algorithm", "desc": "Upgraded the consensus mechanism to handle high-concurrency scenarios for RWA and DID applications, enhancing network performance and scalability" },
+            { "label": "Tested AI Identity Oracle", "desc": "Launched internal testing of the AI Identity Oracle and data authorization mechanism, establishing the foundational model for on-chain identity" }
+          ]
+        }
+      ]
+    },    
+    {
+      "date": "March 15, 2022",
+      "version": "1.0.3",
+      "title": "On-Chain Foundation",
+      "tags": ["BVI", "RWA", "AI Identity", "Blockchain Infrastructure"],
+      "blocks": [
+        {
+          "type": "list",
+          "list": [
+            { "label": "Defined the Trinitarian System Blueprint", "desc": "Introduced an integrated architecture combining BVI (Behavior-as-Mining), RWA (Real-World Asset Tokenization), and AI Identity, establishing XONE’s unique value paradigm" },
+            { "label": "Closed $20M Series A Funding", "desc": "Valuation surged to $200M, securing strong financial backing for blockchain development and ecosystem growth" },
+            { "label": "Built Core Infrastructure & Testnet Prototype", "desc": "Developed the early-stage foundational system and test network, attracting the first wave of global developers" }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "July 01, 2021",
+      "version": "1.0.1",
+      "title": "Value Awakening",
+      "tags": ["POS", "BVI", "Blockchain Innovation"],
+      "blocks": [
+        {
+          "type": "list",
+          "list": [
+            { "label": "Proposed POS × Behavior Mining (BVI) Architecture", "desc": "Pioneered the integration of Proof of Stake with behavior-based value incentives, breaking away from the old 'hash power equals value' narrative to open a new era of value-driven blockchains" },
+            { "label": "Founded XONE Labs", "desc": "Established the core R&D center, bringing together technology and vision to launch the systematic development of the next-generation value-driven blockchain" },
+            { "label": "Validated Incentive Model Feasibility", "desc": "Achieved an initial on-chain proof of the 'behavior as asset' incentive model, laying the technical foundation for future mechanism iterations" }
+          ]
+        }
+      ]
+    }    
+  ]
+}
+
+
