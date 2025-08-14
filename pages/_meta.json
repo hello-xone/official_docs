@@ -59,6 +59,14 @@
       "layout": "full"
     }
   },
+  "roadmap": {
+    "title": "Roadmap",
+    "type": "page",
+    "display": "hidden",
+    "theme": {
+      "layout": "full"
+    }
+  },
   "faucet": {
     "title": "Faucet ⛽️",
     "type": "page",

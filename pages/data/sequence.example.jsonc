@@ -1,0 +1,93 @@
+// 说明：这是带注释的示例配置文件（JSONC）。仅供阅读参考，不会被页面直接引入。
+// 实际生效文件为同目录下的 sequence.json（标准 JSON 不支持注释）。
+{
+  // entries：时间轴条目数组，按从新到旧或相反顺序排列
+  "entries": [
+    {
+      // date：发布日期或节点日期（字符串）
+      "date": "June 30, 2025",
+      // version：可选，版本号或里程碑标识
+      "version": "2.1",
+      // title：该条目的标题（字符串）
+      "title": "Release 2.1 - Kimi K2 Support",
+      // tags：可选，标签列表（字符串数组）
+      "tags": ["AI", "Performance", "Reasoning", "Multi-modal"],
+      // blocks：该条目的内容块列表，按顺序渲染
+      "blocks": [
+        {
+          // type：块类型。支持 "text" | "video" | "accordion" | "list"
+          "type": "video",
+          // src：视频相对路径，最终会拼接到 S3 前缀（见 components/Video.tsx）
+          "src": "video/hello_xone.mp4",
+          // isMt6：可选，是否在视频组件上添加上边距（默认 true）。这里通常置为 false，由外层统一控制间距
+          "isMt6": false
+        }
+      ]
+    },
+    {
+      "date": "June 15, 2025",
+      "version": "1.2",
+      "title": "Enhanced AI Agent Interface and Reasoning Capabilities",
+      "tags": ["AI", "Performance", "Interface", "Reasoning"],
+      "blocks": [
+        {
+          // 纯文本块：按两个及以上换行分段，渲染为多个 <p>
+          "type": "text",
+          // text：文本内容；也兼容使用 content 字段
+          "text": "This release focuses on enhancing reasoning and multi-modal performance.\n\nIt improves robustness under long-context conversations."
+        },
+        {
+          // 折叠块：渲染多个 Accordion.Item
+          "type": "accordion",
+          // items：折叠项数组
+          "items": [
+            {
+              // title：折叠项标题
+              "title": "Features",
+              // defaultOpen：可选，是否默认展开
+              "defaultOpen": true,
+              // list：以列表形式渲染条目
+              // - label：可选，加粗的主文案
+              // - desc：可选，主文案后的补充描述
+              "list": [
+                { "label": "Enhanced Reasoning", "desc": "Improved logical thinking and problem-solving" },
+                { "label": "Context Awareness", "desc": "Better understanding of conversation history" },
+                { "label": "Multi-modal Support", "desc": "Process text, images, and code simultaneously" },
+                { "label": "Adaptive Responses", "desc": "Tailored communication style based on user preferences" },
+                { "label": "Real-time Learning", "desc": "Dynamic adaptation during conversations" }
+              ]
+            },
+            {
+              "title": "Bug Fixes",
+              "list": [
+                { "desc": "Fixed edge-case loop in retry logic" },
+                { "desc": "Resolved memory leak on long sessions" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "May 23, 2025",
+      "version": "0.9",
+      "title": "UX Improvements",
+      "tags": ["UI", "UX"],
+      "blocks": [
+        {
+          // 普通列表块：渲染 <ul>
+          "type": "list",
+          // list：同上结构
+          "list": [
+            { "label": "Redesigned interface", "desc": "with cleaner, more intuitive navigation" },
+            { "label": "Enhanced accessibility", "desc": "with improved keyboard navigation and screen reader support" },
+            { "label": "Streamlined workflows", "desc": "for faster task completion" },
+            { "label": "Responsive design", "desc": "optimized for all device sizes" }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
+
