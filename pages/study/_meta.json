@@ -24,6 +24,7 @@
   },
   "donate": "Xone Donate",
   "release": "Coin Release",
+  "grants": "Grant Program",
 
   "-- RESOURCE": {
     "type": "separator",

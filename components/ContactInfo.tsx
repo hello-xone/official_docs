@@ -27,6 +27,18 @@ const ContactInfo = () => {
         </a>
       </p>
       <p>
+        <strong>Labs:</strong>{" "}
+        <a href="mailto:business@xone.org" className="text-primaryHue hover:underline">
+          labs@xone.org
+        </a>
+      </p>
+      <p>
+        <strong>Grants:</strong>{" "}
+        <a href="mailto:business@xone.org" className="text-primaryHue hover:underline">
+          grants@xone.org
+        </a>
+      </p>
+      <p>
         <strong>News:</strong>{" "}
         <a href="https://medium.com/@xone_chain" target="_blank" rel="noopener noreferrer" className="text-primaryHue hover:underline">
           Medium
