@@ -6,7 +6,7 @@ This repository serves as the source for all documentation related to Xone Chain
 
 ## Contents
 
-- **Introduction to Xone Chain**: An overview of the Xone Chain network, its core principles, and benefits. Learn about Xone Chain's high transaction throughput, security features, and scalable architecture.
+- **Introduction to Xone Chain**: An overview of the Xone Chain network, it is core principles, and benefits. Learn about Xone Chain's high transaction throughput, security features, and scalable architecture.
 - **User Guides**: Comprehensive guides for setting up and interacting with the Xone Chain network, including instructions for managing assets and performing transactions.
 
 - **Technical Specifications**: In-depth technical documentation for developers, covering the architecture, consensus mechanisms, and integration options for building decentralized applications (DApps) on Xone Chain.
