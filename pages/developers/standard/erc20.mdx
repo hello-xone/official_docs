@@ -1,6 +1,6 @@
 import { Steps, Callout } from 'nextra/components';
 import { Link } from "@nextui-org/react";
-import Image from 'next/image';
+import ImageViewer from '@components/ImageViewer';
 
 # Deploying an ERC-20 Token Using Remix and OpenZeppelin
 
@@ -36,7 +36,7 @@ contract Test is ERC20, ERC20Permit {
 }
 
 ```
-<Image src="/images/Create ERC-20.png" alt="Create ERC-20" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-20.png" alt="Create ERC-20" />
 
 <Callout type="info" emoji="ℹ️">
    Change the parameters in the constructor to customize the token:
@@ -64,7 +64,7 @@ contract Test is ERC20, ERC20Permit {
 
 6. Click 【**Compile example.sol**】.
 
-<Image src="/images/Create ERC-20_1.png" alt="Create ERC-20_1" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-20_1.png" alt="Create ERC-20_1" />
 
 ### Step 3: Deploy the Contract.
 
@@ -74,7 +74,7 @@ contract Test is ERC20, ERC20Permit {
 
 3. Click 【**Deploy**】.
 
-<Image src="/images/Create ERC-20_2.png" alt="Create ERC-20_2" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-20_2.png" alt="Create ERC-20_2" />
 
 ### Step 4: Expand the Deployed Contract.
 
@@ -84,7 +84,7 @@ contract Test is ERC20, ERC20Permit {
 
 3. Check smart contract address (e.g.: <Link className='text-primaryHue' isExternal showAnchorIcon href="https://testnet.xonescan.com/token/0xb1a04485443d937e8eEbd260AE954BC3C006422F">0xb1a04485443d937e8eEbd260AE954BC3C006422F</Link>).
 
-<Image src="/images/Create ERC-20_3.png" alt="Create ERC-20_3" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-20_3.png" alt="Create ERC-20_3" />
 
 ### Step 5: Add the Token to MetaMask.
 
@@ -96,7 +96,7 @@ contract Test is ERC20, ERC20Permit {
 
 4. Check your token balance.
 
-<Image src="/images/Create ERC-20_4.png" alt="Create ERC-20_4" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-20_4.png" alt="Create ERC-20_4" />
 
 ### Step 6: Congratulations! You have completed the ERC-20 contract creation.
 

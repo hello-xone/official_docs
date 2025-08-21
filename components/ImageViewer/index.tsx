@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, CSSProperties } from 'react';
 
-const ImageViewer = ({ src, alt, thumbnailClass }) => {
+const ImageViewer = ({ src, alt, className, style }: { src: string, alt: string, className?: string, style?: CSSProperties }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const overlayRef = useRef(null);
@@ -51,8 +51,9 @@ const ImageViewer = ({ src, alt, thumbnailClass }) => {
       <img
         src={src}
         alt={alt}
+        style={style}
         onClick={handleOpen}
-        className={`cursor-zoom-in mt-2 transition-transform hover:scale-105 ${thumbnailClass}`}
+        className={`cursor-zoom-in mt-2 transition-transform hover:scale-105 ${className}`}
       />
 
       {isOpen && (
@@ -76,11 +77,11 @@ const ImageViewer = ({ src, alt, thumbnailClass }) => {
 
           <img
             src={src}
+            style={style}
             alt={alt}
             onLoad={handleImageLoad}
-            className={`max-w-full max-h-screen object-contain transition-all duration-300 ${
-              isLoading ? 'opacity-0' : 'opacity-100'
-            }`}
+            className={`max-w-full max-h-screen object-contain transition-all duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'
+              }`}
           />
         </div>
       )}
