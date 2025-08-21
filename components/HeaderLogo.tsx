@@ -16,12 +16,12 @@ export function HeaderLogo() {
 
   return (
     <div
-      className="flex items-center font-semibold text-[22px] transition-opacity duration-300"
+      className="flex items-center font-semibold text-[clamp(1rem,3.5vw,1.375rem)] transition-opacity duration-300"
       style={{ opacity }}
     >
       <XoneLogo />
 
-      <span className={`pl-4 { color: isDarkMode ? 'white' : 'black' }`}>
+      <span className={`pl-4 max-[400px]:pl-2 { color: isDarkMode ? 'white' : 'black' }`}>
         Xone Docs
       </span>
     </div>
