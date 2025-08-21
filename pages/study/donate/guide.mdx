@@ -1,8 +1,8 @@
-import Image from 'next/image'
 import { Steps } from 'nextra/components'
 import { Tabs } from 'nextra/components'
 import { Card, Cards } from 'nextra/components';
 import { Callout } from 'nextra/components';
+import ImageViewer from '@components/ImageViewer';
 
 # Donation Guide
  
@@ -17,7 +17,7 @@ To participate in this donation, you will need to first acquire USDH tokens. Don
 
 <Tabs items={['Option 1', 'Option 2']}>
   <Tabs.Tab>
-  <Image src="/images/Swap USDH.png" alt="Swap USDH" width={1200} height={800} layout="responsive" />
+  <ImageViewer src="/images/Swap USDH.png" alt="Swap USDH" />
   <Callout type="info" emoji="ℹ️">
   1. Visit [**HuioneDeFi**](https://usdh.huionedefi.com/en/swap).
   2. Exchange USDT for USDH.
@@ -26,7 +26,7 @@ To participate in this donation, you will need to first acquire USDH tokens. Don
   </Callout>
   </Tabs.Tab>
   <Tabs.Tab>
-  <Image src="/images/Huione Pay.png" alt="Huione Pay" width={1200} height={800} layout="responsive" />
+  <ImageViewer src="/images/Huione Pay.png" alt="Huione Pay" />
   <Callout type="info" emoji="ℹ️">
   Download the Huione App:\
   **Android:** [Download here >>](https://play.google.com/store/apps/details?id=com.huione.huionenew\&hl=en\&pli=1)\
@@ -39,7 +39,7 @@ To participate in this donation, you will need to first acquire USDH tokens. Don
 
 Once you have obtained sufficient USDH, go to the donation interaction page.
 
-<Image src="/images/Huione Donation.png" alt="Hello" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Huione Donation.png" alt="Hello" />
 
 <Cards num={1}>
 <Cards.Card
@@ -54,7 +54,7 @@ Once you have obtained sufficient USDH, go to the donation interaction page.
 
 This donation supports payment using mainstream cryptocurrency wallets or Huione App. You can complete this donation in the way you prefer. Before that, we need you to fill in the relevant information according to the form provided on the page.
 
-<Image src="/images/Huione Donation Payment.png" alt="Huione Donation Payment" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Huione Donation Payment.png" alt="Huione Donation Payment" />
 
 <Cards num={3}>
 <Cards.Card
@@ -78,7 +78,7 @@ This donation supports payment using mainstream cryptocurrency wallets or Huione
 
 After confirming that the information you filled in is correct, click [**Pay Now**] to start payment and complete the payment according to the prompts on the page. After completing this donation payment, the smart contract will automatically issue NFT and TXOC tokens to the address you filled in.
 
-<Image src="/images/Payment.png" alt="Payment" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Payment.png" alt="Payment" />
 
 <Callout type="info" emoji="ℹ️">
   **Note:**\
@@ -107,7 +107,7 @@ After confirming that the information you filled in is correct, click [**Pay Now
 
 After the payment is completed, you can view the address information where you will receive the NFT on the page.
 
-<Image src="/images/Finish.png" alt="Finish" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Finish.png" alt="Finish" />
 
 Xone TestNet is scheduled to launch in December 2024, with the Xone Mainnet anticipated in March 2025. During this period, Xone will be hosting substantial airdrop rewards for both test and mainnet phases. Join our official community to stay informed on the latest updates and announcements about Xone Chain.
 

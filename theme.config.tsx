@@ -86,7 +86,7 @@ const config: DocsThemeConfig = {
         (props?.children.type.name === 'img' || props?.children.type.displayName === 'MDXImage')
       const isNativeImg = props?.children.type === 'img'
       if (isMdxImage || isNativeImg) {
-        return <ImageViewer alt = { props?.children.props.alt || '' } src = { props?.children.props.src.src || '' } thumbnailClass = "" ></ImageViewer>
+        return <ImageViewer alt={ props?.children.props.alt || '' } src={ props?.children.props.src.src || '' } className="" ></ImageViewer>
       } else {
         return <p {...props} />
       }

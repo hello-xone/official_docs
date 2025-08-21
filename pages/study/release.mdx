@@ -2,8 +2,8 @@ import { Steps, Callout } from 'nextra/components';
 import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Button} from "@nextui-org/react";
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/react";
 import ContactInfo from "@/components/ContactInfo";
-import Image from 'next/image';
 import { Video } from '@components/Video';
+import ImageViewer from '@components/ImageViewer';
 
 
 # Welcome to the XOC Release Page!
@@ -23,13 +23,13 @@ XOC is the native token of the Xone blockchain, while WXOC (Wrapped XOC) is a ma
 
 Visit the Xone XOC Release Page to start the process of releasing your XOC. <Link className='text-primaryHue' isExternal showAnchorIcon href="https://bvi.xone.org/en/dynamics/release?pageNum=1&pageSize=10&startTime=1747655084000&endTime=1748259884000&address=">Get started now</Link>
 
-<Image src="/images/Release_main.png" alt="Release_main" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Release_main.png" alt="Release_main" />
 
 ### Step 2: Connect Your Wallet and Check.
 
 Connect your wallet that holds WXOC tokens to our release page. Before proceeding, ensure that your connected wallet contains WXOC tokens available for interaction and sufficient gas fees.
 
-<Image src="/images/Release_Connect_Wallet.png" alt="Release_Connect_Wallet" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Release_Connect_Wallet.png" alt="Release_Connect_Wallet" />
 
 <Button
   href="https://faucet.xone.org/"
@@ -46,7 +46,7 @@ Connect your wallet that holds WXOC tokens to our release page. Before proceedin
 
 Once the previous steps are confirmed, enter the amount of XOC you want to release and confirm the transaction. Your wallet will prompt a transaction confirmation request—please verify the contract address and transaction details before proceeding.
 
-<Image src="/images/Release_Send_WXOC.png" alt="Release_Send_WXOC" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Release_Send_WXOC.png" alt="Release_Send_WXOC" />
 
 <Callout type="warning" emoji="⚠️">
   **Note:**  

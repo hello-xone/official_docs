@@ -1,6 +1,6 @@
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Link } from "@nextui-org/react";
 import { Steps, Callout } from 'nextra/components';
-import Image from 'next/image';
+import ImageViewer from '@components/ImageViewer';
 
 # Testnet Faucets
 
@@ -14,7 +14,7 @@ Faucets are developers tools that allow you to get free XOC (and other tokens) o
 
 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://faucet.xone.org/">Xone Faucet</Link> is a development tool jointly built by Xone developers, allowing developers and users to obtain testnet XOC for free, in order to facilitate testing applications on Xone Testnet. If you are looking for XOC and USDH on Xone Testnet, Xone Faucets is a good choice.
 
-<Image src="/images/Faucet.png" alt="Faucet" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Faucet.png" alt="Faucet" />
 
 ## Additional List
 
@@ -42,7 +42,7 @@ Choose your preferred EVM-compatible wallet (e.g., MetaMask) and copy your walle
 
 After confirming the address you wish to use, paste or manually input the copied address into the designated input field.
 
-<Image src="/images/Get_Token.png" alt="Get_Token" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Get_Token.png" alt="Get_Token" />
 
 
 ### Step 4: Request Tokens
@@ -53,7 +53,7 @@ Once the address information is verified, complete the <Link className='text-pri
 
 After submitting, a popup message will appear, providing a 【**View On Explorer**】 link to quickly check the transaction details. Typically, the test tokens will arrive within 1 minute.
 
-<Image src="/images/Successfully received.png" alt="Successfully received" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Successfully received.png" alt="Successfully received" />
 
 <Callout type="warning" emoji="⚠️">
   **Daily Limit:** Each wallet can claim tokens once every 24 hours. Return the next day to claim more test Tokens.

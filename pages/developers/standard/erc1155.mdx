@@ -1,7 +1,7 @@
 import { Steps } from 'nextra/components';
 import { Link, Code } from "@nextui-org/react";
 import { Callout } from 'nextra/components'
-import Image from 'next/image';
+import ImageViewer from '@components/ImageViewer';
 import { Tabs } from 'nextra/components'
 
 # Deploying an ERC-1155 NFT Collection
@@ -22,7 +22,7 @@ The **"Astronaut"** collection will include:
 4. Get <Link className='text-primaryHue' isExternal showAnchorIcon href="https://www.pinata.cloud/">Pinata</Link> Account , If you have your own storage server, you can skip this step.
 5. Download <Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/hello-xone/official_docs/raw/refs/heads/main/public/zip/Astronaut.zip">Astronaut</Link> NFT zip file.
 
-<Image src="/images/Create ERC-1155.png" alt="Create ERC-1155" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-1155.png" alt="Create ERC-1155" />
 
 ## Let’s get started
 <Steps>
@@ -73,7 +73,7 @@ contract Icecream is ERC1155, Ownable {
 }
 ```
 
-<Image src="/images/Create ERC-1155_0.png" alt="Create ERC-1155_0" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-1155_0.png" alt="Create ERC-1155_0" />
 
 ### Step 2: Using Pinata to Store NFT Metadata.
 
@@ -82,7 +82,7 @@ contract Icecream is ERC1155, Ownable {
 3. In the Pinata dashboard, click 【**Upload**】, then select 【**Folder**】.
 4. Upload the **Astronaut** source folder.
 
-<Image src="/images/Create ERC-1155_1.png" alt="Create ERC-1155_1" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-1155_1.png" alt="Create ERC-1155_1" />
 
 <Callout emoji="💡">
   Note this CID URL <Code color="default">https://orange-cheap-pony-550.mypinata.cloud/ipfs/QmVwRzoHkYWeVHu7Jff9KZ18FCvBW4uSvUHokFa1T4BuWf/</Code> as it will be used when minting the NFT.
@@ -101,7 +101,7 @@ Create a JSON file with the following structure. Unsure how to create it? Downlo
 ```
 6. Upload Metadata JSON to Pinata.cloud
 
-<Image src="/images/Create ERC-1155_2.png" alt="Create ERC-1155_2" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-1155_2.png" alt="Create ERC-1155_2" />
 
 7. Get `CID_of_your_metadata`
 
@@ -174,7 +174,7 @@ contract Icecream is ERC1155, Ownable {
 
 6. Click 【**Compile FruitNFT.sol**】 button. Ensure there are no compilation errors.
 
-<Image src="/images/Create ERC-1155_3.png" alt="Create ERC-1155_3" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-1155_3.png" alt="Create ERC-1155_3" />
 
 ### Step 5: Deploy the Smart Contract.
 
@@ -186,13 +186,13 @@ contract Icecream is ERC1155, Ownable {
 
 4. Click 【**Deploy**】 and confirm the transaction in your MetaMask wallet.
 
-<Image src="/images/Create ERC-1155_4.png" alt="Create ERC-1155_4" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-1155_4.png" alt="Create ERC-1155_4" />
 
 ### Step 6: View contract address.
 
 After confirmation, you will see the deployed contract address in the Remix console. Let’s take a look at the Demo we built: <Link className='text-primaryHue' isExternal showAnchorIcon href="https://testnet.xonescan.com/token/0x95B38c21Cba6D9F8b2dDc87479631cb2CBB6c3D8">AstronautNFT</Link>.
 
-<Image src="/images/Create ERC-1155_5.png" alt="Create ERC-1155_5" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-1155_5.png" alt="Create ERC-1155_5" />
 
 ### Step 7: Minting Your NFT.
 
@@ -202,14 +202,14 @@ After confirmation, you will see the deployed contract address in the Remix cons
   2. Enter the quantity of NFTs you wish to mint (e.g., 1).
   3. Click 【**Transact**】 and confirm the transaction in MetaMask.
   4. Once the transaction is complete, visit the blockchain explorer to verify if the minting was successful. Follow along with us to check a <Link className='text-primaryHue' isExternal showAnchorIcon href="https://testnet.xonescan.com/tx/0xd84d728acfbf1e6fd8eb75c236f31d20373fd1aafb65116c38c6690719e89089">successfully minted Astronaut NFT</Link>.
-  <Image src="/images/Create ERC-1155_7.png" alt="Create ERC-1155_7" width={1200} height={800} layout="responsive" />
+  <ImageViewer src="/images/Create ERC-1155_7.png" alt="Create ERC-1155_7" />
   </Tabs.Tab>
   <Tabs.Tab>
   1. Locate the `mintBatch` function in the deployed contract section.
   2. Enter the number of new token IDs you want to mint (e.g., 5).
   3. Click 【**Transact**】 and confirm the transaction in MetaMask.
   4. The `mintBatch` function enables the minting of multiple NFTs in a single transaction, saving on gas fees.
-  <Image src="/images/Create ERC-1155_8.png" alt="Create ERC-1155_8" width={1200} height={800} layout="responsive" />
+  <ImageViewer src="/images/Create ERC-1155_8.png" alt="Create ERC-1155_8" />
   </Tabs.Tab>
 </Tabs>
 
@@ -225,13 +225,13 @@ After confirmation, you will see the deployed contract address in the Remix cons
 
 5. If your address owns this NFT, you will see it in the **NFTs** list.
 
-<Image src="/images/Create ERC-1155_9.png" alt="Create ERC-1155_9" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-1155_9.png" alt="Create ERC-1155_9" />
 
 ### Step 9: Congratulations! You have successfully mastered the creation of an ERC-1155 contract.
 
 Astronaut series Demo, <Link className='text-primaryHue' isExternal showAnchorIcon href="https://testnet.xonescan.com/token/0x95B38c21Cba6D9F8b2dDc87479631cb2CBB6c3D8">go and check it out</Link>.
 
-<Image src="/images/Create ERC-1155_10.png" alt="Create ERC-1155_10" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-1155_10.png" alt="Create ERC-1155_10" />
 
 </Steps>
 

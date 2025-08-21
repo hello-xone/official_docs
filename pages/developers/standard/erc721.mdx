@@ -1,7 +1,7 @@
 import { Steps } from 'nextra/components';
 import { Link, Code } from "@nextui-org/react";
 import { Callout } from 'nextra/components'
-import Image from 'next/image';
+import ImageViewer from '@components/ImageViewer';
 
 # Deploying an ERC-721 NFT Collection
 
@@ -56,7 +56,7 @@ contract FruitNFT is ERC721URIStorage, Ownable {
 }
 
 ```
-<Image src="/images/Create ERC-721.png" alt="Create ERC-721" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-721.png" alt="Create ERC-721" />
 
 ### Step 2: Compile the Smart Contract.
 
@@ -72,7 +72,7 @@ contract FruitNFT is ERC721URIStorage, Ownable {
 
 6. Click 【**Compile FruitNFT.sol**】 button. Ensure there are no compilation errors.
 
-<Image src="/images/Create ERC-721_1.png" alt="Create ERC-721_1" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-721_1.png" alt="Create ERC-721_1" />
 
 ### Step 3: Deploy the Smart Contract.
 
@@ -84,14 +84,14 @@ contract FruitNFT is ERC721URIStorage, Ownable {
 
 4. Click 【**Deploy**】 and confirm the transaction in your MetaMask wallet.
 
-<Image src="/images/Create ERC-721_2.png" alt="Create ERC-721_2" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-721_2.png" alt="Create ERC-721_2" />
 
 ### Step 4: View contract address.
 
 After confirmation, you will see the deployed contract address in the Remix console. Let’s take a look at the Demo we built: <Link className='text-primaryHue' isExternal showAnchorIcon href="https://testnet.xonescan.com/token/0x2BEe15B258964564efF99b22C98AD9cd8c30B842">FruitNFT</Link>
 
 
-<Image src="/images/Create ERC-721_3.png" alt="Create ERC-721_3" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-721_3.png" alt="Create ERC-721_3" />
 
 ### Step 5: Store NFT Metadata with Pinata.cloud.
 
@@ -101,7 +101,7 @@ After confirmation, you will see the deployed contract address in the Remix cons
 
 3. Upload the 【**FruitNFT**】 source file.
 
-<Image src="/images/Create ERC-721_4.png" alt="Create ERC-721_4" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-721_4.png" alt="Create ERC-721_4" />
 
 <Callout emoji="💡">
   Note this CID URL <Code color="default">https://orange-cheap-pony-550.mypinata.cloud/ipfs/QmfXqRkyu3qYdYz5zWaFTaHNYqPBtUY7Q7MWPiu3An377q/</Code> as it will be used when minting the NFT.
@@ -121,7 +121,7 @@ Create a JSON file with the following structure. Don’t know how to create one?
 
 Upload Metadata JSON to Pinata.cloud
 
-<Image src="/images/Create ERC-721_5.png" alt="Create ERC-721_5" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-721_5.png" alt="Create ERC-721_5" />
 
 ### Step 6: Mint an NFT with Metadata.
 
@@ -131,11 +131,11 @@ Upload Metadata JSON to Pinata.cloud
 
 3. Click 【**Transact**】 and confirm the transaction in your MetaMask wallet.
 
-<Image src="/images/Create ERC-721_6.png" alt="Create ERC-721_6" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-721_6.png" alt="Create ERC-721_6" />
 
 4. View <Link className='text-primaryHue' isExternal showAnchorIcon href="https://testnet.xonescan.com/token/0x2BEe15B258964564efF99b22C98AD9cd8c30B842/instance/0">FruitNFT #0</Link> on the Xone explorer.
 
-<Image src="/images/Create ERC-721_7.png" alt="Create ERC-721_7" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-721_7.png" alt="Create ERC-721_7" />
 
 ### Step 7: Add NFTs to MetaMask.
 
@@ -149,13 +149,13 @@ Upload Metadata JSON to Pinata.cloud
 
 5. If your address owns this NFT, you will see it in the **NFTs** list.
 
-<Image src="/images/Create ERC-721_9.png" alt="Create ERC-721_9" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-721_9.png" alt="Create ERC-721_9" />
 
 ### Step 8: Congratulations! You have successfully mastered the creation of an ERC-721 contract.
 
 FruitNFT series Demo, <Link className='text-primaryHue' isExternal showAnchorIcon href="https://testnet.xonescan.com/token/0x2BEe15B258964564efF99b22C98AD9cd8c30B842">go and check it out</Link>.
 
-<Image src="/images/Create ERC-721_8.png" alt="Create ERC-721_8" width={1200} height={800} layout="responsive" />
+<ImageViewer src="/images/Create ERC-721_8.png" alt="Create ERC-721_8" />
 
 </Steps>
 
