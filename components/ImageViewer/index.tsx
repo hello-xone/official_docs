@@ -53,7 +53,7 @@ const ImageViewer = ({ src, alt, className, style }: { src: string, alt: string,
         alt={alt}
         style={style}
         onClick={handleOpen}
-        className={`cursor-zoom-in mt-2 transition-transform hover:scale-105 ${className}`}
+        className={`cursor-zoom-in mt-2 transition-transform hover:scale-105 ${className ? className : ''}`}
       />
 
       {isOpen && (
