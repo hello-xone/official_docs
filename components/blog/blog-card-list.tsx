@@ -15,11 +15,12 @@ export const BlogCardList = ({
   className?: string;
 }): ReactElement => {
   return (
-    <div className={clsx('my-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4', className)}>
+    <div className={clsx('grid gap-6 my-12 md:grid-cols-2 xl:grid-cols-4', className)} style={{ contain: 'content', contentVisibility: 'auto' }}>
       {articles?.map && articles?.map(article => (
         <NextLink
           key={article.link}
           href={article.link}
+          prefetch={false}
           className="
           hocus:bg-neutral-200
           hocus:dark:bg-[#24272E]
@@ -39,9 +40,11 @@ export const BlogCardList = ({
           <img
             src={article.thumbnail ?? article.image}
             alt="Article logo"
-            className="h-40 w-full object-cover transition-all duration-500"
+            loading="lazy"
+            decoding="async"
+            className="object-cover w-full h-40 transition-all duration-500"
           />
-          <div className="flex grow flex-col p-5">
+          <div className="flex flex-col p-5 grow">
             <Heading size="md" className="line-clamp-3 [hyphens:auto]">
               {article.title}
             </Heading>
@@ -51,7 +54,7 @@ export const BlogCardList = ({
             >
               {article.description}
             </Description>
-            <div className="mt-auto flex items-center justify-between text-xs">
+            <div className="flex justify-between items-center mt-auto text-xs">
               <div className="flex items-center space-x-1">
                 <span className="font-bold dark:text-[#C4C4C4]">
                   {article.authors.join(', ')}
@@ -66,7 +69,7 @@ export const BlogCardList = ({
                   tags={article.tags}
                   asLink={false}
                   withCount={false}
-                  className="justify-end gap-2 text-xs dark:text-gray-500"
+                  className="gap-2 justify-end text-xs dark:text-gray-500"
                 />
               )}
             </div>

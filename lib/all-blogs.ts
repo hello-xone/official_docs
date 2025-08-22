@@ -58,7 +58,7 @@ export const getAllBlogs = (allPages: any) => {
       image,
       date: format(new Date(date), 'y-MM-dd'),
       thumbnail,
-      updateDate: updateDate ? format(new Date(updateDate), 'y-MM-dd') : undefined,
+      updateDate: updateDate ? format(new Date(updateDate), 'y-MM-dd') : null,
     };
   })
   .sort(sortByDateDesc);

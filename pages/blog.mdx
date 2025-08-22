@@ -4,5 +4,8 @@ description: Check out the latest Xone updates, announcements, news and more.
 ---
 
 import Blog from "../components/BlogIndex";
+export { getStaticProps } from "./blog_ssg";
 
-<Blog />
+export default function Page(props) {
+  return <Blog {...props} />
+}
