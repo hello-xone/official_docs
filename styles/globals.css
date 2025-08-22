@@ -202,17 +202,20 @@ aside a[href="/study/grants"],
 aside a[href="/roadmap"] {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
 }
 
 aside a[href="/study/donate"]::after,
 aside a[href="/study/grants"]::after,
 aside a[href="/roadmap"]::after {
   display: inline-block;
-  margin-left: 8px;
   padding: 5px 12px;
   font-size: 12px;
   border-radius: 9999px;
+}
+
+aside a[href="/study/donate"] {
+  gap: 6px;
 }
 
 aside a[href="/study/donate"]::after {
@@ -224,15 +227,17 @@ aside a[href="/study/donate"]::after {
 /* Study/Grants => Updated */
 aside a[href="/study/grants"]::after {
   content: "Updated";
-  color: rgb(163, 0, 0);
-  background-color: rgb(255, 224, 224);
+  color: #000000;
+  background-color: #45D483;
+  margin-left: 6px;
 }
 
 /* Roadmap => Updated */
 aside a[href="/roadmap"]::after {
   content: "Updated";
-  color: rgb(163, 0, 0);
-  background-color: rgb(255, 224, 224);
+  color: #000000;
+  background-color: #45D483;
+  margin-left: 6px;
 }
 
 /* Dark mode tweaks */
@@ -246,3 +251,11 @@ html.dark aside a[href="/roadmap"]::after {
   font-weight: bold;
   background-color: rgba(255, 224, 224, 0.08);
 }
+
+/* Hide Developers menu on small screens */
+@media (max-width: 768px) {
+  .nextra-sidebar-container .nextra-scrollbar > ul > li:nth-child(4) {
+    display: none;
+  }
+}
+

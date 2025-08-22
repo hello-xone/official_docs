@@ -32,6 +32,15 @@ module.exports = withNextra({
     });
     return config
   },
+  async redirects() {
+    return [
+      {
+        source: '/developers',
+        destination: '/developers/ready',
+        permanent: false
+      }
+    ]
+  },
   images: {
     unoptimized: true
   }
