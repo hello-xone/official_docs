@@ -247,9 +247,8 @@ html.dark aside a[href="/study/donate"]::after {
 }
 html.dark aside a[href="/study/grants"]::after,
 html.dark aside a[href="/roadmap"]::after {
-  color: rgb(230, 0, 0);
-  font-weight: bold;
-  background-color: rgba(255, 224, 224, 0.08);
+  color: #fff;
+  background-color: #45D483;
 }
 
 /* Hide Developers menu on small screens */
