@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { Article, BlogCardList } from '@components/blog';
-import { useTheme, useConfig } from 'nextra-theme-docs';
+import { BlogCardList } from '@components/blog';
+import { useConfig } from 'nextra-theme-docs';
 import { MetaWithLink } from '@lib/meta';
-import { getBlogs } from '@components/BlogIndex';
+import { getAllBlogs } from '@lib/all-blogs';
+import { getAllPages } from 'nextra/context';
 
 export const BottomContent = () => {
-    const { resolvedTheme } = useTheme();
     const { route } = useRouter();
     const config = useConfig();
     const { tags } = config.frontMatter;
     const [similarArticles, setSimilarArticles] = useState<MetaWithLink[]>([]);
 
     const init = async () => {
-      const allBlogs = await getBlogs();
+      const allBlogs = getAllBlogs(getAllPages());
       if (!tags) {
       return;
       }
