@@ -21,8 +21,56 @@
     "items": {
       "ready": {
         "title": "Build Xone ↗",
-        "type": "page",
-        "href": "/developers/ready"
+        "type": "menu",
+        "items": {
+          "ready": { "title": "Developer Resources", "type": "page", "href": "/developers/ready" },
+          "rpc": { "title": "RPC Endpoints", "type": "page", "href": "/developers/rpc" },
+          "testnet": { "title": "Testnet", "type": "page", "href": "/developers/testnet" },
+          "explorers": { "title": "Block Explorers", "type": "page", "href": "/developers/explorers" },
+          "faucets": { "title": "Faucets", "type": "page", "href": "/developers/faucets" },
+          "architecture": {
+            "title": "Architecture",
+            "type": "menu",
+            "items": {
+              "account": { "title": "Account", "type": "page", "href": "/developers/architecture/account" },
+              "transaction": { "title": "Transaction", "type": "page", "href": "/developers/architecture/transaction" },
+              "replay": { "title": "Replay Protection", "type": "page", "href": "/developers/architecture/replay" }
+            }
+          },
+          "guide": { "title": "Getting Started", "type": "page", "href": "/developers/guide" },
+          "tools": { "title": "Developer Kit", "type": "page", "href": "/developers/tools" },
+          "token": { "title": "Bridge Tokens", "type": "page", "href": "/developers/token" },
+          "contracts": { "title": "Major Contracts", "type": "page", "href": "/developers/contracts" },
+          "jsonrpc": { "title": "Json RPC ↗", "type": "page", "href": "/openapi/overview" },
+          "operators": {
+            "title": "Node Operators",
+            "type": "menu",
+            "items": {
+              "start": {
+                "title": "Start",
+                "type": "menu",
+                "items": {
+                  "quick-start": { "title": "Quick Start", "type": "page", "href": "/developers/operators/start/quick-start" },
+                  "docker-run": { "title": "Docker Run", "type": "page", "href": "/developers/operators/start/docker-run" },
+                  "using-snapshots": { "title": "Using Snapshots", "type": "page", "href": "/developers/operators/start/using-snapshots" },
+                  "background-operation": { "title": "Background Operation", "type": "page", "href": "/developers/operators/start/background-operation" }
+                }
+              },
+              "practices": { "title": "Best Practices", "type": "page", "href": "/developers/operators/practices" },
+              "monitoring": { "title": "Monitoring and Alerting Practices", "type": "page", "href": "/developers/operators/monitoring" }
+            }
+          },
+          "standard": {
+            "title": "Standard",
+            "type": "menu",
+            "items": {
+              "erc20": { "title": "ERC-20: Fungible Tokens", "type": "page", "href": "/developers/standard/erc20" },
+              "erc721": { "title": "ERC-721: NFT", "type": "page", "href": "/developers/standard/erc721" },
+              "erc1155": { "title": "ERC-1155: NFT", "type": "page", "href": "/developers/standard/erc1155" }
+            }
+          },
+          "display": { "title": "Display Tokens", "type": "page", "href": "/developers/display" }
+        }
       },
       "jsonrpc": {
         "title": "Json RPC ↗",
