@@ -16,10 +16,14 @@
     "type": "page"
   },
   "developers": {
+    "type": "menu",
+    "display": "hidden"
+  },
+  "pages": {
     "title": "Developers 🔧",
     "type": "menu",
     "items": {
-      "ready": {
+      "developers": {
         "title": "Build Xone ↗",
         "type": "menu",
         "items": {
