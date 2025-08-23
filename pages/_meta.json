@@ -26,6 +26,7 @@
       "developers": {
         "title": "Build Xone ↗",
         "type": "menu",
+        "href": "/developers/ready",
         "items": {
           "ready": { "title": "Developer Resources", "type": "page", "href": "/developers/ready" },
           "rpc": { "title": "RPC Endpoints", "type": "page", "href": "/developers/rpc" },

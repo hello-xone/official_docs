@@ -1,38 +1,45 @@
-import React from 'react'
-import { useTheme } from 'nextra-theme-docs'
-import { useRouter } from 'next/router'
+"use client";
 
-export function useIsDarkMode(override?: boolean) {
-  const { theme: colorMode } = useTheme()
-  const router = useRouter()
-  const [isDarkMode, setIsDarkMode] = React.useState(colorMode === 'dark' && router.pathname !== '/')
+import { useEffect, useState } from "react";
+import { useTheme } from "nextra-theme-docs";
+import { useRouter } from "next/router";
 
-  const darkModeSetter = (event: MediaQueryListEvent) => {
-    setIsDarkMode(event.matches)
-  }
+/**
+ * 深浅色模式 Hook
+ * - 首页 (/) 强制 light
+ * - 其它页面跟随 colorMode / system
+ * - 不在 hook 顶层访问 window，避免 SSR 报错
+ */
+export function useIsDarkMode(): boolean {
+  const { theme: colorMode } = useTheme();   // 可以在 SSR 使用
+  const router = useRouter();                // 可以在 SSR 使用
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  React.useEffect(() => {
-    // Defaults to light mode when on the homepage
-    if (router.pathname === '/') {
-      setIsDarkMode(false)
-      return
+  useEffect(() => {
+    // 首页强制 light
+    if (router.pathname === "/") {
+      setIsDarkMode(false);
+      return;
     }
 
-    if (typeof window !== 'undefined') {
-      if (colorMode === 'system') {
-        setIsDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches)
-      } else {
-        const themeInLocalStorage = localStorage.getItem('theme')
-        // colorMode is initially undefined so we check themeInLocalStorage,
-        // but after the first render colorMode takes prescedent
-        setIsDarkMode(colorMode ? colorMode === 'dark' : themeInLocalStorage === 'dark')
-      }
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', darkModeSetter)
-    }
-    return () => {
-      window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', darkModeSetter)
-    }
-  }, [colorMode, router.pathname, setIsDarkMode])
+    // 仅在客户端进行后续判断
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
 
-  return override || isDarkMode
+    // 初始化
+    if (colorMode === "system") {
+      setIsDarkMode(mq.matches);
+    } else {
+      const themeInLocalStorage = localStorage.getItem("theme");
+      setIsDarkMode(
+        colorMode ? colorMode === "dark" : themeInLocalStorage === "dark"
+      );
+    }
+
+    // 监听系统主题变化
+    const darkModeSetter = (e: MediaQueryListEvent) => setIsDarkMode(e.matches);
+    mq.addEventListener("change", darkModeSetter);
+    return () => mq.removeEventListener("change", darkModeSetter);
+  }, [colorMode, router.pathname]);
+
+  return isDarkMode;
 }

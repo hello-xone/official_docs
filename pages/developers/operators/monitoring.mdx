@@ -1,0 +1,168 @@
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Link} from "@nextui-org/react";
+import { Callout } from 'nextra/components'
+import ContactInfo from "@/components/ContactInfo";
+
+# Monitoring Metrics & Alerts
+
+To monitor node status in real time and respond promptly at the first sign of issues, it is recommended to combine <Link className='text-primaryHue' isExternal showAnchorIcon href="https://prometheus.io/">Prometheus</Link>, <Link className='text-primaryHue' isExternal showAnchorIcon href="https://grafana.com/">Grafana</Link>, and <Link className='text-primaryHue' isExternal showAnchorIcon href="https://prometheus.io/">Alertmanager</Link> and configure monitoring and alerting rules based on the following key dimensions.
+
+## Metrics Overview (Examples)
+
+<div className="overflow-x-auto">
+  <Table removeWrapper aria-label="Xone Node Monitoring Metrics" className="mt-2">
+    <TableHeader>
+      <TableColumn>Metric Name</TableColumn>
+      <TableColumn>Description</TableColumn>
+      <TableColumn>Prometheus Expression</TableColumn>
+    </TableHeader>
+    <TableBody>
+      <TableRow key="1">
+        <TableCell>Mempool Depth</TableCell>
+        <TableCell>Number of pending transactions, reflecting node backlog</TableCell>
+        <TableCell>xone_mempool_tx_count</TableCell>
+      </TableRow>
+      <TableRow key="2">
+        <TableCell>Block Import Duration</TableCell>
+        <TableCell>Time from receiving a new block to writing it into the local database</TableCell>
+        <TableCell>xone_block_import_duration_seconds</TableCell>
+      </TableRow>
+      <TableRow key="3">
+        <TableCell>RPC Latency (95th Percentile)</TableCell>
+        <TableCell>Time taken for clients to send RPC requests via HTTP/WS and receive responses (p95)</TableCell>
+        <TableCell>
+          histogram_quantile(0.95, sum(rate(xone_rpc_request_duration_seconds_bucket[5m])) by (le))
+        </TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</div>
+
+## Recommended Thresholds & Alerting Strategy
+
+<div className="overflow-x-auto">
+  <Table removeWrapper aria-label="Xone Node Alerting Rules" className="mt-2">
+    <TableHeader>
+      <TableColumn>Alert Name</TableColumn>
+      <TableColumn>Expression</TableColumn>
+      <TableColumn>Duration</TableColumn>
+      <TableColumn>Severity</TableColumn>
+      <TableColumn>Suggested Action</TableColumn>
+    </TableHeader>
+    <TableBody>
+      <TableRow key="1">
+        <TableCell>High Mempool</TableCell>
+        <TableCell>xone_mempool_tx_count &gt; 5000</TableCell>
+        <TableCell>2m</TableCell>
+        <TableCell>Warning</TableCell>
+        <TableCell>Check if block production is lagging; verify network congestion</TableCell>
+      </TableRow>
+      <TableRow key="2">
+        <TableCell>Slow Block Import</TableCell>
+        <TableCell>rate(xone_block_import_duration_seconds_sum[5m]) / rate(xone_block_import_duration_seconds_count[5m]) &gt; 3</TableCell>
+        <TableCell>1m</TableCell>
+        <TableCell>Critical</TableCell>
+        <TableCell>Check I/O performance; investigate GC or DB index issues</TableCell>
+      </TableRow>
+      <TableRow key="3">
+        <TableCell>High RPC Latency</TableCell>
+        <TableCell>histogram_quantile(0.95, sum(rate(xone_rpc_request_duration_seconds_bucket[5m])) by (le)) &gt; 0.1</TableCell>
+        <TableCell>5m</TableCell>
+        <TableCell>Warning</TableCell>
+        <TableCell>Optimize RPC endpoint configuration; check health of dependent services</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</div>
+
+<Callout type="warning">
+  **Notes**
+
+  - **Duration:** An alert is triggered only if the metric stays above the threshold for the specified duration, to avoid false positives caused by short-term fluctuations.
+
+  - **Severity:** Can be routed to different notification channels in Alertmanager (e.g., Slack warning channel vs. email).
+
+  - **Suggested Action:** Each alert should include actionable troubleshooting guidance to facilitate quick diagnosis and resolution.
+</Callout>
+
+## Code Example
+
+```yaml showLineNumbers copy
+groups:
+  - name: xone-node-alerts
+    interval: 30s
+    rules:
+      # High Mempool
+      - alert: HighMempool
+        expr: xone_mempool_tx_count > 5000
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High mempool depth on {{ $labels.instance }}"
+          description: |
+            Mempool size exceeded 5000 for more than 2 minutes.
+            Check if block production is lagging or network congestion is occurring.
+
+      # Slow Block Import
+      - alert: SlowBlockImport
+        expr: rate(xone_block_import_duration_seconds_sum[5m])
+              / rate(xone_block_import_duration_seconds_count[5m]) > 3
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Slow block import detected on {{ $labels.instance }}"
+          description: |
+            Block import duration exceeded 3s average for more than 1 minute.
+            Check I/O performance, GC, or database indexing issues.
+
+      # High RPC Latency
+      - alert: HighRPCLatency
+        expr: histogram_quantile(0.95,
+                sum(rate(xone_rpc_request_duration_seconds_bucket[5m])) by (le)) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High RPC latency on {{ $labels.instance }}"
+          description: |
+            95th percentile RPC latency exceeded 100ms for over 5 minutes.
+            Optimize RPC endpoint configuration or check health of dependent services.
+```
+
+## Alarm routing and notification
+
+### Routing Example
+```yaml showLineNumbers copy
+route:
+  group_by: ['alertname', 'severity']
+  routes:
+    - match:
+        severity: critical
+      receiver: ops-team-email
+    - match_re:
+        severity: warning|info
+      receiver: slack-alerts
+```
+
+### Recommended notification channels:
+- **Critical:** Email + SMS (or phone call)
+- **Warning:** Slack/Teams, webhook to the operations platform
+- **Info:** Grafana dashboard flag, email summary
+
+## Visualization and Diagnosis
+
+1. **Grafana Dashboard**
+
+   * Real-time visualization of mempool depth, block import duration distribution, and RPC latency percentile curves.
+   * Correlate with system-level metrics (CPU, memory, disk I/O, network throughput) for comprehensive analysis.
+
+2. **Common Troubleshooting Workflows**
+
+   * **Large mempool** → Check block production delay (`xone_block_import_duration_seconds`) and block height difference.
+   * **Slow block import** → Verify disk I/O performance (`node_disk_io_time_seconds`) and review GC logs.
+   * **High RPC latency** → Compare consensus client and execution client metrics to identify resource contention or network jitter.
+
+With the above configurations, you will be able to detect node anomalies in the shortest possible time, quickly identify bottlenecks, and restore stability—ensuring continuous and reliable node services for the Xone Chain network.
+
+<ContactInfo />

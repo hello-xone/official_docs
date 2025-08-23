@@ -25,5 +25,10 @@
   },
   "operators": "Node Operators",
   "standard": "Standard",
-  "display": "Display Tokens"
+  "display": "Display Tokens",
+  "verify": {
+    "title": "Verify Contracts ↗",
+    "href": "https://docs.blockscout.com/devs/verification",
+    "newWindow": true
+  }
 }

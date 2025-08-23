@@ -38,7 +38,14 @@ export { default as OpenZeppelinIcon } from './OpenZeppelin.svg'
 export { default as FlowerIcon } from './flower.svg'
 export { default as Flower2Icon } from './flower2.svg'
 export { default as CoinsIcon } from './coins.svg'
-export { default as TwitterX } from './twitterx.svg';
+export { default as TwitterX } from './X.svg'
+export { default as DiscordIcon } from './discord.svg'
+export { default as TelegramIcon } from './telegram.svg'
+export { default as GithubIcon } from './github.svg'
+export { default as MediumIcon } from './medium.svg'
+export { default as RedditIcon } from './reddit.svg'
+export { default as YoutubeIcon } from './youtobe.svg'
+export { default as ChatMeIcon } from './chatme.svg'
 
 
 

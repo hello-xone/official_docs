@@ -51,7 +51,7 @@ export default function Hero() {
                   height: 0,
                 }}
               >
-                <Video src="video/hello_xone.mp4" />
+                <Video src="video/promotional.mp4" />
               </div>
             </div>
             <p className="mt-12 text-lg leading-8 text-gray-600 dark:text-gray-300">
