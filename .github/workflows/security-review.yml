@@ -1,0 +1,173 @@
+name: Claude Security Review
+
+# 工作流权限设置
+permissions:
+  contents: read          # 读取代码仓库
+  pull-requests: write    # 在 PR 中写入评论
+  actions: read          # 读取 Actions 状态
+
+# 触发条件：只针对 main 分支的 Pull Request
+on:
+  pull_request:
+    branches: 
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+    # 只扫描代码文件，排除文档和配置文件
+    paths:
+      - '**.py'
+      - '**.js'
+      - '**.jsx'
+      - '**.ts'
+      - '**.tsx'
+      - '**.java'
+      - '**.go'
+      - '**.php'
+      - '**.rb'
+      - '**.cs'
+      - '**.cpp'
+      - '**.c'
+      - '**.cc'
+      - '**.h'
+      - '**.hpp'
+      - '**.sql'
+      - '**.sh'
+      - '**.bash'
+      - '**.zsh'
+      - '**.ps1'
+      - '**.scala'
+      - '**.kt'
+      - '**.swift'
+      - '**.rs'
+      # 配置文件中可能有安全问题
+      - '**.yaml'
+      - '**.yml'
+      - '**.json'
+      - '**.xml'
+      - '**.toml'
+      # 排除文档和测试文件
+      - '!**.md'
+      - '!**.txt'
+      - '!**.rst'
+      - '!**/docs/**'
+      - '!**/test/**'
+      - '!**/tests/**'
+      - '!**/*_test.*'
+      - '!**/*test*.*'
+      - '!**/spec/**'
+
+  # 手动触发选项
+  workflow_dispatch:
+    inputs:
+      force_scan:
+        description: '强制扫描所有文件'
+        required: false
+        default: false
+        type: boolean
+
+# 环境变量
+env:
+  ALLOWED_REPOSITORIES: "hello-xone/official_docs"
+  
+jobs:
+  # 预检查作业
+  pre-check:
+    runs-on: ubuntu-latest
+    outputs:
+      should-run: ${{ steps.check.outputs.should-run }}
+      repository-allowed: ${{ steps.check.outputs.repository-allowed }}
+    
+    steps:
+      - name: 检查是否应该运行扫描
+        id: check
+        run: |
+          # 检查仓库是否在允许列表中
+          if [[ "${{ env.ALLOWED_REPOSITORIES }}" == *"${{ github.repository }}"* ]]; then
+            echo "repository-allowed=true" >> $GITHUB_OUTPUT
+            echo "✅ 仓库 ${{ github.repository }} 在允许的扫描列表中"
+          else
+            echo "repository-allowed=false" >> $GITHUB_OUTPUT
+            echo "❌ 仓库 ${{ github.repository }} 不在允许的扫描列表中"
+            exit 0
+          fi
+          
+          # 检查目标分支
+          if [[ "${{ github.base_ref }}" == "main" ]] || [[ "${{ github.event.inputs.force_scan }}" == "true" ]]; then
+            echo "should-run=true" >> $GITHUB_OUTPUT
+            echo "✅ 目标分支为 main 或强制扫描，将执行安全扫描"
+          else
+            echo "should-run=false" >> $GITHUB_OUTPUT
+            echo "⏭️ 目标分支不是 main，跳过安全扫描"
+          fi
+
+  # 主要安全扫描作业
+  claude-security-scan:
+    needs: pre-check
+    runs-on: ubuntu-latest
+    
+    # 只有通过预检查才运行
+    if: needs.pre-check.outputs.should-run == 'true' && needs.pre-check.outputs.repository-allowed == 'true'
+    
+    steps:
+      - name: 📥 检出代码
+        uses: actions/checkout@v4
+        with:
+          # 获取 PR 的 HEAD commit
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          # 需要获取至少 2 个提交来比较差异
+          fetch-depth: 2
+          # 确保获取完整的 PR 信息
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📋 显示扫描信息
+        run: |
+          echo "🔍 开始 Claude 安全扫描"
+          echo "📁 仓库: ${{ github.repository }}"
+          echo "🌿 分支: ${{ github.head_ref }} → ${{ github.base_ref }}"
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            echo "📝 PR #${{ github.event.pull_request.number }}"
+            echo "👤 作者: ${{ github.event.pull_request.user.login }}"
+            echo "🔄 提交: ${{ github.event.pull_request.head.sha }}"
+          else
+            echo "🔄 提交: ${{ github.sha }}"
+          fi
+
+      - name: 🛡️ 执行 Claude 安全审计
+        uses: anthropics/claude-code-security-review@main
+        with:
+          # API 密钥（从 GitHub Secrets 获取）
+          claude-api-key: ${{ secrets.CLAUDE_API_KEY }}
+          
+          # 基本配置
+          comment-pr: true              # 在 PR 中添加安全发现的评论
+          upload-results: true          # 上传结果作为工件
+          
+          # 超时设置（分钟）
+          claudecode-timeout: 15
+          
+          # 排除目录设置 - 不扫描这些目录
+          exclude-directories: "node_modules,vendor,dist,build,out,target,.git,.github,docs,documentation,examples,test,tests,spec,specs,coverage,__pycache__,.pytest_cache,.vscode,.idea,logs,tmp,temp,.next,.nuxt,public/assets,static/assets"
+          
+          # 高级配置
+          run-every-commit: false       # 避免重复扫描降低成本
+
+      - name: 📁 上传安全扫描结果
+        if: always()  # 即使前面步骤失败也要保存结果
+        uses: actions/upload-artifact@v4
+        with:
+          name: claude-security-results-${{ github.event.pull_request.number || github.run_number }}
+          path: |
+            security-results.json
+            *.log
+          retention-days: 30
+
+      - name: 📊 显示扫描完成信息
+        if: always()
+        run: |
+          echo "🎉 Claude 安全扫描已完成"
+          echo "📄 扫描结果已保存为工件"
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            echo "💬 如发现安全问题，已在 PR 中添加评论"
+          fi
