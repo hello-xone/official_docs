@@ -6,11 +6,11 @@ permissions:
   pull-requests: write    # 在 PR 中写入评论
   actions: read          # 读取 Actions 状态
 
-# 触发条件：只针对 main 分支的 Pull Request
+# 触发条件：只针对 dev 分支的 Pull Request
 on:
   pull_request:
     branches: 
-      - main
+      - dev
     types:
       - opened
       - synchronize
@@ -94,12 +94,12 @@ jobs:
           fi
           
           # 检查目标分支
-          if [[ "${{ github.base_ref }}" == "main" ]] || [[ "${{ github.event.inputs.force_scan }}" == "true" ]]; then
+          if [[ "${{ github.base_ref }}" == "dev" ]] || [[ "${{ github.event.inputs.force_scan }}" == "true" ]]; then
             echo "should-run=true" >> $GITHUB_OUTPUT
-            echo "✅ 目标分支为 main 或强制扫描，将执行安全扫描"
+            echo "✅ 目标分支为 dev 或强制扫描，将执行安全扫描"
           else
             echo "should-run=false" >> $GITHUB_OUTPUT
-            echo "⏭️ 目标分支不是 main，跳过安全扫描"
+            echo "⏭️ 目标分支不是 dev，跳过安全扫描"
           fi
 
   # 主要安全扫描作业
