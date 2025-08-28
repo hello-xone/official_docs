@@ -112,7 +112,7 @@ jobs:
     
     steps:
       - name: 📥 检出代码
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           # 获取 PR 的 HEAD commit
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
