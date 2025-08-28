@@ -45,6 +45,6 @@ For any questions or support related to Xone Chian, please reach out to our supp
 
 **Business:** [business@xone.org](mailto:business@xone.org)
 
-**Community:** [Telegram](https://t.me/hello_xonechain) | [Developers Telegram](https://t.me/Xone_Developers) | [Twitter](https://x.com/xone_chain) | [Discord](https://discord.gg/Du9y2GHV)
+**Community:** [Telegram](https://t.me/hello_xonechain) | [Developers Telegram](https://t.me/Xone_Developers) | [Twitter](https://x.com/xone_chain) | [Discord](https://discord.gg/HrK3UNB2)
 
 **News:** [Medium](https://medium.com/@xone_chain)

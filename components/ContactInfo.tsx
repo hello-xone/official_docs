@@ -54,7 +54,7 @@ const ContactInfo = () => {
           Twitter
         </a>{" "}
         |{" "}
-        <a href="https://discord.gg/Du9y2GHV" target="_blank" rel="noopener noreferrer" className="text-primaryHue hover:underline ml-1">
+        <a href="https://discord.gg/HrK3UNB2" target="_blank" rel="noopener noreferrer" className="text-primaryHue hover:underline ml-1">
           Discord
         </a>{" "}
         |{" "}

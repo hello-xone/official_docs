@@ -1,45 +1,23 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useTheme } from "nextra-theme-docs";
-import { useRouter } from "next/router";
+import { useTheme as useNextThemes } from "next-themes";   // 注意：用 next-themes
+import { usePathname } from "next/navigation";
 
-/**
- * 深浅色模式 Hook
- * - 首页 (/) 强制 light
- * - 其它页面跟随 colorMode / system
- * - 不在 hook 顶层访问 window，避免 SSR 报错
- */
-export function useIsDarkMode(): boolean {
-  const { theme: colorMode } = useTheme();   // 可以在 SSR 使用
-  const router = useRouter();                // 可以在 SSR 使用
-  const [isDarkMode, setIsDarkMode] = useState(false);
+// 返回 [ready, isDark]
+export function useIsDarkMode(): [boolean, boolean] {
+  const { theme, resolvedTheme } = useNextThemes(); // SSR 不访问浏览器 API
+  const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    // 首页强制 light
-    if (router.pathname === "/") {
-      setIsDarkMode(false);
-      return;
-    }
+  useEffect(() => setMounted(true), []);
 
-    // 仅在客户端进行后续判断
-    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+  // 未挂载前不要给出“可能和 SSR 不同”的值 —— 由使用方决定是否占位
+  if (!mounted) return [false, false];
 
-    // 初始化
-    if (colorMode === "system") {
-      setIsDarkMode(mq.matches);
-    } else {
-      const themeInLocalStorage = localStorage.getItem("theme");
-      setIsDarkMode(
-        colorMode ? colorMode === "dark" : themeInLocalStorage === "dark"
-      );
-    }
+  // 首页强制 light（首帧已在客户端，保证一致）
+  if (pathname === "/") return [true, false];
 
-    // 监听系统主题变化
-    const darkModeSetter = (e: MediaQueryListEvent) => setIsDarkMode(e.matches);
-    mq.addEventListener("change", darkModeSetter);
-    return () => mq.removeEventListener("change", darkModeSetter);
-  }, [colorMode, router.pathname]);
-
-  return isDarkMode;
+  const current = theme === "system" ? resolvedTheme : theme;
+  return [true, current === "dark"];
 }

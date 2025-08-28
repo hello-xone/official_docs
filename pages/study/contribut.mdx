@@ -1,85 +1,153 @@
 import { Callout } from 'nextra/components';
 import { Link } from "@nextui-org/react";
 import {Avatar} from "@nextui-org/react";
+import ContactInfo from '@/components/ContactInfo';
 
-# Contribute To US
+# Contribute to Xone
 
-Thank you so much for taking the time to contribute! We truly believe that with your support, Xone's future will be even brighter. ❤️  
+Thank you for your willingness to contribute to the Xone ecosystem! Whether it's fixing a typo, submitting a piece of code, improving asset metadata, or participating in specification development, every investment helps make Xone better. ❤️
+<br/>
+<Link className='text-primaryHue' isExternal showAnchorIcon href="https://bvi.xone.org/en/community">Xone community</Link> contributions now cover multiple code repositories (not just documentation):
 
-The Xone documentation is open-source and hosted in the `huione-labs/docs` repository on GitHub. The content edited in this repository is presented on the official Xone website at <Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org">docs.xone.org</Link>. This guide outlines the contribution workflow, including opening issues, creating pull requests (PRs), reviewing, and merging PRs. Please note that contributions, pull requests, and issues should currently be written in English. In the future, we plan to launch a dedicated project to add multilingual support for technical documentation. If you're interested in helping with this initiative, feel free to reach out via the <Link className='text-primaryHue' showAnchorIcon href="contribut#support-channels">support channels</Link> mentioned in this document.  
+- **WebSite**：<Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/hello-xone/xone_website">hello-xone/xone_website</Link>  
+- **Docs**：<Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/hello-xone/official_docs">hello-xone/official_docs</Link>  
+- **Assets**(Asset and apps metadata)：<Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/hello-xone/xone_assets">hello-xone/xone_assets</Link>  
 
-When you submit a PR for review, the Xone documentation team will merge it if approved, request changes, or comment and close the PR. We also have a dedicated team focused on documentation review, and we welcome you to join once permissions are opened if you’re interested. There are two main ways to open a pull request for documentation:  
+This guide will help you through the entire process, from raising an issue, creating a pull request (PR), code review, and merging and releasing your release. Unless otherwise noted, we recommend submitting pull requests/issues in English (multilingual documentation will be available in the future).
 
-- Fork the `docs` repository and work locally, or  
-- For smaller updates, click the **Edit this page** link on the right side of any documentation page to edit directly in GitHub.  
-
-## What You Should Know Before Contributing  
-
-1. Learn how to use <Link className='text-primaryHue' isExternal showAnchorIcon href="https://nextra.site/docs">Nextra</Link>, as Xone's documentation is built with it.  
-2. Have a <Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github">GitHub account</Link>. This is essential for contributions. If you don’t have one, you can <Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/signup">create one here >></Link>.  
-3. Familiarize yourself with <Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.github.com/en/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github">how to contribute to open-source projects on GitHub</Link>, as well as the syntax for <Link className='text-primaryHue' isExternal showAnchorIcon href="https://mdxjs.com/">MDX</Link> and <Link className='text-primaryHue' isExternal showAnchorIcon href="https://react.dev/">React</Link>. For advanced contributions, you can also explore <Link className='text-primaryHue' isExternal showAnchorIcon href="https://nextui.org/">NextUI</Link> and <Link className='text-primaryHue' isExternal showAnchorIcon href="https://tailwindcss.com/">TailwindCSS</Link> to help build elegant components or styles.  
-4. If you’d like to test the project locally, follow the <Link className='text-primaryHue' isExternal showAnchorIcon href="https://www.notion.so/Xone-14a29fa6e04b8004bac5cedcecfd8f3f?pvs=21">steps in the terminal</Link>.  
-
-## Setting Up the Project and Testing Locally  
-
-1. <Link className='text-primaryHue' isExternal showAnchorIcon href="https://pnpm.io/installation">Install pnpm</Link>.  
-2. Run `pnpm i` to install dependencies.  
-3. Run `pnpm dev` to start the development server.  
-4. Open <Link className='text-primaryHue' isExternal showAnchorIcon href="http://localhost:3000/">localhost:3000</Link> in your browser to view the site.  
-
-Congratulations! You can now start making changes and see real-time updates whenever you save a file. 🥰  
-
-## Support Channels  
-
-- <Link className='text-primaryHue' isExternal showAnchorIcon href="developers@xone.org">Email</Link>
-- <Link className='text-primaryHue' isExternal showAnchorIcon href="https://discord.gg/Du9y2GHV">Discord</Link>
-
-## Submitting a Pull Request  
-
-### **Important Prerequisites**  
-
-To prevent build issues, you should build the content locally before submitting a pull request:  
-- Stop or terminate any running terminal servers, then run `pnpm dev`.  
-- Use the terminal's output to fix any issues (e.g., broken links).  
-- Run `pnpm fix` to automatically resolve most linting issues (e.g., formatting or style).  
-- Run `pnpm dev` again and repeat until no issues are reported ("Client" and "Server compiled successfully").  
-
-Most pull requests should target the `main` branch. Occasionally, the Xone documentation team might request targeting a different branch.  
-
-**Submit Your Contribution for Review:**  
-
-1. Create a new <Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/hello-xone/official_docs/issues/new/choose">pull request on GitHub</Link>.  
-2. Select a PR type from the list or choose **Open a blank issue** at the bottom of the page.  
-3. Complete the form as required. For blank PRs, provide a clear title and accurate description/context.  
-4. Click **Create Pull Request** to submit your PR.  
-5. Add GitHub labels to your PR. Always include the `documentation` label, and add others based on the type of update or request.  
-
-<Callout emoji="💡">
-  1. If your PR isn’t ready for review, select **Create Draft Pull Request**. The Xone documentation team will review it only when you mark it as **Ready for Review**.  
-  2. If you don’t add update type labels, the Xone documentation team will do it for you.  
-  3. Approved PRs are typically merged into the `main` branch and trigger deployment to <Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org">docs.xone.org</Link> automatically.   
+<Callout emoji="🏁">
+  It’s great to start small: fixing a link, improving a description, adding an example or screenshot are all high-value contributions.
+  Of course! If you’ve contributed to any of the above repositories before, don’t forget to claim your POAP tokens!
 </Callout>
 
-Once approved and merged, your contributions will appear live on <Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org">docs.xone.org</Link> within minutes. 🎉  
+## What can I contribute?
 
-## Reviewing and Managing Pull Requests  
+- **Website**: Optimize page copy and layout, component/style improvements, performance and SEO, accessibility, i18n text, routing and navigation optimization, etc.
+- **Docs**: New chapters/tutorials, API/concept explanations, examples and best practices, fix broken links and formatting, illustrations and architecture diagrams, etc.
+- **Assets**: Add/update token and DApp metadata (info.json, logo, etc.), cross-chain mapping, proofread official links, optimize tags and categories, and improve scripts and validation rules.
+- **Other**: Propose standards (style guide, terminology, directory structure), create scripts and tools, reproduce issues and minimum requirements (MREs), provide roadmap feedback, etc.
 
-The review process and timeline depend on the Xone documentation team’s availability. The workflow includes:  
 
-1. Assigning the PR to a documentation team member.  
-2. Reviewing the PR for:  
-   - Accuracy  
-   - Quality  
-   - Alignment with documentation scope  
-3. Approving, requesting changes, or rejecting the PR.  
-4. Merging accepted PRs, which are deployed to <Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org">docs.xone.org</Link> shortly after.  
+## What You Should Know Before Contributing
 
-## Other Ways to Support the Project  
+1. Create a <Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/signup">GitHub account</Link>.
+2. Familiarize yourself with basic tools, technology stacks, and other important aspects:
+  - Git & GitHub: Branch management, commits, and the pull request process.
+  - Markdown: Document formatting and syntax.
+  - Node.js & package managers (npm/yarn/pnpm): Dependency installation and script execution.
+  - React & Next.js: Front-end component and page development (Website).
+  - JSON/YAML: Configuration and data file editing (Assets).
+  - ESLint/Prettier: Code style and formatting.
+3. **Run the build locally first** before submitting a PR to avoid build failures.
 
-We appreciate all types of contributions. If you enjoy the project but don’t have time to contribute directly, here are other ways to support it:  
-- Star the repository.  
-- Share the project on social media.  
-- Reference it in your project’s README.  
-- Mention it at meetups and share it with your friends or colleagues.  
 
-The community looks forward to your contributions. 🎉  
+## Local Development and Preview
+
+Try to run the validation scripts provided by the repository locally (such as pnpm lint / pnpm validate , etc.; refer to the repository README for details).
+
+<Callout emoji="🧪">
+  Before submitting a pull request, be sure to:
+
+  1. Stop other terminal processes and run `pnpm dev` to see if the build succeeds;
+
+  2. Fix any errors or linking issues reported by the terminal;
+
+  3. Run `pnpm fix` or the formatting/validation scripts provided by the repository;
+
+  4. Run `pnpm dev` again until both the client and server compile successfully.
+
+</Callout>
+
+## How to submit a pull request
+
+Fork the repository to your account and develop on a new branch:
+
+Suggested branch names: `feat/…`, `fix/…`, `docs/…`, `chore/…`, etc.
+
+Conventional Commits:
+
+```
+
+feat: New features/items (e.g., feat: add ABC token on Xone)
+
+fix: Bug fixes
+
+docs: Documentation and content
+
+style: Style/formatting that doesn't affect the logic
+
+refactor: Refactoring
+
+perf: Performance optimization
+
+test: Testing
+
+build: Build-related
+
+ci: CI configuration
+
+chore: Miscellaneous
+
+revert: Rollback
+
+```
+
+Submit a pull request to the upstream repository (usually the target branch is main; maintainers will notify you of any special branches during the review).
+
+**In the PR description:**
+
+1. Clearly explain the motivation and scope of the change;
+
+2. Attach screenshots/screen recordings (for front-end changes);
+
+3. Describe the verification steps and potential impact (mark "Breaking Change").
+
+4. Add tags to the PR: Select at least one of "Documentation/Website/Assets"; other tags (bug, enhancement, good first issue, etc.) can be added as needed.
+
+<br/>
+
+If you're not ready for review yet, select "Create Draft Pull Request"; when ready, mark it "Ready for Review."
+
+<Callout emoji="🤝">
+  We assign and review PRs during business days:
+
+  - Focus on **Accuracy**, **Quality**, and **Scope**;
+
+  - May suggest changes; - After review, the PR will be merged and automatically deployed to the corresponding environment.
+</Callout>
+
+## Support and Communication Channels
+
+Email: <Link className='text-primaryHue' isExternal showAnchorIcon href="mailto:developers@xone.org">developers@xone.org</Link>
+
+Discord: <Link className='text-primaryHue' isExternal showAnchorIcon href="https://discord.gg/HrK3UNB2">Discord</Link>
+
+Telegram: <Link className='text-primaryHue' isExternal showAnchorIcon href="https://t.me/Xone_Developers">Telegram</Link>
+
+Please disclose security vulnerabilities and sensitive issues privately via email; we will respond as quickly as possible. Perhaps you'd be interested in our <Link className='text-primaryHue' isExternal showAnchorIcon href="/study/bug">bug bounty program</Link>.
+
+## Claim Your GitPOAP Badge
+
+To thank our community contributors, we use <Link className='text-primaryHue' isExternal showAnchorIcon href="https://www.gitpoap.io/">GitPOAP</Link> to recognize your efforts! GitPOAP automatically detects your merged contributions and allows you to create a unique contributor POAP directly on their platform.
+
+**How to Claim:**
+
+1. Visit <Link className='text-primaryHue' isExternal showAnchorIcon href="https://www.gitpoap.io/gh/hello-xone">Xone’s GitPOAP page</Link>.
+2. Connect your wallet or email via the sign-in options.
+3. Search your GitHub username, ETH address, ENS name, or any GitPOAP to check your eligibility.
+4. If your GitHub account is eligible, you can create your GitPOAP!
+
+<Callout emoji="⚠️">
+  Do not use an exchange account or any account for which you do not control the private key, as you will not be able to access or manage your POAP with such accounts.
+</Callout>
+
+## License and Code of Conduct
+
+- Contributions must comply with the respective repository's license and code of conduct; please read the repository's README and guidelines before submitting.
+
+- You agree that your contributions may be used and redistributed under the repository's license.
+
+<br/>
+We look forward to your participation. Every contribution you make will brighten the future of Xone. 🎉
+
+<ContactInfo />
