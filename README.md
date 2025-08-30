@@ -39,7 +39,7 @@ For more information about contributing, please see our [contribution document](
 
 ## Contact
 
-For any questions or support related to Xone Chian, please reach out to our support team:
+For any questions or support related to Xone Chain, please reach out to our support team:
 
 **Support:** [support@xone.org](mailto:support@xone.org)
 
