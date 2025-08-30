@@ -1,7 +1,7 @@
 name: PR Merge Notifications
 
 on:
-  pull_request:
+  pull_request_target:
     types: [closed] # PR 关闭时触发（下方判断 merged=true 才发送）
   push:
     branches: [main] # 本地合并或直接提交推到 main
