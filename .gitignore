@@ -5,3 +5,12 @@ node_modules
 .yarn.lock
 .vercel
 wrangler.toml
+
+.idea
+.vscode
+*.log
+.env
+.env.local
+.env.*.local
+dist
+out

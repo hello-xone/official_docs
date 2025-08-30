@@ -47,7 +47,7 @@ export function NavLogo({ variant = "header", className = "" }: Props) {
         <span
           className={[
             "ml-[10px]",
-            isDarkMode ? "text-white" : "text-black",
+            isDarkMode ? "text-black" : "text-white",
             "dark:text-foreground",
           ].join(" ")}
         >
