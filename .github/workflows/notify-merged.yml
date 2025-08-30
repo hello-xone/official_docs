@@ -24,7 +24,7 @@ jobs:
       # push 事件需要完整历史用于判别是否为“合并提交”
       - name: "Checkout (push only)"
         if: github.event_name == 'push'
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
