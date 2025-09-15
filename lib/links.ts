@@ -42,7 +42,8 @@ export const ProgramsGroup: FooterGroup = {
   title: "Global",
   links: [
     { name: "Cooperation", url: "https://xone.org/commercial", internal: true },
-    { name: "Knight Project",     url: "", later: true },
+    { name: "Forum", url: "https://forum.xone.org", internal: true },
+    { name: "City Ambassador",     url: "", later: true },
     { name: "Recruitment",        url: "", later: true },
   ],
 };
