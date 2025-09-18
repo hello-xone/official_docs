@@ -11,10 +11,6 @@ on:
   push:
     branches: 
       - dev
-    types:
-      - opened
-      - synchronize
-      - reopened
     # 只扫描代码文件，排除文档和配置文件
     paths:
       - '**.py'
