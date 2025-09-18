@@ -88,7 +88,8 @@ jobs:
             echo "❌ 仓库 ${{ github.repository }} 不在允许的扫描列表中"
             exit 0
           fi
-        
+          echo "should-run=true" >> $GITHUB_OUTPUT
+          echo "✅ 目标分支为 dev 或强制扫描，将执行安全扫描"
 
   # 主要安全扫描作业
   claude-security-scan:
