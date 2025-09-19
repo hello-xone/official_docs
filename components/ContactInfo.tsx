@@ -27,6 +27,12 @@ const ContactInfo = () => {
         </a>
       </p>
       <p>
+        <strong>Compliance</strong>{" "}
+        <a href="mailto:compliance@xone.org" className="text-primaryHue hover:underline">
+          compliance@xone.org
+        </a>
+      </p>
+      <p>
         <strong>Labs:</strong>{" "}
         <a href="mailto:business@xone.org" className="text-primaryHue hover:underline">
           labs@xone.org

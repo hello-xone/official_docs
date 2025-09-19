@@ -1,4 +1,4 @@
-name = "xone-docs"
+name = "xone-docs-dev"
 compatibility_date = "2025-03-27"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".vercel/output/static"

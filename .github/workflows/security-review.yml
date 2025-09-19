@@ -9,6 +9,7 @@ permissions:
 # 触发条件：只针对 dev 分支的 Pull Request
 on:
   push:
+  push:
     branches: 
       - dev
     # 只扫描代码文件，排除文档和配置文件
