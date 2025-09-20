@@ -196,8 +196,7 @@ html.js-focus-visible.light .scalar-app .relative.z-context .rounded .shadow-bor
 }
 
 /* === Menu badges (visual tags) === */
-/* Study/Donate => Ended */
-aside a[href="/study/donate"],
+/* Study => Ended */
 aside a[href="/study/grants"],
 aside a[href="/developers/operators/monitoring"],
 aside a[href="/roadmap"] {
@@ -206,31 +205,11 @@ aside a[href="/roadmap"] {
   justify-content: start;
 }
 
-aside a[href="/study/donate"]::after,
 aside a[href="/study/grants"]::after,
 aside a[href="/developers/operators/monitoring"]::after,
 aside a[href="/roadmap"]::after {
   display: inline-block;
   border-radius: 9999px;
-}
-
-aside a[href="/study/donate"] {
-  position: relative;
-  gap: 6px;
-  width: 100%;
-}
-
-aside a[href="/study/donate"]::after {
-  content: "Ended";
-  color: rgb(113, 113, 122);
-  background-color: rgb(244, 244, 245);
-  padding: 5px 12px;
-  font-size: 12px;
-}
-
-aside a[href="/study/donate"] svg {
-  position: absolute;
-  right: 8px;
 }
 
 /* Study/Grants => Updated */
@@ -247,10 +226,6 @@ aside a[href="/developers/operators/monitoring"]::after
 }
 
 /* Dark mode tweaks */
-html.dark aside a[href="/study/donate"]::after {
-  color: rgb(113, 113, 122);
-  background-color: oklab(0.273907 0.00152266 -0.00524957 / 0.2);
-}
 html.dark aside a[href="/study/grants"]::after,
 html.dark aside a[href="/developers/operators/monitoring"]::after,
 html.dark aside a[href="/roadmap"]::after {
