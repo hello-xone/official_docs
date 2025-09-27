@@ -6,7 +6,7 @@ import { Link as NLink } from "nextra-theme-docs";
 import { FOOTER_GROUPS, FOOTER_POLICY_LINKS } from "@/lib/links";
 import { EXTERNAL_LINKS } from "@/lib/external";
 import {
-  TwitterX,
+  TwitterIcon,
   DiscordIcon,
   TelegramIcon,
   GithubIcon,
@@ -24,7 +24,7 @@ export default function Footer() {
   useEffect(() => setYear(new Date().getFullYear()), []);
 
   const contacts = [
-    { icon: TwitterX,   url: EXTERNAL_LINKS.Twitter,  label: "Twitter/X" },
+    { icon: TwitterIcon,   url: EXTERNAL_LINKS.Twitter,  label: "Twitter" },
     { icon: TelegramIcon, url: EXTERNAL_LINKS.Telegram, label: "Telegram" },
     { icon: GithubIcon, url: EXTERNAL_LINKS.Github,   label: "GitHub" },
     { icon: YoutubeIcon, url: EXTERNAL_LINKS.Youtube,  label: "YouTube" },
