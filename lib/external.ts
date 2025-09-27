@@ -2,7 +2,17 @@ export const EXTERNAL_LINKS = {
   docs: "/",
   Scan: "https://xonescan.com/",
   Faucet: "https://faucet.xone.org/",
+  Forum: "https://forum.xone.org/",
+  Status: "https://status.xone.org",
 
+  Support: "support@xone.org",
+  Official: "hello@xone.org",
+  Job: "job@xone.org",
+  Busines: "busines@xone.org",
+  Compliance: "compliance@xone.org",
+  Labs: "labs@xone.org",
+  Grants: "grants@xone.org",
+  
   TokenUp: "https://tokenup.org/en",
   RainLink: "https://rainlink.co/",
   SwapX: "https://swapx.exchange/en",
@@ -18,4 +28,5 @@ export const EXTERNAL_LINKS = {
   Reddit: "https://www.reddit.com/r/XoneChain/",
   Medium: "https://medium.com/@xone_chain",
   ChatMe: "https://share.chatme.global/share/group/ztgqmws2k?lang=en&mode=light",
+  Coingecko: "https://www.coingecko.com/en/chains/xone",
 };

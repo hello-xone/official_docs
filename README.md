@@ -43,7 +43,7 @@ For any questions or support related to Xone Chain, please reach out to our supp
 
 **Support:** [support@xone.org](mailto:support@xone.org)
 
-**Business:** [business@xone.org](mailto:business@xone.org)
+**Business:** [busines@xone.org](mailto:busines@xone.org)
 
 **Community:** [Telegram](https://t.me/hello_xonechain) | [Developers Telegram](https://t.me/Xone_Developers) | [Twitter](https://x.com/xone_chain) | [Discord](https://discord.gg/HrK3UNB2)
 

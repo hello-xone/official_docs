@@ -34,6 +34,7 @@ export const ResourcesdGroup: FooterGroup = {
     { name: "RPC Endpoints",         url: EXTERNAL_LINKS.docs + "developers/rpc", internal: true },
     { name: "Open Gateway",         url: EXTERNAL_LINKS.docs + "gateway", internal: true },
     { name: "Dev Tools",        url: EXTERNAL_LINKS.docs + "developers/tools", internal: true },
+    { name: "Status",             url: EXTERNAL_LINKS.Status },
     { name: "Project Files",           url: EXTERNAL_LINKS.Github },
   ],
 };

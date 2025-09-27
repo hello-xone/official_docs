@@ -14,6 +14,7 @@ import {
   RedditIcon,
   YoutubeIcon,
   ChatMeIcon,
+  CoingeckoIcon,
 } from "@/components/icons";
 import { NavLogo } from "../NavLogo";
 import FooterLinks from "./FooterLinks";
@@ -29,7 +30,9 @@ export default function Footer() {
     { icon: YoutubeIcon, url: EXTERNAL_LINKS.Youtube,  label: "YouTube" },
     { icon: MediumIcon, url: EXTERNAL_LINKS.Medium,   label: "Medium" },
     { icon: DiscordIcon, url: EXTERNAL_LINKS.Discord,  label: "Discord" },
+    { icon: ChatMeIcon, url: EXTERNAL_LINKS.ChatMe,  label: "ChatMe" },
     { icon: RedditIcon, url: EXTERNAL_LINKS.Reddit,   label: "Reddit" },
+    { icon: CoingeckoIcon, url: EXTERNAL_LINKS.Coingecko,   label: "Coingecko" },
   ];
 
   return (
@@ -54,27 +57,23 @@ export default function Footer() {
                 {contacts.map((c, i) => {
                   const Icon = c.icon;
                   return (
-                    <Button
-                      key={i}
-                      as={NLink as any}
-                      href={c.url}
-                      isIconOnly
-                      variant="light"
-                      radius="none"
-                      aria-label={c.label}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="
-                        flex items-center justify-center
-                        !w-7 !h-7 md:!w-8 md:!h-8
-                        !p-0 !min-w-0
-                        rounded-[2px]
-                        bg-transparent dark:bg-white
-                        border-0
-                      "
-                    >
-                      <Icon className="block w-[16px] h-[16px] md:w-[18px] md:h-[18px]" />
-                    </Button>
+                    <a
+                    key={i}
+                    href={c.url}
+                    aria-label={c.label}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="
+                      flex items-center justify-center
+                      w-7 h-7 md:w-8 md:h-8   /* 手机固定 28px，桌面 32px */
+                      p-0 shrink-0
+                      rounded-[2px]
+                      bg-transparent dark:bg-white
+                      border-0
+                    "
+                  >
+                    <Icon className="w-8 h-8 md:w-6 md:h-6" />
+                  </a>
                   );
                 })}
               </div>
