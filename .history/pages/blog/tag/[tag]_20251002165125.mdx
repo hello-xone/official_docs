@@ -16,8 +16,8 @@ export async function getStaticPaths() {
   const tags = extractRelevantTags(allBlogs);
   
   return {
-    paths: tags.map(tagObj => ({
-      params: { tag: tagObj.tag }
+    paths: tags.map(tag => ({
+      params: { tag }
     })),
     fallback: true // Set to false if you want to generate all tags at build time
   };

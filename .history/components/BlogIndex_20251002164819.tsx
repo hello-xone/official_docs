@@ -23,6 +23,7 @@ export default function Blog({ initialArticles = [], initialTags = [] }: { initi
   const isMobile = useIsMobile(768)
   const [showAnim, setShowAnim] = useState(false)
   const [visibleCount, setVisibleCount] = useState(0)
+  console.log(initialArticles, "initialArticles")
 
   const { allTags, articles } = useMemo(() => {
     let filtered = initialArticles
@@ -35,6 +36,18 @@ export default function Blog({ initialArticles = [], initialTags = [] }: { initi
       allTags: initialTags,
       articles: filtered,
     }
+    setArticles(filtered)
+    setAllTags(initialTags)
+  }, [tagsFilter, initialArticles, initialTags])
+  useEffect(() => {
+    let filtered = initialArticles
+    if (tagsFilter.length > 0) {
+      filtered = initialArticles.filter(
+        article => asArray(article.tags).some(tag => tagsFilter.includes(tag))
+      )
+    }
+    setArticles(filtered)
+    setAllTags(initialTags)
   }, [tagsFilter, initialArticles, initialTags])
 
   // 非移动端并在空闲时再加载动画，避免阻塞首屏

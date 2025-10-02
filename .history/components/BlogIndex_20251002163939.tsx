@@ -20,21 +20,25 @@ const PagAnimation = dynamic<PAGProps>(
 export default function Blog({ initialArticles = [], initialTags = [] }: { initialArticles: any[]; initialTags: any[] }) {
   const { query } = useRouter()
   const tagsFilter = !query.tag ? [] : asArray(query.tag)
+  const [articles, setArticles] = useState(initialArticles)
+  const [allTags, setAllTags] = useState(initialTags)
   const isMobile = useIsMobile(768)
   const [showAnim, setShowAnim] = useState(false)
   const [visibleCount, setVisibleCount] = useState(0)
+  console.log(initialArticles, "initialArticles")
 
-  const { allTags, articles } = useMemo(() => {
+  const {allTags, articles} = useMemo(() => {
+
+  }, [tagsFilter, initialArticles, initialTags])
+  useEffect(() => {
     let filtered = initialArticles
     if (tagsFilter.length > 0) {
       filtered = initialArticles.filter(
         article => asArray(article.tags).some(tag => tagsFilter.includes(tag))
       )
     }
-    return {
-      allTags: initialTags,
-      articles: filtered,
-    }
+    setArticles(filtered)
+    setAllTags(initialTags)
   }, [tagsFilter, initialArticles, initialTags])
 
   // 非移动端并在空闲时再加载动画，避免阻塞首屏

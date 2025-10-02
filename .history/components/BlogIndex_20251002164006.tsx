@@ -23,6 +23,7 @@ export default function Blog({ initialArticles = [], initialTags = [] }: { initi
   const isMobile = useIsMobile(768)
   const [showAnim, setShowAnim] = useState(false)
   const [visibleCount, setVisibleCount] = useState(0)
+  console.log(initialArticles, "initialArticles")
 
   const { allTags, articles } = useMemo(() => {
     let filtered = initialArticles
@@ -32,10 +33,12 @@ export default function Blog({ initialArticles = [], initialTags = [] }: { initi
       )
     }
     return {
-      allTags: initialTags,
-      articles: filtered,
+      allTags:initialTags,
+      articles: filtered
     }
+
   }, [tagsFilter, initialArticles, initialTags])
+
 
   // 非移动端并在空闲时再加载动画，避免阻塞首屏
   useEffect(() => {

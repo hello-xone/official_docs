@@ -23,6 +23,7 @@ export default function Blog({ initialArticles = [], initialTags = [] }: { initi
   const isMobile = useIsMobile(768)
   const [showAnim, setShowAnim] = useState(false)
   const [visibleCount, setVisibleCount] = useState(0)
+  console.log(initialArticles, "initialArticles")
 
   const { allTags, articles } = useMemo(() => {
     let filtered = initialArticles

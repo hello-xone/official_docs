@@ -1,0 +1,18 @@
+---
+  title: "Tag"
+  layout: "full"
+  toc: false
+  pagination: false
+  sidebar: false
+---
+
+import BlogContent from '../../blog.mdx'
+
+<BlogContent />
+
+import Blog from "../components/BlogIndex";
+export { getStaticProps } from "./blog_ssg";
+
+export default function Page(props) {
+  return <Blog {...props} />
+}

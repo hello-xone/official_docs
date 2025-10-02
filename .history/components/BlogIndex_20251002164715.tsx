@@ -1,9 +1,11 @@
-import { useRouter } from 'next/router'
-import { BlogCardList, TagList } from '@/components/blog'
-import { asArray } from '@lib/as-array'
-import { useEffect, useMemo, useState } from 'react'
-import { useIsMobile } from '@/components/hooks/useIsMobile'
+import { useRouter } from "next/router";
+import { BlogCardList, TagList } from "@/components/blog";
+import { asArray } from "@lib/as-array";
+import { useEffect, useMemo, useState } from "react";
+import { useIsMobile } from "@/components/hooks/useIsMobile";
 import dynamic from "next/dynamic";
+import { getAllBlogs } from "@/lib/all-blogs";
+import { getAllPages } from "nextra/context";
 
 type PAGProps = {
   src: string;
@@ -17,47 +19,59 @@ const PagAnimation = dynamic<PAGProps>(
   { ssr: false }
 );
 
-export default function Blog({ initialArticles = [], initialTags = [] }: { initialArticles: any[]; initialTags: any[] }) {
-  const { query } = useRouter()
-  const tagsFilter = !query.tag ? [] : asArray(query.tag)
-  const isMobile = useIsMobile(768)
-  const [showAnim, setShowAnim] = useState(false)
-  const [visibleCount, setVisibleCount] = useState(0)
+export default function Blog({
+  initialArticles = [],
+  initialTags = [],
+}: {
+  initialArticles: any[];
+  initialTags: any[];
+}) {
+  const { query } = useRouter();
+  const tagsFilter = !query.tag ? [] : asArray(query.tag);
+  const isMobile = useIsMobile(768);
+  const [showAnim, setShowAnim] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(0);
+  console.log(initialArticles, "initialArticles");
 
   const { allTags, articles } = useMemo(() => {
-    let filtered = initialArticles
+    const allBlogs = initialArticles.length === 0 ? getAllBlogs(getAllPages());
+    let filtered = [];
+
     if (tagsFilter.length > 0) {
-      filtered = initialArticles.filter(
-        article => asArray(article.tags).some(tag => tagsFilter.includes(tag))
-      )
+      filtered = allBlogs.filter((article) =>
+        asArray(article.tags).some((tag) => tagsFilter.includes(tag))
+      );
     }
     return {
       allTags: initialTags,
       articles: filtered,
-    }
-  }, [tagsFilter, initialArticles, initialTags])
+    };
+  }, [tagsFilter, initialArticles, initialTags]);
 
   // 非移动端并在空闲时再加载动画，避免阻塞首屏
   useEffect(() => {
-    if (isMobile) return
-    if (typeof window === 'undefined') return
-    const start = () => setShowAnim(true)
-    const ric: any = (window as any).requestIdleCallback
-    if (typeof ric === 'function') {
-      ric(start, { timeout: 1200 })
+    if (isMobile) return;
+    if (typeof window === "undefined") return;
+    const start = () => setShowAnim(true);
+    const ric: any = (window as any).requestIdleCallback;
+    if (typeof ric === "function") {
+      ric(start, { timeout: 1200 });
     } else {
-      const t = setTimeout(start, 300)
-      return () => clearTimeout(t)
+      const t = setTimeout(start, 300);
+      return () => clearTimeout(t);
     }
-  }, [isMobile])
+  }, [isMobile]);
 
   // 控制移动端初次渲染数量，减少首屏压力
   useEffect(() => {
-    const nextCount = isMobile ? 8 : articles.length
-    setVisibleCount(nextCount)
-  }, [isMobile, articles.length])
+    const nextCount = isMobile ? 8 : articles.length;
+    setVisibleCount(nextCount);
+  }, [isMobile, articles.length]);
 
-  const displayedArticles = useMemo(() => articles.slice(0, visibleCount), [articles, visibleCount])
+  const displayedArticles = useMemo(
+    () => articles.slice(0, visibleCount),
+    [articles, visibleCount]
+  );
 
   return (
     <>
@@ -92,7 +106,9 @@ export default function Blog({ initialArticles = [], initialTags = [] }: { initi
               <button
                 type="button"
                 className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md dark:bg-white dark:text-black"
-                onClick={() => setVisibleCount(c => Math.min(c + 8, articles.length))}
+                onClick={() =>
+                  setVisibleCount((c) => Math.min(c + 8, articles.length))
+                }
               >
                 Load more
               </button>
@@ -101,5 +117,5 @@ export default function Blog({ initialArticles = [], initialTags = [] }: { initi
         </div>
       </div>
     </>
-  )
+  );
 }
