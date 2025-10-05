@@ -10,6 +10,7 @@ import { DefaultSeo } from 'next-seo';
 import SEO from 'src/next-seo.config';
 import '@/styles/globals.css';
 import SidebarDevelopersHide from '@/components/SidebarDevelopersHide';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
         <Providers>
           <Component {...pageProps} />
+          <SpeedInsights />
           <SidebarDevelopersHide />
         </Providers>
 
