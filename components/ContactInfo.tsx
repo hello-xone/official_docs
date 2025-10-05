@@ -29,7 +29,7 @@ const ContactInfo = () => {
         </a>
       </p>
       <p>
-        <strong>Compliance</strong>{" "}
+        <strong>Compliance:</strong>{" "}
         <a href={`mailto:${EXTERNAL_LINKS.Compliance}`} className="text-primaryHue hover:underline">
           {EXTERNAL_LINKS.Compliance}
         </a>
