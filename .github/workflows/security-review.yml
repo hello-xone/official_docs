@@ -2,64 +2,63 @@ name: Claude Security Review
 
 # 工作流权限设置
 permissions:
-  contents: read          # 读取代码仓库
-  pull-requests: write    # 在 PR 中写入评论
-  actions: read          # 读取 Actions 状态
+  contents: read # 读取代码仓库
+  pull-requests: write # 在 PR 中写入评论
+  actions: read # 读取 Actions 状态
 
 # 触发条件：只针对 dev 分支的 Pull Request
 on:
   push:
-  push:
-    branches: 
+    branches:
       - dev
     # 只扫描代码文件，排除文档和配置文件
     paths:
-      - '**.py'
-      - '**.js'
-      - '**.jsx'
-      - '**.ts'
-      - '**.tsx'
-      - '**.java'
-      - '**.go'
-      - '**.php'
-      - '**.rb'
-      - '**.cs'
-      - '**.cpp'
-      - '**.c'
-      - '**.cc'
-      - '**.h'
-      - '**.hpp'
-      - '**.sql'
-      - '**.sh'
-      - '**.bash'
-      - '**.zsh'
-      - '**.ps1'
-      - '**.scala'
-      - '**.kt'
-      - '**.swift'
-      - '**.rs'
+      - "**.py"
+      - "**.js"
+      - "**.jsx"
+      - "**.ts"
+      - "**.tsx"
+      - "**.java"
+      - "**.go"
+      - "**.php"
+      - "**.rb"
+      - "**.cs"
+      - "**.cpp"
+      - "**.c"
+      - "**.cc"
+      - "**.h"
+      - "**.hpp"
+      - "**.sql"
+      - "**.sh"
+      - "**.bash"
+      - "**.zsh"
+      - "**.ps1"
+      - "**.scala"
+      - "**.kt"
+      - "**.swift"
+      - "**.rs"
       # 配置文件中可能有安全问题
-      - '**.yaml'
-      - '**.yml'
-      - '**.json'
-      - '**.xml'
-      - '**.toml'
+      - "**.yaml"
+      - "**.yml"
+      - "**.json"
+      - "**.xml"
+      - "**.toml"
       # 排除文档和测试文件
-      - '!**.md'
-      - '!**.txt'
-      - '!**.rst'
-      - '!**/docs/**'
-      - '!**/test/**'
-      - '!**/tests/**'
-      - '!**/*_test.*'
-      - '!**/*test*.*'
-      - '!**/spec/**'
+      - "!**.md"
+      - "!**.txt"
+      - "!**.rst"
+      - "!**/docs/**"
+      - "!**/test/**"
+      - "!**/tests/**"
+      - "!**/*_test.*"
+      - "!**/*test*.*"
+      - "!**/spec/**"
 
   # 手动触发选项
   workflow_dispatch:
     inputs:
       force_scan:
-        description: '强制扫描所有文件'
+        description: "强制扫描所有文件"
         required: false
         default: false
         type: boolean
@@ -67,7 +66,7 @@ on:
 # 环境变量
 env:
   ALLOWED_REPOSITORIES: "hello-xone/official_docs"
-  
+
 jobs:
   # 预检查作业
   pre-check:
@@ -75,7 +74,7 @@ jobs:
     outputs:
       should-run: ${{ steps.check.outputs.should-run }}
       repository-allowed: ${{ steps.check.outputs.repository-allowed }}
-    
+
     steps:
       - name: 检查是否应该运行扫描
         id: check
@@ -91,16 +90,15 @@ jobs:
           fi
           echo "should-run=true" >> $GITHUB_OUTPUT
           echo "✅ 目标分支为 dev 或强制扫描，将执行安全扫描"
-        
 
   # 主要安全扫描作业
   claude-security-scan:
     needs: pre-check
     runs-on: ubuntu-latest
-    
+
     # 只有通过预检查才运行
     if: needs.pre-check.outputs.should-run == 'true' && needs.pre-check.outputs.repository-allowed == 'true'
-    
+
     steps:
       - name: 📥 检出代码
         uses: actions/checkout@v5
@@ -130,22 +128,22 @@ jobs:
         with:
           # API 密钥（从 GitHub Secrets 获取）
           claude-api-key: ${{ secrets.CLAUDE_API_KEY }}
-          
+
           # 基本配置
-          comment-pr: true              # 在 PR 中添加安全发现的评论
-          upload-results: true          # 上传结果作为工件
-          
+          comment-pr: true # 在 PR 中添加安全发现的评论
+          upload-results: true # 上传结果作为工件
+
           # 超时设置（分钟）
           claudecode-timeout: 15
-          
+
           # 排除目录设置 - 不扫描这些目录
           exclude-directories: "node_modules,vendor,dist,build,out,target,.git,.github,docs,documentation,examples,test,tests,spec,specs,coverage,__pycache__,.pytest_cache,.vscode,.idea,logs,tmp,temp,.next,.nuxt,public/assets,static/assets"
-          
+
           # 高级配置
-          run-every-commit: false       # 避免重复扫描降低成本
+          run-every-commit: false # 避免重复扫描降低成本
 
       - name: 📁 上传安全扫描结果
-        if: always()  # 即使前面步骤失败也要保存结果
+        if: always() # 即使前面步骤失败也要保存结果
         uses: actions/upload-artifact@v4
         with:
           name: claude-security-results-${{ github.event.pull_request.number || github.run_number }}
