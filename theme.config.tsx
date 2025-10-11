@@ -36,29 +36,54 @@ const config: DocsThemeConfig = {
 
   useNextSeoProps() {
     const { asPath } = useRouter()
+    const { frontMatter } = useConfig()
+    
+    // 默认 description
+    const defaultDescription = 'The decentralized Layer-1 blockchain platform based on the Ethereum protocol uses leading behavioral value incentives (BVI) to ensure that every interaction of every user participating in Xone will create value, and every contribution will be rewarded.'
+    const description = frontMatter.description || defaultDescription
+    
     if (asPath !== '/') {
       return {
-        titleTemplate: '%s | Xone Docs'
+        titleTemplate: '%s | Xone Docs',
+        description: description,
+        openGraph: {
+          description: description,
+          images: [
+            {
+              url: 'https://docs.xone.org/summary_large_image.png'
+            }
+          ]
+        },
+        twitter: {
+          card: 'summary_large_image',
+          site: '@xone_chain'
+        }
+      }
+    }
+    
+    return {
+      description: description,
+      openGraph: {
+        description: description,
+        images: [
+          {
+            url: 'https://docs.xone.org/summary_large_image.png'
+          }
+        ]
       }
     }
   },
 
   head: () => {
-    const { asPath, defaultLocale, locale } = useRouter()
-    const { frontMatter } = useConfig()
-    const url =
-      'https://xone.org' +
-      (defaultLocale === locale ? asPath : `/${locale}${asPath}`)
+    const { frontMatter, title } = useConfig()
+
+    // Keywords：优先使用 frontMatter.keywords，否则使用页面标题
+    const keywords = frontMatter.keywords || `Xone, blockchain, ${title}`
 
     return (
       <>
-        <meta property="og:url" content={url} />
-        <meta property="og:title" content={frontMatter.title || 'Xone Docs'} />
-        <meta
-          property="og:description"
-          content={frontMatter.description || 'The decentralized Layer-1 blockchain platform based on the Ethereum protocol uses leading behavioral value incentives (BVI) to ensure that every interaction of every user participating in Xone will create value, and every contribution will be rewarded.'}
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* 只添加 Nextra 不生成的标签 */}
+        <meta name="keywords" content={keywords} />
       </>
     )
   },
