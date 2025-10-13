@@ -110,6 +110,6 @@ To maximize key security, minimize compromise risks, and maintain high availabil
 ### Backup Nodes & Failover
 
 * **Archive Mode:** Run backup nodes with `--syncmode full --gcmode archive` to retain the entire history for auditing and debugging.
-* **Graceful Shutdown:** Use `systemctl stop xone` or send `SIGTERM` to allow the node to persist its state before exiting.
+* **Graceful Shutdown:** Use `systemctl stop xone-node` or send `SIGTERM` to allow the node to persist its state before exiting.
 * **Proactive Monitoring:** Deploy <Link className='text-primaryHue' isExternal showAnchorIcon href="https://prometheus.io/">Prometheus</Link>, <Link className='text-primaryHue' isExternal showAnchorIcon href="https://grafana.com/">Grafana</Link>, and <Link className='text-primaryHue' isExternal showAnchorIcon href="https://prometheus.io/docs/alerting/latest/alertmanager/">Alertmanager</Link> to track sync height, block import times, RPC latency, and other critical metrics, and configure alerts accordingly.
 * **Automatic Failover:** Integrate <Link className='text-primaryHue' isExternal showAnchorIcon href="https://keepalived.readthedocs.io/en/latest/introduction.html">Keepalived</Link>, <Link className='text-primaryHue' isExternal showAnchorIcon href="https://www.haproxy.org/">HAProxy</Link>, or similar tools to implement master‑backup failover and traffic switchover.
