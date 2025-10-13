@@ -7,7 +7,7 @@ const NodeOperatore = () => {
         memory: "8 GB RAM",
         os: "Ubuntu 22.04 or later",
         network: "Symmetric 100 Mbps",
-        disk: "≥ 1 TB available (adjust based on log & data volume)",
+        disk: "≥ 1.5 TB available (adjust based on log & data volume)",
     };
 
     const ArchiveNode = {
