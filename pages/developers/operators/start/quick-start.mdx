@@ -97,8 +97,6 @@ xoned start --home ~/.xone
 # Check sync info (latest block height, catching up status)
 xoned status --home ~/.xone --node http://127.0.0.1:26657 | jq .SyncInfo
 
-# Watch logs for “Committed new block” messages
-tail -f ~/.xone/logs/xoned.log
 ```
 
 </Steps>
