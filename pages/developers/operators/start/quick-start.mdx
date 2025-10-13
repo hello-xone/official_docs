@@ -16,8 +16,9 @@ import { Steps, Tabs } from 'nextra/components';
 # Change to a temporary directory
 cd /tmp
 
-# Download the Xone Chain node binary (example version v1.0.1)
-wget https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/xoned-v1.0.1-linux-amd64
+# Download the latest Xone Chain node binary
+VERSION=$(curl -s https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/latest-version.txt)
+wget -O xoned-${VERSION}-linux-amd64 https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/xoned-${VERSION}-linux-amd64
 
 # Download the official configuration template
 wget https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/config.zip
@@ -30,6 +31,9 @@ wget https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/config.zip
 
 ```bash showLineNumbers copy
 # Rename the executable
+# NOTE: Replace the version number below (v1.0.1) with the actual version you just downloaded.
+# For example, if you downloaded xoned-v1.0.3-linux-amd64, run:
+# mv xoned-v1.0.3-linux-amd64 xoned
 mv xoned-v1.0.1-linux-amd64 xoned
 
 # Make it executable
