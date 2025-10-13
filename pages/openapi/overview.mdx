@@ -27,7 +27,7 @@ Xone Chain provides multiple RPC endpoints for developers to connect to the main
         <TableCell>Xone Mainnet</TableCell>
         <TableCell>
         `https://rpc.xone.org`\
-        `wss://rpc-wss.xone.org`
+        `wss://rpc.xone.org`
         </TableCell>
         <TableCell>`0xe89`(3721)</TableCell>
       </TableRow>
@@ -37,7 +37,7 @@ Xone Chain provides multiple RPC endpoints for developers to connect to the main
         `https://rpc-testnet.xone.plus`\
         `https://rpc-testnet.xone.org`\
         `https://rpc-testnet.knight.center`\
-        `wss://wss-rpc-testnet.xone.org`
+        `wss://rpc-testnet.xone.org`
         </TableCell>
         <TableCell>`0x20352b3`(33772211)</TableCell>
       </TableRow>
@@ -70,7 +70,7 @@ console.log(`Current block: ${block}`);
 ```js showLineNumbers copy
 import Web3 from "web3";
 
-const web3 = new Web3("wss://rpc-wss.xone.org");
+const web3 = new Web3("wss://rpc.xone.org");
 const accounts = await web3.eth.getAccounts();
 ```
 

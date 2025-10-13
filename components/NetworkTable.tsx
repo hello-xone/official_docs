@@ -10,7 +10,7 @@ const NetworkTable = () => {
             "https://rpc-testnet.xone.plus",
             "https://rpc-testnet.xone.org",
             "https://rpc-testnet.knight.center",
-            "wss://wss-rpc-testnet.xone.org",
+            "wss://rpc-testnet.xone.org",
         ],
         chainId: 33772211,
         symbol: "XOC",
@@ -22,7 +22,7 @@ const NetworkTable = () => {
         networkName: "Xone Mainnet",
         rpcUrls: [
             "https://rpc.xone.org",
-            "wss://rpc-wss.xone.org",
+            "wss://rpc.xone.org",
         ],
         chainId: 3721,
         symbol: "XOC",
