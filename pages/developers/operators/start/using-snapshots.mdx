@@ -15,11 +15,11 @@ sudo apt install -y lz4 wget
 
 ### 2. Define Variables
 
-<Tabs items={['Miannet', 'Testnet']} defaultValue="Miannet">
+<Tabs items={['Mainnet', 'Testnet']} defaultValue="Mainnet">
   <Tabs.Tab>
     ```bash showLineNumbers copy
     # Snapshot date: recommended to use yesterday’s date, format YYYYMMDD
-    SNAP_DATE=$(date -d "yesterday" +%Y%m%d)
+    SNAP_DATE=$(curl -s https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/latest-version-snapshot.txt)
 
     # Snapshot filename and download URL
     SNAP_FILE="snapshot-${SNAP_DATE}.tar.lz4"
@@ -32,7 +32,7 @@ sudo apt install -y lz4 wget
   <Tabs.Tab>
     ```bash showLineNumbers copy
     # Snapshot date: recommended to use yesterday’s date, format YYYYMMDD
-    SNAP_DATE=$(date -d "yesterday" +%Y%m%d)
+    SNAP_DATE=$(curl -s https://xone-testnet-files.s3.ap-southeast-1.amazonaws.com/latest-version-snapshot.txt)
 
     # Snapshot filename and download URL
     SNAP_FILE="snapshot-${SNAP_DATE}.tar.lz4"

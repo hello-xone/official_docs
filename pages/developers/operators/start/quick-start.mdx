@@ -16,8 +16,9 @@ import { Steps, Tabs } from 'nextra/components';
 # Change to a temporary directory
 cd /tmp
 
-# Download the Xone Chain node binary (example version v1.0.1)
-wget https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/xoned-v1.0.1-linux-amd64
+# Download the latest Xone Chain node binary
+VERSION=$(curl -s https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/latest-version.txt)
+wget -O xoned-${VERSION}-linux-amd64 https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/xoned-${VERSION}-linux-amd64
 
 # Download the official configuration template
 wget https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/config.zip
@@ -30,6 +31,9 @@ wget https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/config.zip
 
 ```bash showLineNumbers copy
 # Rename the executable
+# NOTE: Replace the version number below (v1.0.1) with the actual version you just downloaded.
+# For example, if you downloaded xoned-v1.0.3-linux-amd64, run:
+# mv xoned-v1.0.3-linux-amd64 xoned
 mv xoned-v1.0.1-linux-amd64 xoned
 
 # Make it executable
@@ -42,16 +46,16 @@ sudo mv xoned /usr/bin/xoned
 
 ### 4. Initialize the Data Directory
 
-<Tabs items={['Miannet', 'Testnet']} defaultValue="Miannet">
+<Tabs items={['Mainnet', 'Testnet']} defaultValue="Mainnet">
   <Tabs.Tab>
   ```bash showLineNumbers copy
-  # Initialize your node’s data directory (defaults to ~/.xoned)
+  # Initialize your node’s data directory (defaults to ~/.xone)
   xoned init mynode --chain-id xone_3721-1
   ```
   </Tabs.Tab>
   <Tabs.Tab>
   ```bash showLineNumbers copy
-  # Initialize your node’s data directory (defaults to ~/.xoned)
+  # Initialize your node’s data directory (defaults to ~/.xone)
   xoned init xoned --chain-id xone_33772211-1
   ```
   </Tabs.Tab>
@@ -59,7 +63,7 @@ sudo mv xoned /usr/bin/xoned
 
 
 * `mynode` can be replaced with your preferred directory name
-* This creates a `~/.xoned` (or `~/.mynode`) folder in your home directory
+* This creates a `~/.xone` folder in your home directory. If you want to specify a custom directory, add the --home flag after the xoned init command.
 
 
 ### 5. Apply the Official Configuration
@@ -69,17 +73,17 @@ sudo mv xoned /usr/bin/xoned
 unzip config.zip -d ./config
 
 # Backup your existing config (in case you need to revert)
-cp -r ~/.xoned/config ~/.xoned/config.bak
+cp -r ~/.xone/config ~/.xone/config.bak
 
 # Overwrite genesis.json, config.toml, and app.toml
-cp config/genesis.json  ~/.xoned/config/genesis.json
-cp config/config.toml   ~/.xoned/config/config.toml
-cp config/app.toml      ~/.xoned/config/app.toml
+cp config/genesis.json  ~/.xone/config/genesis.json
+cp config/config.toml   ~/.xone/config/config.toml
+cp config/app.toml      ~/.xone/config/app.toml
 ```
 
 > **Note**
 >
-> * Ensure `~/.xoned/config` contains only the official or intentionally customized files—remove any extras.
+> * Ensure `~/.xone/config` contains only the official or intentionally customized files—remove any extras.
 > * If you need to tweak settings (RPC ports, firewall rules, etc.), edit the files under `config/` first, then copy them over.
 
 
@@ -87,7 +91,7 @@ cp config/app.toml      ~/.xoned/config/app.toml
 
 ```bash showLineNumbers copy
 # Launch the node (use systemd or tmux/screen for background operation)
-xoned start --home ~/.xoned
+xoned start --home ~/.xone
 ```
 
 
@@ -95,10 +99,8 @@ xoned start --home ~/.xoned
 
 ```bash showLineNumbers copy
 # Check sync info (latest block height, catching up status)
-xoned status --home ~/.xoned --node http://127.0.0.1:26657 | jq .SyncInfo
+xoned status --home ~/.xone --node http://127.0.0.1:26657 | jq .SyncInfo
 
-# Watch logs for “Committed new block” messages
-tail -f ~/.xoned/logs/xoned.log
 ```
 
 </Steps>

@@ -57,19 +57,24 @@ In any directory, create a file named `docker_run.sh` and paste the following:
 ```bash showLineNumbers copy
 #!/bin/sh
 
-# —— Modify these variables as needed ——  
-IMAGE_URL='xonechain/xoned:v1.0.1'    # Node image and version  
-CONTAINER_NAME='xone-node'           # Container name  
-DATA_DIR='/home/ubuntu/.xone'        # Host data directory  
-RPC_PORT_HTTP=8545                   # JSON‑RPC HTTP port  
-RPC_PORT_WS=8546                     # JSON‑RPC WebSocket port  
-P2P_PORT=26656                       # P2P port  
-P2P_RPC_PORT=26657                   # P2P RPC interface port  
-PEER_PORT=26658                      # Alternate P2P port  
-PROMETHEUS_PORT=26660                # Prometheus metrics port  
-REST_PORT=1317                       # REST API port  
-METRICS_PORT=9090                    # Prometheus exporter port  
-GRPC_METRICS_PORT=9091               # gRPC exporter port  
+# —— Fetch the latest version number dynamically ——
+LATEST_VERSION=$(curl -s https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/latest-version.txt)
+
+# —— Modify these variables as needed ——
+IMAGE_URL="xonechain/xoned:${LATEST_VERSION}"   # Node image and version (auto-updated)
+CONTAINER_NAME='xone-node'                      # Container name
+DATA_DIR='/home/ubuntu/.xone'                   # Host data directory
+RPC_PORT_HTTP=8545                              # JSON-RPC HTTP port
+RPC_PORT_WS=8546                                # JSON-RPC WebSocket port
+P2P_PORT=26656                                  # P2P port
+P2P_RPC_PORT=26657                              # P2P RPC interface port
+PEER_PORT=26658                                 # Alternate P2P port
+PROMETHEUS_PORT=26660                           # Prometheus metrics port
+REST_PORT=1317                                  # REST API port
+METRICS_PORT=9090                               # Prometheus exporter port
+GRPC_METRICS_PORT=9091                          # gRPC exporter port
+
+echo "Using image version: ${LATEST_VERSION}"
 
 # Remove any existing container
 docker rm -f $CONTAINER_NAME 2>/dev/null
