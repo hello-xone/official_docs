@@ -1,3 +1,9 @@
+---
+description: >-
+  With the successful activation of the new  module via hard fork at height ,
+  Xone Chain now adopts a standardized and...
+keywords: 'Xone, blockchain, epoch'
+---
 import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Button} from "@nextui-org/react";
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell } from "@nextui-org/react";
 import { Tabs } from 'nextra/components';
@@ -5,7 +11,7 @@ import ContactInfo from "@/components/ContactInfo";
 
 # What is Xone Epoch
 
-With the successful activation of the <Link className='text-primaryHue' showAnchorIcon href="/blog/bulletin/hard-fork">new `epochs` module via hard fork at height `# 6397023`</Link>, Xone Chain now adopts a **standardized and modular Epoch system**, inspired by [Evmos Epochs](https://docs.evmos.org/protocol/modules/epochs), enabling flexible, composable, and on-chain managed time cycles.
+With the successful activation of the <Link className='text-primaryHue' showAnchorIcon href="/blog/bulletin/hard-fork">new `epochs` module via hard fork at height `# 6397023`</Link>, [Xone](https://xone.org/) Chain now adopts a **standardized and modular Epoch system**, inspired by [Evmos Epochs](https://docs.evmos.org/protocol/modules/epochs), enabling flexible, composable, and on-chain managed time cycles.
 
 The upgraded module provides a **generic time cycle scheduler** for on-chain logic, supporting dynamic triggering of network-level events (rewards, validator updates, governance, etc.) at the **end of each epoch**, all via configuration and without requiring hardcoded logic.
 
@@ -22,7 +28,7 @@ An **Epoch** is a recurring period defined by block height intervals, during whi
   `week` = 7 D (604800s)
 - Execution: Registered hooks (`BeforeEpochStart`, `AfterEpochEnd`) are triggered automatically
 
-**Dynamic periodicity:** At the end of each Epoch, the network will automatically trigger the preset on-chain operations (such as reward settlement, validator rotation) and start a new cycle. This design makes the operation rhythm of Xone Chain clear and regular.
+**Dynamic periodicity:** At the end of each Epoch, the network will automatically trigger the preset on-chain operations (such as reward settlement, validator rotation) and start a new cycle. This design makes the operation rhythm of [Xone](https://xone.org/) Chain clear and regular.
 
 ## Core rules of Epoch
 
@@ -68,7 +74,7 @@ An **Epoch** is a recurring period defined by block height intervals, during whi
 
 ### Validator (Nodes) rotation
 
-Decentralized rotation mechanism: At the end of each Epoch, Xone Chain selects validators for the next cycle based on staking weights and random algorithms to prevent power concentration.
+Decentralized rotation mechanism: At the end of each Epoch, [Xone](https://xone.org/) Chain selects validators for the next cycle based on staking weights and random algorithms to prevent power concentration.
 
 **Fairness:** New validators need to wait for the Epoch switch to take effect.
 
@@ -130,7 +136,7 @@ Decentralized rotation mechanism: At the end of each Epoch, Xone Chain selects v
 
 ## Comparison with Epochs of other blockchains
 
-To help understand the Epoch design of Xone Chain, the following is a comparison of similar mechanisms of mainstream public chains:
+To help understand the Epoch design of [Xone](https://xone.org/) Chain, the following is a comparison of similar mechanisms of mainstream public chains:
 
 <div className="overflow-x-auto">
   <Table key={new Date().getTime()} removeWrapper aria-label="XOC other blockchains" className="mt-2" defaultSelectedKeys={["4"]} selectionMode="single">
@@ -160,7 +166,7 @@ To help understand the Epoch design of Xone Chain, the following is a comparison
         <TableCell>Natural time alignment, emphasizing the pledge economic cycle</TableCell>
       </TableRow>
       <TableRow key="4">
-        <TableCell>Xone Chain</TableCell>
+        <TableCell>[Xone](https://xone.org/) Chain</TableCell>
         <TableCell>`3600s`/`86400s`/`604800s`</TableCell>
         <TableCell>Rewards distribution, validator rotation, governance effectiveness</TableCell>
         <TableCell>High Customizability、Flexibility、Modular、Predictability</TableCell>
@@ -220,6 +226,6 @@ Yes by default, but they can be modified via governance proposals without code u
 
 </details>
 
-The new Epochs module marks a significant milestone in Xone Chain’s modular architecture evolution. It enhances network coordination, simplifies scheduling logic for future applications, and ensures better governance agility — all while maintaining predictable and user-friendly block-level timing.
+The new Epochs module marks a significant milestone in [Xone](https://xone.org/) Chain’s modular architecture evolution. It enhances network coordination, simplifies scheduling logic for future applications, and ensures better governance agility — all while maintaining predictable and user-friendly block-level timing.
 
 <ContactInfo />

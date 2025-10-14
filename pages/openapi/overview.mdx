@@ -1,3 +1,9 @@
+---
+description: >-
+  Xone Chain’s public RPC endpoints are your gateway to the network. Every
+  on‑chain action—querying balances, sending...
+keywords: 'Xone, blockchain, overview'
+---
 import {Link} from "@nextui-org/react";
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/react";
 import { Callout } from 'nextra/components'
@@ -6,14 +12,14 @@ import ErrorCode from "@/components/JsonRPCErrorCode.tsx";
 # JSON RPC API
 
 <Callout emoji="⚡">
-  Xone Chain’s public RPC endpoints are your gateway to the network. Every on‑chain action—querying balances, sending transactions, or deploying smart contracts—starts with a JSON‑RPC call.
+  [Xone](https://xone.org/) Chain’s public RPC endpoints are your gateway to the network. Every on‑chain action—querying balances, sending transactions, or deploying smart contracts—starts with a JSON‑RPC call.
 </Callout>
 
-<Link className='text-primaryHue' isExternal showAnchorIcon href="/study/xone">Xone Chain is an L1 public chain based on Ethereum</Link>, fully compatible with <Link className='text-primaryHue' isExternal showAnchorIcon href="https://ethereum.org/en/developers/docs/apis/json-rpc/">Ethereum JSON-RPC API</Link>, and supports interaction with mainstream libraries such as <Link className='text-primaryHue' isExternal showAnchorIcon href="https://web3js.readthedocs.io/en/v1.10.0/">Web3.js</Link> and <Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.ethers.org/v6/">Ethers.js</Link>. Developers can use JSON-RPC to access Xone Chain for account management, transaction sending, smart contract calling, and other operations.
+<Link className='text-primaryHue' isExternal showAnchorIcon href="/study/xone">[Xone](https://xone.org/) Chain is an L1 public chain based on Ethereum</Link>, fully compatible with <Link className='text-primaryHue' isExternal showAnchorIcon href="https://ethereum.org/en/developers/docs/apis/json-rpc/">Ethereum JSON-RPC API</Link>, and supports interaction with mainstream libraries such as <Link className='text-primaryHue' isExternal showAnchorIcon href="https://web3js.readthedocs.io/en/v1.10.0/">Web3.js</Link> and <Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.ethers.org/v6/">Ethers.js</Link>. Developers can use JSON-RPC to access [Xone](https://xone.org/) Chain for account management, transaction sending, smart contract calling, and other operations.
 
 ## Endpoint
 
-Xone Chain provides multiple RPC endpoints for developers to connect to the main network or test network. All requests use the POST method.
+[Xone](https://xone.org/) Chain provides multiple RPC endpoints for developers to connect to the main network or test network. All requests use the POST method.
 
 <div className="overflow-x-auto">
   <Table key={new Date().getTime()} removeWrapper aria-label="json prc endpoint table" className="mt-2">
@@ -24,7 +30,7 @@ Xone Chain provides multiple RPC endpoints for developers to connect to the main
     </TableHeader>
     <TableBody>
       <TableRow key="1">
-        <TableCell>Xone Mainnet</TableCell>
+        <TableCell>[Xone](https://xone.org/) Mainnet</TableCell>
         <TableCell>
         `https://rpc.xone.org`\
         `wss://rpc.xone.org`
@@ -32,7 +38,7 @@ Xone Chain provides multiple RPC endpoints for developers to connect to the main
         <TableCell>`0xe89`(3721)</TableCell>
       </TableRow>
       <TableRow key="2">
-        <TableCell>Xone Testnet</TableCell>
+        <TableCell>[Xone](https://xone.org/) Testnet</TableCell>
         <TableCell>
         `https://rpc-testnet.xone.plus`\
         `https://rpc-testnet.xone.org`\

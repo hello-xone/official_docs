@@ -1,8 +1,14 @@
+---
+description: >-
+  Replay protection is a crucial feature of the Xone Chain that ensures the
+  security and integrity of transactions. It...
+keywords: 'Xone, blockchain, replay'
+---
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/react";
 
 # Replay Protection
 
-Replay protection is a crucial feature of the Xone Chain that ensures the security and integrity of transactions. It prevents malicious actors from duplicating or reusing a legitimate transaction on the same or a different blockchain network, safeguarding users' assets and actions.
+Replay protection is a crucial feature of the [Xone](https://xone.org/) Chain that ensures the security and integrity of transactions. It prevents malicious actors from duplicating or reusing a legitimate transaction on the same or a different blockchain network, safeguarding users' assets and actions.
 
 ## 1. What is Replay Protection?
 
@@ -19,10 +25,10 @@ Replay attacks exploit the lack of uniqueness in transaction execution. For exam
 
 ## 3. Replay Protection
 
-The Xone implements robust replay protection mechanisms to ensure that each transaction is uniquely identifiable and cannot be reused. These mechanisms include:
+The [Xone](https://xone.org/) implements robust replay protection mechanisms to ensure that each transaction is uniquely identifiable and cannot be reused. These mechanisms include:
 
 ### 3.1 EIP-155: Chain ID-Based Replay Protection
-EIP-155 introduces a `chainId` parameter in the transaction signature to provide native replay protection between Ethereum-based chains. Xone adopts this standard to secure transactions.
+EIP-155 introduces a `chainId` parameter in the transaction signature to provide native replay protection between Ethereum-based chains. [Xone](https://xone.org/) adopts this standard to secure transactions.
 
 **How It Works:**
 - The transaction includes the `chainId` as part of the signing data.
@@ -45,7 +51,7 @@ EIP-155 introduces a `chainId` parameter in the transaction signature to provide
   <TableBody>
     <TableRow key="1">
       <TableCell>Token Transfer (Tx123)</TableCell>
-      <TableCell>Xone</TableCell>
+      <TableCell>[Xone](https://xone.org/)</TableCell>
       <TableCell>Valid</TableCell>
     </TableRow>
     <TableRow key="2">
@@ -115,7 +121,7 @@ Every transaction is cryptographically signed by the sender's private key.
 
 ## 4. Replay Protection in Cross-Chain Communication
 
-Cross-chain communication introduces additional replay attack vectors. The Xone Blockchain uses the following methods to address them:
+Cross-chain communication introduces additional replay attack vectors. The [Xone](https://xone.org/) Blockchain uses the following methods to address them:
 
 ### 4.1 IBC Packet Nonces
 
@@ -135,7 +141,7 @@ Receiving chains validate and acknowledge IBC packets, ensuring that only unique
 ## 6. Best Practices for Developers
 
 1. Ensure Proper Nonce Handling:
-- Applications interacting with the Xone Blockchain should always retrieve and use the current nonce for each account before submitting a transaction.
+- Applications interacting with the [Xone](https://xone.org/) Blockchain should always retrieve and use the current nonce for each account before submitting a transaction.
 - Example using JSON-RPC:
 
 ```bash showLineNumbers copy filename="Sending Tokens.bash"

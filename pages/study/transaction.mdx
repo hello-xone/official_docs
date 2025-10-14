@@ -1,13 +1,19 @@
+---
+description: >-
+  In the context of Xone's Layer 1 (L1) blockchain, a transaction represents an
+  encrypted instruction sent from one...
+keywords: 'Xone, blockchain, transaction'
+---
 import { Link } from "@nextui-org/react";
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/react";
 
 # Transaction
 
-In the context of Xone's Layer 1 (L1) blockchain, a **transaction** represents an encrypted instruction sent from one account to another, with the aim of updating the state of the Xone network. Each transaction carries details such as a random number (nonce), sender and receiver addresses, transfer amount (if any), data, signatures, and other relevant information. Validators process and validate these transactions, ensuring they adhere to the network's rules. Once validated, transactions are recorded in a block and added to the blockchain, making them immutable and transparent.
+In the context of [Xone](https://xone.org/)'s Layer 1 (L1) blockchain, a **transaction** represents an encrypted instruction sent from one account to another, with the aim of updating the state of the [Xone](https://xone.org/) network. Each transaction carries details such as a random number (nonce), sender and receiver addresses, transfer amount (if any), data, signatures, and other relevant information. Validators process and validate these transactions, ensuring they adhere to the network's rules. Once validated, transactions are recorded in a block and added to the blockchain, making them immutable and transparent.
 
 ## What is a Transaction?
 
-A **transaction** on Xone is an operation initiated by a user-controlled account. For example, when **Alice** sends **100 XOC** to **Bob**, the transaction will deduct the amount from Alice's account and credit it to Bob's account. This operation of updating the state of the blockchain is the core purpose of a transaction.
+A **transaction** on [Xone](https://xone.org/) is an operation initiated by a user-controlled account. For example, when **Alice** sends **100 XOC** to **Bob**, the transaction will deduct the amount from Alice's account and credit it to Bob's account. This operation of updating the state of the blockchain is the core purpose of a transaction.
 
 Once a transaction is initiated, it updates the network's state and is broadcasted to the entire blockchain network. Validators then verify and execute these transactions, ensuring they comply with the network's consensus rules. Each transaction includes crucial details like the sender and receiver's addresses, the amount of XOC transferred, and associated fees. These transactions are cryptographically signed to ensure their authenticity and security.
 
@@ -87,13 +93,13 @@ Transactions require a <Link className='text-primaryHue' showAnchorIcon href="/s
 
 ## Cross-Shard Transactions on Xone L1
 
-One of the standout features of Xone L1 is its ability to handle **cross-shard transactions**, enabling communication and transaction processing across different shards and meta-chains. This improves scalability and overall performance by distributing transaction loads efficiently.
+One of the standout features of [Xone](https://xone.org/) L1 is its ability to handle **cross-shard transactions**, enabling communication and transaction processing across different shards and meta-chains. This improves scalability and overall performance by distributing transaction loads efficiently.
 
 ## Prerequisites for Cross-Shard Transactions
 
 To help you understand the process, let's assume two shards and a meta-chain in Xone. Let’s say a user from **Shard 0** sends **XOC** to another user on **Shard 1**. The cross-shard transaction requires several steps to ensure that both shards correctly process and finalize the transaction.
 
-1. **Block Structure:** Each block in Xone contains a block header with general block information (block nonce, round, proposer, timestamp, etc.) and a list of mini-blocks for each shard. Mini-blocks contain the actual transactions and are specific to the respective shards.
+1. **Block Structure:** Each block in [Xone](https://xone.org/) contains a block header with general block information (block nonce, round, proposer, timestamp, etc.) and a list of mini-blocks for each shard. Mini-blocks contain the actual transactions and are specific to the respective shards.
 
 2. **Mini-Block Example**
 
@@ -109,12 +115,12 @@ Each mini-block in the same block may share the same sender and receiver, but th
 
 1. **Atomicity:** Cross-shard transactions are processed atomically. This means that all transactions within a mini-block must either be executed or failed as a whole. If any transaction fails, the entire mini-block will be rolled back, and the transaction will be retried in the next round.
 
-2. **Asynchronous Processing Model:** Xone’s cross-shard transaction model follows an **asynchronous processing model:**\
+2. **Asynchronous Processing Model:** [Xone](https://xone.org/)’s cross-shard transaction model follows an **asynchronous processing model:**\
 **Step 1:** The transaction is first validated and executed in the sender's shard. The sender's shard can fully verify the transaction based on the account’s balance.\
 **Step 2:** After validation in the sender shard, the transaction is signed and sent to the meta-chain for notarization.\
 **Step 3:** The receiving shard requests execution proof from the meta-chain, performs signature verification, checks for replay attacks, and updates the recipient’s balance accordingly.
 
-3. **Meta-Chain and Notarization:** The meta-chain serves as the oversight layer for cross-shard transactions. It receives the block headers from various shards, including the mini-block hashes and relevant data for cross-shard transactions. The meta-chain will then notarize these transactions, making them valid across the entire Xone network.
+3. **Meta-Chain and Notarization:** The meta-chain serves as the oversight layer for cross-shard transactions. It receives the block headers from various shards, including the mini-block hashes and relevant data for cross-shard transactions. The meta-chain will then notarize these transactions, making them valid across the entire [Xone](https://xone.org/) network.
 
 4. **Cross-Shard Finalization:** Once the cross-shard transaction is processed and notarized by the meta-chain, the transaction is considered complete, and the funds are officially transferred between shards. The system ensures that the transaction is secure, valid, and finalized across both shards.
 

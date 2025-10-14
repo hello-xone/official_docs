@@ -1,9 +1,15 @@
+---
+description: >-
+  In the Xone ecosystem, blocks serve as the fundamental units of data storage
+  and transaction validation. Each block in...
+keywords: 'Xone, blockchain, block'
+---
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/react";
 import ImageViewer from '@components/ImageViewer';
 
 # Xone Blocks
 
-In the Xone ecosystem, blocks serve as the fundamental units of data storage and transaction validation. Each block in the chain represents a collection of verified transactions and serves as an immutable record of the network's state at any given time. The design of Xone's block architecture is inherently optimized for scalability, security, and efficiency.
+In the [Xone](https://xone.org/) ecosystem, blocks serve as the fundamental units of data storage and transaction validation. Each block in the chain represents a collection of verified transactions and serves as an immutable record of the network's state at any given time. The design of [Xone](https://xone.org/)'s block architecture is inherently optimized for scalability, security, and efficiency.
 
 <ImageViewer src="/images/Blocks.png" alt="Blocks" />
 
@@ -22,7 +28,7 @@ In the Xone ecosystem, blocks serve as the fundamental units of data storage and
     </TableRow>
     <TableRow key="2">
       <TableCell>**Block Size**</TableCell>
-      <TableCell>Block sizes are dynamic, depending on the transaction load, but Xone’s modular architecture ensures that the system can scale seamlessly to handle increased demand.</TableCell>
+      <TableCell>Block sizes are dynamic, depending on the transaction load, but [Xone](https://xone.org/)’s modular architecture ensures that the system can scale seamlessly to handle increased demand.</TableCell>
     </TableRow>
     <TableRow key="3">
       <TableCell>**Transactions**</TableCell>
@@ -30,11 +36,11 @@ In the Xone ecosystem, blocks serve as the fundamental units of data storage and
     </TableRow>
     <TableRow key="4">
       <TableCell>**Gas Used**</TableCell>
-      <TableCell>Gas is the computational fee for executing operations on the network. The Xone Chain aims for efficiency, ensuring that gas fees are kept low without compromising the security of the blockchain.</TableCell>
+      <TableCell>Gas is the computational fee for executing operations on the network. The [Xone](https://xone.org/) Chain aims for efficiency, ensuring that gas fees are kept low without compromising the security of the blockchain.</TableCell>
     </TableRow>
     <TableRow key="5">
       <TableCell>**Block Rewards and Fees**</TableCell>
-      <TableCell>Xone’s block rewards and transaction fees (in XOC) incentivize node validators and participants to contribute to the ecosystem's growth and security. A portion of the transaction fees is also burned, contributing to the deflationary mechanism of the XOC token.</TableCell>
+      <TableCell>[Xone](https://xone.org/)’s block rewards and transaction fees (in XOC) incentivize node validators and participants to contribute to the ecosystem's growth and security. A portion of the transaction fees is also burned, contributing to the deflationary mechanism of the XOC token.</TableCell>
     </TableRow>
   </TableBody>
 </Table>
@@ -42,7 +48,7 @@ In the Xone ecosystem, blocks serve as the fundamental units of data storage and
 
 ## Block Validation Process
 
-Xone’s block validation system is designed to be both secure and efficient, thanks to its innovative modular framework. Validators, powered by nodes in the network, process and validate new blocks, ensuring that only legitimate transactions are included. This decentralized validation helps maintain the integrity of the blockchain and ensures that it is resistant to attacks.
+[Xone](https://xone.org/)’s block validation system is designed to be both secure and efficient, thanks to its innovative modular framework. Validators, powered by nodes in the network, process and validate new blocks, ensuring that only legitimate transactions are included. This decentralized validation helps maintain the integrity of the blockchain and ensures that it is resistant to attacks.
 
 **Transaction Pool:** When users initiate transactions, these are first placed into a transaction pool. Validators then prioritize and select transactions based on various factors, including gas fees and transaction validity.
 
@@ -50,32 +56,32 @@ Xone’s block validation system is designed to be both secure and efficient, th
 
 **Block Confirmation:** Other validators confirm the block by verifying the transactions it contains. Once enough validators approve the block, it is added to the blockchain.
 
-**Finality:** After a block is added, it is immutable, meaning that it cannot be altered or erased. This provides strong security guarantees for data stored on the Xone Chain.
+**Finality:** After a block is added, it is immutable, meaning that it cannot be altered or erased. This provides strong security guarantees for data stored on the [Xone](https://xone.org/) Chain.
 
 ## Forking and Uncle Blocks
 
-Xone’s consensus mechanism ensures that the chain remains in a consistent state. However, in certain scenarios where multiple validators produce competing blocks at the same time (forks), the network resolves this by selecting the longest valid chain. Any blocks that are not included in the final chain are considered "uncle blocks" and, while not directly added to the main chain, they are acknowledged for their contribution.
+[Xone](https://xone.org/)’s consensus mechanism ensures that the chain remains in a consistent state. However, in certain scenarios where multiple validators produce competing blocks at the same time (forks), the network resolves this by selecting the longest valid chain. Any blocks that are not included in the final chain are considered "uncle blocks" and, while not directly added to the main chain, they are acknowledged for their contribution.
 
 ## Optimized Network Utilization
 
-Xone Chain utilizes a sophisticated mechanism for network optimization. The network’s **utilization rate** is continuously monitored to ensure efficient block production and transaction processing. The Xone architecture is designed to adjust dynamically to fluctuations in network demand, minimizing congestion and ensuring optimal performance at all times.
+[Xone](https://xone.org/) Chain utilizes a sophisticated mechanism for network optimization. The network’s **utilization rate** is continuously monitored to ensure efficient block production and transaction processing. The [Xone](https://xone.org/) architecture is designed to adjust dynamically to fluctuations in network demand, minimizing congestion and ensuring optimal performance at all times.
 
-**Block Size:** Blocks in the Xone network are designed to be compact, minimizing the overhead while ensuring they can accommodate large transaction volumes as needed.
+**Block Size:** Blocks in the [Xone](https://xone.org/) network are designed to be compact, minimizing the overhead while ensuring they can accommodate large transaction volumes as needed.
 
 **Base Fee:** The base fee, measured in **Gwei**, fluctuates based on network congestion. This dynamic fee structure ensures that validators are adequately compensated without overburdening users.
 
-**Burn Mechanism:** A portion of each transaction fee is burned, contributing to the deflationary nature of the XOC token. This ensures that the token supply remains controlled, benefiting long-term holders and the overall health of the Xone ecosystem.
+**Burn Mechanism:** A portion of each transaction fee is burned, contributing to the deflationary nature of the XOC token. This ensures that the token supply remains controlled, benefiting long-term holders and the overall health of the [Xone](https://xone.org/) ecosystem.
 
 ## Block Rewards & Incentive Structure
 
-Each valid block added to the Xone Chain earns the proposing validator a **reward in XOC**. The reward structure is designed to encourage validators to behave honestly and to support the network’s security and integrity. The rewards are also influenced by transaction fees and the amount of XOC staked by the validator, ensuring that those who contribute more to the network’s operation receive greater incentives.
+Each valid block added to the [Xone](https://xone.org/) Chain earns the proposing validator a **reward in XOC**. The reward structure is designed to encourage validators to behave honestly and to support the network’s security and integrity. The rewards are also influenced by transaction fees and the amount of XOC staked by the validator, ensuring that those who contribute more to the network’s operation receive greater incentives.
 
 Additionally, the **burnt fees** from transactions are permanently removed from circulation, further reinforcing the token's scarcity and increasing its potential value over time.
 
 **Summary of Block Characteristics:**
 
-**Fast Block Time:** Xone Chain is designed for rapid block generation, ensuring that transactions are processed swiftly.
+**Fast Block Time:** [Xone](https://xone.org/) Chain is designed for rapid block generation, ensuring that transactions are processed swiftly.
 
-**Low Gas Fees:** Xone's modular design and efficient consensus mechanism keep transaction fees low while maintaining security.
+**Low Gas Fees:** [Xone](https://xone.org/)'s modular design and efficient consensus mechanism keep transaction fees low while maintaining security.
 
-**Scalable Architecture:** Xone’s block structure can scale to accommodate growing demand as the network expands, ensuring long-term viability and adaptability.
+**Scalable Architecture:** [Xone](https://xone.org/)’s block structure can scale to accommodate growing demand as the network expands, ensuring long-term viability and adaptability.

@@ -1,8 +1,14 @@
+---
+description: >-
+  The Account structure on Xone Chain offers seamless integration with both EVM
+  (Ethereum Virtual Machine) and Cosmos SDK...
+keywords: 'Xone, blockchain, account'
+---
 import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Button} from "@nextui-org/react";
 
 # Xone Account
 
-The Account structure on Xone Chain offers seamless integration with both EVM (Ethereum Virtual Machine) and Cosmos SDK functionalities, creating a unified model for managing assets, executing transactions, and interacting with decentralized applications across multiple chains. This account model ensures compatibility with Ethereum-based smart contracts while leveraging the modularity of Cosmos.
+The Account structure on [Xone](https://xone.org/) Chain offers seamless integration with both EVM (Ethereum Virtual Machine) and Cosmos SDK functionalities, creating a unified model for managing assets, executing transactions, and interacting with decentralized applications across multiple chains. This account model ensures compatibility with Ethereum-based smart contracts while leveraging the modularity of Cosmos.
 
 ## Key Features of Xone Account
 
@@ -34,7 +40,7 @@ The Account structure on Xone Chain offers seamless integration with both EVM (E
       </div>
     </CardHeader>
     <CardBody className="px-3 pt-0 pb-3 text-small">
-      <p>Built to integrate with the interoperability bridge, accounts support smooth asset and data transfers between Xone Chain and other blockchains within both Cosmos and Ethereum ecosystems, making them ideal for multi-chain applications and DeFi use cases.</p>
+      <p>Built to integrate with the interoperability bridge, accounts support smooth asset and data transfers between [Xone](https://xone.org/) Chain and other blockchains within both Cosmos and Ethereum ecosystems, making them ideal for multi-chain applications and DeFi use cases.</p>
     </CardBody>
   </Card>
   <Card className="flex-shrink-0 w-3/5 sm:w-3/4 lg:w-2/5 flex-col">
@@ -62,34 +68,34 @@ The Account structure on Xone Chain offers seamless integration with both EVM (E
 
 ## Account Structure
 
-Xone Accounts are built on a multi-layer architecture that enables both EVM and Cosmos SDK compatibility:
+[Xone](https://xone.org/) Accounts are built on a multi-layer architecture that enables both EVM and Cosmos SDK compatibility:
 
 - **Cosmos Layer:** Manages native transactions (e.g., staking, governance) and cross-chain operations using the Cosmos SDK.
 
 - **EVM Layer:** Handles Ethereum-compatible transactions, including smart contract deployments, token transfers, and DApp interactions.
 
-Each Xone Account can store assets and data across both layers, providing a single point of access for all blockchain activities on Xone Chain.
+Each [Xone](https://xone.org/) Account can store assets and data across both layers, providing a single point of access for all blockchain activities on [Xone](https://xone.org/) Chain.
 
 ## Account Creation and Management
 
-Users can create and manage Xone Accounts through wallets that support Cosmos SDK and EVM compatibility (e.g., MetaMask, Keplr). The account is accessed via a private key, which enables signing and sending transactions across Cosmos and EVM environments seamlessly.
+Users can create and manage [Xone](https://xone.org/) Accounts through wallets that support Cosmos SDK and EVM compatibility (e.g., MetaMask, Keplr). The account is accessed via a private key, which enables signing and sending transactions across Cosmos and EVM environments seamlessly.
 
 ## Xone Account Operations
 
 - **Token Transfers:**
-Transfer native Xone tokens or EVM-compatible tokens within the Xone ecosystem or across supported blockchains via the cross-chain bridge.
+Transfer native [Xone](https://xone.org/) tokens or EVM-compatible tokens within the [Xone](https://xone.org/) ecosystem or across supported blockchains via the cross-chain bridge.
 
 - **Smart Contract Interactions:**
-Execute Ethereum-based smart contracts and interact with DApps on the EVM layer directly from the Xone Account.
+Execute Ethereum-based smart contracts and interact with DApps on the EVM layer directly from the [Xone](https://xone.org/) Account.
 
 - **Governance Participation:**
 Vote in network governance.
 
 ## EIP-155: Replay Protection
 
-To protect users from malicious replays of transactions across different networks, Xone Chain integrates **EIP-155 replay protection** directly into its protocol. Each transaction includes a distinct **chain ID** and **nonce**, which collectively ensure that transactions are valid only within the designated network. This mechanism prevents any Xone Chain transaction from being mistakenly or maliciously duplicated on other EVM-compatible or Cosmos-based chains.
+To protect users from malicious replays of transactions across different networks, [Xone](https://xone.org/) Chain integrates **EIP-155 replay protection** directly into its protocol. Each transaction includes a distinct **chain ID** and **nonce**, which collectively ensure that transactions are valid only within the designated network. This mechanism prevents any [Xone](https://xone.org/) Chain transaction from being mistakenly or maliciously duplicated on other EVM-compatible or Cosmos-based chains.
 
-The chain ID uniquely identifies the Xone network, signaling to validators that the transaction is intended exclusively for this environment. Paired with the nonce, which uniquely increments with each user transaction, this system effectively blocks replays by rejecting duplicate transactions across networks. By embedding EIP-155 replay protection at the protocol level, the network reinforces the integrity of cross-chain transfers and mitigates risks associated with unauthorized duplicates.
+The chain ID uniquely identifies the [Xone](https://xone.org/) network, signaling to validators that the transaction is intended exclusively for this environment. Paired with the nonce, which uniquely increments with each user transaction, this system effectively blocks replays by rejecting duplicate transactions across networks. By embedding EIP-155 replay protection at the protocol level, the network reinforces the integrity of cross-chain transfers and mitigates risks associated with unauthorized duplicates.
 
 For users engaged with multiple blockchain ecosystems, this protection is critical. It ensures that assets and data remain confined to their intended chain, eliminating the potential for unintended exposure or security vulnerabilities when moving assets across different networks.
 
