@@ -6,8 +6,6 @@ import * as React from "react";
 import { AppProps } from 'next/app';
 import { Inter } from "next/font/google";
 import Head from 'next/head';
-import { DefaultSeo } from 'next-seo';
-import SEO from 'src/next-seo.config';
 import '@/styles/globals.css';
 import SidebarDevelopersHide from '@/components/SidebarDevelopersHide';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -24,7 +22,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
       </Head>
-      <DefaultSeo {...SEO} />
       
       <MantineProvider theme={theme}>
 
