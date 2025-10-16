@@ -2,7 +2,7 @@ import { EXTERNAL_LINKS } from "@lib/external";
 
 const ContactInfo = () => {
   return (
-    <div className="space-y-2 text-xm mt-8">
+    <div className="mt-8 space-y-2 text-xm">
       <h3>For any help or support, please contact us:</h3>
       <p>
         <strong>Support:</strong>{" "}
@@ -48,45 +48,45 @@ const ContactInfo = () => {
       </p>
       <p>
         <strong>News:</strong>{" "}
-        <a href={`${EXTERNAL_LINKS.Medium}`} target="_blank" rel="noopener noreferrer" className="text-primaryHue hover:underline">
+        <a href={`${EXTERNAL_LINKS.Medium}`} target="_blank" rel="noopener noreferrer nofollow" className="text-primaryHue hover:underline">
           Medium
         </a>
       </p>
       <p>
         <strong>Community:</strong>{" "}
-        <a href={`${EXTERNAL_LINKS.Telegram}`} target="_blank" rel="noopener noreferrer" className="text-primaryHue hover:underline ml-1">
+        <a href={`${EXTERNAL_LINKS.Telegram}`} target="_blank" rel="noopener noreferrer nofollow" className="ml-1 text-primaryHue hover:underline">
           Telegram
         </a>{" "}
         |{" "}
-        <a href={`${EXTERNAL_LINKS.Twitter}`} target="_blank" rel="noopener noreferrer" className="text-primaryHue hover:underline ml-1">
+        <a href={`${EXTERNAL_LINKS.Twitter}`} target="_blank" rel="noopener noreferrer nofollow" className="ml-1 text-primaryHue hover:underline">
           Twitter
         </a>{" "}
         |{" "}
-        <a href={`${EXTERNAL_LINKS.Discord}`} target="_blank" rel="noopener noreferrer" className="text-primaryHue hover:underline ml-1">
+        <a href={`${EXTERNAL_LINKS.Discord}`} target="_blank" rel="noopener noreferrer nofollow" className="ml-1 text-primaryHue hover:underline">
           Discord
         </a>{" "}
         |{" "}
-        <a href={`${EXTERNAL_LINKS.Forum}`} target="_blank" rel="noopener noreferrer" className="text-primaryHue hover:underline ml-1">
+        <a href={`${EXTERNAL_LINKS.Forum}`} target="_blank" rel="noopener noreferrer nofollow" className="ml-1 text-primaryHue hover:underline">
           Forum
         </a>{" "}
         |{" "}
-        <a href={`${EXTERNAL_LINKS.Youtube}`} target="_blank" rel="noopener noreferrer" className="text-primaryHue hover:underline ml-1">
+        <a href={`${EXTERNAL_LINKS.Youtube}`} target="_blank" rel="noopener noreferrer nofollow" className="ml-1 text-primaryHue hover:underline">
           YouTube
         </a>{" "}
         |{" "}
-        <a href={`${EXTERNAL_LINKS.Reddit}`} target="_blank" rel="noopener noreferrer" className="text-primaryHue hover:underline ml-1">
+        <a href={`${EXTERNAL_LINKS.Reddit}`} target="_blank" rel="noopener noreferrer nofollow" className="ml-1 text-primaryHue hover:underline">
           Reddit
         </a>{" "}
         |{" "}
-        <a href={`${EXTERNAL_LINKS.ChatMe}`} target="_blank" rel="noopener noreferrer" className="text-primaryHue hover:underline ml-1">
+        <a href={`${EXTERNAL_LINKS.ChatMe}`} target="_blank" rel="noopener noreferrer nofollow" className="ml-1 text-primaryHue hover:underline">
           ChatMe
         </a>{" "}
         |{" "}
-        <a href={`${EXTERNAL_LINKS.Coingecko}`} target="_blank" rel="noopener noreferrer" className="text-primaryHue hover:underline ml-1">
+        <a href={`${EXTERNAL_LINKS.Coingecko}`} target="_blank" rel="noopener noreferrer nofollow" className="ml-1 text-primaryHue hover:underline">
           Coingecko
         </a>{" "}
         |{" "}
-        <a href={`${EXTERNAL_LINKS.Github}`} target="_blank" rel="noopener noreferrer" className="text-primaryHue hover:underline ml-1">
+        <a href={`${EXTERNAL_LINKS.Github}`} target="_blank" rel="noopener noreferrer nofollow" className="ml-1 text-primaryHue hover:underline">
           Github
         </a>
       </p>

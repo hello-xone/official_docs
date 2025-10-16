@@ -3,10 +3,10 @@ import Image from "next/image"
 
 export function Guides() {
   return (
-    <section className="flex items-center justify-center overflow-hidden bg-neutral-100 pb-12 pt-24 dark:bg-neutral-950">
-      <div className="flex w-full max-w-5xl flex-col items-center justify-between gap-10 lg:flex-row lg:items-start">
-        <div className="flex w-full max-w-2xl flex-1 flex-col items-start justify-start px-8 lg:px-0">
-          <div className="mb-10 flex w-full items-center justify-between">
+    <section className="flex overflow-hidden justify-center items-center pt-24 pb-12 bg-neutral-100 dark:bg-neutral-950">
+      <div className="flex flex-col gap-10 justify-between items-center w-full max-w-5xl lg:flex-row lg:items-start">
+        <div className="flex flex-col flex-1 justify-start items-start px-8 w-full max-w-2xl lg:px-0">
+          <div className="flex justify-between items-center mb-10 w-full">
             <h2 className="text-2xl lg:text-3xl">Highlighted Guides</h2>
             <Link
               href="/guides/configuring-oauth-providers"
@@ -17,7 +17,7 @@ export function Guides() {
           </div>
           <ul className="w-full list-none">
             <Link href="/guides/configuring-oauth-providers">
-              <li className="group mb-8 flex w-full justify-between">
+              <li className="flex justify-between mb-8 w-full group">
                 <div className="flex gap-2">
                   <div className="flex flex-col items-start">
                     Configuring OAuth providers
@@ -31,7 +31,7 @@ export function Guides() {
               </li>
             </Link>
             <Link href="/guides/configuring-github">
-              <li className="group mb-8 flex w-full justify-between">
+              <li className="flex justify-between mb-8 w-full group">
                 <div className="flex gap-2">
                   <div className="flex flex-col items-start">
                     OAuth with GitHub
@@ -45,7 +45,7 @@ export function Guides() {
               </li>
             </Link>
             <Link href="/guides/pages/signin">
-              <li className="group mb-8 flex w-full justify-between">
+              <li className="flex justify-between mb-8 w-full group">
                 <div className="flex gap-2">
                   <div className="flex flex-col items-start">
                     Custom Signin Page
@@ -60,8 +60,8 @@ export function Guides() {
             </Link>
           </ul>
         </div>
-        <div className="flex w-full max-w-2xl flex-1 flex-col items-start justify-start px-8 lg:mx-0">
-          <div className="mb-10 flex w-full items-center justify-between">
+        <div className="flex flex-col flex-1 justify-start items-start px-8 w-full max-w-2xl lg:mx-0">
+          <div className="flex justify-between items-center mb-10 w-full">
             <h2 className="text-2xl lg:text-3xl">Example Apps</h2>
           </div>
           <ul className="w-full list-none">
@@ -93,9 +93,9 @@ export function Guides() {
             ].map((f) => (
               <li
                 key={f.id}
-                className="mb-8 flex w-full flex-col justify-between gap-4 p-2 grayscale transition duration-300 hover:grayscale-0 sm:flex-row"
+                className="flex flex-col gap-4 justify-between p-2 mb-8 w-full grayscale transition duration-300 hover:grayscale-0 sm:flex-row"
               >
-                <div className="flex items-center gap-2">
+                <div className="flex gap-2 items-center">
                   <Image
                     src={`/img/etc/${f.id}.svg`}
                     className={
@@ -111,18 +111,18 @@ export function Guides() {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <Link
-                    className="flex items-center justify-center gap-2 rounded-md bg-neutral-200 p-3 px-5 outline-none transition duration-300 hover:bg-neutral-300 focus-visible:ring-2 dark:bg-neutral-800 hover:dark:bg-neutral-700"
+                    className="flex gap-2 justify-center items-center p-3 px-5 rounded-md transition duration-300 outline-none bg-neutral-200 hover:bg-neutral-300 focus-visible:ring-2 dark:bg-neutral-800 hover:dark:bg-neutral-700"
                     target="_blank"
                     href={f.demo}
-                    rel="noreferrer"
+                    rel="noreferrer nofollow"
                   >
                     Visit
                   </Link>
                   <Link
                     target="_blank"
                     href={`https://github.com/nextauthjs/${f.repo}`}
-                    className="flex items-center justify-center gap-2 rounded-md bg-neutral-200 p-3 px-5 outline-none transition duration-300 hover:bg-neutral-300 focus-visible:ring-2 dark:bg-neutral-800 hover:dark:bg-neutral-700"
-                    rel="noreferrer"
+                    className="flex gap-2 justify-center items-center p-3 px-5 rounded-md transition duration-300 outline-none bg-neutral-200 hover:bg-neutral-300 focus-visible:ring-2 dark:bg-neutral-800 hover:dark:bg-neutral-700"
+                    rel="noreferrer nofollow"
                   >
                     Clone
                   </Link>

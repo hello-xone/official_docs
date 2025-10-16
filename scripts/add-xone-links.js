@@ -24,27 +24,37 @@ function findMdxFiles(dir, fileList = []) {
 }
 
 // 为 Xone 添加链接
-function addXoneLinks(content) {
+function addXoneLinks(content, filePath = '') {
   // 不处理的区域标记
   const codeBlockRegex = /```[\s\S]*?```/g;
   const inlineCodeRegex = /`[^`]+`/g;
   const linkRegex = /\[([^\]]+)\]\([^)]+\)/g;
   const urlRegex = /https?:\/\/[^\s]+/g;
   const jsxRegex = /<[^>]+>/g;
-  const headingRegex = /^#{1,6}\s+.+$/gm;  // Markdown 标题
+  const buttonRegex = /<Button[\s\S]*?<\/Button>/g;
+  const aTagRegex = /<a[\s\S]*?<\/a>/g;
+  const linkComponentRegex = /<Link[\s\S]*?<\/Link>/g;
   
-  // 收集所有需要保护的区域
+  // 收集需要保护的区域
   const protectedRanges = [];
   
-  // 收集代码块
+  // 收集代码块（排除 Mermaid，让其中的 Xone 可以添加链接）
   let match;
   while ((match = codeBlockRegex.exec(content)) !== null) {
-    protectedRanges.push({ start: match.index, end: match.index + match[0].length });
+    // 检查是否是 Mermaid 代码块
+    const blockContent = match[0];
+    if (!blockContent.startsWith('```mermaid')) {
+      protectedRanges.push({ start: match.index, end: match.index + match[0].length });
+    }
   }
   
-  // 收集行内代码
+  // 收集行内代码（排除多行代码块）
   while ((match = inlineCodeRegex.exec(content)) !== null) {
-    protectedRanges.push({ start: match.index, end: match.index + match[0].length });
+    // 检查是否是单行行内代码（不包含换行符）
+    const codeContent = match[0];
+    if (!codeContent.includes('\n')) {
+      protectedRanges.push({ start: match.index, end: match.index + match[0].length });
+    }
   }
   
   // 收集已有的链接
@@ -62,8 +72,18 @@ function addXoneLinks(content) {
     protectedRanges.push({ start: match.index, end: match.index + match[0].length });
   }
   
-  // 收集 Markdown 标题
-  while ((match = headingRegex.exec(content)) !== null) {
+  // 收集 Button 组件（特殊处理，不处理其中的 Xone）
+  while ((match = buttonRegex.exec(content)) !== null) {
+    protectedRanges.push({ start: match.index, end: match.index + match[0].length });
+  }
+  
+  // 收集 <a> 标签（特殊处理，不处理其中的 Xone）
+  while ((match = aTagRegex.exec(content)) !== null) {
+    protectedRanges.push({ start: match.index, end: match.index + match[0].length });
+  }
+  
+  // 收集 Link 组件（特殊处理，不处理其中的 Xone）
+  while ((match = linkComponentRegex.exec(content)) !== null) {
     protectedRanges.push({ start: match.index, end: match.index + match[0].length });
   }
   
@@ -92,10 +112,10 @@ function addXoneLinks(content) {
       const after = content[matchIndex + match[0].length];
       
       // 跳过如果在特殊字符中（如 @xone, /xone, xone.org）
-      if (before && /[@\/\.]/.test(before)) {
+      if (before && /[@\/]/.test(before)) {
         continue;
       }
-      if (after && /[@\/\.]/.test(after)) {
+      if (after && /[@\/]/.test(after)) {
         continue;
       }
       
@@ -120,7 +140,33 @@ function updateMdxFile(filePath, dryRun = false) {
   
   // 只处理正文内容
   const originalContent = parsed.content;
-  const updatedContent = addXoneLinks(originalContent);
+  const updatedContent = addXoneLinks(originalContent, filePath);
+  
+  // 重新生成 keywords（不管是否已存在）
+  // 优先使用 front matter 中的 title
+  let title = parsed.data.title;
+  
+  // 如果没有 title，从内容中提取第一个标题
+  if (!title) {
+    const h1Match = parsed.content.match(/^#\s+(.+)$/m);
+    if (h1Match) {
+      title = h1Match[1].trim();
+    } else {
+      const h2Match = parsed.content.match(/^##\s+(.+)$/m);
+      if (h2Match) {
+        title = h2Match[1].trim();
+      } else {
+        // 最后使用文件名
+        title = path.basename(filePath, '.mdx');
+      }
+    }
+  }
+  
+  // 移除标题中的链接，只保留纯文本
+  const cleanTitle = title.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+  
+  // 使用清理后的标题生成 keywords
+  parsed.data.keywords = cleanTitle;
   
   // 检查是否有变化
   if (originalContent === updatedContent) {

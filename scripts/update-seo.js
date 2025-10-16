@@ -32,11 +32,34 @@ function extractPlainText(content) {
 
 // 提取第一段有意义的文字（前120个字符）
 function extractFirstParagraph(content, maxLength = 120) {
-  const plainText = extractPlainText(content);
-  const lines = plainText.split('\n').filter(line => line.trim().length > 0);
+  const lines = content.split('\n');
+  const filteredLines = [];
+  
+  // 跳过标题行和空行
+  for (const line of lines) {
+    const trimmed = line.trim();
+    // 跳过标题行（以 # 开头）
+    if (trimmed.startsWith('#')) {
+      continue;
+    }
+    // 跳过空行
+    if (trimmed.length === 0) {
+      continue;
+    }
+    // 跳过 import 语句
+    if (trimmed.startsWith('import ')) {
+      continue;
+    }
+    filteredLines.push(line);
+  }
+  
+  // 重新组合内容并提取纯文本
+  const filteredContent = filteredLines.join('\n');
+  const plainText = extractPlainText(filteredContent);
+  const textLines = plainText.split('\n').filter(line => line.trim().length > 0);
   
   // 找到第一个有意义的段落（长度大于20）
-  for (const line of lines) {
+  for (const line of textLines) {
     const trimmed = line.trim();
     if (trimmed.length > 20) {
       // 取前 maxLength 个字符
@@ -89,21 +112,39 @@ function updateMdxSeo(filePath, dryRun = false) {
     return;
   }
   
-  // 如果已经有手动设置的 description 且内容差不多，就不更新
-  if (parsed.data.description && parsed.data.description.length > 50) {
-    console.log(`✓  ${filePath} 已有 description，跳过`);
-    return;
-  }
-  
   // 更新 frontmatter
   parsed.data.description = autoDescription;
   
-  // 如果没有 keywords，可以根据内容生成（这里简化处理）
-  if (!parsed.data.keywords) {
-    // 可以基于文件路径或标题生成默认 keywords
-    const title = parsed.data.title || path.basename(filePath, '.mdx');
-    parsed.data.keywords = `Xone, blockchain, ${title}`;
+  // 重新生成 keywords（不管是否已存在）
+  // 优先使用 front matter 中的 title
+  let title = parsed.data.title;
+  
+  // 如果没有 title，从内容中提取第一个标题
+  if (!title) {
+    const h1Match = parsed.content.match(/^#\s+(.+)$/m);
+    if (h1Match) {
+      title = h1Match[1].trim();
+    } else {
+      const h2Match = parsed.content.match(/^##\s+(.+)$/m);
+      if (h2Match) {
+        title = h2Match[1].trim();
+      } else {
+        // 最后使用文件名
+        title = path.basename(filePath, '.mdx');
+      }
+    }
   }
+  
+  // 生成 keywords，如果包含 [Xone](https://xone.org/) 链接则保留
+  let keywords = title;
+  
+  // 检查是否包含 [Xone](https://xone.org/) 链接
+  if (keywords.includes('https://xone.org/')) {
+    // 如果不包含 Xone 链接，则移除所有链接
+    keywords = keywords.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+  }
+  
+  parsed.data.keywords = keywords;
   
   // 重新生成文件内容
   const newContent = matter.stringify(parsed.content, parsed.data);
