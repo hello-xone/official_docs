@@ -8,6 +8,7 @@ import { Inter } from "next/font/google";
 import Head from 'next/head';
 import '@/styles/globals.css';
 import SidebarDevelopersHide from '@/components/SidebarDevelopersHide';
+import StudyLinkInjector from '@/components/StudyLinkInjector';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({ subsets: ["latin"] });
@@ -29,6 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
           <SpeedInsights />
           <SidebarDevelopersHide />
+          <StudyLinkInjector />
         </Providers>
 
       </MantineProvider>
