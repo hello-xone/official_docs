@@ -34,6 +34,7 @@ function addXoneLinks(content, filePath = '') {
   const buttonRegex = /<Button[\s\S]*?<\/Button>/g;
   const aTagRegex = /<a[\s\S]*?<\/a>/g;
   const linkComponentRegex = /<Link[\s\S]*?<\/Link>/g;
+  const headingRegex = /^#{1,6}\s+.+$/gm;  // 匹配 Markdown 标题（# 到 ######）
   
   // 收集需要保护的区域
   const protectedRanges = [];
@@ -84,6 +85,11 @@ function addXoneLinks(content, filePath = '') {
   
   // 收集 Link 组件（特殊处理，不处理其中的 Xone）
   while ((match = linkComponentRegex.exec(content)) !== null) {
+    protectedRanges.push({ start: match.index, end: match.index + match[0].length });
+  }
+  
+  // 收集标题行（不在标题中插入 Xone 链接）
+  while ((match = headingRegex.exec(content)) !== null) {
     protectedRanges.push({ start: match.index, end: match.index + match[0].length });
   }
   
