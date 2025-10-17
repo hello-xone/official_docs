@@ -2,7 +2,7 @@
 description: >-
   In the context of Xone's Layer 1 (L1) blockchain, a transaction represents an
   encrypted instruction sent from one...
-keywords: 'Xone, blockchain, transaction'
+keywords: Transaction
 ---
 import { Link } from "@nextui-org/react";
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/react";
@@ -97,7 +97,7 @@ One of the standout features of [Xone](https://xone.org/) L1 is its ability to h
 
 ## Prerequisites for Cross-Shard Transactions
 
-To help you understand the process, let's assume two shards and a meta-chain in Xone. Let’s say a user from **Shard 0** sends **XOC** to another user on **Shard 1**. The cross-shard transaction requires several steps to ensure that both shards correctly process and finalize the transaction.
+To help you understand the process, let's assume two shards and a meta-chain in [Xone](https://xone.org/). Let’s say a user from **Shard 0** sends **XOC** to another user on **Shard 1**. The cross-shard transaction requires several steps to ensure that both shards correctly process and finalize the transaction.
 
 1. **Block Structure:** Each block in [Xone](https://xone.org/) contains a block header with general block information (block nonce, round, proposer, timestamp, etc.) and a list of mini-blocks for each shard. Mini-blocks contain the actual transactions and are specific to the respective shards.
 

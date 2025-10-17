@@ -1,6 +1,8 @@
 ---
-description: Welcome to the XOC Release Page!
-keywords: 'Xone, blockchain, release'
+description: >-
+  This guide will help you quickly understand why you need to release XOC and
+  how to complete the process smoothly.
+keywords: Welcome to the XOC Release Page!
 ---
 import { Steps, Callout } from 'nextra/components';
 import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Button} from "@nextui-org/react";
@@ -77,48 +79,48 @@ config:
 ---
 sequenceDiagram
   participant Wallet
-  participant Xone Testnet
+  participant [Xone](https://xone.org/) Testnet
   participant Web Server
-  participant Xone Mainnet
+  participant [Xone](https://xone.org/) Mainnet
 
-  Wallet ->> Xone Testnet: Transfer WXOC
+  Wallet ->> [Xone](https://xone.org/) Testnet: Transfer WXOC
 
-  activate Xone Testnet
-  Xone Testnet -->> Xone Testnet: Burn WXOC
-  Xone Testnet ->> Web Server: Notify Mint XOC
-  deactivate Xone Testnet
+  activate [Xone](https://xone.org/) Testnet
+  [Xone](https://xone.org/) Testnet -->> [Xone](https://xone.org/) Testnet: Burn WXOC
+  [Xone](https://xone.org/) Testnet ->> Web Server: Notify Mint XOC
+  deactivate [Xone](https://xone.org/) Testnet
 
   activate Web Server
   Web Server -->> Web Server: Verify info and Save
-  Web Server ->> Xone Mainnet: Notify Execution
+  Web Server ->> [Xone](https://xone.org/) Mainnet: Notify Execution
   deactivate Web Server
 
-  activate Xone Mainnet
-  Xone Mainnet ->> Web Server: Notify Finish Mint XOC
-  deactivate Xone Mainnet
+  activate [Xone](https://xone.org/) Mainnet
+  [Xone](https://xone.org/) Mainnet ->> Web Server: Notify Finish Mint XOC
+  deactivate [Xone](https://xone.org/) Mainnet
 
   activate Web Server
   Web Server -->> Web Server: Save info
   deactivate Web Server
 
-  activate Xone Mainnet
-  Xone Mainnet ->> Wallet: Transfer Mainnet XOC
-  deactivate Xone Mainnet
+  activate [Xone](https://xone.org/) Mainnet
+  [Xone](https://xone.org/) Mainnet ->> Wallet: Transfer Mainnet XOC
+  deactivate [Xone](https://xone.org/) Mainnet
 
 ```
 
 You might still have many questions about the illustration. Let’s dive deeper into the process:  
 
-1. **Sending WXOC to the Xone Testnet Contract**  
-  After the **Xone Mainnet launch**, you need to send the WXOC tokens you received from donations to the **Xone Testnet contract address**. Once the contract receives your tokens, it will **burn** them and record key information such as **amount, address, and timestamp** on the server.  
+1. **Sending WXOC to the [Xone](https://xone.org/) Testnet Contract**  
+  After the **[Xone](https://xone.org/) Mainnet launch**, you need to send the WXOC tokens you received from donations to the **[Xone](https://xone.org/) Testnet contract address**. Once the contract receives your tokens, it will **burn** them and record key information such as **amount, address, and timestamp** on the server.  
 
-  🚨 *This step is crucial as it determines the amount of XOC you will receive on the Xone Mainnet.*  
+  🚨 *This step is crucial as it determines the amount of XOC you will receive on the [Xone](https://xone.org/) Mainnet.*  
 
 2. **Data Verification & Locking**  
-  The server **stores and verifies** the transaction data. After confirmation, it **notifies Xone Mainnet** to proceed with the XOC release. At this stage, the Testnet transaction details are officially recorded on the Mainnet, a process referred to as **locking** on the release page. Your XOC tokens will then be released **linearly** based on these records.  
+  The server **stores and verifies** the transaction data. After confirmation, it **notifies [Xone](https://xone.org/) Mainnet** to proceed with the XOC release. At this stage, the Testnet transaction details are officially recorded on the Mainnet, a process referred to as **locking** on the release page. Your XOC tokens will then be released **linearly** based on these records.  
 
 3. **Gradual Release of XOC**  
-  According to the rules, the contract on **Xone Mainnet** will **start releasing XOC** to the wallet address that interacted with the Testnet. The release follows a **linear schedule**, where tokens unlock **every Epoch after 50 Epochs**.  
+  According to the rules, the contract on **[Xone](https://xone.org/) Mainnet** will **start releasing XOC** to the wallet address that interacted with the Testnet. The release follows a **linear schedule**, where tokens unlock **every Epoch after 50 Epochs**.  
   
   🎉 *Once the process begins, your XOC tokens will be gradually sent to your wallet!*
 
@@ -172,7 +174,7 @@ Next, we will combine the values ​​of the two donations 😊
 
 Finally, we see that the total number of tokens required for donation release is 340,000,000.00.
 
-At this point, we pass the donation plan rules; after the Xone Mainnet goes online, the number of tokens available for donors to release in the first Epoch is: 17,000,000.00 XOC.
+At this point, we pass the donation plan rules; after the [Xone](https://xone.org/) Mainnet goes online, the number of tokens available for donors to release in the first Epoch is: 17,000,000.00 XOC.
 
 <div className="overflow-x-auto">
 ```math
@@ -188,11 +190,11 @@ Release=Lock_{Token} \times 5\%
 ```
 </div>
 
-In the above content, we assumed that you got 10,000.00 WXOC, then through calculation, you can immediately get 500.00 XOC released on Xone Mainnet.
+In the above content, we assumed that you got 10,000.00 WXOC, then through calculation, you can immediately get 500.00 XOC released on [Xone](https://xone.org/) Mainnet.
 
 <Callout type="warning" emoji="⚠️">
   **Release:** The amount of XOC you can get.\
-  **LockWXOC:** The total amount you send to the Xone Testnet contract before the next release point. This value will be eliminated every time you successfully release.
+  **LockWXOC:** The total amount you send to the [Xone](https://xone.org/) Testnet contract before the next release point. This value will be eliminated every time you successfully release.
 </Callout>
 
 So how much can be released after 50 Epochs? Let’s continue to calculate; in the previous content, we mentioned that the total amount of the donation plan needs to be released and the total amount of tokens accumulated in the two donation phases. Therefore, we can deduce that each can be released:
