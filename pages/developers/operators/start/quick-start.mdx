@@ -87,7 +87,12 @@ cp config/app.toml      ~/.xone/config/app.toml
 > * If you need to tweak settings (RPC ports, firewall rules, etc.), edit the files under `config/` first, then copy them over.
 
 
-### 6. Start the Node and Begin Syncing
+### 6. Sync to the Latest Progress Using Snapshots  
+In the current version, syncing must be done through a snapshot to ensure quick and accurate synchronization to the latest node state. For detailed instructions, please refer to [Using Snapshots](/developers/operators/start/using-snapshots).
+
+
+### 7. Wait for Snapshot Restoration to Complete Before Starting the Node  
+After the snapshot restoration is complete, you can proceed to start the node and begin syncing with the blockchain network.
 
 ```bash showLineNumbers copy
 # Launch the node (use systemd or tmux/screen for background operation)
@@ -95,7 +100,7 @@ xoned start --home ~/.xone
 ```
 
 
-### 7. Verify Sync Status
+### 8. Verify Sync Status
 
 ```bash showLineNumbers copy
 # Check sync info (latest block height, catching up status)
