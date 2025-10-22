@@ -91,7 +91,8 @@ cp config/app.toml      ~/.xone/config/app.toml
 In the current version, syncing must be done through a snapshot to ensure quick and accurate synchronization to the latest node state. For detailed instructions, please refer to [Using Snapshots](/developers/operators/start/using-snapshots).
 
 
-### 7. Start the Node and Begin Syncing
+### 7. Wait for Snapshot Restoration to Complete Before Starting the Node  
+After the snapshot restoration is complete, you can proceed to start the node and begin syncing with the blockchain network.
 
 ```bash showLineNumbers copy
 # Launch the node (use systemd or tmux/screen for background operation)
