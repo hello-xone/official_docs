@@ -23,6 +23,7 @@
     "title": "ACTIVE"
   },
   "release": "Coin Release",
+  "early_unlock": "Early Unlock",
   "grants": "Grant Program",
 
   "-- RESOURCE": {

@@ -1,0 +1,187 @@
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Link} from "@nextui-org/react";
+import ContactInfo from "@/components/ContactInfo";
+import ImageViewer from '@components/ImageViewer';
+import { Steps, Callout } from 'nextra/components';
+import { CopyToClipboard } from "@/components/CopyToClipboard";
+
+# Waiver Operation Guide
+
+In the Xone donation release system, **Waiver** refers to the donor’s ability to **voluntarily give up the unreleased portion** of their allocated tokens. Upon waiver, the corresponding unreleased amount is **immediately redirected to the Foundation**, and the donor receives a **1:1 minted RWA Options Token (ROT)** as compensation.
+
+This allows donors to shift from a **locked principal** model to an **immediate liquidity + dividend participation** model, based on RWA performance.
+
+<Callout type="warning" emoji="⚠️">
+  **Note:** The screenshots and demonstration data in this content are from testing.
+</Callout>
+
+## 🔑 Key Benefits
+
+<div className="overflow-x-auto">
+  <Table removeWrapper aria-label="Example static collection table" className="mt-2">
+    <TableHeader>
+      <TableColumn>**Feature**</TableColumn>
+      <TableColumn>**Waiver Enabled**</TableColumn>
+    </TableHeader>
+    <TableBody>
+      <TableRow key="1">
+        <TableCell>Unreleased tokens</TableCell>
+        <TableCell>Voluntarily surrendered.</TableCell>
+      </TableRow>
+      <TableRow key="2">
+        <TableCell>ROT minting</TableCell>
+        <TableCell>1:1 with waived amount.</TableCell>
+      </TableRow>
+      <TableRow key="3">
+        <TableCell>ROT usage</TableCell>
+        <TableCell>Tradable on SwapX + RWA dividend eligibility.</TableCell>
+      </TableRow>
+      <TableRow key="4">
+        <TableCell>Release rights</TableCell>
+        <TableCell>Irrevocably waived.</TableCell>
+      </TableRow>
+      <TableRow key="5">
+        <TableCell>Tax impact</TableCell>
+        <TableCell>Jurisdiction-dependent.</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</div>
+
+## 📍Where to Access Waiver
+
+* **Location:** <Link className='text-primaryHue' isExternal showAnchorIcon href="https://bvi.xone.org/en/dynamics/release">Release Page</Link>
+* **Condition:** Wallet must hold unreleased donation XOC Tokens.
+* **Button:** “Waive remaining rights” (appears when eligible)
+
+## 🧭 How to Use Waiver?
+
+<Steps>
+### Step 1: Preview
+
+Click the **Abstain** button on the Release page.
+
+<ImageViewer src="/images/Waiver_Preview.png" alt="Waiver_Preview" />
+
+<Callout type="warning" emoji="⚠️">
+  **System displays:**
+
+    * Your **remaining unreleased amount**
+    * **Expected ROT amount**
+    * Legal and risk disclaimer
+
+  Waiver is **permanent** and cannot be undone.
+</Callout>
+
+### Step 2: Receipt
+
+* Click **Confirm to give up**
+* Wallet will prompt you to sign and broadcast the on-chain `waiver()` transaction
+* Wait for confirmation (spinner + block explorer link shown)
+
+<ImageViewer src="/images/Waiver_Receipt.png" alt="Waiver_Receipt" />
+
+### Step 3: Confirm Transaction
+
+Once successful, you’ll see:
+
+* Amount waived
+* ROT received
+* Tx hashes (waive + mint)
+
+<ImageViewer src="/images/Waiver_Confirm_Transaction.png" alt="Waiver_Confirm_Transaction" />
+
+<Callout type="warning" emoji="⚠️">
+  **Suggested actions:**
+
+    * View ROT in wallet
+    * Trade on SwapX
+    * Learn about RWA dividends
+</Callout>
+</Steps>
+
+## 🎯 What is ROT?
+
+**ROT** (RWA Options Token) is the token you receive after waiving your release. It represents your eligibility in the Xone RWA dividend distribution plan.
+
+<div className="overflow-x-auto">
+  <Table removeWrapper aria-label="Example static collection table" className="mt-2">
+    <TableHeader>
+      <TableColumn>**Attribute**</TableColumn>
+      <TableColumn>**Description**</TableColumn>
+    </TableHeader>
+    <TableBody>
+      <TableRow key="1">
+        <TableCell>Name</TableCell>
+        <TableCell>RWA Options Token (ROT) </TableCell>
+      </TableRow>
+      <TableRow key="2">
+        <TableCell>Type</TableCell>
+        <TableCell>ERC-20</TableCell>
+      </TableRow>
+      <TableRow key="3">
+        <TableCell>Decimals</TableCell>
+        <TableCell>18</TableCell>
+      </TableRow>
+      <TableRow key="4">
+        <TableCell>Contract</TableCell>
+        <TableCell className="flex items-center gap-[5px] truncate">`0x9977368F8271dfec2817bE60b261A683Bc0b69c8`<CopyToClipboard value="0x9977368F8271dfec2817bE60b261A683Bc0b69c8" iconSize={16} /></TableCell>
+      </TableRow>
+      <TableRow key="5">
+        <TableCell>Transferability</TableCell>
+        <TableCell>Fully transferable</TableCell>
+      </TableRow>
+      <TableRow key="6">
+        <TableCell>Tradable</TableCell>
+        <TableCell>Yes</TableCell>
+      </TableRow>
+      <TableRow key="7">
+        <TableCell>Supply</TableCell>
+        <TableCell>Dynamic (minted on waiver)</TableCell>
+      </TableRow>
+      <TableRow key="8">
+        <TableCell>Value Basis</TableCell>
+        <TableCell>RWA dividend programs (policy-based)</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</div>
+
+## 🧠 FAQ
+
+<details>
+
+<summary>Q1: Can I cancel my waiver?</summary>
+
+No. Once you submit a waiver transaction, it is irreversible and final.
+
+</details>
+
+<details>
+
+<summary>Q2: Is ROT guaranteed to hold or increase value?</summary>
+
+No. ROT value depends on RWA dividend performance and market trading. It has **no fixed redemption value**.
+
+</details>
+
+<details>
+
+<summary>Q3: What happens to the tokens I waived?</summary>
+
+They are permanently redirected to the **Xone Foundation wallet** and will no longer belong to the donor.
+
+</details>
+
+<details>
+
+<summary>Q4: Are there tax implications?</summary>
+
+Possibly. ROT issuance and dividend income may be treated differently by regulators in different jurisdictions. Consult your local tax advisor.
+
+</details>
+
+## 🤝 Governance Summary
+
+This waiver mechanism was approved by the community via proposal vote, aligned with Xone’s mission to provide flexible, RWA-aligned participation paths for early donors.
+
+<ContactInfo />
