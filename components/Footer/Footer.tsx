@@ -53,7 +53,7 @@ export default function Footer() {
             {/* 跟右侧列等高时，Follow Us 贴底 */}
             <section className="mt-4 lg:mt-auto">
               <h3 className="mb-3 text-sm font-semibold">Follow Us</h3>
-              <div className="social-icons flex flex-wrap items-center gap-2.5 md:gap-3">
+              <div className="social-icons flex  items-center gap-2.5 md:gap-3">
                 {contacts.map((c, i) => {
                   const Icon = c.icon;
                   return (

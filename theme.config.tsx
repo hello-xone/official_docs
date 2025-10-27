@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 import { Article } from "@components/blog"
 import ImageViewer from './components/ImageViewer';
 import AgentButton from "@/components/AgentButton";
+import PixelBlastBackground from './components/PixelBlastBackground';
 
 const primaryHue = 0
 
@@ -78,7 +79,9 @@ const config: DocsThemeConfig = {
   },
   main: ({ children }: { children: React.ReactNode }): ReactElement => {
     const { pathname } = useRouter();
+    const isHome = pathname === '/';
     const isBlog = pathname.match(/^\/blog\/(?!tag\/).+/);
+    
     if (isBlog) {
       return (
         <>
@@ -87,7 +90,13 @@ const config: DocsThemeConfig = {
         </>
       );
     }
-    return <>{children}</>;
+    
+    return (
+      <>
+        {!isHome && <PixelBlastBackground />}
+        {children}
+      </>
+    );
   },
 
   footer: {
