@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import { Article } from "@components/blog"
 import ImageViewer from './components/ImageViewer';
 import AgentButton from "@/components/AgentButton";
-import PixelBlastBackground from './components/PixelBlastBackground';
+import PixelBlastBackground from '@/components/PixelBlastBackground';
 
 const primaryHue = 0
 
