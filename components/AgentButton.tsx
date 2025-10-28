@@ -1,6 +1,8 @@
 "use client";
 
 import {useState, useCallback} from "react";
+import dynamic from 'next/dynamic';
+const LanguageSwitcher = dynamic(() => import('@/components/LanguageSwitcher'), { ssr: false });
 import {
   Modal,
   ModalBody,
@@ -44,6 +46,7 @@ export default function AgentButton() {
 
   return (
     <>
+  <div className="inline-flex items-center gap-3">
       <div
         onClick={handleOpen}
         role="button"
@@ -53,6 +56,8 @@ export default function AgentButton() {
       >
         <span>Ask AI</span>
         <AgentIcon />
+      </div>
+        <LanguageSwitcher />
       </div>
 
       <Modal

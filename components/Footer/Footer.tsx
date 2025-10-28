@@ -259,10 +259,6 @@ export default function Footer() {
                   {message}
                 </p>
               )}
-
-              <p className="mt-2 text-xs text-default-500">
-                Click "Join" to open your email client and send a subscription request.
-              </p>
             </section>
 
             {/* 跟右侧列等高时，Follow Us 贴底 */}

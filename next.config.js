@@ -17,6 +17,10 @@ module.exports = withNextra({
   eslint: {
     ignoreDuringBuilds: true
   },
+  i18n: {
+    locales: ['en', 'zh'],
+    defaultLocale: 'en'
+  },
   webpack(config) {
 
     const allowedSvgRegex = /\.svg$/;

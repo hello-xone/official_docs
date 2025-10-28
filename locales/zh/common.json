@@ -1,0 +1,17 @@
+{
+  "lang": {
+    "en": "English",
+    "zh": "中文"
+  },
+  "tab": {
+    "home": "首页"
+  },
+  "actions": {
+    "switch_language": "语言",
+    "confirm": "确认",
+    "cancel": "取消"
+  },
+  "app": {
+    "title": "Xone 文档"
+  }
+}

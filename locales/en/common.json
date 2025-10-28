@@ -1,0 +1,17 @@
+{
+  "lang": {
+    "en": "English",
+    "zh": "中文"
+  },
+  "tab": {
+    "home": "Hello"
+  },
+  "actions": {
+    "switch_language": "Language",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
+  },
+  "app": {
+    "title": "Xone Docs"
+  }
+}

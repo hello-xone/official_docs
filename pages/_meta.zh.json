@@ -1,0 +1,227 @@
+{
+  "index": {
+    "title": "首页",
+    "type": "page",
+    "theme": {
+      "layout": "full"
+    },
+    "display": "children"
+  },
+  "study": {
+    "title": "学习 📖",
+    "type": "page"
+  },
+  "bvi": {
+    "title": "什么是 BVI 🎯",
+    "type": "page"
+  },
+  "developers": {
+    "type": "menu",
+    "display": "hidden"
+  },
+  "pages": {
+    "title": "开发者 🔧",
+    "type": "menu",
+    "items": {
+      "developers": {
+        "title": "开始构建 ↗",
+        "type": "menu",
+        "href": "/developers/ready",
+        "items": {
+          "ready": {
+            "title": "开发者资源",
+            "type": "page",
+            "href": "/developers/ready"
+          },
+          "rpc": {
+            "title": "RPC 节点",
+            "type": "page",
+            "href": "/developers/rpc"
+          },
+          "testnet": {
+            "title": "测试网",
+            "type": "page",
+            "href": "/developers/testnet"
+          },
+          "explorers": {
+            "title": "区块浏览器",
+            "type": "page",
+            "href": "/developers/explorers"
+          },
+          "faucets": {
+            "title": "水龙头",
+            "type": "page",
+            "href": "/developers/faucets"
+          },
+          "architecture": {
+            "title": "架构",
+            "type": "menu",
+            "items": {
+              "account": {
+                "title": "账户",
+                "type": "page",
+                "href": "/developers/architecture/account"
+              },
+              "transaction": {
+                "title": "交易",
+                "type": "page",
+                "href": "/developers/architecture/transaction"
+              },
+              "replay": {
+                "title": "重放保护",
+                "type": "page",
+                "href": "/developers/architecture/replay"
+              }
+            }
+          },
+          "guide": {
+            "title": "快速开始",
+            "type": "page",
+            "href": "/developers/guide"
+          },
+          "tools": {
+            "title": "开发工具",
+            "type": "page",
+            "href": "/developers/tools"
+          },
+          "token": {
+            "title": "跨链资产",
+            "type": "page",
+            "href": "/developers/token"
+          },
+          "contracts": {
+            "title": "核心合约",
+            "type": "page",
+            "href": "/developers/contracts"
+          },
+          "jsonrpc": {
+            "title": "Json RPC ↗",
+            "type": "page",
+            "href": "/openapi/overview"
+          },
+          "operators": {
+            "title": "节点运维",
+            "type": "menu",
+            "items": {
+              "start": {
+                "title": "启动",
+                "type": "menu",
+                "items": {
+                  "quick-start": {
+                    "title": "快速开始",
+                    "type": "page",
+                    "href": "/developers/operators/start/quick-start"
+                  },
+                  "docker-run": {
+                    "title": "Docker 启动",
+                    "type": "page",
+                    "href": "/developers/operators/start/docker-run"
+                  },
+                  "using-snapshots": {
+                    "title": "使用快照",
+                    "type": "page",
+                    "href": "/developers/operators/start/using-snapshots"
+                  },
+                  "background-operation": {
+                    "title": "后台运行",
+                    "type": "page",
+                    "href": "/developers/operators/start/background-operation"
+                  }
+                }
+              },
+              "practices": {
+                "title": "最佳实践",
+                "type": "page",
+                "href": "/developers/operators/practices"
+              },
+              "monitoring": {
+                "title": "监控与告警",
+                "type": "page",
+                "href": "/developers/operators/monitoring"
+              }
+            }
+          },
+          "standard": {
+            "title": "标准",
+            "type": "menu",
+            "items": {
+              "erc20": {
+                "title": "ERC-20: 同质化代币",
+                "type": "page",
+                "href": "/developers/standard/erc20"
+              },
+              "erc721": {
+                "title": "ERC-721: NFT",
+                "type": "page",
+                "href": "/developers/standard/erc721"
+              },
+              "erc1155": {
+                "title": "ERC-1155: NFT",
+                "type": "page",
+                "href": "/developers/standard/erc1155"
+              }
+            }
+          },
+          "display": {
+            "title": "展示资产",
+            "type": "page",
+            "href": "/developers/display"
+          }
+        }
+      },
+      "jsonrpc": {
+        "title": "Json RPC ↗",
+        "type": "page",
+        "href": "/openapi/overview"
+      },
+      "gateway": {
+        "title": "网关 ↗",
+        "type": "page",
+        "href": "/gateway"
+      }
+    }
+  },
+  "blog": {
+    "title": "博客 📚",
+    "type": "page",
+    "theme": {
+      "layout": "full"
+    }
+  },
+  "openapi": {
+    "title": "API 🧰",
+    "type": "page",
+    "display": "hidden",
+    "theme": {
+      "layout": "full"
+    }
+  },
+  "gateway": {
+    "title": "网关",
+    "type": "page",
+    "display": "hidden",
+    "theme": {
+      "layout": "full"
+    }
+  },
+  "roadmap": {
+    "title": "路线图",
+    "type": "page",
+    "display": "hidden",
+    "theme": {
+      "layout": "full"
+    }
+  },
+  "forum": {
+    "title": "论坛 💬",
+    "type": "page",
+    "href": "https://forum.xone.org/",
+    "newWindow": true
+  },
+  "contact": {
+    "title": "活动 🎉",
+    "type": "page",
+    "href": "https://lu.ma/xone",
+    "newWindow": true
+  }
+}
