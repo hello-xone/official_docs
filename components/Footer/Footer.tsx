@@ -20,22 +20,20 @@ import {
 } from "@/components/icons";
 import { NavLogo } from "../NavLogo";
 import FooterLinks from "./FooterLinks";
+import { useTranslation } from 'react-i18next';
 
 // 定义域名建议列表
 const domains = ['@gmail.com', '@yahoo.com', '@outlook.com', '@hotmail.com', '@icloud.com', '@qq.com', '@163.com', '@126.com'];
 
 // EmailInput 组件
-function EmailInput({ 
-  email, 
-  setEmail 
-}: { 
+function EmailInput({ email, setEmail }: { 
   email: string; 
   setEmail: (email: string) => void 
 }) {
   const [suggestions, setSuggestions] = useState<Array<string>>([]);
   const [selectedSuggestion, setSelectedSuggestion] = useState(-1);
   const [showSuggestions, setShowSuggestions] = useState(false);
-
+  const { t } = useTranslation();
   const generateSuggestions = useCallback((input: string) => {
     if (!input) {
       setSuggestions([]);
@@ -94,7 +92,7 @@ function EmailInput({
         onFocus={() => setShowSuggestions(true)}
         onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
         onKeyDown={handleKeyDown}
-        placeholder="Enter email address"
+        placeholder={t('footer.text5')}
         className="w-full px-4 py-3 pr-24 text-sm bg-white dark:bg-default-100 rounded-lg border border-default-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent placeholder:text-default-400"
       />
 
@@ -124,6 +122,8 @@ export default function Footer() {
   const [year, setYear] = useState<number | null>(null);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const { t } = useTranslation();
+
 
   useEffect(() => setYear(new Date().getFullYear()), []);
 
@@ -232,10 +232,9 @@ export default function Footer() {
 
             {/* 邮箱订阅组件 */}
             <section className="mb-6 lg:mb-8">
-              <h5 className="mb-3 text-lg font-bold text-foreground">Subscribe to Newsletter</h5>
+              <h5 className="mb-3 text-lg font-bold text-foreground">{t('footer.text1')}</h5>
               <p className="mb-4 text-sm text-default-600 leading-relaxed">
-                Xone Chain is a modular Layer 1 blockchain that goes beyond scalability and efficiency. 
-                It focuses on ensuring every on-chain action creates tangible, traceable value.
+                {t('footer.text2')}
               </p>
               
               <form onSubmit={handleEmailSubscribe} className="email-subscription relative w-full">
@@ -246,7 +245,7 @@ export default function Footer() {
                   size="sm"
                   style={{backgroundColor: '#FF0000'}}
                 >
-                  Join
+                  {t('footer.text3')}
                 </Button>
               </form>
               
@@ -263,7 +262,7 @@ export default function Footer() {
 
             {/* 跟右侧列等高时，Follow Us 贴底 */}
             <section className="mt-4 lg:mt-auto">
-              <h3 className="mb-3 text-sm font-semibold">Follow Us</h3>
+              <h3 className="mb-3 text-sm font-semibold">{t('footer.text4')}</h3>
               <div className="social-icons flex items-center gap-2.5 md:gap-3">
                 {contacts.map((c, i) => {
                   const Icon = c.icon;
@@ -313,7 +312,7 @@ export default function Footer() {
                 rel={l.internal ? undefined : "noreferrer"}
                 className="hover:text-foreground"
               >
-                {l.name}
+                {t(l.name)}
               </NLink>
             ))}
           </div>

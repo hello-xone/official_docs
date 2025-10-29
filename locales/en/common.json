@@ -6,6 +6,47 @@
   "tab": {
     "home": "Hello"
   },
+  "hero": {
+    "text1": "Make all efforts worthwhile.",
+    "text2": "Read more",
+    "text3": "Let’s Embrace The",
+    "text4": "Together!",
+    "text5": "In the ever-evolving landscape of blockchain technology, Xone Chain emerges as a modular Layer 1 solution that redefines how we perceive and interact with on-chain value. While many existing Layer 1 and Layer 2 solutions focus on scalability or efficiency, Xone emphasizes something deeper: building a blockchain where every on-chain action generates tangible, traceable value.",
+    "text6": "Start Learning",
+    "text7": "Building"
+  },
+  "footer": {
+    "text1": "Subscribe to Newsletter",
+    "text2": "Xone Chain is a modular Layer 1 blockchain that goes beyond scalability and efficiency. It focuses on ensuring every on - chain action creates tangible, traceable value.",
+    "text3": "Join",
+    "text4": "Follow Us",
+    "text5": "Enter email address"
+  },
+  "links": {
+    "title1": "Ecology",
+    "title2": "Resources",
+    "title3": "Global",
+    "text1": "Wallet",
+    "text2": "Payment",
+    "text3": "Bridge",
+    "text4": "Swap",
+    "text5": "Name Service",
+    "text6": "NFT Market",
+    "text7": "Block Explorers",
+    "text8": "Faucet",
+    "text9": "Json RPC",
+    "text10": "RPC Endpoints",
+    "text11": "Open Gateway",
+    "text12": "Dev Tools",
+    "text13": "Status",
+    "text14": "Project Files",
+    "text15": "Cooperation",
+    "text16": "Forum",
+    "text17": "City Ambassador",
+    "text18": "Recruitment",
+    "text19": "Terms Service",
+    "text20": "Privacy Policy"
+  },
   "actions": {
     "switch_language": "Language",
     "confirm": "Confirm",

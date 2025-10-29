@@ -16,42 +16,42 @@ export type FooterGroup = {
 export const EcologyGroup: FooterGroup = {
   title: "Ecology",
   links: [
-    { name: "Wallet",         url: EXTERNAL_LINKS.TokenUp },
-    { name: "Payment",        url: EXTERNAL_LINKS.Settlement },
-    { name: "Bridge",         url: EXTERNAL_LINKS.RainLink },
-    { name: "Swap",           url: EXTERNAL_LINKS.SwapX },
-    { name: "Name Service",   url: EXTERNAL_LINKS.Xone_ID },
-    { name: "NFT Market",     url: EXTERNAL_LINKS.NFT_Market },
+    { name: "links.text1",         url: EXTERNAL_LINKS.TokenUp },
+    { name: "links.text2",        url: EXTERNAL_LINKS.Settlement },
+    { name: "links.text3",         url: EXTERNAL_LINKS.RainLink },
+    { name: "links.text4",           url: EXTERNAL_LINKS.SwapX },
+    { name: "links.text5",   url: EXTERNAL_LINKS.Xone_ID },
+    { name: "links.text6",     url: EXTERNAL_LINKS.NFT_Market },
   ],
 };
 
 export const ResourcesdGroup: FooterGroup = {
   title: "Resources",
   links: [
-    { name: "Block Explorers",             url: EXTERNAL_LINKS.Scan },
-    { name: "Faucet",           url: EXTERNAL_LINKS.Faucet },
-    { name: "Json RPC",         url: EXTERNAL_LINKS.docs + "openapi/overview", internal: true },
-    { name: "RPC Endpoints",         url: EXTERNAL_LINKS.docs + "developers/rpc", internal: true },
-    { name: "Open Gateway",         url: EXTERNAL_LINKS.docs + "gateway", internal: true },
-    { name: "Dev Tools",        url: EXTERNAL_LINKS.docs + "developers/tools", internal: true },
-    { name: "Status",             url: EXTERNAL_LINKS.Status },
-    { name: "Project Files",           url: EXTERNAL_LINKS.Github },
+    { name: "links.text7",             url: EXTERNAL_LINKS.Scan },
+    { name: "links.text8",           url: EXTERNAL_LINKS.Faucet },
+    { name: "links.text9",         url: EXTERNAL_LINKS.docs + "openapi/overview", internal: true },
+    { name: "links.text10",         url: EXTERNAL_LINKS.docs + "developers/rpc", internal: true },
+    { name: "links.text11",         url: EXTERNAL_LINKS.docs + "gateway", internal: true },
+    { name: "links.text12",        url: EXTERNAL_LINKS.docs + "developers/tools", internal: true },
+    { name: "links.text13",             url: EXTERNAL_LINKS.Status },
+    { name: "links.text14",           url: EXTERNAL_LINKS.Github },
   ],
 };
 
 export const ProgramsGroup: FooterGroup = {
   title: "Global",
   links: [
-    { name: "Cooperation", url: "https://xone.org/commercial", internal: true },
-    { name: "Forum", url: "https://forum.xone.org", internal: true },
-    { name: "City Ambassador",     url: "", later: true },
-    { name: "Recruitment",        url: "", later: true },
+    { name: "links.text15", url: "https://xone.org/commercial", internal: true },
+    { name: "links.text16", url: "https://forum.xone.org", internal: true },
+    { name: "links.text17",     url: "", later: true },
+    { name: "links.text18",        url: "", later: true },
   ],
 };
 
 export const FOOTER_GROUPS: FooterGroup[] = [EcologyGroup, ResourcesdGroup, ProgramsGroup];
 
 export const FOOTER_POLICY_LINKS: FooterLink[] = [
-  { name: "Terms Service",    url: EXTERNAL_LINKS.docs + "study/service" },
-  { name: "Privacy Policy",      url: EXTERNAL_LINKS.docs + "study/privacy" },
+  { name: "links.text19",    url: EXTERNAL_LINKS.docs + "study/service" },
+  { name: "links.text20",      url: EXTERNAL_LINKS.docs + "study/privacy" },
 ];
