@@ -197,25 +197,20 @@ html.js-focus-visible.light .scalar-app .relative.z-context .rounded .shadow-bor
 
 /* === Menu badges (visual tags) === */
 /* Study => Ended */
-aside a[href="/study/grants"],
-aside a[href="/developers/operators/monitoring"],
+aside a[href="/developers/tools/safety/solidityscan"],
 aside a[href="/roadmap"] {
   display: flex;
   align-items: center;
   justify-content: start;
 }
 
-aside a[href="/study/grants"]::after,
-aside a[href="/developers/operators/monitoring"]::after,
-aside a[href="/roadmap"]::after {
+aside a[href="/developers/tools/safety/solidityscan"]::after {
   display: inline-block;
   border-radius: 9999px;
 }
 
 /* Study/Grants => Updated */
-aside a[href="/study/grants"]::after,
-aside a[href="/roadmap"]::after,
-aside a[href="/developers/operators/monitoring"]::after
+aside a[href="/developers/tools/safety/solidityscan"]::after
 {
   content: "Updated";
   color: #000000;
@@ -226,9 +221,7 @@ aside a[href="/developers/operators/monitoring"]::after
 }
 
 /* Dark mode tweaks */
-html.dark aside a[href="/study/grants"]::after,
-html.dark aside a[href="/developers/operators/monitoring"]::after,
-html.dark aside a[href="/roadmap"]::after {
+html.dark aside a[href="/developers/tools/safety/solidityscan"]::after {
   color: #fff;
   background-color: #45D483;
 }
