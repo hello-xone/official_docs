@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { XoneLogo } from "./XoneLogo";
 import { useIsDarkMode } from "@components/hooks/useIsDarkMode";
+import { useTranslation } from 'react-i18next';
 
 type Props = {
   variant?: "header" | "footer"; // header: "/", footer: "https://xone.org"
@@ -21,9 +22,9 @@ export function NavLogo({ variant = "header", className = "" }: Props) {
     const t = setTimeout(() => setOpacity(1), 0);
     return () => clearTimeout(t);
   }, []);
-
+  const { t } = useTranslation();
   const isHeader = variant === "header";
-  const label = isHeader ? "Xone Docs" : "Xone";
+  const label = isHeader ? t('app.title') : "Xone";
   const href = isHeader ? "/" : "https://xone.org";
   const external = !isHeader;
 

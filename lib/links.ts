@@ -14,7 +14,7 @@ export type FooterGroup = {
 };
 
 export const EcologyGroup: FooterGroup = {
-  title: "Ecology",
+  title: "links.title1",
   links: [
     { name: "links.text1",         url: EXTERNAL_LINKS.TokenUp },
     { name: "links.text2",        url: EXTERNAL_LINKS.Settlement },
@@ -26,7 +26,7 @@ export const EcologyGroup: FooterGroup = {
 };
 
 export const ResourcesdGroup: FooterGroup = {
-  title: "Resources",
+  title: "links.title2",
   links: [
     { name: "links.text7",             url: EXTERNAL_LINKS.Scan },
     { name: "links.text8",           url: EXTERNAL_LINKS.Faucet },
@@ -40,7 +40,7 @@ export const ResourcesdGroup: FooterGroup = {
 };
 
 export const ProgramsGroup: FooterGroup = {
-  title: "Global",
+  title: "links.title3",
   links: [
     { name: "links.text15", url: "https://xone.org/commercial", internal: true },
     { name: "links.text16", url: "https://forum.xone.org", internal: true },

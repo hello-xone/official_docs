@@ -58,6 +58,11 @@ export default function GatewayFull() {
           transform-origin: top center;
         }
       }
+      .scalar-app .references-header{
+        position: fixed;
+        top: 63px;
+        left: 0;
+      }
     `}</style>
       <ApiReferenceReact
         configuration={{

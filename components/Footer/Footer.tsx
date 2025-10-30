@@ -146,7 +146,8 @@ export default function Footer() {
   };
 
   // 处理邮件订阅
-  const handleEmailSubscribe = useCallback(async() => {
+  const handleEmailSubscribe = useCallback(async(e) => {
+    e.preventDefault()
     if (email && isValidEmail(email)) {
       try {
         fetch(`https://openapi.xone.org/emailsub/subscribe`, {
@@ -227,12 +228,11 @@ export default function Footer() {
             </div>
 
             <div className="text-xs text-default-600 lg:hidden">
-              © {year ?? ""} Xone Foundation.
+              © {year ?? ""} Xone {t('footer.text6')}
             </div>
 
             {/* 邮箱订阅组件 */}
-            <section className="mb-6 lg:mb-8">
-              <h5 className="mb-3 text-lg font-bold text-foreground">{t('footer.text1')}</h5>
+            <section className="mb-6 lg:mb-8 lg:w-[380px]">
               <p className="mb-4 text-sm text-default-600 leading-relaxed">
                 {t('footer.text2')}
               </p>
@@ -263,7 +263,7 @@ export default function Footer() {
             {/* 跟右侧列等高时，Follow Us 贴底 */}
             <section className="mt-4 lg:mt-auto">
               <h3 className="mb-3 text-sm font-semibold">{t('footer.text4')}</h3>
-              <div className="social-icons flex items-center gap-2.5 md:gap-3">
+              <div className="social-icons flex flex-wrap items-center gap-2.5 md:gap-3">
                 {contacts.map((c, i) => {
                   const Icon = c.icon;
                   return (
@@ -282,7 +282,7 @@ export default function Footer() {
                       border-0
                     "
                   >
-                    <Icon className="w-8 h-8 md:w-6 md:h-6" />
+                    <Icon className="mx-auto" />
                   </a>
                   );
                 })}
@@ -318,7 +318,7 @@ export default function Footer() {
           </div>
 
           <div className="copyright text-xs text-default-600 hidden lg:block">
-            © {year ?? ""} Xone Foundation.
+            © {year ?? ""} Xone {t('footer.text6')}
           </div>
         </div>
       </div>

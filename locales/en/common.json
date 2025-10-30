@@ -20,7 +20,8 @@
     "text2": "Xone Chain is a modular Layer 1 blockchain that goes beyond scalability and efficiency. It focuses on ensuring every on - chain action creates tangible, traceable value.",
     "text3": "Join",
     "text4": "Follow Us",
-    "text5": "Enter email address"
+    "text5": "Enter email address",
+    "text6": "Foundation."
   },
   "links": {
     "title1": "Ecology",
@@ -50,7 +51,8 @@
   "actions": {
     "switch_language": "Language",
     "confirm": "Confirm",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "aibtn": "Ask AI"
   },
   "app": {
     "title": "Xone Docs"

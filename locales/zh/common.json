@@ -20,7 +20,8 @@
     "text2": "Xone Chain 是一个模块化的 Layer 1 区块链，它超越了可扩展性和效率。它专注于确保链上的每一个操作都能创造切实可追溯的价值。",
     "text3": "加入",
     "text4": "关注我们",
-    "text5": "输入电子邮件地址"
+    "text5": "输入电子邮件地址",
+    "text6": "基金会."
   },
   "links": {
     "title1": "生态",
@@ -50,7 +51,8 @@
   "actions": {
     "switch_language": "语言",
     "confirm": "确认",
-    "cancel": "取消"
+    "cancel": "取消",
+    "aibtn": "Ask AI"
   },
   "app": {
     "title": "Xone 文档"
