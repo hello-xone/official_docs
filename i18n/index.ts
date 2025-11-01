@@ -4,14 +4,14 @@ import { initReactI18next } from 'react-i18next';
 import en from '../locales/en/common.json';
 import zh from '../locales/zh/common.json';
 
-// 仅客户端决定初始语言，避免 SSR 与 CSR 不一致
-const getInitialLanguage = () => {
-  if (typeof window === 'undefined') return 'en';
-  const saved = window.localStorage.getItem('LANG');
-  if (saved) return saved;
-  const nav = navigator?.language || navigator?.languages?.[0] || 'en';
-  return nav.startsWith('zh') ? 'zh' : 'en';
+// 获取保存的语言
+export const getCurrentLanguage = (): string => {
+  if (typeof window === 'undefined') return 'en'; // 服务端返回默认值
+  
+  return localStorage.getItem('i18nextLng') || 'en';
 };
+
+
 
 export function ensureI18nInitialized() {
   if (i18n.isInitialized) return i18n;
@@ -24,7 +24,7 @@ export function ensureI18nInitialized() {
         en: { translation: en },
         zh: { translation: zh },
       },
-      lng: getInitialLanguage(),
+      lng: getCurrentLanguage(),
       fallbackLng: 'en',
       supportedLngs: ['en', 'zh'],
       interpolation: { escapeValue: false },
@@ -33,12 +33,11 @@ export function ensureI18nInitialized() {
   return i18n;
 }
 
-export function setLanguage(lang: 'en' | 'zh') {
-  i18n.changeLanguage(lang);
-  if (typeof window !== 'undefined') {
-    window.localStorage.setItem('LANG', lang);
-  }
-}
+// 设置语言
+export const setLanguage = (lang: string) => {
+  localStorage.setItem('i18nextLng', lang);
+  return i18n.changeLanguage(lang);
+};
 
 export default i18n;
 

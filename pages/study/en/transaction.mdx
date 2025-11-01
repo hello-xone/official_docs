@@ -1,0 +1,129 @@
+import { Link } from "@nextui-org/react";
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/react";
+
+# Transaction
+
+In the context of Xone's Layer 1 (L1) blockchain, a **transaction** represents an encrypted instruction sent from one account to another, with the aim of updating the state of the Xone network. Each transaction carries details such as a random number (nonce), sender and receiver addresses, transfer amount (if any), data, signatures, and other relevant information. Validators process and validate these transactions, ensuring they adhere to the network's rules. Once validated, transactions are recorded in a block and added to the blockchain, making them immutable and transparent.
+
+## What is a Transaction?
+
+A **transaction** on Xone is an operation initiated by a user-controlled account. For example, when **Alice** sends **100 XOC** to **Bob**, the transaction will deduct the amount from Alice's account and credit it to Bob's account. This operation of updating the state of the blockchain is the core purpose of a transaction.
+
+Once a transaction is initiated, it updates the network's state and is broadcasted to the entire blockchain network. Validators then verify and execute these transactions, ensuring they comply with the network's consensus rules. Each transaction includes crucial details like the sender and receiver's addresses, the amount of XOC transferred, and associated fees. These transactions are cryptographically signed to ensure their authenticity and security.
+
+Transactions require a <Link className='text-primaryHue' showAnchorIcon href="/study/gas">transaction fee</Link> (paid in XOC) and must be included in a validated block to be considered complete.
+
+## Typical Xone L1 Transaction Components
+
+``` js showLineNumbers copy filename="example.json"
+{
+  "nonce": 42,                                // Unique transaction identifier (from sender's account)
+  "to": "0x1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmq4vw35r",  // Recipient address
+  "from": "0x1ylzm22ngxl2tspgvwm0yth2myr6dx9avtx83zpxpu7rhxw4qltzs9tmjm9",  // Sender address
+  "value": "100000000000000000",              // Amount to be transferred (in wei)
+  "gas": 70000,                               // Gas limit for the transaction
+  "gasPrice": "1000000000",                   // Gas price (in wei)
+  "data": "Zm9vZCBmb3IgY2F0cw==",             // Optional data (encoded)
+  "chainId": 1,                               // The chain ID (1 = Mainnet for Ethereum)
+  "v": 27,                                    // Recovery id for signature (in EVM, the v is used in signature)
+  "r": "0x5845301de8ca3a8576166fb3b7dd25124868ce54b07eec7022ae3ffd8d4629540dbb7d0ceed9455a259695e2665db614828728d0f9b0fb1cc46c07dd669d2f0e",  // r part of the signature
+  "s": "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",  // s part of the signature
+  "type": 0                                    // Optional EIP-1559 transaction type for dynamic gas pricing (if applicable)
+}
+{
+: "5845301de8ca3a8576166fb3b7dd25124868ce54b07eec7022ae3ffd8d4629540dbb7d0ceed9455a259695e2665db614828728d0f9b0fb1cc46c07dd669d2f0e"
+}
+```
+<div className="overflow-x-auto">
+<Table removeWrapper aria-label="Example static collection table" className="mt-2">
+  <TableHeader>
+    <TableColumn>**Fields**</TableColumn>
+    <TableColumn>**Explain**</TableColumn>
+  </TableHeader>
+  <TableBody>
+    <TableRow key="1">
+      <TableCell>**Nonce**</TableCell>
+      <TableCell>A unique counter indicating the number of transactions initiated by the sender’s account. Each new transaction increases the nonce by 1 to prevent replay attacks.</TableCell>
+    </TableRow>
+    <TableRow key="2">
+      <TableCell>**Value**</TableCell>
+      <TableCell>The amount of XOC being transferred in the transaction.</TableCell>
+    </TableRow>
+    <TableRow key="3">
+      <TableCell>**Receiver**</TableCell>
+      <TableCell>The recipient's address.</TableCell>
+    </TableRow>
+    <TableRow key="4">
+      <TableCell>**Sender**</TableCell>
+      <TableCell>The address of the account initiating the transaction.</TableCell>
+    </TableRow>
+    <TableRow key="5">
+      <TableCell>**Gas Price**</TableCell>
+      <TableCell>The price (in XOC) for each unit of gas consumed by the transaction. Gas is used to execute smart contracts and pay for network resources.</TableCell>
+    </TableRow>
+    <TableRow key="6">
+      <TableCell>**Gas Limit**</TableCell>
+      <TableCell>The maximum amount of gas the transaction can consume. This ensures that a transaction doesn't exhaust network resources.</TableCell>
+    </TableRow>
+    <TableRow key="7">
+      <TableCell>**Data**</TableCell>
+      <TableCell>An optional field for including additional data, such as messages or instructions for smart contracts.</TableCell>
+    </TableRow>
+    <TableRow key="8">
+      <TableCell>**Chain ID**</TableCell>
+      <TableCell>Identifies which chain the transaction belongs to (e.g., Mainnet, Testnet, etc.).</TableCell>
+    </TableRow>
+    <TableRow key="9">
+      <TableCell>**Version**</TableCell>
+      <TableCell>Specifies the version of the transaction type.</TableCell>
+    </TableRow>
+    <TableRow key="10">
+      <TableCell>**Signature**</TableCell>
+      <TableCell>A cryptographic signature generated by the sender’s private key to authorize the transaction.</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+</div>
+
+## Cross-Shard Transactions on Xone L1
+
+One of the standout features of Xone L1 is its ability to handle **cross-shard transactions**, enabling communication and transaction processing across different shards and meta-chains. This improves scalability and overall performance by distributing transaction loads efficiently.
+
+## Prerequisites for Cross-Shard Transactions
+
+To help you understand the process, let's assume two shards and a meta-chain in Xone. Let’s say a user from **Shard 0** sends **XOC** to another user on **Shard 1**. The cross-shard transaction requires several steps to ensure that both shards correctly process and finalize the transaction.
+
+1. **Block Structure:** Each block in Xone contains a block header with general block information (block nonce, round, proposer, timestamp, etc.) and a list of mini-blocks for each shard. Mini-blocks contain the actual transactions and are specific to the respective shards.
+
+2. **Mini-Block Example**
+
+- **Mini-Block 0:** Contains transactions within **Shard 0**.
+
+- **Mini-Block 1:** Contains a cross-shard transaction where the sender is in **Shard 0**, and the receiver is in **Shard 1**.
+
+- **Mini-Block 2:** Contains a cross-shard transaction where the sender is in **Shard 1**, and the receiver is in **Shard 0**.
+
+Each mini-block in the same block may share the same sender and receiver, but the transactions might occur in different shards. There is no limitation on the number of mini-blocks with the same sender and receiver in a block.
+
+## Processing Cross-Shard Transactions
+
+1. **Atomicity:** Cross-shard transactions are processed atomically. This means that all transactions within a mini-block must either be executed or failed as a whole. If any transaction fails, the entire mini-block will be rolled back, and the transaction will be retried in the next round.
+
+2. **Asynchronous Processing Model:** Xone’s cross-shard transaction model follows an **asynchronous processing model:**\
+**Step 1:** The transaction is first validated and executed in the sender's shard. The sender's shard can fully verify the transaction based on the account’s balance.\
+**Step 2:** After validation in the sender shard, the transaction is signed and sent to the meta-chain for notarization.\
+**Step 3:** The receiving shard requests execution proof from the meta-chain, performs signature verification, checks for replay attacks, and updates the recipient’s balance accordingly.
+
+3. **Meta-Chain and Notarization:** The meta-chain serves as the oversight layer for cross-shard transactions. It receives the block headers from various shards, including the mini-block hashes and relevant data for cross-shard transactions. The meta-chain will then notarize these transactions, making them valid across the entire Xone network.
+
+4. **Cross-Shard Finalization:** Once the cross-shard transaction is processed and notarized by the meta-chain, the transaction is considered complete, and the funds are officially transferred between shards. The system ensures that the transaction is secure, valid, and finalized across both shards.
+
+## Transaction Flow in Cross-Shard Scenario
+
+1. **Shard 0** processes transactions within its shard, including the cross-shard transaction.
+
+2. **Meta-chain** notarizes the block from **Shard 0** containing cross-shard transactions.
+
+3. **Shard 1** processes the cross-shard transaction, retrieves the necessary transaction data from the meta-chain, and updates the recipient's balance.
+
+This method ensures that cross-shard transactions are completed without compromising the integrity and consistency of the network.

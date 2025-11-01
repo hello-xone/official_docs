@@ -1,0 +1,743 @@
+import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Button, Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/react";
+import { Callout } from 'nextra/components'
+import ImageViewer from '@components/ImageViewer';
+
+# Xone White Paper
+
+## 1. Overview
+
+Xone Chain is an advanced Behavioral Value Incentive (BVI) Layer 1 (L1) blockchain that uniquely merges EVM compatibility with Cosmos’s modular architecture, delivering a high-speed, secure, and commercially viable solution. Built to support the seamless deployment of applications, Xone Chain provides developers with a flexible, high-performance environment, fully compatible with EVM-based DApps and tools. This design empowers businesses to scale efficiently while ensuring robust security and operational reliability.
+
+### 1.1 Background and Vision
+
+Blockchain technology is reshaping modern financial systems and the digital economy. However, today’s decentralized finance (DeFi) systems face significant limitations in behavioral incentives, user experience, and ecosystem diversity. Xone Chain addresses these challenges by deeply integrating **Behavioral Value Incentives (BVI)** with **AI technologies**, redefining user roles in blockchain networks while creating an **open, transparent, and sustainable financial system** for developers and organizations alike.
+
+**Xone’s vision** is to se technological innovation and optimized economic models to reward users for their on-chain activities with real value, to provide developers with a diverse application development environment, and drive ongoing innovation and growth within the decentralized finance ecosystem.
+
+### 1.2 Core Positioning
+
+**Driving the decentralized finance ecosystem through Behavioral Value Incentives (BVI), with AI aiding user behavior and financial mechanism optimization.**
+
+At its heart, Xone emphasizes **BVI**. By combining **AI-powered analytics** and **Decentralized Autonomous Organization (DAO)** governance, Xone gathers and analyzes on-chain behavior data in real time to empower users. Every participant can receive value rewards based on their contributions. Additionally, the **Xone Name System (XNS)** enhances user experience, injecting flexibility, innovation, and sustainability into the DeFi ecosystem.
+
+### 1.3 Core Values
+
+<div class="mt-2 md:mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-carbon-convert-to-cloud stroke-2 bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <h4 className="flex flex-col text-md font-bold">Monetization of User Behavior</h4>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Transform on-chain behaviors into economic incentives, ensuring that every individual contribution is rewarded with real value.</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-carbon-deployment-pattern bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <h4 className="flex flex-col text-md font-bold">Technological Support and Flexibility</h4>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Provide a platform compatible with diverse application scenarios to support the rapid growth of decentralized finance.</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-fluent-building-government-search-32-regular bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <h4 className="flex flex-col text-md font-bold">Decentralized Governance</h4>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Utilize DAO structures and behavior-driven incentive mechanisms to foster ecosystem growth and multi-party collaboration.</p>
+    </CardBody>
+  </Card>  
+</div>  
+
+Through Xone, developers, organizations, and users can collaboratively shape an open, efficient, and sustainable decentralized future.
+
+## 2. Core Features
+
+### 2.1 High-Performance Consensus
+
+With a **1-second block time**, Xone Chain delivers near-instant finality, which is essential for DApp requiring real-time interactions, such as trading, gaming, and bidding platforms. This rapid block finalization reduces congestion and keeps transaction fees predictable.
+
+**Enhanced User Experience:** The brief confirmation time significantly reduces the waiting period for transactions, enabling interactions that feel immediate. This responsiveness is especially valuable for high-engagement applications, such as gaming, decentralized finance (DeFi), and NFT marketplaces, where real-time transaction settlement is essential.\
+**Optimized Throughput for Commercial Applications:** By achieving such a fast block time, Xone can handle a high volume of transactions per second, making it suitable for commercial-scale applications. This capability ensures that enterprises can rely on Xone to meet real-world demands for scalability, whether they involve payments, supply chain management, or large-scale data verification.\
+**Reduced Congestion and Lower Fees:** With rapid block production, the likelihood of network congestion is minimized, even during peak usage periods. A lower congestion rate means that transaction fees remain stable and affordable, making Xone an attractive option for developers and users alike. Low transaction costs encourage adoption across a wide range of users, from individual participants to large organizations.\
+**Real-Time DApp Interactions:** Enables real-time interactions within DApps, enhancing the viability of applications that require immediate feedback. Examples include automated trading bots in DeFi, real-time bidding systems, and live gaming interactions, all of which benefit from Xone’s low-latency environment.\
+**Increased Network Security:** Faster block times mean that transactions reach finality more quickly, reducing the potential window for malicious actors to attempt attacks, such as double-spending. This enhanced security is crucial for financial applications and asset transfers, where every second counts in ensuring the reliability and trustworthiness of the network.
+
+### 2.2 Modular Architecture
+
+The Cosmos SDK allows developers to add, remove, or modify blockchain modules without interrupting the entire chain’s operation. Key modules include governance, staking, and Inter-Blockchain Communication (IBC). Xone’s modular architecture supports various governance models, enabling developers and users to participate in the protocol's evolution actively.
+
+### 2.3 Full EVM Compatibility
+
+As an EVM-compatible chain, Xone Chain allows developers to deploy and interact with Ethereum-compatible smart contracts. This compatibility ensures that DApps built for Ethereum can run on Xone Chain without modification, facilitating the use of Ethereum’s extensive ecosystem of development tools, libraries, and wallets. 
+
+### 2.4 Privacy and Security
+
+Xone Chain integrates advanced privacy features, including zk-SNARKs (Zero-Knowledge Succinct Non-Interactive Arguments of Knowledge), supporting for secure, anonymous transactions. This privacy-centric approach supports private transactions and data confidentiality, which is crucial for applications requiring high security.
+
+## 3. Technical Framework
+
+Xone Blockchain adopts a modular, scalable, and high-performance architecture design. It combines a robust Proof of Stake consensus mechanism with an innovative Behavioral Value Incentive (BVI) systems to promote user participation and ecosystem growth. Its  architecture ensures seamless integration of new features, positioning Xone as a versatile platform for decentralized applications and cross-chain interoperability.
+
+<ImageViewer src="/images/technical_architecture.png" alt="Technical Architecture" style={{ width: '100%', height: 'auto' }} />
+
+### 3.1 Blockchain Infrastructure
+
+This layer manages the on-chain storage of all blockchain data, including account states, transaction history, and contract information.
+
+#### 3.1.1 Features
+
+**State Management:** Maintains the global state of the blockchain, including account balances, contract states, and Merkle Patricia Tree structure for proof verification.
+
+**Efficient Storage:** Uses a hierarchical key-value database (e.g., RocksDB) for high-performance data retrieval and writing.
+
+**Transaction History:** Provides access to historical transaction data for auditing and analytics purposes.
+
+#### 3.1.2 Scalability Extensions
+
+**State Sharding:** Divides the global state into independent shards, allowing parallel read and write operations to improve scalability.
+
+**Cold/Hot Data Separation:** Historical data (cold data) is archived into cost-efficient storage solutions, while frequently accessed data (hot data) remains in high-performance storage for low-latency operations.
+
+**Dynamic State Leasing:** Unused contract states or inactive accounts are moved to an off-chain storage mechanism, freeing up resources for active participants.
+
+### 3.2 Consensus Layer
+
+The Consensus Layer is the foundation of Xone Blockchain, responsible for maintaining network security, transaction finality, and validator coordination.
+
+#### 3.2.1 Proof of Stake (PoS)
+
+**Core Mechanism:**
+
+- Validators are selected based on the amount of staked tokens, ensuring a high level of security and decentralization.
+- Staking incentivizes network participants (validators and delegators) to act responsibly to earn rewards and avoid penalties for malicious behavior.
+
+**Validator Selection:**
+
+- Validators are dynamically selected to propose and validate blocks. The probability of being selected is proportional to their staked amount.
+- Misbehaving validators are penalized through to ensure the integrity of network.
+
+**Delegator System:**
+
+- Delegators can stake tokens with validators, earning a portion of the rewards, thereby indirectly securing the network.
+- A transparent mechanism allows delegators to switch validators when necessary.
+
+#### 3.2.2 Behavioral Value Incentive (BVI)
+
+Behavioral Value Incentive (BVI) is a mechanism that rewards users based on their significant actions on the blockchain, such as interacting with decentralized applications (DApps), contributing to governance, or facilitating network activity.
+
+**Key Features:**
+
+**User Interaction Incentives:**
+- Users earn BVI rewards by engaging with DApps, such as:
+  - Completing tasks or milestones in target applications.
+  - Participating in decentralized finance (DeFi) protocols (e.g., providing liquidity, staking, or borrowing).
+- Encourages healthy growth of the ecosystem by rewarding activity that adds value.
+
+``` json showLineNumbers copy filename="Rewarding DApp Interactions.json"
+//The user receives 50 GV tokens for their activity.
+{
+"action": "reward",
+"DApp": "XoneSwap",
+"user": "0xUserAddress",
+"behavior": "TokenSwap",
+"value": 50
+}
+```
+
+**Cross-DApp Interoperability:**
+- BVI is shared across interconnected DApps, creating a cohesive user experience. For example:
+  - Rewards earned in a DeFi platform can be utilized in gaming or governance DApps.
+  - Tokenized behavior values can be traded or used as collateral.
+
+**Social Interaction Rewards:** Incentivizes social behaviors like inviting friends, voting in governance, or supporting content creators within the ecosystem.
+
+**Data Aggregation and Transparency:** BVI is recorded on-chain, allowing transparent tracking and analysis of user behavior. Developers can integrate these metrics into their DApps for tailored reward systems.
+
+#### 3.2.3 Scalability Extensions
+
+**Dynamic Validator Pool:** Expands or contracts the validator set based on network activity, ensuring cost-efficiency during low activity periods and robustness during high load scenarios.
+
+**Behavior Scoring System:** Implements a scoring system to rank user activities, providing weighted rewards based on the significance of the action (e.g., high-value DeFi interactions vs. routine transfers).
+
+**BVI Integration with Governance:** Users with higher BVI scores gain greater voting influence in on-chain governance, promoting active and constructive participation.
+
+### 3.3 Networking Layer
+
+The Networking Layer ensures efficient communication between all nodes in the Xone Blockchain. It handles transaction propagation, block dissemination, and overall data synchronization.
+
+#### 3.3.1 Features
+
+**Peer-to-Peer Communication:** Utilizes the Gossip Protocol for broadcasting transactions and blocks. Each node shares data with its peers in a randomized yet efficient manner, ensuring rapid network-wide dissemination.
+
+**Topology Management:**
+- Dynamic node discovery enables seamless integration of new nodes into the network without manual configuration.
+- Resilient to node failures through self-healing mechanisms that re-establish broken communication links.
+
+**Bandwidth Optimization:**
+- Implements delta synchronization for state updates, minimizing redundant data transmission.
+- Prioritizes critical messages such as new transactions and finalized blocks over less urgent synchronization data.
+
+#### 3.3.2 Scalability Extensions
+
+**Multi-path Routing:** Introduces redundancy in data transmission by utilizing multiple communication paths, enhancing network fault tolerance and reducing bottlenecks.
+
+**Data Compression:** Compresses transaction and block data before transmission, reducing bandwidth usage and accelerating propagation in low-connectivity environments.
+
+**Optimized Gossip Protocol:** Incorporates message prioritization and selective rebroadcast to minimize network congestion and improve efficiency.
+
+### 3.4 Application Layer
+
+The Application Layer powers smart contract execution, decentralized application support, and Cosmos SDK-based modular functionalities.
+
+#### 3.4.1 EVM Module
+
+**Features**:
+- Fully supports Ethereum Virtual Machine (EVM), enabling deployment and execution of Solidity and Vyper-based smart contracts.
+- Provides a robust JSON-RPC API interface for interaction with wallets, DApps, and external services.
+
+``` solidity showLineNumbers copy filename="Querying Contract Data.solidity"
+//A wallet queries a token balance
+const balance = await token.balanceOf("0xUserAddress");
+console.log(`Balance: ${balance.toString()} tokens`);
+```
+
+**Gas Optimization:** Implements dynamic gas pricing, adjusting transaction costs based on network load and computational complexity.
+
+**Account Model:** Supports both externally owned accounts (EOAs) and contract accounts, ensuring compatibility with existing Ethereum infrastructure.
+
+**Scalability Extensions:**
+    
+- **Parallel Execution:** Smart contracts with independent states are executed in parallel to increase throughput.
+
+- **Batch Processing:** Groups multiple transactions into a single batch for simultaneous execution and validation, reducing block space overhead.
+
+``` solidity showLineNumbers copy filename="Batch Transactions.solidity"
+const batch = [
+{
+to: "0xRecipient1",
+value: ethers.utils.parseEther("1.0"),
+},
+{
+to: "0xRecipient2",
+value: ethers.utils.parseEther("2.0"),
+},
+];
+ 
+const tx = await signer.sendBatchTransactions(batch);
+console.log("Batch Transaction Hash:", tx.hash);
+```
+
+#### 3.4.2 Cosmos SDK Modules
+
+**Core Functionalities:**
+- **Governance:** Enables on-chain proposal creation, voting, and implementation, ensuring decentralized decision-making.
+- **Staking:** Supports delegation and validator rewards to secure the network.
+- **IBC:** Facilitates inter-blockchain communication for asset transfers and data exchange.
+
+**Scalability Extensions:**
+- **Dynamic Modules:** Allows seamless integration or upgrading of modules without network downtime.
+- **Optimized IBC:** Processes cross-chain messages in bulk, reducing latency and improving efficiency.
+
+``` solidity showLineNumbers copy filename="IBC Transfer.solidity"
+# Send tokens to a connected chain
+Xone tx ibc-transfer transfer channel-0 <recipient-address> 5xoc --from <user-address>
+```
+
+### 3.5 RPC Gateway Layer
+
+The RPC Gateway Layer acts as the primary communication bridge between decentralized applications (DApps), wallets, and the blockchain backend. It is responsible for processing user requests, translating them into blockchain-compatible commands, and returning results to the client applications.
+
+#### 3.5.1 Features
+
+**JSON-RPC API:**
+- Implements the JSON-RPC standard, allowing developers to interact with the blockchain using familiar Ethereum-compatible methods, such as:\
+  `eth_call`: For read-only contract calls.\
+  `eth_sendTransaction`: To submit transactions.\
+  `eth_getBalance`: To query account balances.
+
+- Provides backward compatibility with Ethereum development tools, including Web3.js, ethers.js, and Truffle.
+
+**IBC Integration:** Supports Inter-Blockchain Communication (IBC) queries and transactions, enabling DApps to initiate cross-chain transfers and retrieve data from connected Cosmos chains.
+
+**Secure Gateway:**
+- Implements authentication and rate-limiting mechanisms to protect the network from abuse (e.g., DDOS attacks).
+- Supports HTTPS for encrypted communication, ensuring data integrity and security.
+
+#### 3.5.2 Scalability Extensions
+
+**Asynchronous Query Processing:** Allows multiple RPC requests to be handled concurrently, reducing response latency under high demand.
+
+**Caching Layer:** Introduces a caching mechanism for frequently accessed data (e.g., account balances, recent blocks), improving query performance.
+
+**Sharded RPC Services:** Distributes RPC requests across multiple gateway nodes, enabling horizontal scalability and fault tolerance.
+
+#### 3.5.3 Examples
+
+1. **Querying Account Balance:**
+
+A user queries their balance via a wallet application:
+
+``` json showLineNumbers copy filename="Example.json"
+{
+  "jsonrpc": "2.0",
+  "method": "eth_getBalance",
+  "params": ["0xYourAccountAddress", "latest"],
+  "id": 1
+}
+```
+
+The gateway fetches the balance from the blockchain state and returns:
+
+``` json showLineNumbers copy filename="Example.json"
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": "0x1234567890abcdef"
+}
+```
+
+2. **Submitting Transactions:** A transaction payload is sent via eth_sendTransaction, which the RPC layer processes, validates, and forwards to the blockchain.
+
+### 3.6 Web3 Interface
+
+The Web3 Interface is the user-facing API layer that provides seamless integration between DApps, wallets, and the Xone Blockchain. It bridges the gap between end-users and the blockchain by abstracting complex functionalities into accessible methods.
+
+#### 3.6.1 Features
+
+**Ethereum-Compatible API:**
+- Fully compatible with Web3.js and ethers.js libraries, allowing developers to build DApps without learning new interfaces.
+- Includes APIs for:\
+  Querying blockchain data (`eth_blockNumber`, `eth_getTransactionReceipt`).\
+  Managing accounts (`personal_newAccount`, `personal_unlockAccount`).\
+  Interacting with smart contracts (`eth_call`, `eth_sendRawTransaction`).
+        
+**User Authentication:**
+- Leverages wallets like MetaMask or Xone’s native wallet to sign transactions securely.
+- Supports session management via token-based authentication for persistent connections.
+
+**Integration with DApps:** Allows seamless connection of DApps to the Xone network via injected providers (e.g., `window.ethereum` in browsers).
+
+#### 3.6.2 Scalability Extensions
+
+**Batch Processing:** Supports batching multiple RPC calls in a single request, reducing network overhead.
+
+**Event Subscription:** Enables real-time event monitoring (e.g., `eth_subscribe`), such as contract events, new blocks, or transaction statuses.
+
+**Cross-Chain Event Monitoring:** Extends Web3 subscriptions to track IBC-related events, providing developers with unified tools for multi-chain operations.
+
+#### 3.6.3 Examples
+
+1. **Smart Contract Interaction:**
+
+A DeFi DApp interacts with a liquidity pool contract:
+
+``` solidity showLineNumbers copy filename="Example.solidity"
+const contract = new ethers.Contract(contractAddress, abi, provider);
+const balance = await contract.getPoolBalance();
+console.log(`Pool balance: ${balance}`);
+```
+
+The Web3 Interface translates this into `eth_call` requests for execution.
+
+2. **Real-Time Event Tracking:**
+
+Subscribing to a contract's events:
+
+``` solidity showLineNumbers copy filename="Example.solidity"
+provider.on('Transfer', (from, to, value) => {
+  console.log(`Transfer from ${from} to ${to} of ${value} tokens`);
+});
+```
+
+### 3.7 Cross-Chain Bridge
+
+The interoperability bridge links Xone Chain to other EVM-compatible and Cosmos SDK chains, enabling cross-chain liquidity, asset swaps, and interoperability between DApps on different chains. This bridge is secured through multi-signature and threshold encryption, ensuring both functionality and security.
+
+#### 3.7.1 Use Cases of Xone Chain Privacy Bridge
+
+**Confidential DeFi Operations:** Users and institutions seeking privacy in decentralized finance can leverage Xone’s bridge to execute large-scale transactions without exposing wallet addresses or amounts, securing their financial privacy.
+
+**Cross-Chain NFT Transfers:** With privacy-preserving NFT transfers, creators and collectors can trade assets across chains without compromising ownership or transaction histories, giving a new level of privacy to the digital collectibles market.
+
+**Privacy in Enterprise Applications:** Xone Chain’s privacy bridge is ideal for enterprises requiring secure, cross-chain data transfers. It enables sensitive data exchanges, such as supply chain information, to move seamlessly across chains while keeping proprietary data confidential.
+
+**Decentralized Identity (DID) Management:** Users can maintain anonymous identity verification through privacy-focused DID solutions that operate on Xone’s bridge, allowing for secure authentication across applications without revealing personal information.
+
+## 4. Consensus Mechanism
+
+Xone Chain leverages a **hybrid Proof of Stake (PoS) and Delegated Proof of Stake (DPoS) consensus** mechanism, creating a robust and efficient framework for network security and scalability. This combination provides several key benefits:
+
+**Efficient Transaction Processing**: PoS and DPoS both require significantly less computational power than Proof of Work (PoW), reducing energy consumption while maintaining a high throughput.
+
+**Enhanced Security**: The hybrid structure increases fault tolerance by distributing network security responsibilities among both stakers and delegates, mitigating risks even if a subset of nodes becomes compromised.
+
+**Scalability**: PoS consensus enables horizontal scalability, allowing the network to maintain performance as additional nodes are added, which supports the growth of high-volume applications on the chain.
+
+Validator and delegate nodes are incentivized through staking rewards and transaction fees, creating a secure environment where participants are rewarded for contributing to network integrity and reliability. This incentive model promotes honest behavior and aligns network interests with security and decentralization.
+
+## 5. Nodes
+
+Xone Chain is a modular Layer 1 blockchain that enables users to participate through various node types, providing decentralized consensus and data availability support. With its multi-layer node structure and USDT stablecoin feedback loop, Xone Chain allows participants to contribute liquidity and staking for network growth, earning rewards and driving the ecosystem’s sustainability. Xone Chain supports multiple node types, each with unique functions to facilitate consensus and ensure data availability across the entire network:
+
+<ImageViewer src="/images/Xone_Chain_Nodes.png" alt="Xone Chain Nodes" style={{ width: '100%', height: 'auto' }} />
+
+**Validator Nodes:** These nodes participate in the consensus by generating and validating blocks, ensuring the security of the network. By staking XOC, node operators can unlock node identities, participate in the consensus mechanism, and earn Annual Percentage Yield (APY) rewards based on the GV (Growth Value) calculated according to the chain’s Epoch block production cycle.
+
+**Consensus Nodes:** These nodes synchronize the on-chain historical data of Xone Chain, maintaining the stability and reliability of the network.
+
+**Data Availability Nodes:**
+
+- **Bridge Nodes:** These nodes bridge blocks between the data availability network and the consensus network, enabling cross-chain operations.
+
+- **Light Nodes:** Light nodes perform data availability sampling on the data availability network, ensuring data integrity and network security while reducing hardware requirements for node operation.
+
+- **Full Storage Nodes:** Full storage nodes store all on-chain data without participating in consensus, providing comprehensive on-chain historical data to applications in need.
+
+**Xone-Specific Nodes:**
+
+- **Project Nodes:** Designed for developers, integrators, and ecosystem partners, project nodes participate in chain consensus and validation, earning XOC token rewards.
+
+- **Organization Nodes:** Targeted at enterprises and large community groups with more extensive storage and computational resources, organization nodes enhance consensus security and promote the long-term development of Xone.
+
+- **Individual Nodes:** Community members and individual users with lower hardware requirements can access personal nodes, which become part of the Xone ecosystem and provide Proof of Stake (PoS) yield benefits.
+
+## 6. Transactions
+
+In Xone, **transactions** represent cryptographic instructions sent from one account to another with the purpose of updating the state of the Xone network. Each transaction contains detailed information such as a nonce, sender and receiver addresses, transfer amount (if applicable), data, signatures, and other relevant information. Validators process and verify these transactions to ensure compliance with network rules. Once verified, the transaction is recorded in a block and added to the blockchain, making it immutable and transparent. 
+
+Transactions on Xone are operations initiated by user-controlled accounts.For example, when **Alice** sends **100 XOC** to **Bob**, **the transaction** deducts this amount from **Alice**’s account and deposits it into **Bob**’s account. The core purpose of this operation is to update the blockchain state.
+
+Once initiated, the transaction updates the network state and is broadcast to the entire blockchain network. Validators then verify and execute these transactions to ensure they conform to the network’s consensus rules. Each transaction contains key details, such as the sender and receiver addresses, the amount of XOC transferred, and any associated fees. All transactions are cryptographically signed to ensure authenticity and security.
+
+Transactions require a **transaction fee** (paid in XOC) and must be included in a validated block to be considered complete. The transaction information includes:
+
+``` js showLineNumbers copy filename="example.json"
+{
+  "nonce": 42,                                // Unique transaction identifier (from sender's account)
+  "to": "0x1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmq4vw35r",  // Recipient address
+  "from": "0x1ylzm22ngxl2tspgvwm0yth2myr6dx9avtx83zpxpu7rhxw4qltzs9tmjm9",  // Sender address
+  "value": "100000000000000000",              // Amount to be transferred (in wei)
+  "gas": 70000,                               // Gas limit for the transaction
+  "gasPrice": "1000000000",                   // Gas price (in wei)
+  "data": "Zm9vZCBmb3IgY2F0cw==",             // Optional data (encoded)
+  "chainId": 1,                               // The chain ID (1 = Mainnet for Ethereum)
+  "v": 27,                                    // Recovery id for signature (in EVM, the v is used in signature)
+  "r": "0x5845301de8ca3a8576166fb3b7dd25124868ce54b07eec7022ae3ffd8d4629540dbb7d0ceed9455a259695e2665db614828728d0f9b0fb1cc46c07dd669d2f0e",  // r part of the signature
+  "s": "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",  // s part of the signature
+  "type": 0                                    // Optional EIP-1559 transaction type for dynamic gas pricing (if applicable)
+}
+{
+: "5845301de8ca3a8576166fb3b7dd25124868ce54b07eec7022ae3ffd8d4629540dbb7d0ceed9455a259695e2665db614828728d0f9b0fb1cc46c07dd669d2f0e"
+}
+```
+<div className="overflow-x-auto">
+<Table removeWrapper aria-label="Example static collection table" className="mt-2">
+  <TableHeader>
+    <TableColumn>**Fields**</TableColumn>
+    <TableColumn>**Explain**</TableColumn>
+  </TableHeader>
+  <TableBody>
+    <TableRow key="1">
+      <TableCell>**Nonce**</TableCell>
+      <TableCell>A unique counter indicating the number of transactions initiated by the sender’s account. Each new transaction increases the nonce by 1 to prevent replay attacks.</TableCell>
+    </TableRow>
+    <TableRow key="2">
+      <TableCell>**Value**</TableCell>
+      <TableCell>The amount of XOC being transferred in the transaction.</TableCell>
+    </TableRow>
+    <TableRow key="3">
+      <TableCell>**Receiver**</TableCell>
+      <TableCell>The recipient's address.</TableCell>
+    </TableRow>
+    <TableRow key="4">
+      <TableCell>**Sender**</TableCell>
+      <TableCell>The address of the account initiating the transaction.</TableCell>
+    </TableRow>
+    <TableRow key="5">
+      <TableCell>**Gas Price**</TableCell>
+      <TableCell>The price (in XOC) for each unit of gas consumed by the transaction. Gas is used to execute smart contracts and pay for network resources.</TableCell>
+    </TableRow>
+    <TableRow key="6">
+      <TableCell>**Gas Limit**</TableCell>
+      <TableCell>The maximum amount of gas the transaction can consume. This ensures that a transaction doesn't exhaust network resources.</TableCell>
+    </TableRow>
+    <TableRow key="7">
+      <TableCell>**Data**</TableCell>
+      <TableCell>An optional field for including additional data, such as messages or instructions for smart contracts.</TableCell>
+    </TableRow>
+    <TableRow key="8">
+      <TableCell>**Chain ID**</TableCell>
+      <TableCell>Identifies which chain the transaction belongs to (e.g., Mainnet, Testnet, etc.).</TableCell>
+    </TableRow>
+    <TableRow key="9">
+      <TableCell>**Version**</TableCell>
+      <TableCell>Specifies the version of the transaction type.</TableCell>
+    </TableRow>
+    <TableRow key="10">
+      <TableCell>**Signature**</TableCell>
+      <TableCell>A cryptographic signature generated by the sender’s private key to authorize the transaction.</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+</div>
+
+## 7. Economic Model
+
+The XOC token is the native currency of Xone Chain which operates similarly to ETH within the Ethereum ecosystem. Users are required to use XOC tokens to interact with the Xone Chain, as they are utilized for paying gas fees associated with transactions and smart contract interactions. Additionally, XOC tokens play a critical role in the network’s security model, allowing users to stake their tokens to secure the network and earn corresponding rewards. They support decentralized finance (DeFi), smart contracts, and cross-chain applications, while also playing an important role in the Behavioral Value Incentive (BVI) economic model.
+
+![XOC](/images/Charts.png)
+
+### 7.1 Tokenomics
+
+XOC serves as the core resource of the Xone Chain ecosystem, with a token supply cap set at 10 billion. This cap is designed to ensure the stability of the token’s value and prevent inflation. These tokens power the network, enabling staking and supporting daily operations (such as initiating transactions, governance rewards, etc.), thereby ensuring the security and stability of the ecosystem.
+
+<div className="overflow-x-auto">
+<Table removeWrapper aria-label="Example static collection table" className="mt-2">
+  <TableHeader>
+    <TableColumn>**Channels**</TableColumn>
+    <TableColumn>**Allocation**</TableColumn>
+    <TableColumn>**Release**</TableColumn>
+  </TableHeader>
+  <TableBody>
+    <TableRow key="1">
+      <TableCell>BVI Nodes</TableCell>
+      <TableCell>60%</TableCell>
+      <TableCell>Through GV output, it is expected to be completed in 10 years of linear release.</TableCell>
+    </TableRow>
+    <TableRow key="2">
+      <TableCell>Donation Program</TableCell>
+      <TableCell>10%</TableCell>
+      <TableCell>5% of the donation plan will be released when the mainnet goes online, and the rest will be released starting from the 50th Epoch and will be released in 2 years.</TableCell>
+    </TableRow>
+    <TableRow key="3">
+      <TableCell>Team Allocation</TableCell>
+      <TableCell>10%</TableCell>
+      <TableCell>The mainnet will be released once every quarter and will be completed in 3 years.</TableCell>
+    </TableRow>
+    <TableRow key="4">
+      <TableCell>Ecosystem funds</TableCell>
+      <TableCell>10%</TableCell>
+      <TableCell>Reserved for exchange listings and ecosystem governance.</TableCell>
+    </TableRow>
+    <TableRow key="5">
+      <TableCell>DAO and Airdrops</TableCell>
+      <TableCell>10%</TableCell>
+      <TableCell>Being allocated for DAO governance and airdrop activities.</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+</div>
+
+In Xone Chain, XOC determines the weight of each node in the network’s decision-making process. Under the Proof of Stake (PoS) consensus mechanism, validators will receive voting power proportional to the amount of XOC they stake. To execute transactions on the network, users must pay a “Gas” fee, which will be burned, permanently removing it from the circulating supply.
+
+### 7.2 Key Features of XOC
+
+**Ownership:** XOC empowers users with full control over their funds. By holding XOC, users effectively become their own bank, enjoying complete ownership and control over their tokens. 
+
+**Security:** XOC is safeguarded by robust cryptographic algorithms and stored in personal wallets, ensuring the security of funds and transactions while preventing unauthorized access.
+
+**Decentralization:** XOC utilizes the Delegated Proof of Stake (DPoS) consensus mechanism, ensuring that no central authority controls the network. This enables decentralized management and governance.
+
+**Accessibility:** Anyone with an internet connection and a compatible wallet can access XOC, enabling seamless participation for users worldwide.
+
+**Flexibility:** XOC can be divided into extremely small units (as low as 0.00000000000000000001), facilitating transactions of any size—from micro-payments to large-scale transfers.
+
+**Instant Payments:** XOC transactions occur without intermediaries, processed directly on-chain. This ensures payments are fast, seamless, and cost-effective, akin to peer-to-peer cash transactions.
+
+### 7.3 Unique Attributes of XOC
+
+**Support for the Xone Chain Network:** XOC is the core token of Xone Chain, used to pay transaction fees and incentivize validators who process and verify transactions. Every transaction on Xone Chain requires XOC for payment, which facilitates network operations.
+
+**Validator Rewards:** Validators on Xone Chain are responsible for proposing and validating blocks. They are rewarded with XOC for maintaining the blockchain’s integrity.
+
+**Staking and Network Security:** Users can stake XOC to secure the network. Staking XOC helps protect the network and provides rewards for participants. This supports the security and decentralization of Xone Chain.
+
+**DeFi Capabilities:** XOC is used as collateral in decentralized finance (DeFi) applications, enabling borrowing, lending, and earning interest.
+
+**Transactions and Cross-Chain Payments:** XOC enables cross-chain asset transfers and is used to pay fees for multi-chain transactions. This supports the interoperability of Xone Chain across blockchain ecosystems.
+
+## 8. Xone Accounts
+
+The **Account** structure of Xone Chain enables seamless integration with EVM (Ethereum Virtual Machine) and Cosmos SDK functionalities, creating a unified model for managing assets, executing transactions, and interacting with decentralized applications across multiple chains. This account model ensures compatibility with Ethereum-based smart contracts while leveraging the modular capabilities of Cosmos.
+
+### 8.1 Key Features of Xone Accounts
+
+**Unified Address Format:** The account structure employs a single address format compatible with both EVM and Cosmos SDK. This design enables users to interact with Cosmos modules and EVM smart contracts using a consistent address, eliminating the need for separate accounts.
+
+**Dual Functionality:** The account model supports native Cosmos SDK operations (such as staking, governance, and IBC transfers) alongside EVM-specific actions (such as deploying contracts and transferring tokens). This functionality allows users to perform a comprehensive range of interactions through a single account structure, simplifying the operational process.
+
+**Cross-Chain Compatibility:** The account integrates with interoperability bridges, facilitating seamless asset and data transfers between Xone Chain and other blockchains within the Cosmos and Ethereum ecosystems. This is particularly suited for multi-chain applications and DeFi use cases.
+
+**Enhanced Security:** Accounts include options for multi-signature and recovery protocols, providing additional layers of protection. These features make the account structure suitable for users and organizations with high security requirements.
+
+**Privacy-Enhanced Transactions:** Accounts support privacy features such as zk-SNARKs and stealth addresses, enabling highly private and anonymous cross-chain transactions.
+
+### 8.2 Account Architecture
+
+Xone Accounts are built on a multi-layer architecture that enables both EVM and Cosmos SDK compatibility:
+
+- **Cosmos Layer:** Manages native transactions (e.g., staking, governance) and cross-chain operations using the Cosmos SDK.
+- **EVM Layer:** Handles Ethereum-compatible transactions, including smart contract deployments, token transfers, and DApp interactions.
+
+Each Xone Account can store assets and data across both layers, providing a unified access point for all blockchain activities on Xone Chain.
+
+### 8.3 Account Creation and Management
+
+Users can create and manage Xone Accounts through wallets (e.g., MetaMask, Keplr) that support both Cosmos and EVM environment. Accounts are accessed via private keys, which enables transaction signing and submission across Cosmos and EVM environments seamlessly.
+
+### 8.4 Xone Account Operations
+
+**Token Transfers:** Transfer native Xone tokens or EVM-compatible tokens within the Xone ecosystem or across supported blockchains via the cross-chain bridge.\
+**Smart Contract Interactions:** Execute Ethereum-based smart contracts and interact with DApps on the EVM layer directly from Xone Accounts.\
+**Governance Participation:** Vote in network governance.
+
+### 8.5 EIP-155: Replay Protection
+
+To protect users against malicious replay attacks of transactions across different networks, Xone Chain integrates **EIP-155 replay protection** directly into its protocol. Each transaction includes a unique **chain ID** and **nonce**, which collectively ensure that transactions are valid only within the designated network. This mechanism prevents any Xone Chain transaction from being mistakenly or maliciously duplicated on other EVM-compatible or Cosmos-based chains.
+
+The chain ID uniquely identifies the Xone network, signaling to validators that the transaction belongs exclusively to this environment. Paired with the incrementing nonce for each user transaction, this system effectively blocks replays by rejecting duplicate transactions across networks. By embedding EIP-155 replay protection at the protocol level, the network reinforces the integrity of cross-chain transfers and mitigates risks associated with unauthorized duplicate transactions.
+
+For users participating across multiple blockchain ecosystems, this protection is critical. It ensures that assets and data remain confined to their intended chain, eliminating the potential for unintended exposure or security vulnerabilities when moving assets across different networks.
+
+## 9. Gas and Fees
+
+On the Xone Chain network, gas fees are a fundamental component supporting transaction processing, preventing spam, and maintaining the network’s economic sustainability. Every transaction on the network, whether a simple token transfer or a complex smart contract interaction, requires users to pay **XOC** as gas fees. The gas fee model dynamically adjusts based on network congestion to ensure appropriate fee allocation during periods of high demand.
+
+### 9.1 Fee Structure and Allocation
+
+**Transaction Processing**: When a user initiates a transaction, a certain amount of **XOC** is paid as gas to compensate validators for processing and verifying the transaction. The fee structure incentivizes validators to prioritize transactions, with users willing to pay higher fees receiving faster confirmation times.
+
+**Burn Mechanism**: A unique feature of the fee structure is that a portion of each transaction fee is burned, meaning a small amount of **XOC** is permanently removed from circulation. This deflationary mechanism reduces the total supply of XOC over time as transaction volume grows, adding deflationary pressure that could positively impact the token’s value.
+
+**Network Stability and Security**: The gas fee and burn mechanism are key tools for maintaining network stability. By requiring users to pay gas for each transaction, the network reduces the likelihood of spam transactions and resource wastage. The burn feature further enhances this by reducing the incentive for malicious actors to flood the network with unnecessary transactions, as the cumulative cost of doing so would lead to significant XOC burns.
+
+**EVM and Cosmos Compatibility**: Xone Chain’s gas fee model is compatible with both EVM and Cosmos SDK frameworks, allowing for seamless fee calculation and burning on both layers. Whether transactions are processed on the EVM layer or uses Cosmos SDK functionality, the gas fee model remains consistent, transparent, and secure.
+
+The gas calculations of Xone Chain consist of three components: Gas used, Base fee, and Priority fee. The specific calculation is as follows:
+
+<div className="overflow-x-auto">
+```math
+GasFee=GasUsed*(BaseFee+PriorityFee)
+```
+</div>
+
+<Callout type="info" emoji="ℹ️">
+  **Minimum gas** unit price 0.01 Gwei\
+  **Base Fee:** This dynamic fee is automatically adjusted by the network to reflect the current level of congestion on the blockchain. If demand within a block is high, the base fee will increase; if demand is low, the base fee will decrease. This adjustment mechanism ensures fair pricing and helps maintain network stability by managing congestion.\
+  **Priority Fee:** The priority fee is an optional additional fee that users can pay to incentivize miners to prioritize their transactions. By paying a higher priority fee, users can speed up the transaction  confirmation, which is especially useful during peak network activity periods.
+</Callout>
+
+### 9.2 EIP-1559: Transaction Fee Model
+
+To optimize user transaction experience and enhance the fair allocation of network resources, **Xone Chain** integrates the **EIP-1559 transaction fee model** introduced by Ethereum. This model redefines the structure of transaction fees through dynamic base fee adjustment and  a fee burn mechanism, improving network usability and value stability.
+
+**Dynamic Adjustment of Base Fee:** The base fee is the minimum fee paid for each transaction, determined by the congestion level of the current block. When block demand is high, the base fee will automatically increase; when the network is idle, the fee will decrease. This mechanism effectively mitigates the uncertainty caused by fee market volatility for users.
+
+**Fee Burn Mechanism:** The paid base fee is directly burned from the network rather than paid to miners or validators. This not only reduces the number of tokens in circulation but also injects a natural deflationary property into Xone Chain's token model, thereby enhancing the long-term value of the token.
+
+**Priority Fee:** To incentivize validators to prioritize certain transactions, users can pay an additional priority fee. This portion of the fee is directly earned by validators, ensuring flexibility and fairness in network transaction processing.
+
+For example:
+
+#### 1. Transaction Initiation Phase
+
+A user wants to purchase a piece of artwork in the Xone Chain NFT marketplace for 5 XOC (Xone Chain’s native token). When the user initiates the transaction, the wallet application automatically queries the current network status, providing real-time base fee (Base Fee) and suggested priority fee (Priority Fee).
+
+Example data:
+
+- Current network base fee: **0.002 XOC**
+- User-selected priority fee: **0.0005 XOC**
+- Total transaction fee: **0.0025 XOC (Base Fee + Priority Fee)**
+
+#### 2. Dynamic Adjustment of Base Fee
+
+- **Network congestion:** If the current network demand is high (e.g., due to a popular NFT drop causing a surge in transactions), the base fee will automatically increase, such as adjusting from 0.002 XOC to 0.003 XOC.
+
+- **Low demand:** If the network is under low load, the base fee may decrease to 0.0015 XOC. This mechanism ensures dynamic balance in resource allocation, preventing transaction processing capacity from being excessively occupied.
+
+#### 3. Fee Burn Mechanism
+
+Once the user’s transaction is successfully validated in the block, the **0.002 XOC base fee** paid is burned. This reduces the total supply of XOC in circulation, creating a deflationary effect that supports long-term value growth of the token.
+
+**Example burn effect:** If there are 50,000 transactions on a given day, with each transaction burning 0.002 XOC, then **100 XOC** would be burned on that day by Xone Chain.
+
+#### 4. Priority Fee Incentive
+
+The **0.0005 XOC priority fee** paid by the user is directly rewarded to the validators. This mechanism provides additional income for validators, incentivizing them to prioritize the user's transaction, thus enhancing transaction confirmation speed and user experience.
+
+#### 5. Transaction Packaging and Confirmation
+
+- The user’s transaction is completed in less than 3 seconds because the user paid a priority fee, which the validators processed first.
+
+- During the block packaging process, the base fee is burned, and the transaction result is recorded on-chain, ensuring immutability of the transaction.
+
+## 10. Cross-Chain Interoperability
+
+Xone **Interoperability Bridge** aims to enable the free flow of assets and data between Cosmos SDK and EVM-compatible networks, providing users and developers with a seamless    multi-chain interaction experience while expanding access to liquidity and decentralized application (DApp) functionality.
+
+### 10.1 EVM and Cosmos SDK Compatibility
+
+By integrating EVM and Cosmos SDK, Xone Interoperability Bridge enables: 
+
+**Cross-Chain Smart Contract Calls:** Developers can deploy smart contracts between Ethereum-compatible chains (such as Binance Smart Chain) and Cosmos SDK-based chains, reducing development complexity.
+
+**Optimized Asset Transfer Efficiency:** Utilizing Light Client Verification reduces delays and costs associated with cross-chain asset transfers, ensuring efficient and reliable transactions.
+
+**Unified Multi-Chain Experience:** Xone Chain provides a one-stop SDK toolkit, enabling developers to quickly build multi-chain applications, offering end users a seamless blockchain interaction experience.
+
+### 10.2 Privacy Protocols
+
+To ensure data protection and transaction confidentiality, the cross-chain bridge incorporates the following advanced privacy protocols:
+
+**zk-SNARKs (Zero-Knowledge Succinct Non-Interactive Arguments of Knowledge):**
+
+- **Function:** Verifies the integrity of transactions without revealing specific details.
+- **Advantage:** Reduces verification time, suitable for high-frequency transaction scenarios while maintaining privacy.
+- **Use Cases:** Anonymous payments, private transaction records, etc.
+
+**Ring Signatures:**
+
+- **Function:** Mixes signatures among multiple parties to obscure the sender's true identity.
+- **Advantage:** Enhances the anonymity of transaction origins, protecting user privacy.
+- **Use Cases:** Enterprise-level confidential transactions, anti-censorship payments.
+
+**Stealth Addresses:**
+
+- **Function:** Automatically generates one-time addresses to conceal the recipient's identity.
+- **Advantage:** Prevents third parties from identifying transaction parties through blockchain data analysis, further protecting privacy.
+- **Use Cases:** Private transfers, cross-chain transfer of sensitive assets.
+
+Through these privacy protocols, Xone Chain Interoperability Bridge creates a secure and anonymous cross-chain transfer environment, particularly suited for financial and enterprise applications with high confidentiality requirements.
+
+## 11. Privacy and Security
+
+To ensure the integrity of user data and transaction security, Xone Chain employs a multi-layered technical architecture and innovative mechanisms in the realms of privacy and security:
+
+### 11.1 Multi-Layer Encryption Mechanism
+
+**Combination of Symmetric and Asymmetric Encryption:** Uses symmetric encryption (such as AES) to protect sensitive data on the chain, and asymmetric encryption (such as ECDSA) to ensure data security during cross-chain transmission.
+
+**End-to-End Encryption:** Ensures that data transmission between users and nodes is fully encrypted, preventing data from being intercepted or tampered with.
+
+**Multi-Factor Authentication (MFA):** Adds an MFA mechanism during cross-chain bridge access to further secure accounts.
+
+### 11.2 Fast Finality
+
+**Optimized Consensus Mechanism:** Xone Chain combines PoS (Proof of Stake) and BFT (Byzantine Fault Tolerance) to achieve efficient and reliable block confirmation. Transactions typically reach finality within **1-2 seconds.**
+
+Dual Protection Design:
+
+- **Preventing Double-Spend Attacks:** Uses strong consistency consensus algorithms (such as Tendermint) to ensure that a single transaction can only be confirmed once.
+- **Resisting 51% Attacks:** Relies on a highly decentralized validator network and dynamic penalty mechanisms to reduce the possibility of malicious node attacks.
+
+**Real-Time Monitoring and Recovery:** Uses on-chain monitoring tools to capture potential threats in real-time and quickly recover through hot backup mechanisms.
+
+### 11.3 Security Audits and Upgrade Mechanism
+
+**Regular Audits:** Collaborate with top blockchain security agencies (such as CertiK or SlowMist) to ensure code quality and vulnerability assessment.
+
+**Automated Upgrades:** Implementing a rollback-capable upgrade solution to ensure the smooth operation of the network during upgrades and provide a quick recovery path for potential issues.

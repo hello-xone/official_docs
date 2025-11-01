@@ -2,6 +2,7 @@ import classes from "./animatedStars.module.css";
 import TypingEffect from "@/components/typewriter/typewriter"
 import { Video } from '@components/Video';
 import { useTranslation } from 'react-i18next';
+import DynamicLangLink from './LangLink';
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -30,10 +31,10 @@ export default function Hero() {
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm dark:text-white leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20" >
               {t('hero.text1')}{" "}
-              <a href="/bvi/readme.zh" className="font-semibold text-primaryHue">
+              <DynamicLangLink basePath="/bvi" subPath="/readme" className="font-semibold text-primaryHue">
                 <span aria-hidden="true" className="absolute inset-0" />
                 {t('hero.text2')} <span aria-hidden="true">&rarr;</span>
-              </a>
+              </DynamicLangLink>
             </div>
           </div>
           <div className="text-center mt-16">

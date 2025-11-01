@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from '@heroui/react';
-import { setLanguage, ensureI18nInitialized } from '@/i18n';
+import { setLanguage, ensureI18nInitialized, getCurrentLanguage } from '@/i18n';
 import { useRouter } from 'next/router';
 
 const GlobeIcon = () => (
@@ -26,18 +26,70 @@ const GlobeIcon = () => (
 const LanguageSwitcher: React.FC = () => {
   const { i18n, t } = useTranslation();
   const router = useRouter();
-  const routerLocale = typeof router?.locale === 'string' ? router.locale : undefined;
-  const current = (routerLocale || i18n.language)?.startsWith('zh') ? 'zh' : 'en';
   const [mounted, setMounted] = React.useState(false);
+  const [currentLanguage, setCurrentLanguage] = React.useState('en');
+
   React.useEffect(() => {
-    ensureI18nInitialized();
-    setMounted(true);
-  }, []);
-  const label = mounted ? (current === 'zh' ? t('lang.zh') : t('lang.en')) : '';
+    const initializeLanguage = async () => {
+      // 确保 i18n 初始化完成
+      await ensureI18nInitialized();
+      
+      // 优先级：1. 路由的 locale 2. i18n 的当前语言 3. 持久化存储的语言
+      const routerLocale = router.locale;
+      const i18nLanguage = i18n.language;
+      const savedLanguage = getCurrentLanguage(); // 假设你有这个函数来获取保存的语言
+      
+      let finalLanguage = 'en';
+      
+      if (routerLocale && routerLocale.startsWith('zh')) {
+        finalLanguage = 'zh';
+      } else if (i18nLanguage && i18nLanguage.startsWith('zh')) {
+        finalLanguage = 'zh';
+      } else if (savedLanguage === 'zh') {
+        finalLanguage = 'zh';
+        // 如果持久化的语言与路由不一致，更新路由
+        if (routerLocale !== 'zh') {
+          const asPath = router.asPath || '/';
+          await router.push(asPath, asPath, { locale: 'zh', scroll: false });
+        }
+      }
+      
+      // 确保 i18n 使用正确的语言
+      if (i18nLanguage !== finalLanguage) {
+        await i18n.changeLanguage(finalLanguage);
+      }
+      
+      setCurrentLanguage(finalLanguage);
+      setMounted(true);
+    };
+
+    initializeLanguage();
+  }, [i18n, router]);
+
+  const label = mounted ? (currentLanguage === 'zh' ? t('lang.zh') : t('lang.en')) : '';
 
   if (!mounted) {
     return null;
   }
+
+  const handleLanguageChange = async (newLang: 'en' | 'zh') => {
+    if (newLang === currentLanguage) return;
+    
+    const asPath = router.asPath || '/';
+    
+    try {
+      setLanguage(newLang);
+      setCurrentLanguage(newLang);
+      // 同时更新路由和 i18n
+      await Promise.all([
+        router.push(asPath, asPath, { locale: newLang, scroll: false }),
+        i18n.changeLanguage(newLang)
+      ]);
+      
+    } catch (error) {
+      console.error('Failed to change language:', error);
+    }
+  };
 
   return (
     <Dropdown>
@@ -47,24 +99,16 @@ const LanguageSwitcher: React.FC = () => {
           <span className="text-small">{label}</span>
         </Button>
       </DropdownTrigger>
-      <DropdownMenu aria-label={t('actions.switch_language')} selectionMode="single" selectedKeys={new Set([current])}>
+      <DropdownMenu aria-label={t('actions.switch_language')} selectionMode="single" selectedKeys={new Set([currentLanguage])}>
         <DropdownItem
           key="en"
-          onPress={async () => {
-            const asPath = router.asPath || '/';
-            await router.push(asPath, asPath, { locale: 'en', scroll: false });
-            setLanguage('en');
-          }}
+          onPress={() => handleLanguageChange('en')}
         >
           {t('lang.en')}
         </DropdownItem>
         <DropdownItem
           key="zh"
-          onPress={async () => {
-            const asPath = router.asPath || '/';
-            await router.push(asPath, asPath, { locale: 'zh', scroll: false });
-            setLanguage('zh');
-          }}
+          onPress={() => handleLanguageChange('zh')}
         >
           {t('lang.zh')}
         </DropdownItem>

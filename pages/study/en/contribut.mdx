@@ -1,0 +1,155 @@
+import { Callout } from 'nextra/components';
+import { Link } from "@nextui-org/react";
+import {Avatar} from "@nextui-org/react";
+import ContactInfo from '@/components/ContactInfo';
+
+# Contribute to Xone
+
+Thank you for your willingness to contribute to the Xone ecosystem! Whether it's fixing a typo, submitting a piece of code, improving asset metadata, or participating in specification development, every investment helps make Xone better. ❤️
+<br/>
+<Link className='text-primaryHue' isExternal showAnchorIcon href="https://bvi.xone.org/en/community">Xone community</Link> contributions now cover multiple code repositories (not just documentation):
+
+- **WebSite**：<Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/hello-xone/xone_website">hello-xone/xone_website</Link>  
+- **Docs**：<Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/hello-xone/official_docs">hello-xone/official_docs</Link>  
+- **Assets**(Asset and apps metadata)：<Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/hello-xone/xone_assets">hello-xone/xone_assets</Link>  
+
+This guide will help you through the entire process, from raising an issue, creating a pull request (PR), code review, and merging and releasing your release. Unless otherwise noted, we recommend submitting pull requests/issues in English (multilingual documentation will be available in the future).
+
+<Callout emoji="🏁">
+  It’s great to start small: fixing a link, improving a description, adding an example or screenshot are all high-value contributions.
+  Of course! If you’ve contributed to any of the above repositories before, don’t forget to claim your POAP tokens!
+</Callout>
+
+## What can I contribute?
+
+- **Website**: Optimize page copy and layout, component/style improvements, performance and SEO, accessibility, i18n text, routing and navigation optimization, etc.
+- **Docs**: New chapters/tutorials, API/concept explanations, examples and best practices, fix broken links and formatting, illustrations and architecture diagrams, etc.
+- **Assets**: Add/update token and DApp metadata (info.json, logo, etc.), cross-chain mapping, proofread official links, optimize tags and categories, and improve scripts and validation rules.
+- **Other**: Propose standards (style guide, terminology, directory structure), create scripts and tools, reproduce issues and minimum requirements (MREs), provide roadmap feedback, etc.
+
+
+## What You Should Know Before Contributing
+
+1. Create a <Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/signup">GitHub account</Link>.
+2. Familiarize yourself with basic tools, technology stacks, and other important aspects:
+  - Git & GitHub: Branch management, commits, and the pull request process.
+  - Markdown: Document formatting and syntax.
+  - Node.js & package managers (npm/yarn/pnpm): Dependency installation and script execution.
+  - React & Next.js: Front-end component and page development (Website).
+  - JSON/YAML: Configuration and data file editing (Assets).
+  - ESLint/Prettier: Code style and formatting.
+3. **Run the build locally first** before submitting a PR to avoid build failures.
+
+
+## Local Development and Preview
+
+Try to run the validation scripts provided by the repository locally (such as pnpm lint / pnpm validate , etc.; refer to the repository README for details).
+
+<Callout emoji="🧪">
+  Before submitting a pull request, be sure to:
+
+  1. Stop other terminal processes and run `pnpm dev` to see if the build succeeds;
+
+  2. Fix any errors or linking issues reported by the terminal;
+
+  3. Run `pnpm fix` or the formatting/validation scripts provided by the repository;
+
+  4. Run `pnpm dev` again until both the client and server compile successfully.
+
+</Callout>
+
+## How to submit a pull request
+
+Fork the repository to your account and develop on a new branch:
+
+Suggested branch names: `feat/…`, `fix/…`, `docs/…`, `chore/…`, etc.
+
+Conventional Commits:
+
+```
+
+feat: New features/items (e.g., feat: add ABC token on Xone)
+
+fix: Bug fixes
+
+docs: Documentation and content
+
+style: Style/formatting that doesn't affect the logic
+
+refactor: Refactoring
+
+perf: Performance optimization
+
+test: Testing
+
+build: Build-related
+
+ci: CI configuration
+
+chore: Miscellaneous
+
+revert: Rollback
+
+```
+
+Submit a pull request to the upstream repository (usually the target branch is main; maintainers will notify you of any special branches during the review).
+
+**In the PR description:**
+
+1. Clearly explain the motivation and scope of the change;
+
+2. Attach screenshots/screen recordings (for front-end changes);
+
+3. Describe the verification steps and potential impact (mark "Breaking Change").
+
+4. Add tags to the PR: Select at least one of "Documentation/Website/Assets"; other tags (bug, enhancement, good first issue, etc.) can be added as needed.
+
+<br/>
+
+If you're not ready for review yet, select "Create Draft Pull Request"; when ready, mark it "Ready for Review."
+
+<Callout emoji="🤝">
+  We assign and review PRs during business days:
+
+  - Focus on **Accuracy**, **Quality**, and **Scope**;
+
+  - May suggest changes;
+
+  - After review, the PR will be merged and automatically deployed to the corresponding environment.
+</Callout>
+
+## Support and Communication Channels
+
+Email: <Link className='text-primaryHue' isExternal showAnchorIcon href="mailto:developers@xone.org">developers@xone.org</Link>
+
+Discord: <Link className='text-primaryHue' isExternal showAnchorIcon href="https://discord.gg/SzTaqpns">Discord</Link>
+
+Telegram: <Link className='text-primaryHue' isExternal showAnchorIcon href="https://t.me/Xone_Developers">Telegram</Link>
+
+Please disclose security vulnerabilities and sensitive issues privately via email; we will respond as quickly as possible. Perhaps you'd be interested in our <Link className='text-primaryHue' isExternal showAnchorIcon href="/study/bug">bug bounty program</Link>.
+
+## Claim Your GitPOAP Badge
+
+To thank our community contributors, we use <Link className='text-primaryHue' isExternal showAnchorIcon href="https://www.gitpoap.io/">GitPOAP</Link> to recognize your efforts! GitPOAP automatically detects your merged contributions and allows you to create a unique contributor POAP directly on their platform.
+
+**How to Claim:**
+
+1. Visit <Link className='text-primaryHue' isExternal showAnchorIcon href="https://www.gitpoap.io/gh/hello-xone">Xone’s GitPOAP page</Link>.
+2. Connect your wallet or email via the sign-in options.
+3. Search your GitHub username, ETH address, ENS name, or any GitPOAP to check your eligibility.
+4. If your GitHub account is eligible, you can create your GitPOAP!
+
+<Callout emoji="⚠️">
+  Do not use an exchange account or any account for which you do not control the private key, as you will not be able to access or manage your POAP with such accounts.
+</Callout>
+
+## License and Code of Conduct
+
+- Contributions must comply with the respective repository's license and code of conduct; please read the repository's README and guidelines before submitting.
+
+- You agree that your contributions may be used and redistributed under the repository's license.
+
+<br/>
+We look forward to your participation. Every contribution you make will brighten the future of Xone. 🎉
+
+<ContactInfo />

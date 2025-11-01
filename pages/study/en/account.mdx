@@ -1,0 +1,100 @@
+import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Button} from "@nextui-org/react";
+
+# Xone Account
+
+The Account structure on Xone Chain offers seamless integration with both EVM (Ethereum Virtual Machine) and Cosmos SDK functionalities, creating a unified model for managing assets, executing transactions, and interacting with decentralized applications across multiple chains. This account model ensures compatibility with Ethereum-based smart contracts while leveraging the modularity of Cosmos.
+
+## Key Features of Xone Account
+
+<div class="mt-2 md:mt-6 flex gap-3 overflow-x-auto py-6 px-6">
+  <Card className="flex-shrink-0 w-3/5 sm:w-3/4 lg:w-2/5 flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**Unified Address Format**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Accounts utilize a single address format that is functional across both EVM and Cosmos SDK. This design allows users to interact with Cosmos modules and EVM smart contracts using one consistent address, eliminating the need for separate accounts.</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 w-3/5 sm:w-3/4 lg:w-2/5 flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**Dual Functionality**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>The account model supports native Cosmos SDK operations (like staking, governance, and IBC transfers) alongside EVM-specific actions (such as deploying contracts and transferring tokens). This versatility enables comprehensive interactions from a single account structure, streamlining user experience.</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 w-3/5 sm:w-3/4 lg:w-2/5 flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**Cross-Chain Compatibility**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Built to integrate with the interoperability bridge, accounts support smooth asset and data transfers between Xone Chain and other blockchains within both Cosmos and Ethereum ecosystems, making them ideal for multi-chain applications and DeFi use cases.</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 w-3/5 sm:w-3/4 lg:w-2/5 flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**Enhanced Security**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Accounts are safeguarded by options like multi-signature and account recovery protocols. These additional layers of protection make them suitable for users and organizations with high security needs.</p>
+    </CardBody>
+  </Card>  
+  <Card className="flex-shrink-0 w-3/5 sm:w-3/4 lg:w-2/5 flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**Privacy-Enhanced Transactions**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Privacy features, including zk-SNARKs and stealth addresses, allow for confidential transactions directly from accounts, offering high levels of privacy and anonymity across chains.</p>
+    </CardBody>
+  </Card>
+</div>
+
+
+## Account Structure
+
+Xone Accounts are built on a multi-layer architecture that enables both EVM and Cosmos SDK compatibility:
+
+- **Cosmos Layer:** Manages native transactions (e.g., staking, governance) and cross-chain operations using the Cosmos SDK.
+
+- **EVM Layer:** Handles Ethereum-compatible transactions, including smart contract deployments, token transfers, and DApp interactions.
+
+Each Xone Account can store assets and data across both layers, providing a single point of access for all blockchain activities on Xone Chain.
+
+## Account Creation and Management
+
+Users can create and manage Xone Accounts through wallets that support Cosmos SDK and EVM compatibility (e.g., MetaMask, Keplr). The account is accessed via a private key, which enables signing and sending transactions across Cosmos and EVM environments seamlessly.
+
+## Xone Account Operations
+
+- **Token Transfers:**
+Transfer native Xone tokens or EVM-compatible tokens within the Xone ecosystem or across supported blockchains via the cross-chain bridge.
+
+- **Smart Contract Interactions:**
+Execute Ethereum-based smart contracts and interact with DApps on the EVM layer directly from the Xone Account.
+
+- **Governance Participation:**
+Vote in network governance.
+
+## EIP-155: Replay Protection
+
+To protect users from malicious replays of transactions across different networks, Xone Chain integrates **EIP-155 replay protection** directly into its protocol. Each transaction includes a distinct **chain ID** and **nonce**, which collectively ensure that transactions are valid only within the designated network. This mechanism prevents any Xone Chain transaction from being mistakenly or maliciously duplicated on other EVM-compatible or Cosmos-based chains.
+
+The chain ID uniquely identifies the Xone network, signaling to validators that the transaction is intended exclusively for this environment. Paired with the nonce, which uniquely increments with each user transaction, this system effectively blocks replays by rejecting duplicate transactions across networks. By embedding EIP-155 replay protection at the protocol level, the network reinforces the integrity of cross-chain transfers and mitigates risks associated with unauthorized duplicates.
+
+For users engaged with multiple blockchain ecosystems, this protection is critical. It ensures that assets and data remain confined to their intended chain, eliminating the potential for unintended exposure or security vulnerabilities when moving assets across different networks.
+
+
+
+
+
+
