@@ -4,7 +4,7 @@ import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@
 import ContactInfo from "@/components/ContactInfo";
 import { Video } from '@components/Video';
 import ImageViewer from '@components/ImageViewer';
-
+import DynamicLangLink from '@components/LangLink.tsx';
 
 # Welcome to the XOC Release Page!
 
@@ -51,7 +51,7 @@ Once the previous steps are confirmed, enter the amount of XOC you want to relea
 <Callout type="warning" emoji="⚠️">
   **Note:**  
   1. The exchange ratio of WXOC to XOC is **1:1**, with no additional fees or management charges.  
-  2. The amount of XOC you receive depends on the amount of WXOC you confirm for release. <Link className='text-primaryHue' showAnchorIcon href="/study/release#how-do-i-calculate-the-tokens-i-can-release">Check the calculation details here >></Link>
+  2. The amount of XOC you receive depends on the amount of WXOC you confirm for release. <DynamicLangLink className='text-primaryHue' showAnchorIcon basePath='/study' subPath='/release#how-do-i-calculate-the-tokens-i-can-release'>Check the calculation details here >></DynamicLangLink>
   3. Once your WXOC tokens are sent and confirmed on the contract, they **cannot be retrieved**, whether sent from this page or through other methods.
 </Callout>
 
@@ -120,7 +120,7 @@ You might still have many questions about the illustration. Let’s dive deeper 
 
 ## How do I calculate the tokens I can release?
 
-Before we start calculating, let's understand <Link className='text-primaryHue' showAnchorIcon href="/study/epoch">what Xone Epoch is?</Link>Here, we assume that the first Epoch will be released when the mainnet is launched, so there will be 365 Epochs participating in this release in two years. Since we have to wait for 50 Epochs after the first release, the total number of released Epochs is 315.
+Before we start calculating, let's understand <DynamicLangLink className='text-primaryHue' showAnchorIcon basePath='/study' subPath='/epoch'>what Xone Epoch is?</DynamicLangLink>Here, we assume that the first Epoch will be released when the mainnet is launched, so there will be 365 Epochs participating in this release in two years. Since we have to wait for 50 Epochs after the first release, the total number of released Epochs is 315.
 
 Although we calculate the accumulated number of Epochs based on the number of natural days in 2 years, it is not fixed.
 
@@ -128,7 +128,7 @@ It may be adjusted due to market fluctuations, foundation voting, etc., **but yo
 
 After a deeper understanding, now imagine a value that represents the number of WXOC tokens you get in the donation plan. For example: 10,000.00
 
-Preparation is complete! Next, let's take a look at the number of XOCs released this time; from the <Link className='text-primaryHue' showAnchorIcon href="/study/wiki">Xone white paper</Link>, we can know that the XOC released is the donation part, which accounts for 10% of the total token supply, that is: 1,000,000,000.00. 5% will be released when the mainnet is launched, so on the first day, 50,000,000.00 XOC will be released for the donation plan.
+Preparation is complete! Next, let's take a look at the number of XOCs released this time; from the <DynamicLangLink className='text-primaryHue' showAnchorIcon basePath='/study' subPath='/wiki'>Xone white paper</DynamicLangLink>, we can know that the XOC released is the donation part, which accounts for 10% of the total token supply, that is: 1,000,000,000.00. 5% will be released when the mainnet is launched, so on the first day, 50,000,000.00 XOC will be released for the donation plan.
 
 <div className="overflow-x-auto">
 ```math

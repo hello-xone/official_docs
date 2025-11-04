@@ -1,5 +1,5 @@
 import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Button} from "@nextui-org/react";
-
+import DynamicLangLink from '@/components/LangLink.tsx';
 # Let the value be seen and make participation more meaningful
 
 Welcome to the home of the BVI identity system! Here, we firmly believe that every participant deserves a unique and warm digital identity. Whether you are a shining individual, a united and collaborative organization, or a project that dares to innovate, your identity is the valuable footprint you leave in this ecosystem.
@@ -46,14 +46,15 @@ We hope that through this identity system, every participant can feel warmth and
       <p>Learn how your personal identity can help you showcase your unique style, record every contribution and growth, and participate in platform governance and incentive plans.</p>
     </CardBody>
     <CardFooter>
-      <Link
+      <DynamicLangLink
         isExternal
         showAnchorIcon
-        href="/bvi/identity/individual"
+        basePath='/bvi/identity' 
+        subPath='/individual'
         className='text-primaryHue'
       >
         See more
-      </Link>
+      </DynamicLangLink>
     </CardFooter>
   </Card>
   <Card className="flex-shrink-0 max-w-full flex-col">
@@ -67,14 +68,15 @@ We hope that through this identity system, every participant can feel warmth and
       <p>Discover how organizational identity integrates team strength, builds decentralized autonomous organizations, and promotes collaboration and shared governance among members.</p>
     </CardBody>
     <CardFooter>
-      <Link
+      <DynamicLangLink
         isExternal
         showAnchorIcon
-        href="/bvi/identity/organize"
+        basePath='/bvi/identity' 
+        subPath='/organize'
         className='text-primaryHue'
       >
         See more
-      </Link>
+      </DynamicLangLink>
     </CardFooter>
   </Card>
   <Card className="flex-shrink-0 max-w-full flex-col">
@@ -88,14 +90,15 @@ We hope that through this identity system, every participant can feel warmth and
       <p>Explore how project identity can become a comprehensive credential for you to demonstrate your technical strength and market performance, and gain continuous incentives and cooperation opportunities in the ecosystem.</p>
     </CardBody>
     <CardFooter>
-      <Link
+      <DynamicLangLink
         isExternal
         showAnchorIcon
-        href="/bvi/identity/project"
+        basePath='/bvi/identity' 
+        subPath='/project'
         className='text-primaryHue'
       >
         See more
-      </Link>
+      </DynamicLangLink>
     </CardFooter>
   </Card>  
 </div>

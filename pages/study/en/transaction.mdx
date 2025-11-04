@@ -1,5 +1,6 @@
 import { Link } from "@nextui-org/react";
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/react";
+import DynamicLangLink from '@/components/LangLink.tsx';
 
 # Transaction
 
@@ -11,7 +12,7 @@ A **transaction** on Xone is an operation initiated by a user-controlled account
 
 Once a transaction is initiated, it updates the network's state and is broadcasted to the entire blockchain network. Validators then verify and execute these transactions, ensuring they comply with the network's consensus rules. Each transaction includes crucial details like the sender and receiver's addresses, the amount of XOC transferred, and associated fees. These transactions are cryptographically signed to ensure their authenticity and security.
 
-Transactions require a <Link className='text-primaryHue' showAnchorIcon href="/study/gas">transaction fee</Link> (paid in XOC) and must be included in a validated block to be considered complete.
+Transactions require a <DynamicLangLink className='text-primaryHue' showAnchorIcon basePath='/study' subPath='/gas'>transaction fee</DynamicLangLink> (paid in XOC) and must be included in a validated block to be considered complete.
 
 ## Typical Xone L1 Transaction Components
 

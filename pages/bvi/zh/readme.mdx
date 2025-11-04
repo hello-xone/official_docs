@@ -1,36 +1,36 @@
 import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Link} from "@nextui-org/react";
 import { Callout } from 'nextra/components'
-import DynamicLangLink from '../../../components/LangLink.tsx'
+import DynamicLangLink from '@/components/LangLink.tsx';
 
-![横幅](public/images/banner.png)
+![Banner](public/images/banner.png)
 
 # 背景
 
-随着数字经济和区块链技术的发展，个体与平台之间的互动缺乏一种切实的记录方式和价值赋予方式。无形资产和行为难以量化，而去中心化、透明、高效和用户自主权正成为现代生态系统的核心需求。在当前的Web3项目中，用户参与度低、激励机制碎片化、治理无效以及<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>自由度有限等挑战，常常阻碍生态系统的长期健康发展。
+随着数字经济和区块链技术的发展，个人与平台之间的互动缺乏切实的记录方式和价值赋予。无形资产和行为难以量化，而去中心化、透明化、高效化和用户自主权正成为现代生态系统的核心需求。在当前Web3项目中，用户参与度低、激励机制碎片化、治理无效以及<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath='/identity'>身份</DynamicLangLink>自由度有限等挑战，往往阻碍了生态系统的长期健康发展。
 
-为了解决这些问题，Xone 的主要目标和愿景是构建一个理想的 BVI（行为价值激励）系统。该系统旨在将每一个用户行为转化为可衡量的激励积分，并为用户提供一个自由、开放且独具特色的<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>平台——最终实现 **"将无形行为转化为有形价值"** 的目标。以行为为锚点，以<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>为纽带，以治理为基础，BVI 系统致力于推动一个公平、透明和高效的生态系统。
+为了解决这些问题，Xone的主要目标和愿景是构建一个理想的BVI（行为价值激励）系统。该系统旨在将每一个用户行为转化为可衡量的激励分数，并为用户提供一个自由、开放且独特的<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath='/identity'>身份</DynamicLangLink>平台——最终实现 **"将无形行为转化为有形价值"** 的目标。以行为为锚点，以<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/identity">身份</DynamicLangLink>为纽带，以治理为基础，BVI系统致力于推动一个公平、透明和高效的生态系统。
 
 ## 理念与目标
 
 ### 2.1 行为估值与价值积累
 
-BVI 的核心思想借鉴了<Link className='text-primaryHue' isExternal showAnchorIcon href="https://zh.wikipedia.org/wiki/%E8%8A%9D%E9%BA%BB%E4%BF%A1%E7%94%A8">"信用评分"（如芝麻信用）</Link>的概念，但它超越了信誉评估的范畴。它是一个全面的激励系统，用于量化用户在链上的行为和贡献。每一个行动——无论是交易、跨链交互还是社区参与——都可以转化为相应的激励积分（GV）。这种方法为原本无形的行为赋予了明确的价值，这些积分作为奖励累积在用户的账户中。
+BVI的核心思想借鉴了<Link className='text-primaryHue' isExternal showAnchorIcon href="https://zh.wikipedia.org/wiki/%E8%8A%9D%E9%BA%BB%E4%BF%A1%E7%94%A8">"信用评分"（如芝麻信用）</Link>的概念，但超越了信誉评估的范畴。它是一个全面的激励系统，旨在量化用户在链上的行为和贡献。每一个行动——无论是交易、跨链交互还是社区参与——都可以转化为相应的激励分数（GV）。这种方法为原本无形的行为赋予了明确的价值，这些分数作为奖励累积在用户的账户中。
 
 ### 2.2 激励与治理
 
-BVI 系统引入了两种主要的激励类型，既确保参与者的经济回报，又通过去中心化治理避免权力集中：
+BVI系统引入了两种主要的激励类型，确保参与者的经济回报和去中心化治理，以避免权力集中：
 
-- **经济激励**：累积的 GV 可以兑换为原生链代币 <DynamicLangLink className='text-primaryHue' showAnchorIcon basePath="/study" subPath="/xoc" >XOC</DynamicLangLink>，为用户提供切实的经济回报。
-- **治理激励**：GV 也可以转化为投票权（GVOTING），使用户能够参与平台的重大决策，并为生态系统优化和资源分配做出贡献。
+- **经济激励**：累积的GV可以兑换原生链代币<DynamicLangLink className='text-primaryHue' showAnchorIcon basePath='/study' subPath='/xoc'>XOC</DynamicLangLink>，为用户提供切实的经济回报。
+- **治理激励**：GV也可以转化为投票权（GVOTING），使用户能够参与平台重大决策，并助力生态系统优化和资源分配。
 
 ### 2.3 自由身份与开放组织
 
-在 BVI 中，<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>不再局限于固定标签，而是一个灵活、开放且可扩展的<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>系统。每个用户的区块链地址不仅是一个账户，更是整个生态系统中<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>、声誉、历史贡献以及 DAO 或 DApp 隶属关系的凭证。通过整合去中心化身份（<Link className='text-primaryHue' isExternal showAnchorIcon href="https://ethereum.org/en/decentralized-identity/">DID</Link>）技术，BVI 增强了安全性、互操作性和用户自主权——从而释放<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>的全部价值。
+在BVI中，<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/identity">身份</DynamicLangLink>不再局限于固定标签，而是一个灵活、开放且可扩展的<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath='identity'>身份</DynamicLangLink>系统。每个用户的区块链地址不仅是一个账户，更是整个生态系统中<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/identity">身份</DynamicLangLink>、声誉、历史贡献以及DAO或DApp隶属关系的凭证。通过整合去中心化身份（<Link className='text-primaryHue' isExternal showAnchorIcon href="https://ethereum.org/en/decentralized-identity/">DID</Link>）技术，BVI提升了安全性、互操作性和用户自主权——从而释放<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/identity">身份</DynamicLangLink>的全部价值。
 
-- **定义自由**：用户可以自由定义和管理自己的<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>，实现个性化表达。这包括根据个人偏好、贡献历史和角色来自定义头像、昵称、凭证和社区标签。
-- **跨域互操作性**：统一的<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>系统确保了在不同 DApp 和 DAO 之间的无缝传输和共享。经过加密和验证后，<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>数据可以在不同平台间使用，解决了碎片化问题，减少了重复认证，最终提升了用户体验。
-- **专业化组织**：<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>不仅仅是个人标签——它也可以作为去中心化、开放和独特组织的基础。用户可以根据自己的<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>创建或加入 DAO，建立可信的社区，实现自我治理和协作式的生态系统管理。
-- **<Link className='text-primaryHue' isExternal showAnchorIcon href="https://ethereum.org/en/decentralized-identity/">DID</Link> 集成**：通过集成去中心化<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>（<Link className='text-primaryHue' isExternal showAnchorIcon href="https://ethereum.org/en/decentralized-identity/">DID</Link>）系统，BVI 为去中心化应用提供了独特、用户友好且安全的<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>凭证。<Link className='text-primaryHue' isExternal showAnchorIcon href="https://ethereum.org/en/decentralized-identity/">DID</Link> 确保了隐私和用户对<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>数据的控制，允许在不同平台和链上进行可验证、安全的交互。这释放了<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>数据的价值，并实现了跨链和跨平台的无缝连接。
+- **定义自由**：用户可以自由定义和管理自己的<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/identity">身份</DynamicLangLink>，实现个性化表达。这包括根据个人偏好、贡献历史和角色定制头像、昵称、凭证和社区标签。
+- **跨域互操作性**：统一的<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/identity">身份</DynamicLangLink>系统确保了跨DApp和DAO的无缝传输和共享。经过加密和验证后，<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/identity">身份</DynamicLangLink>数据可以在不同平台间使用，解决了碎片化问题，减少了重复认证，最终提升了用户体验。
+- **专业化组织**：<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/identity">身份</DynamicLangLink>不仅仅是个人标签，它还可以作为去中心化、开放且独特组织的基础。用户可以根据自己的<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/identity">身份</DynamicLangLink>创建或加入DAO，建立可信的社区，实现自我治理和协作式的生态系统管理。
+- **<Link className='text-primaryHue' isExternal showAnchorIcon href="https://ethereum.org/en/decentralized-identity/">DID</Link>集成**：通过集成去中心化<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/identity">身份</DynamicLangLink>（<Link className='text-primaryHue' isExternal showAnchorIcon href="https://ethereum.org/en/decentralized-identity/">DID</Link>）系统，BVI为去中心化应用提供了独特、用户友好且安全的<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/identity">身份</DynamicLangLink>凭证。<Link className='text-primaryHue' isExternal showAnchorIcon href="https://ethereum.org/en/decentralized-identity/">DID</Link>确保了隐私和用户对<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/identity">身份</DynamicLangLink>数据的控制，允许跨平台和跨链进行可验证、安全的交互。这释放了<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/identity">身份</DynamicLangLink>数据的价值，并实现了无缝的跨链和跨平台连接。
 
 ## BVI 系统概览
 
@@ -42,49 +42,49 @@ BVI 系统引入了两种主要的激励类型，既确保参与者的经济回�
 
 ### 4.1 选择身份方案
 
-**每个加入 Xone 的地址（用户）** **默认被识别为普通用户**。在此默认状态下，任何链上行为都不会产生实际价值。由于 Xone 是一个 EVM 兼容的 Layer-1 链，此类地址与以太坊、BNB 智能链、Arbitrum 等其他公链上的地址并无区别。
+**每个加入Xone的地址（用户）** **默认被识别为普通用户**。在此默认状态下，任何链上行为都不会产生实际价值。由于Xone是一个EVM兼容的Layer-1链，此类地址与以太坊、BNB智能链、Arbitrum等其他公链上的地址并无区别。
 
-Xone 的独特之处在于它将用户分为三大<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>类别：**个人**、**组织**和**项目**。
+Xone的独特之处在于将其用户划分为三大<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/identity">身份</DynamicLangLink>类别：**个人**、**组织**和**项目**。
 
-在传统行业中，这会被视为"打标签"，逻辑上确实如此。然而，Xone 的意图超越了打标签。它旨在为 Xone 生态系统内的每个用户提供一个可视化且有意义的**<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>**，从而能够根据每个用户的角色和期望进行价值权益分配。
+在传统行业中，这会被视为"打标签"，从逻辑上讲也确实如此。然而，Xone的意图超越了打标签。它旨在为Xone生态系统内的每一位用户提供一个可视化且有意义的**<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/identity">身份</DynamicLangLink>**，以便根据每个用户的角色和期望进行价值权益分配。
 
-**选择<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>是参与 BVI 的先决条件**——这是一个强制性步骤。每个地址**只能选择一个<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>**，并且一旦选定，**将无法更改**。
+**选择<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/identity">身份</DynamicLangLink>是参与BVI的先决条件**——这是一个强制性步骤。每个地址**只能选择一个<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/identity">身份</DynamicLangLink>**，并且一旦选定，**无法更改**。
 
 ### 4.2 参与特定行为
 
-为了规范化和可视化每个参与<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/identity">身份</Link>的地址（BVI 参与者）的贡献，Xone 将这些行动定义为**行为**，或者更实际地说，**任务**。
+为了规范和可视化每个拥有<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/identity">身份</DynamicLangLink>的地址（BVI参与者）的贡献，Xone将这些行动定义为**行为**，或者更实际地说，**任务**。
 
-行为形式多样。有些需要**在指定项目内进行特定交易或满足特定标准**，而另一些则是**生态系统内 DApp 开发者或运营者分配的任务**。为了支持开发者，**Xone 将提供开放的 API 和 SDK**，以创建个性化和灵活的集成 BVI 的 DApp。
+行为形式多样。有些行为需要**在指定项目内进行特定交易或满足特定标准**，而其他行为则是**由生态系统内的DApp开发者或运营者分配的任务**。为了支持开发者，**Xone将提供开放的API和SDK**，以创建个性化和灵活的集成BVI的DApp。
 
-目前，Xone 仍处于早期和脆弱阶段。与成熟的公链相比，Xone 在工具、生态系统成熟度和社区规模方面仍然落后。为了解决这个问题，Xone 的运营者引入了 **BVI <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/season">赛季</Link>** 的概念，每个**赛季都包含有资格获得 BVI 奖励的指定行为**。
+目前，Xone仍处于早期和脆弱阶段。与成熟的公链相比，Xone在工具、生态系统成熟度和社区规模方面仍然落后。为了解决这个问题，Xone的运营者引入了**BVI <DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/season">赛季</DynamicLangLink>** 的概念，每个**赛季都包含有资格获得BVI奖励的指定行为**。
 
-每个赛季根据生态系统目标为**不同的行为分配不同的权重**。例如，在<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/season">第 1 赛季</Link>，行为 A、B 和 C 可能贡献 GV，权重分别为 60%、25% 和 15%，这表明行为 A 是本赛季的重点。**未来的赛季（例如<Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/season">第 2 赛季</Link>）** 将根据市场、运营和生态系统的反馈调整行为权重——从而定义了动态的 **BVI <Link className='text-primaryHue' isExternal showAnchorIcon href="/bvi/season">赛季框架</Link>**。
+每个赛季根据生态系统目标为**各种行为分配不同的权重**。例如，在<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/season">第1赛季</DynamicLangLink>中，A、B、C三种行为可能贡献GV，权重分别为60%、25%和15%，这表明行为A是本赛季的重点。**未来的赛季（例如<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/season">第2赛季</DynamicLangLink>）** 将根据市场、运营和生态系统的反馈调整行为权重——从而定义了动态的**BVI <DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/bvi' subPath="/season">赛季</DynamicLangLink>框架**。
 
 ### 4.3 基于纪元的结算
 
-当 **BVI 参与者完成赛季特定任务**后，结算会在**每个新<Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> 纪元 </Link>开始时**进行，基于**上一个<Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> 纪元 </Link>** 内完成的行为。
+当**BVI参与者完成赛季特定任务**后，结算将在**每个新<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/study' subPath='/epoch'> 纪元 </DynamicLangLink>开始时**进行，基于**上一个<Link className='text-primaryHue' isExternal showAnchorIcon basePath='/study' subPath='/epoch'> 纪元 </Link>** 内完成的行为。
 
-GV 奖励根据**赛季行为权重**和**个体用户贡献**进行分配。为了维持**每个<Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> 纪元 </Link>固定的 GV 奖励池总量**，Xone 采用了**截断机制**：如果用户的行为贡献占比 **≤ 0.001%**，则**不会获得奖励**。
+GV奖励根据**赛季行为权重**和**个体用户贡献**进行分配。为了维持**每个<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/study' subPath='/epoch'> 纪元 </DynamicLangLink>固定的GV奖励池总量**，Xone采用了**截断机制**：如果用户的行为贡献占比**≤ 0.001%**，则**不会获得奖励**。
 
-此外，在 **"零赛季"**（没有活跃 BVI 赛季的时期），所有**原本用于该<Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> 纪元 </Link>奖励池的 XOC 代币将被发送到一个销毁地址**——永久销毁。该机制旨在调节 XOC 的流通供应量并支持价格稳定。
+此外，在**"零赛季"**（没有活跃BVI赛季的时期），所有**原计划用于该<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/study' subPath='/epoch'> 纪元 </DynamicLangLink>奖励池的XOC代币将被发送至销毁地址**——永久销毁。该机制旨在调节XOC的流通供应量并支持价格稳定。
 
-需要注意的是，**GV 具有有效期**。在一个<Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> 纪元 </Link>内获得的 GV 必须在 **20 个<Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> 纪元 </Link>内**被领取或使用。例如，在<Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> 纪元 </Link> #1 中获得的 GV，如果未被使用，将在**<Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> 纪元 </Link> #21 开始时被销毁**。
+需要注意的是，**GV具有有效期**。在一个<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/study' subPath='/epoch'> 纪元 </DynamicLangLink>内获得的GV必须在**20个<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/study' subPath='/epoch'> 纪元 </DynamicLangLink>内**被领取或使用。例如，在<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/study' subPath='/epoch'> 纪元 </DynamicLangLink> #1中获得的GV，如果未被使用，将在**<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/study' subPath='/epoch'> 纪元 </DynamicLangLink> #21开始时被销毁**。
 
-### 4.4 获取有形价值
+### 4.4 获得有形价值
 
-既然我们已经概述了 BVI 的核心逻辑，一个主要问题仍然存在：**用户通过参与 BVI 究竟能获得什么有形价值？** 为什么不直接奖励 XOC 或其他代币？
+既然我们已经概述了BVI的核心逻辑，一个主要问题仍然存在：**用户参与BVI究竟能获得什么有形价值？** 为什么不直接奖励XOC或其他代币？
 
-这是 Xone 的运营者和开发者仔细考虑过的。目标是将 Xone 建设成一个**自由、开放、公平、透明和高效的生态系统**。从一开始就将行为价值与代币直接挂钩会**违背 BVI 的设计理念**。
+这是Xone的运营者和开发者仔细考虑过的。目标是将Xone建设成一个**自由、开放、公平、透明和高效的生态系统**。从一开始就将行为价值直接与代币挂钩会**与BVI的设计理念相悖**。
 
-GV **不是货币，而是一种占位符**——一种代表潜在价值的中间件。它可能表现为**积分、能量、优惠券、凭证、忠诚度代币、股份、期权**，或任何您熟悉的类似机制。当用户通过 BVI 赚取 GV 时，**他们获得的是一个可以解锁未来有形价值的凭证**。
+GV**不是货币，而是一个占位符**——一种代表潜在价值的中间件。它可能以**积分、能量、优惠券、凭证、忠诚度代币、股份、期权**的形式出现，或者任何您熟悉的类似机制。当用户通过BVI赚取GV时，**他们获得的是一个可以解锁未来有形价值的凭证**。
 
-此外，生态系统内的开发者可以利用 GV 作为其**定制项目策略**的一个组成部分，使其适应他们自己的运营或奖励框架。
+此外，生态系统内的开发者可以将GV作为其**自定义项目策略**的一个组成部分，使其适应他们自己的运营或奖励框架。
 
 ## BVI 代币经济学
 
 ![代币经济学](public/images/Tokenomics.png)
 
-如**白皮书**所述，**总代币供应量的 60.00% 分配给 BVI 系统**。这部分分配的具体比例如下：
+如**白皮书**所述，**总代币供应量的60.00%分配给BVI系统**。这部分分配的具体情况如下：
 
 <div className="overflow-x-auto">
   <Table removeWrapper aria-label="Example static collection table" className="mt-2">
@@ -99,7 +99,7 @@ GV **不是货币，而是一种占位符**——一种代表潜在价值的中�
         <TableCell>GV</TableCell>
         <TableCell>55.00%</TableCell>
         <TableCell>3,300,000,000.00</TableCell>
-        <TableCell>用于 GV 奖励或线性释放。</TableCell>
+        <TableCell>用于GV奖励或线性释放。</TableCell>
       </TableRow>
       <TableRow key="2">
         <TableCell>质押</TableCell>
@@ -111,7 +111,7 @@ GV **不是货币，而是一种占位符**——一种代表潜在价值的中�
         <TableCell>基金会</TableCell>
         <TableCell>10%</TableCell>
         <TableCell>600,000,000.00</TableCell>
-        <TableCell>用于 Xone 基金会运营和部署。</TableCell>
+        <TableCell>用于Xone基金会运营和部署。</TableCell>
       </TableRow>
     </TableBody>
   </Table>
@@ -119,7 +119,7 @@ GV **不是货币，而是一种占位符**——一种代表潜在价值的中�
 
 ## 如何计算
 
-在上面的内容中，我们知道每次参与行为都会根据特定的权重和自身参与行为的比例进行结算。那么我们如何才能知道每次参与行为能获得多少 GV 呢？
+在以上内容中，我们了解到每次参与行为都会根据特定权重以及自身参与行为的占比进行结算。那么我们如何才能知道每次参与行为可以获得多少GV呢？
 
 <div className="overflow-x-auto">
 ```math
@@ -130,11 +130,11 @@ GV_{i,b}(E) = \left( \frac{x_{i,b}(E)}{\sum_{u} x_{u,b}(E)} \right) \times w_b \
 <Callout>
 **含义:**
 
-- **$GV_{i,b}(E)$:** 用户 $i$ 在<Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> 纪元 </Link> $E$ 中因行为 $b$ 获得的奖励数量。
-- **${x_{i,b}(E)}$:** 用户 $i$ 在<Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> 纪元 </Link> $E$ 中对行为 $b$ 的贡献值（例如，完成任务次数、贡献数据量等）。
+- **$GV_{i,b}(E)$:** 用户 $i$ 在<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/study' subPath='/epoch'> 纪元 </DynamicLangLink> $E$ 中因行为 $b$ 获得的奖励数量。
+- **${x_{i,b}(E)}$:** 用户 $i$ 在<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/study' subPath='/epoch'> 纪元 </DynamicLangLink>  $E$ 中对行为 $b$ 的贡献值（例如，完成任务次数、贡献数据量等）。
 - **${\sum_{u} x_{u,b}(E)}$:** 所有用户（用下标 $u$ 表示）对行为 $b$ 的总贡献。
 - **$w_b$:** 行为 $b$ 的权重，用于调整不同行为的奖励比例（例如：重要的行为权重更高）。
-- **${TotalGV}(E)$:** 当前<Link className='text-primaryHue' isExternal showAnchorIcon href="/study/epoch"> 纪元 </Link> $E$ 中可以分发给所有用户的总奖励数量。
+- **${TotalGV}(E)$:** 当前<DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/study' subPath='/epoch'> 纪元 </DynamicLangLink> $E$ 中可以分发给所有用户的总奖励数量。
 
 </Callout>
 

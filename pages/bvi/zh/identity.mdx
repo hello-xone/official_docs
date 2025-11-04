@@ -1,113 +1,114 @@
 import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Button} from "@nextui-org/react";
+import DynamicLangLink from '@/components/LangLink.tsx';
+# 让价值被看见，让参与更有意义
 
-# Let the value be seen and make participation more meaningful
+欢迎来到BVI身份系统的家园！在这里，我们坚信每一位参与者都值得拥有一个独特且温暖的数字身份。无论您是闪耀的个人、团结协作的组织，还是敢于创新的项目，您的身份都是您在这个生态中留下的宝贵足迹。
 
-Welcome to the home of the BVI identity system! Here, we firmly believe that every participant deserves a unique and warm digital identity. Whether you are a shining individual, a united and collaborative organization, or a project that dares to innovate, your identity is the valuable footprint you leave in this ecosystem.
+我们的身份系统不仅仅是一个简单的区块链地址，更是一张综合性的数字名片，记录着您的历史贡献、个人声誉与参与历程。结合去中心化身份（DID）技术，我们确保每个身份都安全、透明且完全由您掌控，让每一次互动与付出都能被真实记录与共享。
 
-Our identity system is not just a simple blockchain address, but a comprehensive digital business card that records your historical contributions, personal reputation and participation. Combined with decentralized identity (DID) technology, we ensure that each identity is secure, transparent and fully controlled by you, so that every interaction and effort can be truly recorded and shared.
+## 为何选择我们的身份系统？
 
-## Why choose our identity system?
+在去中心化的世界里，我们拒绝中心化的身份管理，但我们需要一种**真实可信的方式来识别彼此的价值**。身份不仅仅是标签，更是连接信任、协作与激励的基础。
 
-In a decentralized world, we reject centralized identity management, but we need a **real and credible way to identify each other's value**. Identity is not just a label, but also the basis for connecting trust, collaboration and motivation.
+Xone BVI身份系统正是为此而生。
 
-Xone BVI identity system was born for this purpose.
+我们相信：
 
-We believe:
+- 一个项目值得展示它的创意与发展；
+- 一个组织应该体现它的协作与贡献；
+- 一个个人应当拥有自己的记录与声音。
 
-- A project deserves to show its creativity and development;
+因此，我们构建了三大核心身份类型，以涵盖生态中的每一个角色。
 
-- An organization should reflect its collaboration and contribution;
+## 它们的特性
 
-- An individual should have his own records and voice.
+**自由定义：** 每位用户都可以自由设置自己的昵称、头像与简介，以最真实的方式展示自我。您的身份是您独特个性的延伸。
 
-Therefore, we have built three core identity types to cover every role in the ecosystem.
+**跨域互操作性：** 我们构建的身份系统支持不同DApp和DAO之间的无缝连接。无论您在哪里参与，都能使用同一身份自由连通整个生态。
 
-## Their characteristics
+**开放包容：** 无论您是个人、团队还是项目，我们都欢迎您的加入。在这里，您不仅可以展示自我，更能与志同道合的伙伴共同成长，携手共建一个更加开放透明的数字世界。
 
-**Free definition:** Each user can freely set their own nickname, avatar and profile to show themselves in the most authentic way. Your identity is an extension of your unique personality.
+## 探索我们的身份
 
-**Cross-domain interoperability:** The identity system we built supports seamless connection between different DApps and DAOs. No matter where you participate, you can use the same identity to freely connect to the entire ecosystem.
-
-**Openness and inclusiveness:** Whether you are an individual, a team or a project, we welcome you to join. Here, you can not only show yourself, but also grow together with like-minded partners and work together to build a more open and transparent digital world.
-
-## Explore our identity
-
-We hope that through this identity system, every participant can feel warmth and trust. Identity is not only a label, but also a record of your digital journey. No matter where you come from or what role you play, we look forward to working with you to promote this possible and beautiful future.
+我们希望通过这个身份系统，让每位参与者都能感受到温暖与信任。身份不仅是标签，更是您数字旅程的记录。无论您来自何方，扮演何种角色，我们都期待与您一同推动这个充满可能的美好未来。
 
 <div class="mt-2 md:mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
   <Card className="flex-shrink-0 max-w-full flex-col">
     <CardHeader className="flex top-6 gap-2">
       <div className="i-streamline-interface-favorite-award-ribbon-reward-like-social-rating-media stroke-2 bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
       <div className="flex flex-col">
-        <p className="text-md">**Free Individual**</p>
+        <p className="text-md">**自由个人**</p>
       </div>
     </CardHeader>
     <CardBody className="px-3 pt-0 pb-3 text-small">
-      <p>Learn how your personal identity can help you showcase your unique style, record every contribution and growth, and participate in platform governance and incentive plans.</p>
+      <p>了解您的个人身份如何帮助您展现独特风格，记录每一次贡献与成长，并参与平台治理和激励计划。</p>
     </CardBody>
     <CardFooter>
-      <Link
+      <DynamicLangLink
         isExternal
         showAnchorIcon
-        href="/bvi/identity/individual"
+        basePath='/bvi/identity' 
+        subPath='/individual'
         className='text-primaryHue'
       >
-        See more
-      </Link>
+        了解更多
+      </DynamicLangLink>
     </CardFooter>
   </Card>
   <Card className="flex-shrink-0 max-w-full flex-col">
     <CardHeader className="flex top-6 gap-2">
       <div className="i-solar-share-circle-bold bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
       <div className="flex flex-col">
-        <p className="text-md">**Active organizations**</p>
+        <p className="text-md">**活跃组织**</p>
       </div>
     </CardHeader>
     <CardBody className="px-3 pt-0 pb-3 text-small">
-      <p>Discover how organizational identity integrates team strength, builds decentralized autonomous organizations, and promotes collaboration and shared governance among members.</p>
+      <p>探索组织身份如何凝聚团队力量，构建去中心化自治组织，并推动成员间的协作与共治。</p>
     </CardBody>
     <CardFooter>
-      <Link
+      <DynamicLangLink
         isExternal
         showAnchorIcon
-        href="/bvi/identity/organize"
+        basePath='/bvi/identity' 
+        subPath='/organize'
         className='text-primaryHue'
       >
-        See more
-      </Link>
+        了解更多
+      </DynamicLangLink>
     </CardFooter>
   </Card>
   <Card className="flex-shrink-0 max-w-full flex-col">
     <CardHeader className="flex top-6 gap-2">
       <div className="i-material-symbols-track-changes-rounded bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
       <div className="flex flex-col">
-        <p className="text-md">**Independent Project**</p>
+        <p className="text-md">**独立项目**</p>
       </div>
     </CardHeader>
     <CardBody className="px-3 pt-0 pb-3 text-small">
-      <p>Explore how project identity can become a comprehensive credential for you to demonstrate your technical strength and market performance, and gain continuous incentives and cooperation opportunities in the ecosystem.</p>
+      <p>探索项目身份如何成为您展示技术实力与市场表现的综合性凭证，并在生态中获得持续激励与合作机会。</p>
     </CardBody>
     <CardFooter>
-      <Link
+      <DynamicLangLink
         isExternal
         showAnchorIcon
-        href="/bvi/identity/project"
+        basePath='/bvi/identity' 
+        subPath='/project'
         className='text-primaryHue'
       >
-        See more
-      </Link>
+        了解更多
+      </DynamicLangLink>
     </CardFooter>
   </Card>  
 </div>
 
-If you have any questions or suggestions about our identity system, please feel free to contact us. Thank you for your trust and support, and we look forward to working with you to create a more free, open, and interconnected ecological world!
+如果您对我们的身份系统有任何疑问或建议，请随时联系我们。感谢您的信任与支持，我们期待与您共同打造一个更加自由、开放、互联的生态世界！
 
-## The relationship between them
+## 它们之间的关系
 
-![relationship](public/images/relationship.png)
+![关系](public/images/relationship.png)
 
-As for the connection between identities, as shown in the figure above; they will have their own independent joining and invitation relationships, and all identities are based on BVI's unified governance, identity confirmation and legal authorization, providing identity authentication support for the entire network.
+关于身份之间的联系，如上图所示；它们将拥有各自独立的加入与邀请关系，并且所有身份都基于BVI的统一治理、身份确权与合法授权，为全网络提供身份认证支持。
 
-Regarding identity rights and the connection between them, reasonable adjustments will be made based on the governance proposal; for today's Xone, BVI's identity system will be processed **according to the single-line two-way logic of individuals joining organizations and organizations joining projects**. Individuals cannot join projects without organizations, and of course, projects themselves cannot invite individuals to join;
+关于身份权益以及它们之间的联系，将根据治理提案进行合理调整；对于今天的Xone而言，BVI的身份系统将按照**个人加入组织，组织加入项目的单线双向逻辑进行处理**。个人无法不经组织加入项目，当然项目本身也无法邀请个人加入；
 
-However, in this process, **individuals will have 2.00% rebates after joining the organization** given to the organization that joins; this purpose is for Xone to tilt more resources to organizations that join BVI in the startup phase; of course, as the Xone ecological project grows, more high-quality rights and interests will be obtained for individuals and project identities.
+不过在此过程中，**个人加入组织后将会有2.00%的返利**给予所加入的组织；这个目的是为了Xone在启动阶段向加入BVI的组织倾斜更多资源；当然，随着Xone生态项目的发展，也将为个人与项目身份获取更多优质权益。
