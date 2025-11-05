@@ -1,0 +1,116 @@
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Link} from "@nextui-org/react";
+import ContactInfo from "@/components/ContactInfo";
+import DynamicLangLink from "@/components/LangLink.tsx";
+
+# Cookie 政策
+
+本 Cookie 政策是 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://xone.org">Xone</Link> 更广泛隐私政策的一部分。它解释了当您访问我们的网站或使用我们的服务时，<Link className='text-primaryHue' isExternal showAnchorIcon href="https://xone.org">Xone</Link>（"我们"或"我们的"）如何使用 Cookie 和类似技术。本政策旨在遵守欧盟（EU）、中华人民共和国（PRC）和美国（US）的法律要求，特别是在用户同意、透明度和数据权利方面。
+
+## 1. 法律依据和辖区合规性
+
+根据您所在的位置，我们遵守以下法规：
+
+* **欧盟（GDPR + ePrivacy 指令）：** 要求在设置非必要 Cookie 之前获得知情、明确的同意。必须给予用户细化的选择权，并能够随时撤回同意。
+* **中国（PIPL）：** 个人信息的处理（包括可识别身份的 Cookie）必须具有合法基础。必须告知用户，对于跨境数据传输或敏感数据，需要单独同意。
+* **美国（例如 CCPA/CPRA）：** 要求透明度、选择退出个人信息销售或共享的权利，以及访问/删除某些数据的能力。对于广告或第三方 Cookie，必须提供用户选择退出的选项。
+
+## 2. 什么是 Cookie？
+
+Cookie 是您访问网站时存储在您设备上的小型文本文件。它们有助于识别您的浏览器或设备，并执行多种功能：
+
+* 确保网站的技术运行
+* 记住用户偏好
+* 进行分析
+* 实现广告和营销
+
+我们还使用类似的技术，例如网络信标、跟踪像素和本地存储。
+
+## 3. 我们使用的 Cookie 类型
+
+<div className="overflow-x-auto">
+  <Table removeWrapper aria-label="Cookie类型表" className="mt-2">
+    <TableHeader>
+      <TableColumn>**类别**</TableColumn>
+      <TableColumn>**示例**</TableColumn>
+      <TableColumn>**目的**</TableColumn>
+      <TableColumn>**必要？**</TableColumn>
+      <TableColumn>**保留期**</TableColumn>
+    </TableHeader>
+    <TableBody>
+      <TableRow key="1">
+        <TableCell>严格必要</TableCell>
+        <TableCell>session_id, csrf_token</TableCell>
+        <TableCell>启用核心功能，如登录和导航</TableCell>
+        <TableCell>是</TableCell>
+        <TableCell>会话 / 短期</TableCell>
+      </TableRow>
+      <TableRow key="2">
+        <TableCell>分析 / 性能</TableCell>
+        <TableCell>_ga, _gid, _gat (Google Analytics)</TableCell>
+        <TableCell>衡量用户互动、流量和行为模式</TableCell>
+        <TableCell>否</TableCell>
+        <TableCell>_ga: 2年, _gid: 1天, _gat: 1分钟</TableCell>
+      </TableRow>
+      <TableRow key="3">
+        <TableCell>广告 / 重定向</TableCell>
+        <TableCell>Google Ads cookies</TableCell>
+        <TableCell>跟踪广告展示、转化和用户行为以进行定向投放</TableCell>
+        <TableCell>否</TableCell>
+        <TableCell>不定（数月到数年）</TableCell>
+      </TableRow>
+      <TableRow key="4">
+        <TableCell>安全 / 归因</TableCell>
+        <TableCell>gac*</TableCell>
+        <TableCell>验证 UTM 来源、活动链接</TableCell>
+        <TableCell>有时</TableCell>
+        <TableCell>按 Google 定义</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</div>
+
+## 4. 同意管理
+
+当您首次访问我们的网站时，您会看到一个 **Cookie 横幅**请求您的同意。此横幅将：
+
+* 提供接受或拒绝非必要 Cookie 的选项
+* 提供对 Cookie 类别的细化控制
+* 允许访问 Cookie 设置面板
+
+根据 GDPR，所有非必要 Cookie 在您提供明确、知情的同意之前都将被禁用。我们不使用预选框或默示同意（例如，继续浏览）。
+
+对于位于中国的用户，虽然当地法律目前未强制要求横幅，但我们自愿提供类似的界面，以确保分析或广告 Cookie 的透明度和知情同意。
+
+在美国，特别是对于加利福尼亚州居民，我们在适用的情况下提供"请勿出售或共享我的个人信息"链接，并允许选择退出第三方 Cookie。
+
+您可以通过我们的 Cookie 设置面板**随时撤回或修改您的同意**。
+
+## 5. 用户权利
+
+根据您所在的司法管辖区，您拥有以下权利：
+
+* **访问权：** 请求有关存储的 Cookie 及相关数据的信息
+* **删除权：** 请求删除 Cookie 或相关的个人数据
+* **限制或反对权：** 阻止将 Cookie 用于特定目的
+* **撤回同意权：** 随时撤回，不影响撤回前基于同意的处理的合法性
+* **投诉权：** 向监管机构（欧盟）、监管者（中国）或州检察长（美国）提出投诉
+
+要行使任何这些权利，请通过我们<DynamicLangLink className='text-primaryHue' showAnchorIcon basePath='/study' subPath='/privacy'>隐私政策</DynamicLangLink>中的联系信息与我们联系。
+
+## 6. 跨境数据传输
+
+我们使用的某些服务（例如 Google Analytics、Google Ads）可能会将数据传输到您所在司法管辖区之外的服务器，例如美国。我们确保任何此类传输：
+
+* 符合 GDPR 的标准合同条款（针对欧盟用户）
+* 获得单独、知情的同意并进行风险披露（针对 PIPL 下的中国用户）
+* 符合适用的州和联邦法律（针对美国用户）
+
+我们实施安全保障措施，例如加密、访问控制和数据最小化实践。
+
+## 7. 政策更新
+
+我们可能会不时更新本政策，以反映法律、我们 Cookie 使用情况或服务提供商的变化。我们将通知用户任何重大变更，并更新上面的生效日期。我们鼓励您定期查看本政策。
+
+## 8. 联系我们
+
+<ContactInfo />

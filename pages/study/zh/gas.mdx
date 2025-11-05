@@ -1,0 +1,277 @@
+import { Callout } from 'nextra/components';
+import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Button} from "@nextui-org/react";
+import { Tabs } from 'nextra/components';
+
+# Gas 费用
+
+在 Xone Chain 网络中，Gas 费用是一个基本组成部分，旨在支持交易处理、防止垃圾信息并促进网络的经济可持续性。网络上的每笔交易，无论是简单的代币转账还是复杂的智能合约交互，都需要用户以 XOC 支付 Gas 费用。Gas 费用模型根据网络拥堵情况动态调整，确保在高需求期间适当分配费用。
+
+## 什么是 Gas 费用？
+
+在区块链网络中，**Gas 费用**是指用户必须支付以执行交易或智能合约的成本。它是网络运营和维护的核心部分，确保交易得到验证、处理，并保持网络健康安全。Gas 费用用于补偿网络验证者，他们负责处理交易和执行智能合约，从而确保网络稳定性。
+
+在 Xone Chain 网络内，每笔交易必须支付 **XOC** 作为 Gas 费用。无论是简单的代币转账还是复杂的智能合约交互，用户都支付特定数量的 **XOC** 来支持网络的正常运行。
+
+## 费用结构与分配
+
+<div class="mt-2 md:mt-6 flex gap-3 overflow-x-auto py-6 px-6">
+  <Card className="flex-shrink-0 w-3/4 sm:w-2/3 lg:w-2/4 flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**交易处理**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>当用户发起交易时，会支付一定数量的 XOC 作为 Gas，以补偿验证者节点处理和验证交易。这笔费用激励验证者优先处理交易，使愿意支付更高费用的用户能够更快地确认交易。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 w-3/4 sm:w-2/3 lg:w-2/4 flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**销毁机制**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>费用结构的一个独特特点是每笔交易费用的一部分会被销毁，这意味着少量 XOC 会永久退出流通。这种通缩机制随着时间的推移减少了 XOC 的总供应量，符合长期代币经济学目标。随着交易量的增长，被销毁的 XOC 数量也会增加，增加了通缩压力，可能对代币价值产生积极影响。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 w-3/4 sm:w-2/3 lg:w-2/4 flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**网络稳定性和安全性**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Gas 费用和销毁机制也是维护网络稳定性的关键工具。通过要求用户为每笔交易支付 Gas，网络阻止了垃圾交易和资源浪费。销毁功能通过减少恶意行为者用不必要交易淹没网络的动机来进一步增强这一点，因为这样做的累积成本将导致大量 XOC 被销毁。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 w-3/4 sm:w-2/3 lg:w-2/4 flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**EVM 和 Cosmos 兼容性**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone Chain 上的 Gas 费用模型与 EVM 和 Cosmos SDK 框架兼容，允许在两个层面上进行无缝的费用计算和销毁。这种集成确保了无论交易是在 EVM 层处理还是使用 Cosmos SDK 功能，Gas 费用模型都保持一致、透明和安全。</p>
+    </CardBody>
+  </Card>
+</div>
+
+## 如何减少 Gas 费用支付？
+
+近年来，区块链网络和交易平台在降低 Gas 费用方面取得了显著进展，这是用户和开发者普遍面临的一个痛点，尤其是在 DeFi 和 NFT 日益普及的情况下。为了解决这个问题，许多网络和平台正在积极探索创新解决方案，以降低交易成本并提高效率。降低 Gas 费用可以改善用户体验，降低运营成本，并使更广泛的受众能够访问区块链。如果您想减少在 Xone Chain 或其他区块链网络上的 Gas 费用，请考虑以下策略：
+
+<div class="mt-2 md:mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-3">
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-game-icons-avoidance stroke-2 bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**避开交易高峰期**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Gas 费用通常随着网络拥堵而波动。在网络需求较低的闲时，交易费用通常也较低。避开高峰期（例如，在市场暴涨期间）有助于最大限度地减少您的 Gas 支出。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-solar-hand-stars-broken bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**优化交易操作**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+    <Tabs items={['批量交易', '降低复杂度']}>
+      <Tabs.Tab>
+      如果您需要进行多笔交易，请尝试将它们合并为一笔交易，这样可以降低总体 Gas 成本。例如，某些代币转账或交互可以合并，从而减少单笔 Gas 费用。
+      </Tabs.Tab>
+      <Tabs.Tab>
+      复杂的智能合约交互通常需要更高的 Gas 费用。通过简化合约调用并避免不必要的操作，您可以有效降低成本。
+      </Tabs.Tab>
+    </Tabs>
+    </CardBody>
+    <CardFooter>
+      <Link
+        isDisabled
+        showAnchorIcon
+        href="#"
+        className='text-primaryHue'
+      >
+        即将推出。
+      </Link>
+    </CardFooter>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-teenyicons-adjust-vertical-outline bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**调整 Gas 限制和价格**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>大多数钱包允许您手动设置 Gas 限制和价格。通过将这些调整到适当水平而不是使用默认值，您可以在交易速度和成本之间取得平衡。如果您不着急，可以选择较低的 Gas 价格以节省费用。</p>
+    </CardBody>
+    <CardFooter>
+      <Link
+        isDisabled
+        showAnchorIcon
+        href="#"
+        className='text-primaryHue'
+      >
+        如何调整？
+      </Link>
+    </CardFooter>
+  </Card>  
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-gis-layer-2-add-o bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**使用 Layer 2 解决方案**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>某些 Layer 2 解决方案，如以太坊上的 Optimism 和 Arbitrum，通常提供较低的 Gas 费用。如果 Xone Chain 或兼容链支持类似的扩展解决方案，将交易迁移到这些网络可以降低 Gas 费用。</p>
+    </CardBody>
+    <CardFooter>
+      <Link
+        isDisabled
+        showAnchorIcon
+        href="#"
+        className='text-primaryHue'
+      >
+        什么是 Layer 2？
+      </Link>
+    </CardFooter>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-carbon-tool-box bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**利用 Gas 优化工具**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>一些去中心化应用程序（DApps）和钱包提供 Gas 优化工具，选择最低的 Gas 费用和最有效的交易路径，帮助您节省交易成本。</p>
+    </CardBody>
+    <CardFooter>
+      <Link
+        isDisabled
+        showAnchorIcon
+        href="#"
+        className='text-primaryHue'
+      >
+        前往查看。
+      </Link>
+    </CardFooter>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-la-gifts bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**探索 Gas 费用补贴选项**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>一些平台提供 Gas 费用补贴或替代支付机制，例如代币奖励。在 Xone Chain 上，请留意任何可能有助于抵消交易成本的激励措施或生态系统支持。</p>
+    </CardBody>
+    <CardFooter>
+      <Link
+        isDisabled
+        showAnchorIcon
+        href="#"
+        className='text-primaryHue'
+      >
+        即将推出。
+      </Link>
+    </CardFooter>
+  </Card>
+</div>
+
+## 什么导致高 Gas 费用？
+
+Gas 费用受多种因素影响，例如网络拥堵、交易复杂性和可扩展性限制。在交易高峰期，用户通常支付更高的费用以确保及时确认。开发人员也可以通过优化智能合约来提高网络效率，因为低效的合约会消耗更多 Gas 并可能导致网络拥堵。
+
+<div class="mt-2 md:mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-carbon-tsq stroke-2 bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**网络拥堵**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>网络拥堵是高 Gas 费用的主要驱动因素之一。当交易量增加时，验证者会优先处理费用较高的交易，这意味着用户在高需求期间必须支付更多费用以确保更快的确认。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-octicon-multi-select-24 bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**交易复杂性**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>交易的复杂性也直接影响 Gas 费用。简单的代币转账需要最少的 Gas，而复杂的智能合约或多步骤交易会消耗更多的计算资源，从而推高 Gas 成本。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-material-symbols-contract-edit-outline-rounded bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**区块链协议设计**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>每个区块链的设计都会影响 Gas 费用。例如，以太坊较高的 Gas 费用部分归因于其工作量证明（PoW）共识机制和区块大小限制。尽管以太坊正在通过以太坊 2.0 转向权益证明（PoS）并实施 Layer 2 解决方案，但这些因素仍然显著影响 Gas 费用。</p>
+    </CardBody>
+  </Card>  
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-tdesign-extension-off bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**可扩展性限制**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>一些区块链，如以太坊，具有固有的可扩展性限制，每个区块只能容纳有限数量的交易。当交易需求超过吞吐量时，对区块空间的竞争会推高费用。许多项目正在探索解决方案，如 Layer 2 扩展或新的共识机制，以解决这些限制。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-icon-park-outline-market-analysis bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**供需动态**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Gas 费用很大程度上由供需决定。随着交易需求的增加和处理能力仍然有限，费用就会上涨。愿意支付更高 Gas 费用的用户通常这样做是为了确保及时处理，这进一步推高了总体费用。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-tabler-mail-code bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**恶意攻击和垃圾交易**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>如果区块链遭受垃圾邮件攻击或大量低价值交易的冲击，网络拥堵可能会加剧，从而减慢交易速度并提高 Gas 费用。为了缓解这种情况，区块链通常会调整 Gas 费用模型，通过增加进行垃圾交易的成本来阻止此类攻击。</p>
+    </CardBody>
+  </Card>
+</div>
+
+## Gas 是如何计算的？
+
+Xone Chain 的 Gas 费用计算遵循与以太坊类似的结构，包括三个主要组成部分：**Gas 消耗量**、**基础费用**和**优先费用**。计算总 Gas 费用的详细公式如下：
+
+### **Gas 计算公式**
+
+**最低 Gas 价格：** `min_gas_price = 0.01 Gwei`
+
+**总 Gas 费用：** `Gas 费用 = Gas 消耗量 × (基础费用 + 优先费用)`
+
+<Callout type="info" emoji="ℹ️">
+  **基础费用**：此动态费用由网络自动调整，以反映区块链当前的拥堵水平。如果区块中的需求很高，基础费用会增加；如果需求低，基础费用会减少。这种调整机制通过管理拥堵来确保公平定价并有助于维护网络稳定性。
+
+  **优先费用（小费）**：优先费用是用户可以选择包含的额外费用，以激励矿工优先处理他们的交易。通过支付更高的优先费用，用户可以加快交易确认速度，这在网络活动频繁时期尤其有用。
+</Callout>

@@ -1,0 +1,128 @@
+import { Link } from "@nextui-org/react";
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/react";
+import DynamicLangLink from '@/components/LangLink.tsx';
+
+# 交易
+
+在Xone的第一层（L1）区块链语境中，**交易**代表从一个账户发送到另一个账户的加密指令，旨在更新Xone网络的状态。每笔交易都携带详细信息，例如随机数（nonce）、发送方和接收方地址、转账金额（如果有）、数据、签名和其他相关信息。验证者处理并验证这些交易，确保它们遵守网络的规则。一旦验证通过，交易就会被记录在一个区块中并添加到区块链上，使其变得不可篡改和透明。
+
+## 什么是交易？
+
+Xone上的**交易**是由用户控制的账户发起的操作。例如，当**Alice**向**Bob**发送**100 XOC**时，该交易将从Alice的账户中扣除相应金额并将其存入Bob的账户。这种更新区块链状态的操作是交易的核心目的。
+
+交易一旦发起，就会更新网络状态，并广播到整个区块链网络。验证者随后验证并执行这些交易，确保它们符合网络的共识规则。每笔交易都包含关键细节，如发送方和接收方的地址、转账的XOC数量以及相关费用。这些交易都经过密码学签名，以确保其真实性和安全性。
+
+交易需要支付<DynamicLangLink className='text-primaryHue' showAnchorIcon basePath='/study' subPath='/gas'>交易费</DynamicLangLink>（以XOC支付），并且必须包含在已验证的区块中才能被视为完成。
+
+## 典型的Xone L1交易组件
+
+```js showLineNumbers copy filename="example.json"
+{
+  "nonce": 42,                                // 唯一交易标识符（来自发送方账户）
+  "to": "0x1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmq4vw35r",  // 接收方地址
+  "from": "0x1ylzm22ngxl2tspgvwm0yth2myr6dx9avtx83zpxpu7rhxw4qltzs9tmjm9",  // 发送方地址
+  "value": "100000000000000000",              // 要转账的金额（以wei为单位）
+  "gas": 70000,                               // 交易的Gas上限
+  "gasPrice": "1000000000",                   // Gas价格（以wei为单位）
+  "data": "Zm9vZCBmb3IgY2F0cw==",             // 可选数据（已编码）
+  "chainId": 1,                               // 链ID（1 = 以太坊主网）
+  "v": 27,                                    // 签名的恢复id（在EVM中，v用于签名）
+  "r": "0x5845301de8ca3a8576166fb3b7dd25124868ce54b07eec7022ae3ffd8d4629540dbb7d0ceed9455a259695e2665db614828728d0f9b0fb1cc46c07dd669d2f0e",  // 签名的r部分
+  "s": "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",  // 签名的s部分
+  "type": 0                                    // 可选的EIP-1559交易类型，用于动态Gas定价（如果适用）
+}
+{
+: "5845301de8ca3a8576166fb3b7dd25124868ce54b07eec7022ae3ffd8d4629540dbb7d0ceed9455a259695e2665db614828728d0f9b0fb1cc46c07dd669d2f0e"
+}
+```
+<div className="overflow-x-auto">
+<Table removeWrapper aria-label="Example static collection table" className="mt-2">
+  <TableHeader>
+    <TableColumn>**字段**</TableColumn>
+    <TableColumn>**说明**</TableColumn>
+  </TableHeader>
+  <TableBody>
+    <TableRow key="1">
+      <TableCell>**Nonce**</TableCell>
+      <TableCell>一个唯一的计数器，表示发送方账户发起的交易数量。每笔新交易会使nonce增加1，以防止重放攻击。</TableCell>
+    </TableRow>
+    <TableRow key="2">
+      <TableCell>**Value**</TableCell>
+      <TableCell>交易中转移的XOC金额。</TableCell>
+    </TableRow>
+    <TableRow key="3">
+      <TableCell>**Receiver**</TableCell>
+      <TableCell>接收方地址。</TableCell>
+    </TableRow>
+    <TableRow key="4">
+      <TableCell>**Sender**</TableCell>
+      <TableCell>发起交易的账户地址。</TableCell>
+    </TableRow>
+    <TableRow key="5">
+      <TableCell>**Gas Price**</TableCell>
+      <TableCell>交易消耗的每单位Gas的价格（以XOC计）。Gas用于执行智能合约和支付网络资源费用。</TableCell>
+    </TableRow>
+    <TableRow key="6">
+      <TableCell>**Gas Limit**</TableCell>
+      <TableCell>交易可以消耗的最大Gas数量。这确保了交易不会耗尽网络资源。</TableCell>
+    </TableRow>
+    <TableRow key="7">
+      <TableCell>**Data**</TableCell>
+      <TableCell>一个可选字段，用于包含附加数据，例如消息或智能合约的指令。</TableCell>
+    </TableRow>
+    <TableRow key="8">
+      <TableCell>**Chain ID**</TableCell>
+      <TableCell>标识交易属于哪条链（例如，主网、测试网等）。</TableCell>
+    </TableRow>
+    <TableRow key="9">
+      <TableCell>**Version**</TableCell>
+      <TableCell>指定交易类型的版本。</TableCell>
+    </TableRow>
+    <TableRow key="10">
+      <TableCell>**Signature**</TableCell>
+      <TableCell>由发送方私钥生成的密码学签名，用于授权交易。</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+</div>
+
+## Xone L1上的跨分片交易
+
+Xone L1的一个突出特点是其处理**跨分片交易**的能力，实现了跨不同分片和元链的通信和交易处理。这通过有效分配交易负载来提高可扩展性和整体性能。
+
+## 跨分片交易的先决条件
+
+为了帮助您理解这个过程，我们假设Xone中有两个分片和一个元链。假设**分片0**的用户向**分片1**的另一个用户发送**XOC**。跨分片交易需要几个步骤来确保两个分片都能正确处理并最终完成交易。
+
+1.  **区块结构：** Xone中的每个区块包含一个区块头（其中包含通用区块信息，如区块随机数、轮次、提议者、时间戳等）和一个针对每个分片的迷你区块列表。迷你区块包含实际的交易，并且特定于各自的分片。
+
+2.  **迷你区块示例**
+
+    *   **迷你区块0：** 包含**分片0**内的交易。
+    *   **迷你区块1：** 包含一笔跨分片交易，其中发送方在**分片0**，接收方在**分片1**。
+    *   **迷你区块2：** 包含一笔跨分片交易，其中发送方在**分片1**，接收方在**分片0**。
+
+    同一区块中的每个迷你区块可能共享相同的发送方和接收方，但交易可能发生在不同的分片中。一个区块中具有相同发送方和接收方的迷你区块数量没有限制。
+
+## 处理跨分片交易
+
+1.  **原子性：** 跨分片交易是原子性处理的。这意味着迷你区块内的所有交易必须全部执行成功或全部失败。如果有任何交易失败，整个迷你区块将被回滚，并且该交易将在下一轮重试。
+
+2.  **异步处理模型：** Xone的跨分片交易模型遵循**异步处理模型：**\
+    **步骤1：** 交易首先在发送方分片中进行验证和执行。发送方分片可以根据账户余额完全验证交易。\
+    **步骤2：** 在发送方分片验证后，交易被签名并发送到元链进行公证。\
+    **步骤3：** 接收分片向元链请求执行证明，执行签名验证，检查重放攻击，并相应地更新接收方的余额。
+
+3.  **元链与公证：** 元链作为跨分片交易的监督层。它接收来自各个分片的区块头，包括迷你区块哈希和跨分片交易的相关数据。元链随后对这些交易进行公证，使它们在整個Xone网络中有效。
+
+4.  **跨分片最终确定：** 一旦跨分片交易被处理并由元链公证，该交易即被视为完成，资金在分片之间正式转移。系统确保交易安全、有效，并在两个分片上最终确定。
+
+## 跨分片场景中的交易流程
+
+1.  **分片0**处理其分片内的交易，包括跨分片交易。
+
+2.  **元链**对来自**分片0**的包含跨分片交易的区块进行公证。
+
+3.  **分片1**处理该跨分片交易，从元链检索必要的交易数据，并更新接收方的余额。
+
+这种方法确保了跨分片交易在完成的同时，不损害网络的完整性和一致性。

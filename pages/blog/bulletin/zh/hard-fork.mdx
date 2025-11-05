@@ -1,0 +1,107 @@
+---
+title: Xone 主网硬分叉升级公告
+date: 2025-05-27
+description: Xone 将在主网指定区块高度执行硬分叉升级，正式引入新的 Epochs 模块。
+draft: false
+tags: [公告]
+authors: Xone Chain
+image: /blog/bulletin/hard_fork_banner.png
+thumbnail: /blog/bulletin/hard_fork_banner.png
+---
+
+import { Callout } from 'nextra/components';
+import { Link } from "@nextui-org/react";
+import ContactInfo from "@/components/ContactInfo";
+import DynamicLangLink from "@/components/LangLink.tsx";
+
+尊敬的节点运营商和开发者社区：
+
+Xone 将在主网指定区块高度执行硬分叉升级，正式引入新的 Epochs 模块。该模块基于 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.evmos.org/protocol/modules/epochs">Evmos epochs</Link> 并具备更灵活的时间周期管理能力，为未来的激励、治理和定时任务机制奠定基础。
+
+<Callout type="warning" emoji="⚠️">
+  本次升级涉及状态机和存储结构的变更，要求所有节点在指定区块高度的前一个区块完成重启和二进制文件替换。
+</Callout>
+
+## ⛓ 升级概览
+
+**升级方式：** 硬分叉
+
+**新增模块：** <DynamicLangLink className='text-primaryHue' showAnchorIcon basePath='/study' subPath='/epoch'>Epochs</DynamicLangLink>（引入模块 StoreKey、生命周期钩子、Genesis 逻辑）
+
+**目标区块高度：** `# 6397023`
+
+**执行时间：** 2025-05-28 11:00:00 (UTC+0)
+
+**操作要求：** 所有主网节点必须在 **高度 `# 6397022`** 前完成新版本部署和重启
+
+## 🔍 技术变更说明
+
+**1. StoreKey 注册与 IAVL 状态一致性**
+
+  - 每个模块需要在启动时通过 `store.NewKVStoreKey` 注册其存储前缀（StoreKey）。
+
+  - 动态添加 StoreKey 会破坏 IAVL 状态树的结构和哈希确定性，导致共识分叉。
+
+  - 因此，节点必须在高度 `# 6397022` 前重启，确保新二进制正确加载模块的存储结构。
+
+**2. 生命周期钩子 (BeginBlocker / EndBlocker)**
+
+  - Epochs 模块在每个区块触发相应的逻辑处理，需要在 `SetOrderBeginBlockers()` 中注册。
+
+  - 未重启的节点将错过钩子调用，导致状态差异，无法参与共识。
+
+**3. InitGenesis 执行与模块初始化**
+
+  - 新模块需要通过 `SetOrderInitGenesis()` 注册初始状态逻辑。
+
+  - 升级时将在区块 `#6397023` 开始前执行 `InitGenesis` 初始化状态。未升级节点将因数据缺失而崩溃。
+
+## 🧩 升级机制实现
+
+我们使用 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/cosmos/cosmos-sdk">Cosmos SDK</Link> 标准的 `UpgradeStoreLoader` 和版本控制逻辑来实现安全的链上模块引入：
+
+```go showLineNumbers copy filename="app.go"
+app.SetStoreLoader(upgradetypes.UpgradeStoreLoader(
+  ForkAddEpochsMainNetHeight,
+  &storetypes.StoreUpgrades{
+    Added: []string{epochsmoduletypes.StoreKey},
+  },
+))
+```
+
+- 分叉高度在链 ID 确定后动态注入；
+
+- StoreKey 注册和模块状态初始化在升级区块初始化时完成；
+
+- 避免在不一致状态下写入。
+
+## 🧑‍💻 节点操作指南
+
+1. 确认升级高度 `# 6397023`；
+
+2. 在高度 `# 6397022` 前完成节点二进制文件替换和重启；
+
+3. 使用包含 Epochs 模块的新版 <DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/developers/operators/start' subPath='/quick-start'>Xone 节点程序</DynamicLangLink>；
+
+4. 重启后系统将自动初始化新模块的状态树和运行逻辑。
+
+## 🧠 为什么不能动态添加模块？
+
+- Cosmos SDK 状态机要求所有节点的状态变更完全一致；
+
+- StoreKey 直接关联状态哈希，动态添加会破坏哈希一致性；
+
+- 缺少 `BeginBlocker`、`EndBlocker` 和 `InitGenesis` 逻辑将导致不可预测的运行行为；
+
+因此，**在升级前重启二进制并加载模块是安全升级的最佳方式**。
+
+如果您对升级过程有任何疑问，请前往我们的开发者支持频道寻求帮助。
+
+感谢❤️每一位验证者、开发者和社区成员对 Xone 网络的支持与信任！
+
+Xone 团队\
+2025年5月27日
+
+---
+
+<ContactInfo />

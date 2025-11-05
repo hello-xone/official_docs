@@ -1,0 +1,408 @@
+import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Button} from "@nextui-org/react";
+import ContactInfo from "@/components/ContactInfo";
+
+# Xone Chain
+
+![banner](public/images/Thumb.png)
+
+## 概述
+
+**Xone Chain** 是一个基于以太坊协议的去中心化第一层区块链平台，也是领先的**行为价值激励区块链（BVI）**。在 Xone Chain 上，每一次交互都在创造价值，每一份贡献都获得回报。通过其独特的 **BVI 系统**，用户的行为和贡献被实时累积并转化为奖励。Xone Chain 提供高性能的区块链解决方案，具有快速交易速度、低成本、强隐私保护和去中心化治理等特点，使其成为一个充满活力、创新和繁荣的生态系统。
+
+## Xone 愿景
+
+与传统主要作为交易基础设施的区块链不同，Xone 建立在通过社区驱动协作创造价值的原则之上。它提供了一种独特的区块链设计方法，专注于：
+
+<div class="mt-2 md:mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-streamline-interface-favorite-award-ribbon-reward-like-social-rating-media stroke-2 bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**链上激励**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>每一次交互，无论是交易、智能合约执行还是治理投票，都为不断增长的可持续经济做出贡献。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-solar-share-circle-bold bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**共享价值创造**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>节点、开发者和用户都被平等地赋能，为网络增长做出贡献并分享其成功。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-material-symbols-track-changes-rounded bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**可追溯价值**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone Chain 上的所有贡献都被透明记录，确保每个行动都被认可和奖励，培养信任和长期参与。</p>
+    </CardBody>
+  </Card>  
+</div>
+
+## Xone 能做什么？
+<div class="mt-2 md:mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-carbon-finance stroke-2 bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**全民金融服务**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone 为每个人提供可访问的金融服务，无论地理位置或身份如何。只需互联网连接，用户即可访问基于以太坊构建的金融工具，包括借贷和储蓄，铺就通往财务自由的道路。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-gis-openls bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**真正的开源**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone 提供了一个用于交互、创新和开发的开源网络。用户保持对其资产、身份和数据的控制，独立于大型企业。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-ri-p2p-line bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**点对点交互**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone 允许个人直接建立连接，无需中介即可达成协议和转移资产。这种点对点模式增强了用户自主权和隐私。</p>
+    </CardBody>
+  </Card>  
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-material-symbols-fact-check-outline bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**抗审查性**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone 的去中心化架构保护用户的自由。没有政府或公司可以阻止或控制用户访问，确保所有用户都能在 Xone 上自由接收付款和使用服务。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-hugeicons-security-check bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**交易安全保障**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone 提供内置的交易安全保证。只有在所有约定条件满足时资金才会转移，为用户和开发者在交易过程中提供安心保障。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-carbon-migrate bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**应用互操作性**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone 上的所有应用都在共享的生态系统和全局状态下运行，这意味着它们可以无缝协作。这种互操作性增强了用户体验，并确保所有工具不能被轻易移除或禁用。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-fluent-reward-24-regular bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**行为激励机制**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone 上的每个行动都会产生价值。平台独特的行为价值激励系统（BVI）将用户交互转化为奖励，创造了一个更加动态和有益的生态系统。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-fluent-layer-diagonal-person-24-regular bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**透明治理模式**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone 的社区驱动治理模式使用户能够参与平台的演进。代币持有者可以参与投票，共同决定平台的方向，使 Xone 成为一个用户主导的生态系统。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-uil-transaction bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**低成本高效率交易**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone 注重效率，旨在最大化交易速度并降低交易成本。其架构支持快速处理和低费用，使全球用户能够轻松且可持续地参与。</p>
+    </CardBody>
+  </Card>
+</div>
+
+## 为什么选择 Xone？
+
+在快速变化的数字世界中，Xone Chain 不仅仅是一个区块链平台；它代表了一种新的数字生活方式。在这里，每个用户都可以实现财务自由，享受隐私保护，创造价值，并参与未来的社区治理。选择 Xone 意味着享受超越传统区块链的独特体验：
+
+<div class="mt-2 md:mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-token-future bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**拥抱未来数字生态系统**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone Chain 采用先进的行为价值激励机制，支持去中心化的开放生态系统。这种独特的设计使 Xone 不仅仅是交易和资产管理；它是一个开放社区，用户和开发者可以共同成长，真正实现价值共创和利益共享。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-mdi-shield-sword-outline bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**个人数据与隐私主权**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone 提供严格的隐私保护措施，允许用户完全控制其数据和身份。无需依赖传统的中心化企业或银行，您可以在 Xone 上无缝管理资产和身份，避免信息泄露，享受数字主权。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-ph-fediverse-logo-light bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**用户主导的去中心化治理**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>作为 Xone 生态系统的一员，您不仅仅是用户，更是社区建设者。Xone 赋予用户参与平台决策的权利，通过链上治理机制，每一次投票都对平台的未来发展产生实际影响。这种用户主导的治理模式带来了前所未有的归属感。</p>
+    </CardBody>
+  </Card>  
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-hugeicons-global-search bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**全球金融服务接入**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone 提供无国界的金融接入，允许任何有互联网连接的人体验全球金融产品和服务。这种自由使用户无论身处何地都能轻松参与数字经济，提供了前所未有的金融灵活性。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-lineicons-invention bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**创新与基础设施**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone 为开发者提供丰富的构建工具和兼容环境，帮助用户无缝接入各种新兴技术应用。作为一个面向未来的区块链平台，Xone 的基础设施为去中心化金融、数字身份验证、NFT 和 DAO 等场景提供了广阔的创新空间。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-icon-park-outline-trend-two bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**可持续发展激励体系**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone 的行为价值激励机制确保每个用户的贡献都被认可和奖励。无论是参与治理、贡献内容还是其他互动行为，您都可以通过参与获得回报，让每一份努力都产生价值。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-material-symbols-partner-exchange bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**协作伙伴生态系统**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone 致力于构建高度协作的合作伙伴生态系统，汇聚多方资源和行业支持，具有强大的增长潜力。选择 Xone 意味着加入一个不断壮大的社区，带来更丰富的资源共享，并让您始终处于行业发展的前沿。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-fluent-square-dovetail-joint-16-regular bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**无缝用户体验**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone 强调用户体验优化，通过简单便捷的界面设计和高效流畅的交易系统，提供如日常应用般易于使用的操作。用户可以轻松使用 Xone 的各项服务，无需复杂的学习成本，享受"去中心化世界"的自由与便利。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-icon-park-outline-source-code bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+      <div className="flex flex-col">
+        <p className="text-md">**持续技术支持与演进**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone Chain 持续优化和升级底层技术，为用户提供更稳定高效的运行环境。通过积极拥抱最新行业技术趋势，Xone 确保用户能够亲身体验区块链技术创新，始终站在技术前沿。</p>
+    </CardBody>
+  </Card>
+</div>
+
+选择 Xone 不仅是因为其全面的功能，更是因为它带来了全新的数字体验。从财务独立到隐私保护，从去中心化治理到创新生态，Xone 为用户提供了一个可持续、激励丰富且不断发展的未来选择。
+
+## 谁在运行 Xone？
+
+Xone 是一个去中心化的区块链平台，不受任何单一实体控制。Xone 的存在依赖于全球运行 Xone 协议的计算机网络，这些计算机节点共同记录和维护区块链的安全性和完整性。任何人都可以通过运行 Xone 软件并遵守协议规则成为 Xone 节点并帮助运行网络。
+
+此外，Xone 的协议代码是开放的，由全球开发者社区构建和优化。任何人都可以提出改进建议，参与讨论并决定升级事宜。Xone 协议实现也由多个独立团队使用不同的编程语言开发，确保平台的灵活性和兼容性，进一步激发社区协作。
+
+## 理解智能合约
+
+智能合约是部署在 Xone 区块链上的自动化计算程序，当用户触发交易时会自动执行相应操作。智能合约使 Xone 的功能高度灵活，成为去中心化应用（DApp）和去中心化组织（DAO）的核心构建块。
+
+您是否遇到过服务条款被随意修改或常用功能被删除的情况？一旦智能合约部署到 Xone 网络，它们就永久存在；只要 Xone 网络运行，它们就会在线可用。即使是开发者也无法删除或修改合约内容。因此，智能合约的执行是公开、透明且不可篡改的，不受任何个人或组织意愿的影响。
+
+智能合约应用场景极其丰富，包括去中心化借贷应用、去中心化交易所、保险合约、众筹平台、社交网络和 NFT 应用，几乎涵盖了所有可想象的应用类型。
+
+## Xone 的加密货币 XOC
+
+在 Xone 网络上，许多操作需要在其内置计算系统——Xone 虚拟机上执行计算任务。这项计算服务不是免费的，而是通过 Xone 的原生加密货币 XOC 支付。因此，用户在网络上交互时需要至少拥有少量 XOC。
+
+XOC 是一种纯数字货币，用户可以快速无缝地将其转移给全球任何地方的接收者。XOC 的发行不受任何政府或公司控制；它是去中心化且完全透明的。XOC 根据协议精确生成和分发，主要发行给通过质押 XOC 保护网络安全的质押持有者。
+
+<Button
+  href="/xoc"
+  as={Link}
+  className="top-6 rounded-md bg-primaryHue px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-grd-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+  showAnchorIcon
+  variant="solid"
+>
+  想要更多 XOC 信息？请前往此处
+</Button>
+
+## Xone 如何处理非法活动？
+
+与任何技术一样，Xone 有时可能会被犯罪分子滥用。然而，由于所有 Xone 交易都记录在公开、透明且不可变的区块链上，当局比在传统金融系统中更容易追踪和识别非法活动。因此，对于希望隐藏身份的犯罪分子来说，Xone 并不是理想的选择。尽管如此，Xone 网络仍然设有多层安全性和风险管理措施来监控潜在的恶意活动。
+<div class="mt-2 md:mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**透明度与可追溯性**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone 上的所有交易都记录在区块链上，不可变且公开透明。虽然用户身份信息是匿名的，但交易记录是永久可访问的。这使得执法机构能够在法律授权下追踪链上行为，协助打击非法活动。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**智能合约自执行**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone 使用智能合约技术；一旦发布，合约不能被任意更改或删除。这意味着任何依赖智能合约进行非法活动的恶意行为都将始终公开透明，可供公众和审计者检查。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**社区治理与合规措施**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Xone 的去中心化治理结构允许社区监督和调整网络规则。通过社区共识，Xone 可以实施新规则或安全措施，以减少非法活动的可能性。</p>
+    </CardBody>
+  </Card>  
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**依赖外部合规机构**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>在法律合规的前提下，Xone 支持合法的第三方合规机构与其生态系统合作伙伴合作，确保平台的合法性。</p>
+    </CardBody>
+  </Card>
+</div>
+
+## 模块化方法
+
+Xone 的模块化架构实现了无缝的可扩展性、灵活性和互操作性。借鉴现有的第 2 层 Rollup 技术和模块化框架（如 OP Stack 和 ZKSync 的 ZKStack）的灵感，Xone 将这些原则提升到一个新的水平，将它们直接嵌入到第 1 层设计中。
+
+Xone 模块化基础设施的关键要素包括：
+
+- **可定制激励层：** 根据社区需求和使用案例量身定制的奖励机制。
+
+- **去中心化节点机制：** 强大的节点系统，鼓励持续参与，确保网络的安全性和去中心化。
+
+- **互操作性标准：** 原生支持跨链通信，以无缝桥接不同生态系统之间的资产、数据和用户。
+
+## 解决现有区块链的不足
+
+**第 1 层限制：** 许多当前的第 1 层链专注于交易吞吐量和可扩展性，但缺乏强大的社区驱动激励系统。它们优先考虑效率，但往往未能将经济奖励与用户参与度对齐。
+
+**第 2 层挑战：** 如 Optimistic Rollups 或 zk-Rollups 这样的 Rollup 解决方案提供了可扩展性，但严重依赖中心化的定序器或外部基础设施，导致供应商锁定、不透明治理和 dApp 灵活性有限等风险。
+
+**Xone 解决方案：** 通过将激励机制直接集成到第 1 层协议中，Xone 消除了这些权衡。结果是一个高效、社区导向且可持续的区块链，旨在将用户行动与长期生态系统增长对齐。
+
+## Xone 与其他区块链有何不同？
+
+Xone Chain 结合了以太坊的技术成熟度和比特币的价值存储概念，同时引入了创新的行为价值激励机制，形成了独特的竞争优势。与以太坊和比特币相比，Xone Chain 在以下方面具有显著特点：
+
+<div class="mt-2 md:mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**技术创新**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>在保持与以太坊兼容的同时，通过技术优化提供了更好的性能和更低的成本。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**生态系统建设**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>通过 BVI 系统激励用户参与，形成了一个更加活跃的生态系统。</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**治理机制**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>更加强调用户参与，实现真正的去中心化治理。</p>
+    </CardBody>
+  </Card>  
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**可持续性**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>采用环保的共识机制，确保持续的长期发展。</p>
+    </CardBody>
+  </Card>
+</div>
+
+这些差异化特性使 Xone Chain 在保持主流区块链优势的同时，开创了自己的发展道路，为用户提供更有价值的区块链服务体验。
+
+<ContactInfo />

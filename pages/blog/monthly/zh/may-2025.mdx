@@ -1,0 +1,79 @@
+---
+title: Xone 更新 | 2025 年 5 月
+date: 2025-06-10
+description: 当东方的天空初次泛起黎明温柔的曙光，漂浮堡垒 Xone 周围的空气充满了无限可能。
+draft: false
+tags: [月度更新]
+authors: Xone Chain
+image: /blog/monthly/may_2025/banner.png
+thumbnail: /blog/monthly/may_2025/banner.png
+---
+
+import { Link, Card, CardHeader, CardBody, CardFooter, Divider, Image } from "@nextui-org/react";
+import ContactInfo from "@/components/ContactInfo";
+import FeatureCards from '@/components/blog/FeatureCards';
+import data from '@/pages/blog/monthly/data/202505.json'
+
+**亲爱的社区成员！**
+
+当东方的天空初次泛起黎明温柔的曙光，漂浮堡垒 Xone 周围的空气充满了无限可能。
+
+晨雾已然消散，如日出时的梦境般飘然远去。
+
+下方，链式连接的城市开始苏醒——灯火闪烁，节点唤醒，共识的嗡鸣声愈发稳定。
+
+在甲板上，我们的首席验证人立于栏杆旁，注视着阳光碎片在抛光船体上的闪烁。
+
+随后是一个会意的点头：网络在增加的负载下通过了又一次严格的性能验证。团队中漾起笑容，因为每一次优化都带来对 Xone 演进的新信心。
+
+我们的五月故事就此开启——在这个月里，稳定性加深，新地平线浮现，每一位参与者的心跳都与 Xone 前进的节奏同频共振……
+
+## 五月 摘要
+
+本月，Xone 生态系统迎来了一系列重要的升级和迭代，为网络稳定性、产品体验和开发者生态注入了新的活力。
+
+- **主网硬分叉：** 本月我们完成了一次关键的<Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org/blog/bulletin/hard-fork">主网硬分叉</Link>，并正式上线了新的<Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org/study/epoch">Epoch 模块</Link>。通过引入基于周期（epoch）的管理机制，我们能更精准地协调核心网络操作（如奖励分发和验证人轮换），为未来功能扩展和经济模型设计奠定了坚实基础。
+
+- **产品更新：** 为统一 Xone 品牌形象，我们重构了<Link className='text-primaryHue' isExternal showAnchorIcon href="https://faucet.xone.org/en">水龙头页面 UI</Link>，并在此期间开放了<Link className='text-primaryHue' isExternal showAnchorIcon href="https://tokenup.org/en/developer">开发者平台</Link>，丰富了开发者与用户之间的信息渠道。<Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org/bvi/readme">针对 BVI</Link>，我们在官方文档中新增了专门模块，详细阐述了 BVI 的原理与使用方法。更重要的是，<Link className='text-primaryHue' isExternal showAnchorIcon href="https://nft.xone.org/en">Xone NFT 市场</Link>已正式迁移至主网。
+
+- **合约迭代：** 由于 Epoch 的更新，我们升级了<Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org/study/release">释放合约</Link>，并完成了<Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org/developers/contracts#mainnet-contracts-list">跨链桥的合约更新</Link>，以更好地执行跨链资产操作。
+
+## 🛠 主网硬分叉
+
+通过引入基于周期（epoch）的管理机制，该模块基于<Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org/study/release">Evmos epochs</Link>并具备更灵活的时间周期管理能力，我们能更精准地协调核心网络操作（如奖励分发和验证人轮换），为未来功能扩展和经济模型设计奠定了坚实基础。
+
+![hard](/blog/monthly/may_2025/hard.png)
+
+对于用户，您可以<Link className='text-primaryHue' isExternal showAnchorIcon href="https://xonescan.com/epochs">通过区块链浏览器</Link>查看当前的 Epoch 数据。如果您是开发者，我们相信<Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org/gateway">网关调用</Link>这里更适合您。
+
+## 🍾 产品焕新
+
+- **水龙头页面重新设计：** 为了给新用户更直观的 Xone 品牌认知，我们彻底重做了<Link className='text-primaryHue' isExternal showAnchorIcon href="https://faucet.xone.org/en">水龙头页面</Link>。视觉和交互现在都与官方设计系统保持一致，帮助用户快速获取测试资产。
+
+![faucet](/blog/monthly/may_2025/faucet.png)
+
+- **开发者平台集成：** 我们将<Link className='text-primaryHue' isExternal showAnchorIcon href="https://tokenup.org/en/developer">TokenUp 开发者平台</Link>纳入生态。任何 DApp 开发者现在都可以独立上传项目信息并在该平台查看运营数据。上传的信息将同步展示在<Link className='text-primaryHue' isExternal showAnchorIcon href="https://bvi.xone.org/en/ecology">Xone BVI 生态</Link>和<Link className='text-primaryHue' isExternal showAnchorIcon href="https://tokenup.org/en">TokenUp 钱包</Link>中，进一步丰富了开发者与用户之间的信息流。
+
+![Developer](/blog/monthly/may_2025/developer.png)
+
+- **文档新增 BVI 介绍：** 官方文档现在包含了关于<Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.xone.org/bvi/readme">BVI（行为价值激励）</Link>的专门章节，详细阐述了其原理和使用方法。这有助于开发者和社区成员快速理解并参与激励体系。
+
+![Introduction](/blog/monthly/may_2025/introduction.png)
+
+- **Xone NFT 市场主网上线：** 在测试网验证通过后，<Link className='text-primaryHue' isExternal showAnchorIcon href="https://nft.xone.org/en">Xone NFT 市场</Link>已正式迁移至主网。所有用户现在都可以在主网环境中安全地铸造、交易和托管 NFT，开启全新的数字收藏品体验。
+
+![nft](/blog/monthly/may_2025/nft.png)
+
+## 📃 合约迭代
+
+- **捐赠和团队代币释放合约优化：** 我们升级了捐赠释放合约和团队代币释放合约的逻辑，现在所有周期计算都由链上 Epoch 模块驱动。这意味着释放计划将与区块高度保持精确同步，进一步提高了透明度和执行稳定性。
+
+- **跨链桥合约更新：** 为了更好地处理多链环境中的资产转移，我们重构并增强了桥接合约的安全性。新版本为跨链验证和资产托管引入了更全面的验证逻辑，显著降低了潜在风险，为用户提供更可靠的跨链体验。
+
+## 🎉 生态扩展
+
+<FeatureCards items={data} />
+
+这些更新不仅提升了底层的网络可扩展性和稳定性，还在产品层面为开发者和终端用户带来了更流畅、更安全的体验。敬请期待我们下一阶段的优化和生态扩展。
+
+<ContactInfo />
