@@ -1,0 +1,68 @@
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Link } from "@nextui-org/react";
+import { Steps, Callout } from 'nextra/components';
+import ImageViewer from '@components/ImageViewer';
+
+# 测试网水龙头
+
+水龙头是开发者工具，允许您在测试网络（如 Xone 和 Xone）上免费获取 XOC（和其他代币），以便您可以发送交易和创建智能合约。在这里，您将找到可以尝试的活动水龙头列表。不同的水龙头使用不同的认证方法，因此您可能需要尝试几个才能找到适合您的水龙头。水龙头偶尔也会耗尽 XOC，因此如果您从一个水龙头获取 XOC 遇到问题，请尝试另一个。
+
+<Callout type="warning" emoji="⚠️">
+  测试网络（如 Xone）上的代币没有价值，仅用于测试目的。
+</Callout>
+
+## Xone 水龙头
+
+<Link className='text-primaryHue' isExternal showAnchorIcon href="https://faucet.xone.org/">Xone 水龙头</Link> 是由 Xone 开发者共同构建的开发工具，允许开发者和用户免费获取测试网 XOC，以便在 Xone 测试网上测试应用程序。如果您正在寻找 Xone 测试网上的 XOC 和 USDH，Xone 水龙头是一个不错的选择。
+
+<ImageViewer src="/images/Faucet.png" alt="水龙头" />
+
+## 附加列表
+
+  <Table className="mt-2" removeWrapper aria-label="水龙头列表">
+    <TableHeader>
+      <TableColumn>水龙头名称</TableColumn>
+      <TableColumn>支持的网络</TableColumn>
+    </TableHeader>
+    <TableBody emptyContent={"正在建设中"}>{[]}</TableBody>
+  </Table>
+
+
+## 如何领取测试代币？
+
+<Steps>
+### 步骤 1：访问 Xone 水龙头
+
+确保您访问的 URL 是 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://faucet.xone.org/">Xone 水龙头</Link>。
+
+### 步骤 2：准备您的钱包地址
+
+选择您喜欢的 EVM 兼容钱包（例如 MetaMask）并复制您的钱包地址。
+
+### 步骤 3：输入您的钱包地址
+
+确认您要使用的地址后，将复制的地址粘贴或手动输入到指定的输入字段中。
+
+<ImageViewer src="/images/Get_Token.png" alt="获取代币" />
+
+
+### 步骤 4：请求代币
+
+地址信息验证后，完成 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://developers.google.com/recaptcha">安全验证</Link>。通过验证后，点击【**发送 XOC**】来领取您每日限额的 **1 XOC** 测试代币。
+
+### 步骤 5：等待确认
+
+提交后，将出现一个弹出消息，提供【**在浏览器中查看**】链接以快速检查交易详情。通常，测试代币会在 1 分钟内到达。
+
+<ImageViewer src="/images/Successfully_received.png" alt="成功接收" />
+
+<Callout type="warning" emoji="⚠️">
+  **每日限额：** 每个钱包每 24 小时可以领取一次代币。第二天返回以领取更多测试代币。
+</Callout>
+
+</Steps>
+
+## 我可以用测试代币做什么？
+
+- 在 Xone 测试网上部署的测试 DApp 上进行实验。
+- 在不花费真实资金的情况下探索 Xone 生态系统。
+- 验证交易和智能合约功能。

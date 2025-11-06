@@ -1,9 +1,10 @@
 import { Steps } from 'nextra/components';
 import { Link } from "@nextui-org/react";
+import DynamicLangLink from '@/components/LangLink.tsx';
 
 # Display Tokens
 
-When users open <Link className='text-primaryHue' isExternal showAnchorIcon href="https://metamask.io/">MetaMask</Link>, they initially see a selection of major tokens. To display additional custom <Link className='text-primaryHue' showAnchorIcon href="/developers/standard/erc20">ERC-20 tokens</Link>, users must either enable token autodetection or add the tokens manually. Similarly, <Link className='text-primaryHue' showAnchorIcon href="/developers/standard/erc721">for NFTs</Link>, users need to enable NFT autodetection or manually add them.
+When users open <Link className='text-primaryHue' isExternal showAnchorIcon href="https://metamask.io/">MetaMask</Link>, they initially see a selection of major tokens. To display additional custom <DynamicLangLink className='text-primaryHue' showAnchorIcon basePath='/developers/standard' subPath='/erc20'>ERC-20 tokens</DynamicLangLink>, users must either enable token autodetection or add the tokens manually. Similarly, <DynamicLangLink className='text-primaryHue' showAnchorIcon basePath='/developers/standard' subPath='/erc721'>for NFTs</DynamicLangLink>, users need to enable NFT autodetection or manually add them.
 
 This tutorial can enhance the user experience by making it easier to <Link className='text-primaryHue' isExternal showAnchorIcon href="https://support.metamask.io/zh-cn/managing-my-tokens/custom-tokens/how-to-display-tokens-in-metamask/">manage and view tokens within MetaMask</Link>. 
 

@@ -1,0 +1,88 @@
+import { Steps, Tabs } from 'nextra/components';
+
+# 后台运行（Systemd 服务配置示例）
+
+以下示例基于 Ubuntu 22.04/24.04，演示如何将 `xoned` 注册为 systemd 服务，以确保自动重启、集中式日志记录等功能。
+
+<Steps>
+### 1. 创建并编辑服务单元文件
+
+```bash showLineNumbers copy
+sudo vim /etc/systemd/system/xone-node.service
+```
+
+粘贴以下内容：
+
+```bash showLineNumbers copy
+[Unit]
+Description=Xone Node
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+ExecStart=/usr/bin/xoned start
+Restart=always
+RestartSec=3
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target
+```
+
+### 2. 重新加载并启用服务
+
+```bash showLineNumbers copy
+# 重新加载 systemd 配置
+sudo systemctl daemon-reload
+
+# 启用服务，使其在启动时自动运行
+sudo systemctl enable xone-node
+```
+
+
+### 3. 启动服务并检查状态
+
+```bash showLineNumbers copy
+# 启动节点服务
+sudo systemctl start xone-node
+
+# 查看服务状态
+sudo systemctl status xone-node
+```
+
+
+### 4. 查看实时日志
+
+```bash showLineNumbers copy
+# 实时跟踪服务的日志
+sudo journalctl -f -u xone-node
+```
+
+
+### 5. 常用维护命令
+
+*   **重启服务**
+
+  ```bash showLineNumbers copy
+  sudo systemctl restart xone-node
+  ```
+*   **停止服务**
+
+  ```bash showLineNumbers copy
+  sudo systemctl stop xone-node
+  ```
+*   **禁用开机自启**
+
+  ```bash showLineNumbers copy
+  sudo systemctl disable xone-node
+  ```
+*   **查看最后 100 行日志**
+
+  ```bash showLineNumbers copy
+  sudo journalctl -u xone-node -n 100
+  ```
+
+</Steps>
+
+配置完成后，您的 Xone Chain 节点将作为守护进程在后台运行，在系统重启或出现故障后自动恢复，并可通过 `journalctl` 轻松检查日志和进行故障排除。

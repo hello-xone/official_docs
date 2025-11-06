@@ -3,12 +3,13 @@ import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@
 import {Code} from "@nextui-org/react";
 import { Steps } from 'nextra/components';
 import NetworkTable from "@/components/NetworkTable";
+import DynamicLangLink from '@/components/LangLink.tsx';
 
-# Xone Developer Resources
+# Xone 开发者资源
 
-This guide primarily introduces the basics or manuals for developers building on Xone. Written by Xone builders and for builders to use, it is tailored for those ready to start developing. While you may not fully understand <Link className='text-primaryHue' isExternal showAnchorIcon href="/study/xone">what Xone is</Link>, as a developer, your focus shouldn't be on learning what Xone is, but rather on how to build on it. Xone is equivalent to the <Link className='text-primaryHue' isExternal showAnchorIcon href="https://ethereum.org/en/developers/docs/evm/">EVM series</Link>, so the gap between developing on Xone and Ethereum is minimal. However, keep in mind that there are still some differences between Xone and Ethereum.
+本指南主要介绍在 Xone 上构建的开发者的基础知识或手册。由 Xone 构建者为构建者编写，专为准备开始开发的人员量身定制。虽然您可能不完全理解 <DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/study' subPath='/xone'>Xone 是什么</DynamicLangLink>，但作为开发者，您的重点不应该是学习 Xone 是什么，而是如何在它上面构建。Xone 相当于 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://ethereum.org/en/developers/docs/evm/">EVM 系列</Link>，因此在 Xone 和以太坊上开发之间的差距很小。但是，请记住 Xone 和以太坊之间仍然存在一些差异。
 
-## Ready to Start Building?
+## 准备好开始构建了吗？
 
 <div class="mt-2 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-3 gap-2">
   <Card className="flex-shrink-0 max-w-full flex-col">
@@ -16,18 +17,18 @@ This guide primarily introduces the basics or manuals for developers building on
       <div className="i-material-symbols-school-outline bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
     </CardHeader>
     <CardBody className="px-3 pt-0 pb-3 text-small">
-    <h3 className="font-bold text-large pb-2">Learn Xone Development</h3>
-    <p>Read our documentation to understand Xone's core concepts.</p>
+    <h3 className="font-bold text-large pb-2">学习 Xone 开发</h3>
+    <p>阅读我们的文档以了解 Xone 的核心概念。</p>
     </CardBody>
     <CardFooter>
-      <Link
+      <DynamicLangLink
         isExternal
         showAnchorIcon
-        href="/developers/architecture/account"
+        basePath='/developers/architecture' subPath='/account'
         className='text-primaryHue'
       >
-        Get Started
-      </Link>
+        开始使用
+      </DynamicLangLink>
     </CardFooter>
   </Card>
   <Card className="flex-shrink-0 max-w-full flex-col">
@@ -35,8 +36,8 @@ This guide primarily introduces the basics or manuals for developers building on
       <div className="i-icon-park-outline-youtobe bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
     </CardHeader>
     <CardBody className="px-3 pt-0 pb-3 text-small">
-    <h3 className="font-bold text-large pb-2">Watch Video Tutorials</h3>
-    <p> If you're new to this space, we provide video guides and documents to help you start building on Xone.</p>
+    <h3 className="font-bold text-large pb-2">观看视频教程</h3>
+    <p>如果您是这个领域的新手，我们提供视频指南和文档来帮助您开始在 Xone 上构建。</p>
     </CardBody>
     <CardFooter>
       <Link
@@ -45,7 +46,7 @@ This guide primarily introduces the basics or manuals for developers building on
         href="#"
         className='text-primaryHue'
       >
-        Under Construction
+        正在建设中
       </Link>
     </CardFooter>
   </Card>
@@ -54,18 +55,18 @@ This guide primarily introduces the basics or manuals for developers building on
       <div className="i-material-symbols-laptop-mac-outline bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
     </CardHeader>
     <CardBody className="px-3 pt-0 pb-3 text-small">
-    <h3 className="font-bold text-large pb-2">Give it a try?</h3>
-    <p>Practice makes perfect! Start building first, then ask questions later.</p>
+    <h3 className="font-bold text-large pb-2">尝试一下？</h3>
+    <p>熟能生巧！先开始构建，然后再提问。</p>
     </CardBody>
     <CardFooter>
-      <Link
+      <DynamicLangLink
         isExternal
         showAnchorIcon
-        href="/developers/standard/erc20"
+        basePath='/developers/standard' subPath='/erc20'
         className='text-primaryHue'
       >
-        Creating the first contract
-      </Link>
+        创建第一个合约
+      </DynamicLangLink>
     </CardFooter>
   </Card>
   <Card className="flex-shrink-0 max-w-full flex-col">
@@ -73,45 +74,45 @@ This guide primarily introduces the basics or manuals for developers building on
       <div className="i-tabler-settings-code bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
     </CardHeader>
     <CardBody className="px-3 pt-0 pb-3 text-small">
-    <h3 className="font-bold text-large pb-2">Set Up Your Local Environment</h3>
-    <p>Configure your development environment and begin with "Hello Xone."</p>
+    <h3 className="font-bold text-large pb-2">设置您的本地环境</h3>
+    <p>配置您的开发环境并从"Hello Xone"开始。</p>
     </CardBody>
     <CardFooter>
-      <Link
+      <DynamicLangLink
         isExternal
         showAnchorIcon
-        href="/developers/tools"
+        basePath='/developers' subPath='/tools'
         className='text-primaryHue'
       >
-        Select local development tools
-      </Link>
+        选择本地开发工具
+      </DynamicLangLink>
     </CardFooter>
   </Card>
 </div>
 
-## Important Information
+## 重要信息
 
-To ensure a smoother development experience, we recommend familiarizing yourself with the following information and utilizing local development nodes or <Link className='text-primaryHue' isExternal showAnchorIcon href="https://testnet.xonescan.com/">Xone TestNet</Link>. This allows you to immerse yourself in development without worrying about spending real money. If you need XOC on Xone TestNet for testing, <Link className='text-primaryHue' isExternal showAnchorIcon href="https://faucet.xone.org/">you can claim it from the faucet</Link>.
+为确保更顺畅的开发体验，我们建议您熟悉以下信息并利用本地开发节点或 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://testnet.xonescan.com/">Xone 测试网</Link>。这使您可以专注于开发，而不用担心花费真钱。如果您需要 Xone 测试网上的 XOC 进行测试，<Link className='text-primaryHue' isExternal showAnchorIcon href="https://faucet.xone.org/">您可以从水龙头领取</Link>。
 
 <NetworkTable />
 
-## Contract Verification
+## 合约验证
 
-In Xone, we provide <Link className='text-primaryHue' isExternal showAnchorIcon href="https://testnet.xonescan.com/contract-verification">Verify & Publish Contract</Link>. In just three steps, you can verify and publish the contract you built. In Xone Mainnet, you need to delete the <Code color="danger">testnet</Code> in the access URL, for example: <Code color="success">xonescan.com/contract-verification</Code>, <Link className='text-primaryHue' isExternal showAnchorIcon href="https://xonescan.com/contract-verification">you can also access it directly here</Link>.
+在 Xone 中，我们提供 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://testnet.xonescan.com/contract-verification">验证和发布合约</Link>。只需三个步骤，您就可以验证和发布您构建的合约。在 Xone 主网中，您需要删除访问 URL 中的 <Code color="danger">testnet</Code>，例如：<Code color="success">xonescan.com/contract-verification</Code>，<Link className='text-primaryHue' isExternal showAnchorIcon href="https://xonescan.com/contract-verification">您也可以直接在这里访问</Link>。
 
-## Development Tools
+## 开发工具
 
-As you'll see in the development stack below, deploying contracts and interacting with them on Xone Mainnet or Xone TestNet is almost identical to how you do it on Ethereum L1. **The most notable difference is the requirement to specify different endpoints.**
+正如您将在下面的开发堆栈中看到的，在 Xone 主网或 Xone 测试网上部署合约并与它们交互，与在以太坊 L1 上的操作几乎相同。**最显著的区别是需要指定不同的端点。**
 
-### Development Essentials
+### 开发必需品
 <div class="columns-2 mt-2">
   <Card className="flex-shrink-0 max-w-full flex-col">
     <CardHeader className="flex top-6 gap-2">
       <Image className="w-8 h-8" src="/favicon.png" alt="Xone Logo"layout="responsive" />
     </CardHeader>
     <CardBody className="px-3 pt-0 pb-3 text-small">
-    <h3 className="font-bold text-large pb-2">Xone Faucet</h3>
-    <p>Obtain free test tokens to interact with the Xone Chain test network.</p>
+    <h3 className="font-bold text-large pb-2">Xone 水龙头</h3>
+    <p>获取免费测试代币以与 Xone Chain 测试网络交互。</p>
     </CardBody>
     <CardFooter>
       <Link
@@ -120,7 +121,7 @@ As you'll see in the development stack below, deploying contracts and interactin
         href="https://faucet.xone.org/"
         className='text-primaryHue'
       >
-        Open Faucet
+        打开水龙头
       </Link>
     </CardFooter>
   </Card>
@@ -130,7 +131,7 @@ As you'll see in the development stack below, deploying contracts and interactin
     </CardHeader>
     <CardBody className="px-3 pt-0 pb-3 text-small">
     <h3 className="font-bold text-large pb-2">OpenZeppelin</h3>
-    <p>A library for secure and standard smart contracts.</p>
+    <p>用于安全和标准智能合约的库。</p>
     </CardBody>
     <CardFooter>
       <Link
@@ -139,13 +140,13 @@ As you'll see in the development stack below, deploying contracts and interactin
         href="https://www.openzeppelin.com/"
         className='text-primaryHue'
       >
-        Open OpenZeppelin
+        打开 OpenZeppelin
       </Link>
     </CardFooter>
   </Card>
 </div>
 
-### Development Frameworks
+### 开发框架
 <div class="columns-2 mt-2">
   <Card className="flex-shrink-0 max-w-full flex-col">
     <CardHeader className="flex top-6 gap-2">
@@ -153,7 +154,7 @@ As you'll see in the development stack below, deploying contracts and interactin
     </CardHeader>
     <CardBody className="px-3 pt-0 pb-3 text-small">
     <h3 className="font-bold text-large pb-2">Hardhat</h3>
-    <p>A development environment for compiling, deploying, and testing smart contracts.</p>
+    <p>用于编译、部署和测试智能合约的开发环境。</p>
     </CardBody>
     <CardFooter>
       <Link
@@ -162,7 +163,7 @@ As you'll see in the development stack below, deploying contracts and interactin
         href="https://hardhat.org/"
         className='text-primaryHue'
       >
-        Open Hardhat
+        打开 Hardhat
       </Link>
     </CardFooter>
   </Card>
@@ -172,7 +173,7 @@ As you'll see in the development stack below, deploying contracts and interactin
     </CardHeader>
     <CardBody className="px-3 pt-0 pb-3 text-small">
     <h3 className="font-bold text-large pb-2">Remix</h3>
-    <p>An online IDE for developing Solidity smart contracts.</p>
+    <p>用于开发 Solidity 智能合约的在线 IDE。</p>
     </CardBody>
     <CardFooter>
       <Link
@@ -181,14 +182,13 @@ As you'll see in the development stack below, deploying contracts and interactin
         href="https://remix.ethereum.org/"
         className='text-primaryHue'
       >
-        Open Remix
+        打开 Remix
       </Link>
     </CardFooter>
   </Card>
 </div>
 
-
-### Code Collaboration Platforms
+### 代码协作平台
 <div class="columns-2 mt-2">
   <Card className="flex-shrink-0 max-w-full flex-col">
     <CardHeader className="flex top-6 gap-2">
@@ -196,7 +196,7 @@ As you'll see in the development stack below, deploying contracts and interactin
     </CardHeader>
     <CardBody className="px-3 pt-0 pb-3 text-small">
     <h3 className="font-bold text-large pb-2">Replit</h3>
-    <p>An online IDE for collaborative coding and rapid testing.</p>
+    <p>用于协作编码和快速测试的在线 IDE。</p>
     </CardBody>
     <CardFooter>
       <Link
@@ -205,7 +205,7 @@ As you'll see in the development stack below, deploying contracts and interactin
         href="https://replit.com/"
         className='text-primaryHue'
       >
-        Open Replit
+        打开 Replit
       </Link>
     </CardFooter>
   </Card>
@@ -215,7 +215,7 @@ As you'll see in the development stack below, deploying contracts and interactin
     </CardHeader>
     <CardBody className="px-3 pt-0 pb-3 text-small">
     <h3 className="font-bold text-large pb-2">Truffle</h3>
-    <p>A suite of development tools for Ethereum smart contracts.</p>
+    <p>一套用于以太坊智能合约的开发工具。</p>
     </CardBody>
     <CardFooter>
       <Link
@@ -224,13 +224,13 @@ As you'll see in the development stack below, deploying contracts and interactin
         href="https://trufflesuite.com/"
         className='text-primaryHue'
       >
-        Open Truffle
+        打开 Truffle
       </Link>
     </CardFooter>
   </Card>
 </div>
 
-### Blockchain Simulators and Language
+### 区块链模拟器和语言
 <div class="columns-2 mt-2">
   <Card className="flex-shrink-0 max-w-full flex-col">
     <CardHeader className="flex top-6 gap-2">
@@ -238,7 +238,7 @@ As you'll see in the development stack below, deploying contracts and interactin
     </CardHeader>
     <CardBody className="px-3 pt-0 pb-3 text-small">
     <h3 className="font-bold text-large pb-2">Ganache</h3>
-    <p>A personal blockchain for testing Ethereum contracts.</p>
+    <p>用于测试以太坊合约的个人区块链。</p>
     </CardBody>
     <CardFooter>
       <Link
@@ -247,7 +247,7 @@ As you'll see in the development stack below, deploying contracts and interactin
         href="https://trufflesuite.com/ganache"
         className='text-primaryHue'
       >
-        Open Ganache
+        打开 Ganache
       </Link>
     </CardFooter>
   </Card>
@@ -257,7 +257,7 @@ As you'll see in the development stack below, deploying contracts and interactin
     </CardHeader>
     <CardBody className="px-3 pt-0 pb-3 text-small">
     <h3 className="font-bold text-large pb-2">Solidity</h3>
-    <p>The primary programming language for writing Ethereum smart contracts.</p>
+    <p>编写以太坊智能合约的主要编程语言。</p>
     </CardBody>
     <CardFooter>
       <Link
@@ -266,31 +266,31 @@ As you'll see in the development stack below, deploying contracts and interactin
         href="https://soliditylang.org/"
         className='text-primaryHue'
       >
-        Open Solidity
+        打开 Solidity
       </Link>
     </CardFooter>
   </Card>
 </div>
 
-
-## Practice
+## 实践
 <Steps>
-### **Step 1: Choose Your Preferred Development Tool**
+### **步骤 1：选择您喜欢的开发工具**
 
-We recommend using tools designed for EVM-based development. They are not only faster but often offer additional features, such as <Link className='text-primaryHue' isExternal showAnchorIcon href="https://hardhat.org/tutorial/debugging-with-hardhat-network.html">debugging Solidity messages</Link> or <Link className='text-primaryHue' isExternal showAnchorIcon href="https://trufflesuite.com/ganache/">providing user interfaces</Link>.
+我们推荐使用为基于 EVM 的开发设计的工具。它们不仅更快，而且通常提供额外功能，例如 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://hardhat.org/tutorial/debugging-with-hardhat-network.html">调试 Solidity 消息</Link> 或 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://trufflesuite.com/ganache/">提供用户界面</Link>。
 
-### **Step 2: Debug Before Deployment**
+### **步骤 2：在部署前调试**
 
-Once local development is complete, debug your DApp using development nodes or Xone TestNet. Focus on specific aspects of Xone Mainnet, such as verifying contract logic or testing token transfers.  
+本地开发完成后，使用开发节点或 Xone 测试网调试您的 DApp。专注于 Xone 主网的特定方面，例如验证合约逻辑或测试代币转移。
 
-Deploy to the production network only after ensuring your application runs smoothly on the test network. This reduces unnecessary costs, as every transaction on Xone Mainnet incurs a fee.  
+只有在确保您的应用程序在测试网络上运行顺畅后，才部署到生产网络。这样可以减少不必要的成本，因为 Xone 主网上的每笔交易都会产生费用。
 
-### **Step 3: Verify Contract Source**
+### **步骤 3：验证合约源代码**
 
-You don't need to upload the source code to the <Link className='text-primaryHue' isExternal showAnchorIcon href="/developers/explorers">block explorer</Link> during testing, as the test network allows you to send queries and transactions directly from the graphical interface. On the production network, verified contracts help users better understand their purpose.  
+在测试期间，您不需要将源代码上传到 <DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/developers' subPath='/explorers'>区块浏览器</DynamicLangLink>，因为测试网络允许您直接从图形界面发送查询和交易。在生产网络上，经过验证的合约可以帮助用户更好地理解其用途。
 </Steps>
-## About These Developer Resources
 
-We help you write documents about basic concepts and development stacks with Xone, and there are tutorials to get you up and running. We believe that Xone is an open network that everyone can participate in; for this huge network, it is far from enough for only Xone developers and operators to write these contents and resources. For this reason, we open source everything and encourage you to participate in it and follow us to expand and improve it.
+## 关于这些开发者资源
 
-If you have any feedback, please contact us via <Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/hello-xone/official_docs/issues/new/choose">GitHub Issues</Link> or our <Link className='text-primaryHue' isExternal showAnchorIcon href="https://discord.gg/SzTaqpns">Discord server</Link> and <Link className='text-primaryHue' isExternal showAnchorIcon href="https://t.me/Xone_Developers">Developers Telegram</Link>.
+我们帮助您编写关于 Xone 基本概念和开发堆栈的文档，并提供教程让您快速上手。我们相信 Xone 是一个每个人都可以参与的开放网络；对于这个庞大的网络来说，仅靠 Xone 开发者和运营商来编写这些内容和资源是远远不够的。为此，我们将所有内容开源，并鼓励您参与其中，跟随我们一起扩展和改进它。
+
+如果您有任何反馈，请通过 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/hello-xone/official_docs/issues/new/choose">GitHub Issues</Link> 或我们的 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://discord.gg/SzTaqpns">Discord 服务器</Link> 和 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://t.me/Xone_Developers">开发者 Telegram</Link> 联系我们。

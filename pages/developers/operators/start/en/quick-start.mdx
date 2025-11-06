@@ -1,0 +1,111 @@
+import { Steps, Tabs } from 'nextra/components';
+
+# Download & Install the Xone Chain Full Node Binary and Configuration
+
+<Steps>
+### 1. Prerequisites
+
+* A Linux server (Ubuntu 22.04+ recommended)
+* `wget` and `unzip` installed
+* `sudo` privileges
+
+
+### 2. Download the Latest Binary and Config Bundle
+
+```bash showLineNumbers copy
+# Change to a temporary directory
+cd /tmp
+
+# Download the latest Xone Chain node binary
+VERSION=$(curl -s https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/latest-version.txt)
+wget -O xoned-${VERSION}-linux-amd64 https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/xoned-${VERSION}-linux-amd64
+
+# Download the official configuration template
+wget https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/config.zip
+```
+
+> **Tip**: Optionally verify the SHA256 checksum to ensure the files haven’t been tampered with.
+
+
+### 3. Install the Binary
+
+```bash showLineNumbers copy
+# Rename the executable
+# NOTE: Replace the version number below (v1.0.1) with the actual version you just downloaded.
+# For example, if you downloaded xoned-v1.0.3-linux-amd64, run:
+# mv xoned-v1.0.3-linux-amd64 xoned
+mv xoned-v1.0.1-linux-amd64 xoned
+
+# Make it executable
+chmod +x xoned
+
+# Move it into your system’s PATH
+sudo mv xoned /usr/bin/xoned
+```
+
+
+### 4. Initialize the Data Directory
+
+<Tabs items={['Mainnet', 'Testnet']} defaultValue="Mainnet">
+  <Tabs.Tab>
+  ```bash showLineNumbers copy
+  # Initialize your node’s data directory (defaults to ~/.xone)
+  xoned init mynode --chain-id xone_3721-1
+  ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+  ```bash showLineNumbers copy
+  # Initialize your node’s data directory (defaults to ~/.xone)
+  xoned init xoned --chain-id xone_33772211-1
+  ```
+  </Tabs.Tab>
+</Tabs>
+
+
+* `mynode` can be replaced with your preferred directory name
+* This creates a `~/.xone` folder in your home directory. If you want to specify a custom directory, add the --home flag after the xoned init command.
+
+
+### 5. Apply the Official Configuration
+
+```bash showLineNumbers copy
+# Unzip the config bundle
+unzip config.zip -d ./config
+
+# Backup your existing config (in case you need to revert)
+cp -r ~/.xone/config ~/.xone/config.bak
+
+# Overwrite genesis.json, config.toml, and app.toml
+cp config/genesis.json  ~/.xone/config/genesis.json
+cp config/config.toml   ~/.xone/config/config.toml
+cp config/app.toml      ~/.xone/config/app.toml
+```
+
+> **Note**
+>
+> * Ensure `~/.xone/config` contains only the official or intentionally customized files—remove any extras.
+> * If you need to tweak settings (RPC ports, firewall rules, etc.), edit the files under `config/` first, then copy them over.
+
+
+### 6. Sync to the Latest Progress Using Snapshots  
+In the current version, syncing must be done through a snapshot to ensure quick and accurate synchronization to the latest node state. For detailed instructions, please refer to [Using Snapshots](/developers/operators/start/using-snapshots).
+
+
+### 7. Wait for Snapshot Restoration to Complete Before Starting the Node  
+After the snapshot restoration is complete, you can proceed to start the node and begin syncing with the blockchain network.
+
+```bash showLineNumbers copy
+# Launch the node (use systemd or tmux/screen for background operation)
+xoned start --home ~/.xone
+```
+
+
+### 8. Verify Sync Status
+
+```bash showLineNumbers copy
+# Check sync info (latest block height, catching up status)
+xoned status --home ~/.xone --node http://127.0.0.1:26657 | jq .SyncInfo
+
+```
+
+</Steps>

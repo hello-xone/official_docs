@@ -1,0 +1,442 @@
+---
+title: XoneScan 更新 | 更强大、更清晰的链上数据体验
+date: 2025-10-01
+description: 我们重新设计了界面，提升了性能，并添加了大量强大的新功能，让区块链数据浏览对 Web3 中的每个人来说都更流畅、更智能、更有趣。
+draft: false
+tags: [Updates]
+authors: Xone Chain
+image: https://xone-docs.s3.ap-southeast-1.amazonaws.com/blog/updates/scan_10_01_banner.png
+thumbnail: https://xone-docs.s3.ap-southeast-1.amazonaws.com/blog/updates/scan_10_01_banner.png
+---
+
+import ContactInfo from "@/components/ContactInfo";
+import { Callout } from 'nextra/components';
+import {Link, Image, Card, CardHeader, CardBody, CardFooter} from "@nextui-org/react";
+
+**亲爱的节点运营商和开发者社区：**
+<br/>
+XoneScan 刚刚迎来了迄今为止最大的一次升级！🎉
+
+我们重新设计了界面，提升了性能，并添加了大量强大的新功能，让区块链数据浏览对 Web3 中的每个人来说都更流畅、更智能、更有趣。
+
+## 🧩 以下是最新变化：
+
+### 全新的主题配色
+整个网站焕然一新，呈现出时尚现代的外观。深色模式和浅色模式现在都对眼睛更加友好。✨
+
+<Image src="https://xone-docs.s3.ap-southeast-1.amazonaws.com/blog/updates/Theme_Colors.png" alt="主题配色" width={1200} layout="responsive"/>
+
+<Card
+  className="flex flex-col-reverse md:flex-row w-full border-none mt-12 items-start"
+  isFooterBlurred
+  shadow="none"
+>
+  <div className="md:w-1/2">
+  <Image 
+    src="https://xone-docs.s3.ap-southeast-1.amazonaws.com/blog/updates/XOC_Market.png"
+    alt="XOC 市场"
+    width={1200}
+    layout="responsive"
+    className="w-full h-auto object-cover"
+  />
+  </div>
+
+  <div className="md:w-1/2 flex flex-col">
+    <CardHeader className="flex gap-3 -mt-8">
+      ### XOC 市场与价格追踪
+    </CardHeader>
+
+    <CardBody>
+      <p>新增了专门的 XOC 代币市场模块，提供实时价格、市值、百分比变化等信息。让您一目了然地掌握市场动态。</p>
+    </CardBody>
+
+    <CardFooter>
+      <Link
+        href="https://xonescan.com"
+        isExternal
+        showAnchorIcon
+        className="text-primaryHue"
+      >
+        立即体验
+      </Link>
+    </CardFooter>
+  </div>
+</Card>
+
+<Card
+  className="flex flex-col-reverse md:flex-row w-full border-none mt-12 items-start"
+  isFooterBlurred
+  shadow="none"
+>
+  <div className="md:w-1/2">
+  <Image 
+    src="https://xone-docs.s3.ap-southeast-1.amazonaws.com/blog/updates/Shortcuts.png"
+    alt="快捷入口"
+    width={1200}
+    layout="responsive"
+    className="w-full h-auto object-cover"
+  />
+  </div>
+
+  <div className="md:w-1/2 flex flex-col">
+    <CardHeader className="flex gap-3 -mt-8">
+      ### 兑换与跨链桥快捷入口
+    </CardHeader>
+
+    <CardBody>
+      <p>无需再费力寻找工具！我们在区块浏览器内直接内置了热门兑换和跨链桥的快速链接。</p>
+    </CardBody>
+
+    <CardFooter>
+      <Link
+        href="https://xonescan.com"
+        isExternal
+        showAnchorIcon
+        className="text-primaryHue"
+      >
+        立即体验
+      </Link>
+    </CardFooter>
+  </div>
+</Card>
+
+### 区块奖励追踪
+全面追踪区块生产奖励，包括矿工/验证者信息、基础奖励、Gas 奖励和费用分配，帮助用户分析链上激励机制。
+
+<Image src="https://xone-docs.s3.ap-southeast-1.amazonaws.com/blog/updates/Reward_Tracking.png" alt="奖励追踪" width={1200} layout="responsive"/>
+
+<Callout type="warning" emoji="⚠️"> **重要提示：** 验证者质押功能即将推出。🔥 </Callout>
+
+### 更详细的代币、地址和交易页面
+关于持有者、历史记录、审计状态、资产流向等更多洞察——应有尽有。
+
+<Image src="https://xone-docs.s3.ap-southeast-1.amazonaws.com/blog/updates/Detailed_Token.png" alt="详细代币信息" width={1200} layout="responsive"/>
+
+<Callout type="warning" emoji="⚠️"> 悄悄说一句…… XID 域名和公共标签显示功能仍在完善中。敬请期待！😉 </Callout>
+
+<Card
+  className="flex flex-col-reverse md:flex-row w-full border-none mt-12 items-start"
+  isFooterBlurred
+  shadow="none"
+>
+  <div className="md:w-1/2">
+  <Image 
+    src="https://xone-docs.s3.ap-southeast-1.amazonaws.com/blog/updates/Transaction_Type.png"
+    alt="交易类型"
+    width={1200}
+    layout="responsive"
+    className="w-full h-auto object-cover"
+  />
+  </div>
+
+  <div className="md:w-1/2 flex flex-col">
+    <CardHeader className="flex gap-3 -mt-8">
+      ### 交易类型标签
+    </CardHeader>
+
+    <CardBody>
+      <p>清晰的标签让您快速识别是代币转账、DEX 交易、跨链桥兑换还是合约调用。</p>
+    </CardBody>
+
+    <CardFooter>
+      <Link
+        href="https://xonescan.com/txs"
+        isExternal
+        showAnchorIcon
+        className="text-primaryHue"
+      >
+        立即体验
+      </Link>
+    </CardFooter>
+  </div>
+</Card>
+
+<Card
+  className="flex flex-col-reverse md:flex-row w-full border-none mt-12 items-start"
+  isFooterBlurred
+  shadow="none"
+>
+  <div className="md:w-1/2">
+  <Image 
+    src="https://xone-docs.s3.ap-southeast-1.amazonaws.com/blog/updates/Address_Tagging.png"
+    alt="地址标签"
+    width={1200}
+    layout="responsive"
+    className="w-full h-auto object-cover"
+  />
+  </div>
+
+  <div className="md:w-1/2 flex flex-col">
+    <CardHeader className="flex gap-3 -mt-8">
+      ### 地址标签功能
+    </CardHeader>
+
+    <CardBody>
+      <p>为地址添加标签，如"交易所钱包"或"开发者地址"。选择私有或公共标签——完全由您决定。</p>
+    </CardBody>
+
+    <CardFooter>
+      <Link
+        href="https://xonescan.com/accounts"
+        isExternal
+        showAnchorIcon
+        className="text-primaryHue"
+      >
+        立即体验
+      </Link>
+    </CardFooter>
+  </div>
+</Card>
+
+<Card
+  className="flex flex-col-reverse md:flex-row w-full border-none mt-12 items-start"
+  isFooterBlurred
+  shadow="none"
+>
+  <div className="md:w-1/2">
+  <Image 
+    src="https://xone-docs.s3.ap-southeast-1.amazonaws.com/blog/updates/Token_Verification.png"
+    alt="代币验证"
+    width={1200}
+    layout="responsive"
+    className="w-full h-auto object-cover"
+  />
+  </div>
+
+  <div className="md:w-1/2 flex flex-col">
+    <CardHeader className="flex gap-3 -mt-8">
+      ### 项目代币验证
+    </CardHeader>
+
+    <CardBody>
+      <p>项目方现在可以使用官方信息、社交链接和徽章来验证代币。为查看代币的每个人增加了信任度。</p>
+    </CardBody>
+
+    <CardFooter>
+      <Link
+        href="https://xonescan.com/tokens"
+        isExternal
+        showAnchorIcon
+        className="text-primaryHue"
+      >
+        立即体验
+      </Link>
+    </CardFooter>
+  </div>
+</Card>
+
+<Callout type="warning" emoji="⚠️">
+ 两种简单方式：
+ 1. 通过站内表单提交（审核后我们将显示它）；
+ 2. 或者在我们的 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/hello-xone/xone_assets">资产仓库</Link> 中提交 PR。
+ </Callout>
+
+### 内部交易追踪
+查看交易中的幕后调用——嵌套转账、合约逻辑流等等。
+
+<Image src="https://xone-docs.s3.ap-southeast-1.amazonaws.com/blog/updates/Internal_Transaction.png" alt="内部交易" width={1200} layout="responsive"/>
+
+<Card
+  className="flex flex-col-reverse md:flex-row w-full border-none mt-12 items-start"
+  isFooterBlurred
+  shadow="none"
+>
+  <div className="md:w-1/2">
+  <Image 
+    src="https://xone-docs.s3.ap-southeast-1.amazonaws.com/blog/updates/DEX_Pool.png"
+    alt="DEX 资金池"
+    width={1200}
+    layout="responsive"
+    className="w-full h-auto object-cover"
+  />
+  </div>
+
+  <div className="md:w-1/2 flex flex-col">
+    <CardHeader className="flex gap-3 -mt-8">
+      ### DEX 资金池追踪
+    </CardHeader>
+
+    <CardBody>
+      <p>来自 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://www.geckoterminal.com/xone/pools">Geckoterminal</Link> 和 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://swapx.exchange/en/position">SwapX</Link> 的实时资金池数据——总锁定价值、交易量、费用、代币对，应有尽有。</p>
+    </CardBody>
+
+    <CardFooter>
+      <Link
+        href="https://xonescan.com/pools"
+        isExternal
+        showAnchorIcon
+        className="text-primaryHue"
+      >
+        立即体验
+      </Link>
+    </CardFooter>
+  </div>
+</Card>
+
+<Card
+  className="flex flex-col-reverse md:flex-row w-full border-none mt-12 items-start"
+  isFooterBlurred
+  shadow="none"
+>
+  <div className="md:w-1/2">
+  <Image 
+    src="https://xone-docs.s3.ap-southeast-1.amazonaws.com/blog/updates/Token_Price.png"
+    alt="代币价格"
+    width={1200}
+    layout="responsive"
+    className="w-full h-auto object-cover"
+  />
+  </div>
+
+  <div className="md:w-1/2 flex flex-col">
+    <CardHeader className="flex gap-3 -mt-8">
+      ### 更好的代币价格与市值图表
+    </CardHeader>
+
+    <CardBody>
+      <p>更多的价格来源，更长的历史数据，以及按价格或类别排序的筛选器。全面了解市场趋势。</p>
+    </CardBody>
+
+    <CardFooter>
+      <Link
+        href="https://www.coingecko.com/en/coins/wrapped-xoc"
+        isExternal
+        showAnchorIcon
+        className="text-primaryHue"
+      >
+        立即体验
+      </Link>
+    </CardFooter>
+  </div>
+</Card>
+
+<Card
+  className="flex flex-col-reverse md:flex-row w-full border-none mt-12 items-start"
+  isFooterBlurred
+  shadow="none"
+>
+  <div className="md:w-1/2">
+  <Image 
+    src="https://xone-docs.s3.ap-southeast-1.amazonaws.com/blog/updates/Contract_Verification.png"
+    alt="合约验证"
+    width={1200}
+    layout="responsive"
+    className="w-full h-auto object-cover"
+  />
+  </div>
+
+  <div className="md:w-1/2 flex flex-col">
+    <CardHeader className="flex gap-3 -mt-8">
+      ### 智能合约验证
+    </CardHeader>
+
+    <CardBody>
+      <p>直接在浏览器中验证和显示合约源代码——支持语法高亮和自动 ABI 解析。</p>
+    </CardBody>
+
+    <CardFooter>
+      <Link
+        href="https://xonescan.com/contract-verification"
+        isExternal
+        showAnchorIcon
+        className="text-primaryHue"
+      >
+        立即体验
+      </Link>
+    </CardFooter>
+  </div>
+</Card>
+
+<Card
+  className="flex flex-col-reverse md:flex-row w-full border-none mt-12 items-start"
+  isFooterBlurred
+  shadow="none"
+>
+  <div className="md:w-1/2">
+  <Image 
+    src="https://xone-docs.s3.ap-southeast-1.amazonaws.com/blog/updates/Chain_AD.png"
+    alt="链上广告"
+    width={1200}
+    layout="responsive"
+    className="w-full h-auto object-cover"
+  />
+  </div>
+
+  <div className="md:w-1/2 flex flex-col">
+    <CardHeader className="flex gap-3 -mt-8">
+      ### 链上广告
+    </CardHeader>
+
+    <CardBody>
+      <p>新增广告位，供项目在浏览器上进行原生推广。📢</p>
+    </CardBody>
+
+    <CardFooter>
+      <Link
+        href="https://xonescan.com"
+        isExternal
+        showAnchorIcon
+        className="text-primaryHue"
+      >
+        立即体验
+      </Link>
+    </CardFooter>
+  </div>
+</Card>
+
+<Card
+  className="flex flex-col-reverse md:flex-row w-full border-none mt-12 items-start"
+  isFooterBlurred
+  shadow="none"
+>
+  <div className="md:w-1/2">
+  <Image 
+    src="https://xone-docs.s3.ap-southeast-1.amazonaws.com/blog/updates/Wallet_Integration.png"
+    alt="钱包集成"
+    width={1200}
+    layout="responsive"
+    className="w-full h-auto object-cover"
+  />
+  </div>
+
+  <div className="md:w-1/2 flex flex-col">
+    <CardHeader className="flex gap-3 -mt-8">
+      ### TokenUp 钱包集成
+    </CardHeader>
+
+    <CardBody>
+      <p>连接 TokenUp 钱包以同步您的历史记录、管理收藏夹并与合约交互——全部安全可靠。</p>
+    </CardBody>
+
+    <CardFooter>
+      <Link
+        href="https://tokenup.org/en"
+        isExternal
+        showAnchorIcon
+        className="text-primaryHue"
+      >
+        立即体验
+      </Link>
+    </CardFooter>
+  </div>
+</Card>
+
+### 修复与性能提升
+更快的查询速度、更流畅的数据加载以及整体优化，带来更稳定的体验。🚀
+
+<br/>
+🔗 主域名：https://xonescan.com
+
+🔗 备用域名：https://xscscan.com
+<br/>
+这次更新是 XoneScan 向前迈出的一大步，没有您的支持我们无法做到。💜 
+<br/>
+快来试用，探索新功能，并告诉我们您的想法！
+
+<br/>
+Xone 团队\
+2025年10月1日
+
+---
+
+<ContactInfo />

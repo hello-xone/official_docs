@@ -1,0 +1,297 @@
+import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Button} from "@nextui-org/react";
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell} from "@nextui-org/react";
+import {Code} from "@nextui-org/react";
+import { Steps } from 'nextra/components';
+import NetworkTable from "@/components/NetworkTable";
+import DynamicLangLink from '@/components/LangLink.tsx';
+
+# Xone Developer Resources
+
+This guide primarily introduces the basics or manuals for developers building on Xone. Written by Xone builders and for builders to use, it is tailored for those ready to start developing. While you may not fully understand <DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/study' subPath='/xone'>what Xone is</DynamicLangLink>, as a developer, your focus shouldn't be on learning what Xone is, but rather on how to build on it. Xone is equivalent to the <Link className='text-primaryHue' isExternal showAnchorIcon href="https://ethereum.org/en/developers/docs/evm/">EVM series</Link>, so the gap between developing on Xone and Ethereum is minimal. However, keep in mind that there are still some differences between Xone and Ethereum.
+
+## Ready to Start Building?
+
+<div class="mt-2 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-3 gap-2">
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-material-symbols-school-outline bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+    <h3 className="font-bold text-large pb-2">Learn Xone Development</h3>
+    <p>Read our documentation to understand Xone's core concepts.</p>
+    </CardBody>
+    <CardFooter>
+      <DynamicLangLink
+        isExternal
+        showAnchorIcon
+        basePath='/developers/architecture' subPath='/account'
+        className='text-primaryHue'
+      >
+        Get Started
+      </DynamicLangLink>
+    </CardFooter>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-icon-park-outline-youtobe bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+    <h3 className="font-bold text-large pb-2">Watch Video Tutorials</h3>
+    <p> If you're new to this space, we provide video guides and documents to help you start building on Xone.</p>
+    </CardBody>
+    <CardFooter>
+      <Link
+        isDisabled
+        showAnchorIcon
+        href="#"
+        className='text-primaryHue'
+      >
+        Under Construction
+      </Link>
+    </CardFooter>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-material-symbols-laptop-mac-outline bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+    <h3 className="font-bold text-large pb-2">Give it a try?</h3>
+    <p>Practice makes perfect! Start building first, then ask questions later.</p>
+    </CardBody>
+    <CardFooter>
+      <DynamicLangLink
+        isExternal
+        showAnchorIcon
+        basePath='/developers/standard' subPath='/erc20'
+        className='text-primaryHue'
+      >
+        Creating the first contract
+      </DynamicLangLink>
+    </CardFooter>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="i-tabler-settings-code bg-red-600 w-8 h-8" role="img" aria-hidden="true" />
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+    <h3 className="font-bold text-large pb-2">Set Up Your Local Environment</h3>
+    <p>Configure your development environment and begin with "Hello Xone."</p>
+    </CardBody>
+    <CardFooter>
+      <DynamicLangLink
+        isExternal
+        showAnchorIcon
+        basePath='/developers' subPath='/tools'
+        className='text-primaryHue'
+      >
+        Select local development tools
+      </DynamicLangLink>
+    </CardFooter>
+  </Card>
+</div>
+
+## Important Information
+
+To ensure a smoother development experience, we recommend familiarizing yourself with the following information and utilizing local development nodes or <Link className='text-primaryHue' isExternal showAnchorIcon href="https://testnet.xonescan.com/">Xone TestNet</Link>. This allows you to immerse yourself in development without worrying about spending real money. If you need XOC on Xone TestNet for testing, <Link className='text-primaryHue' isExternal showAnchorIcon href="https://faucet.xone.org/">you can claim it from the faucet</Link>.
+
+<NetworkTable />
+
+## Contract Verification
+
+In Xone, we provide <Link className='text-primaryHue' isExternal showAnchorIcon href="https://testnet.xonescan.com/contract-verification">Verify & Publish Contract</Link>. In just three steps, you can verify and publish the contract you built. In Xone Mainnet, you need to delete the <Code color="danger">testnet</Code> in the access URL, for example: <Code color="success">xonescan.com/contract-verification</Code>, <Link className='text-primaryHue' isExternal showAnchorIcon href="https://xonescan.com/contract-verification">you can also access it directly here</Link>.
+
+## Development Tools
+
+As you'll see in the development stack below, deploying contracts and interacting with them on Xone Mainnet or Xone TestNet is almost identical to how you do it on Ethereum L1. **The most notable difference is the requirement to specify different endpoints.**
+
+### Development Essentials
+<div class="columns-2 mt-2">
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <Image className="w-8 h-8" src="/favicon.png" alt="Xone Logo"layout="responsive" />
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+    <h3 className="font-bold text-large pb-2">Xone Faucet</h3>
+    <p>Obtain free test tokens to interact with the Xone Chain test network.</p>
+    </CardBody>
+    <CardFooter>
+      <Link
+        isExternal
+        showAnchorIcon
+        href="https://faucet.xone.org/"
+        className='text-primaryHue'
+      >
+        Open Faucet
+      </Link>
+    </CardFooter>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <Image className="w-8 h-8" src="https://www.openzeppelin.com/hubfs/openzeppelin-favicon-1.png" alt="Xone Logo"layout="responsive" />
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+    <h3 className="font-bold text-large pb-2">OpenZeppelin</h3>
+    <p>A library for secure and standard smart contracts.</p>
+    </CardBody>
+    <CardFooter>
+      <Link
+        isExternal
+        showAnchorIcon
+        href="https://www.openzeppelin.com/"
+        className='text-primaryHue'
+      >
+        Open OpenZeppelin
+      </Link>
+    </CardFooter>
+  </Card>
+</div>
+
+### Development Frameworks
+<div class="columns-2 mt-2">
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <Image className="w-8 h-8" src="https://hardhat.org/favicon.ico" alt="Xone Logo"layout="responsive" />
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+    <h3 className="font-bold text-large pb-2">Hardhat</h3>
+    <p>A development environment for compiling, deploying, and testing smart contracts.</p>
+    </CardBody>
+    <CardFooter>
+      <Link
+        isExternal
+        showAnchorIcon
+        href="https://hardhat.org/"
+        className='text-primaryHue'
+      >
+        Open Hardhat
+      </Link>
+    </CardFooter>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <Image className="w-8 h-8" src="https://remix.ethereum.org/assets/img/remix-logo-blue.png" alt="Xone Logo"layout="responsive" />
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+    <h3 className="font-bold text-large pb-2">Remix</h3>
+    <p>An online IDE for developing Solidity smart contracts.</p>
+    </CardBody>
+    <CardFooter>
+      <Link
+        isExternal
+        showAnchorIcon
+        href="https://remix.ethereum.org/"
+        className='text-primaryHue'
+      >
+        Open Remix
+      </Link>
+    </CardFooter>
+  </Card>
+</div>
+
+
+### Code Collaboration Platforms
+<div class="columns-2 mt-2">
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <Image className="w-8 h-8" src="https://cdn.replit.com/dotcom/favicon-196.png" alt="Xone Logo"layout="responsive" />
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+    <h3 className="font-bold text-large pb-2">Replit</h3>
+    <p>An online IDE for collaborative coding and rapid testing.</p>
+    </CardBody>
+    <CardFooter>
+      <Link
+        isExternal
+        showAnchorIcon
+        href="https://replit.com/"
+        className='text-primaryHue'
+      >
+        Open Replit
+      </Link>
+    </CardFooter>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <Image className="w-8 h-8" src="https://trufflesuite.com/assets/favicon-32x32.png" alt="Xone Logo"layout="responsive" />
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+    <h3 className="font-bold text-large pb-2">Truffle</h3>
+    <p>A suite of development tools for Ethereum smart contracts.</p>
+    </CardBody>
+    <CardFooter>
+      <Link
+        isExternal
+        showAnchorIcon
+        href="https://trufflesuite.com/"
+        className='text-primaryHue'
+      >
+        Open Truffle
+      </Link>
+    </CardFooter>
+  </Card>
+</div>
+
+### Blockchain Simulators and Language
+<div class="columns-2 mt-2">
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <Image className="w-8 h-8" src="https://trufflesuite.com/assets/favicon-32x32.png" alt="Xone Logo"layout="responsive" />
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+    <h3 className="font-bold text-large pb-2">Ganache</h3>
+    <p>A personal blockchain for testing Ethereum contracts.</p>
+    </CardBody>
+    <CardFooter>
+      <Link
+        isExternal
+        showAnchorIcon
+        href="https://trufflesuite.com/ganache"
+        className='text-primaryHue'
+      >
+        Open Ganache
+      </Link>
+    </CardFooter>
+  </Card>
+  <Card className="flex-shrink-0 max-w-full flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <Image className="w-8 h-8" src="https://soliditylang.org/assets/favicon.ico" alt="Xone Logo"layout="responsive" />
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+    <h3 className="font-bold text-large pb-2">Solidity</h3>
+    <p>The primary programming language for writing Ethereum smart contracts.</p>
+    </CardBody>
+    <CardFooter>
+      <Link
+        isExternal
+        showAnchorIcon
+        href="https://soliditylang.org/"
+        className='text-primaryHue'
+      >
+        Open Solidity
+      </Link>
+    </CardFooter>
+  </Card>
+</div>
+
+
+## Practice
+<Steps>
+### **Step 1: Choose Your Preferred Development Tool**
+
+We recommend using tools designed for EVM-based development. They are not only faster but often offer additional features, such as <Link className='text-primaryHue' isExternal showAnchorIcon href="https://hardhat.org/tutorial/debugging-with-hardhat-network.html">debugging Solidity messages</Link> or <Link className='text-primaryHue' isExternal showAnchorIcon href="https://trufflesuite.com/ganache/">providing user interfaces</Link>.
+
+### **Step 2: Debug Before Deployment**
+
+Once local development is complete, debug your DApp using development nodes or Xone TestNet. Focus on specific aspects of Xone Mainnet, such as verifying contract logic or testing token transfers.  
+
+Deploy to the production network only after ensuring your application runs smoothly on the test network. This reduces unnecessary costs, as every transaction on Xone Mainnet incurs a fee.  
+
+### **Step 3: Verify Contract Source**
+
+You don't need to upload the source code to the <DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/developers' subPath='/explorers'>block explorer</DynamicLangLink> during testing, as the test network allows you to send queries and transactions directly from the graphical interface. On the production network, verified contracts help users better understand their purpose.  
+</Steps>
+## About These Developer Resources
+
+We help you write documents about basic concepts and development stacks with Xone, and there are tutorials to get you up and running. We believe that Xone is an open network that everyone can participate in; for this huge network, it is far from enough for only Xone developers and operators to write these contents and resources. For this reason, we open source everything and encourage you to participate in it and follow us to expand and improve it.
+
+If you have any feedback, please contact us via <Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/hello-xone/official_docs/issues/new/choose">GitHub Issues</Link> or our <Link className='text-primaryHue' isExternal showAnchorIcon href="https://discord.gg/SzTaqpns">Discord server</Link> and <Link className='text-primaryHue' isExternal showAnchorIcon href="https://t.me/Xone_Developers">Developers Telegram</Link>.
