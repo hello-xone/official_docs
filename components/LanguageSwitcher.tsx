@@ -31,31 +31,24 @@ const LanguageSwitcher: React.FC = () => {
 
   React.useEffect(() => {
     const initializeLanguage = async () => {
-      // 确保 i18n 初始化完成
       await ensureI18nInitialized();
       
-      // 优先级：1. 路由的 locale 2. i18n 的当前语言 3. 持久化存储的语言
+      // 获取当前路由的语言和保存的语言
       const routerLocale = router.locale;
-      const i18nLanguage = i18n.language;
-      const savedLanguage = getCurrentLanguage(); // 假设你有这个函数来获取保存的语言
+      const savedLanguage = getCurrentLanguage();
       
-      let finalLanguage = 'en';
+      let finalLanguage = 'en'; // 默认英文
       
+      // 优先级：1. 路由中的语言 2. 保存的语言
       if (routerLocale && routerLocale.startsWith('zh')) {
-        finalLanguage = 'zh';
-      } else if (i18nLanguage && i18nLanguage.startsWith('zh')) {
         finalLanguage = 'zh';
       } else if (savedLanguage === 'zh') {
         finalLanguage = 'zh';
-        // 如果持久化的语言与路由不一致，更新路由
-        if (routerLocale !== 'zh') {
-          const asPath = router.asPath || '/';
-          await router.push(asPath, asPath, { locale: 'zh', scroll: false });
-        }
+        // 不在初始化时跳转路由，只设置i18n语言
       }
       
-      // 确保 i18n 使用正确的语言
-      if (i18nLanguage !== finalLanguage) {
+      // 设置i18n语言，但不跳转路由
+      if (i18n.language !== finalLanguage) {
         await i18n.changeLanguage(finalLanguage);
       }
       
@@ -75,11 +68,28 @@ const LanguageSwitcher: React.FC = () => {
   const handleLanguageChange = async (newLang: 'en' | 'zh') => {
     if (newLang === currentLanguage) return;
     
-    const asPath = router.asPath || '/';
+    let asPath = router.asPath || '/';
+    
+    // 特殊处理：在路径开头添加语言代码，并替换路径中的语言代码
+    // 例如：/study/en/account -> /zh/study/zh/account
+    
+    // 1. 首先在路径开头添加新的语言代码
+    if (!asPath.startsWith(`/${newLang}/`)) {
+      asPath = `/${newLang}${asPath.startsWith('/') ? asPath : `/${asPath}`}`;
+    }
+    
+    // 2. 然后替换路径中的语言代码
+    // 使用正则表达式替换所有出现的当前语言代码
+    const regex = new RegExp(`/${currentLanguage}/`, 'g');
+    asPath = asPath.replace(regex, `/${newLang}/`);
+    
+    // 3. 确保路径末尾没有双斜杠
+    asPath = asPath.replace(/\/\//g, '/');
     
     try {
       setLanguage(newLang);
       setCurrentLanguage(newLang);
+      
       // 同时更新路由和 i18n
       await Promise.all([
         router.push(asPath, asPath, { locale: newLang, scroll: false }),
@@ -96,7 +106,7 @@ const LanguageSwitcher: React.FC = () => {
       <DropdownTrigger>
         <Button variant="flat" size="sm" className="min-w-0 px-2 gap-1">
           <GlobeIcon />
-          <span className="text-small">{label}</span>
+          <span className="text-small hidden lg:block">{label}</span>
         </Button>
       </DropdownTrigger>
       <DropdownMenu aria-label={t('actions.switch_language')} selectionMode="single" selectedKeys={new Set([currentLanguage])}>

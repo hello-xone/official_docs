@@ -26,32 +26,32 @@
       "developers": {
         "title": "Build Xone ↗",
         "type": "menu",
-        "href": "/developers/ready",
+        "href": "/developers/en/ready",
         "items": {
           "ready": {
             "title": "Developer Resources",
             "type": "page",
-            "href": "/developers/ready"
+            "href": "/developers/en/ready"
           },
           "rpc": {
             "title": "RPC Endpoints",
             "type": "page",
-            "href": "/developers/rpc"
+            "href": "/developers/en/rpc"
           },
           "testnet": {
             "title": "Testnet",
             "type": "page",
-            "href": "/developers/testnet"
+            "href": "/developers/en/testnet"
           },
           "explorers": {
             "title": "Block Explorers",
             "type": "page",
-            "href": "/developers/explorers"
+            "href": "/developers/en/explorers"
           },
           "faucets": {
             "title": "Faucets",
             "type": "page",
-            "href": "/developers/faucets"
+            "href": "/developers/en/faucets"
           },
           "architecture": {
             "title": "Architecture",
@@ -60,44 +60,44 @@
               "account": {
                 "title": "Account",
                 "type": "page",
-                "href": "/developers/architecture/account"
+                "href": "/developers/architecture/en/account"
               },
               "transaction": {
                 "title": "Transaction",
                 "type": "page",
-                "href": "/developers/architecture/transaction"
+                "href": "/developers/architecture/en/transaction"
               },
               "replay": {
                 "title": "Replay Protection",
                 "type": "page",
-                "href": "/developers/architecture/replay"
+                "href": "/developers/architecture/en/replay"
               }
             }
           },
           "guide": {
             "title": "Getting Started",
             "type": "page",
-            "href": "/developers/guide"
+            "href": "/developers/en/guide"
           },
           "tools": {
             "title": "Developer Kit",
             "type": "page",
-            "href": "/developers/tools"
+            "href": "/developers/en/tools"
           },
           "token": {
             "title": "Bridge Tokens",
             "type": "page",
-            "href": "/developers/token"
+            "href": "/developers/en/token"
           },
           "contracts": {
             "title": "Major Contracts",
             "type": "page",
-            "href": "/developers/contracts"
+            "href": "/developers/en/contracts"
           },
           "jsonrpc": {
             "title": "Json RPC ↗",
             "type": "page",
-            "href": "/openapi/overview"
+            "href": "/openapi/en/overview"
           },
           "operators": {
             "title": "Node Operators",
@@ -110,34 +110,34 @@
                   "quick-start": {
                     "title": "Quick Start",
                     "type": "page",
-                    "href": "/developers/operators/start/quick-start"
+                    "href": "/developers/operators/start/en/quick-start"
                   },
                   "docker-run": {
                     "title": "Docker Run",
                     "type": "page",
-                    "href": "/developers/operators/start/docker-run"
+                    "href": "/developers/operators/start/en/docker-run"
                   },
                   "using-snapshots": {
                     "title": "Using Snapshots",
                     "type": "page",
-                    "href": "/developers/operators/start/using-snapshots"
+                    "href": "/developers/operators/start/en/using-snapshots"
                   },
                   "background-operation": {
                     "title": "Background Operation",
                     "type": "page",
-                    "href": "/developers/operators/start/background-operation"
+                    "href": "/developers/operators/start/en/background-operation"
                   }
                 }
               },
               "practices": {
                 "title": "Best Practices",
                 "type": "page",
-                "href": "/developers/operators/practices"
+                "href": "/developers/operators/en/practices"
               },
               "monitoring": {
                 "title": "Monitoring and Alerting Practices",
                 "type": "page",
-                "href": "/developers/operators/monitoring"
+                "href": "/developers/operators/en/monitoring"
               }
             }
           },
@@ -148,17 +148,17 @@
               "erc20": {
                 "title": "ERC-20: Fungible Tokens",
                 "type": "page",
-                "href": "/developers/standard/erc20"
+                "href": "/developers/standard/en/erc20"
               },
               "erc721": {
                 "title": "ERC-721: NFT",
                 "type": "page",
-                "href": "/developers/standard/erc721"
+                "href": "/developers/standard/en/erc721"
               },
               "erc1155": {
                 "title": "ERC-1155: NFT",
                 "type": "page",
-                "href": "/developers/standard/erc1155"
+                "href": "/developers/standard/en/erc1155"
               }
             }
           },

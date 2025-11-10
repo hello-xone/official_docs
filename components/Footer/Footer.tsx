@@ -227,7 +227,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="text-xs text-default-600 lg:hidden">
+            <div className="text-xs text-default-600 lg:hidden mb-4">
               © {year ?? ""} Xone {t('footer.text6')}
             </div>
 

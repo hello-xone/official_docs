@@ -39,10 +39,15 @@ module.exports = withNextra({
   async redirects() {
     return [
       {
-        source: '/developers',
-        destination: '/developers/ready',
+        source: '/developers/en',
+        destination: '/developers/en/ready',
         permanent: false
-      }
+      },
+      {
+        source: '/developers/zh',
+        destination: '/developers/zh/ready',
+        permanent: false,
+      },
     ]
   },
   images: {

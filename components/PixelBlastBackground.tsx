@@ -17,11 +17,29 @@ interface Particle {
   isBackground: boolean;
 }
 
+// 定义粒子生成区域接口
+interface ParticleArea {
+  x: number;    // 区域中心x坐标
+  y: number;    // 区域中心y坐标
+  radius: number; // 区域半径
+  density: number; // 粒子密度 (0-1)
+}
+
 export default function PixelBlastBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
   const mouseRef = useRef({ x: -1000, y: -1000 });
   const rafRef = useRef<number>();
+
+  // 配置特定的粒子生成区域（根据背景图线框位置调整）
+  // 这些坐标将相对于画布大小进行计算
+  const particleAreas: ParticleArea[] = [
+    { x: 0.2, y: 0.3, radius: 0.1, density: 0.8 },  // 左上区域
+    { x: 0.8, y: 0.3, radius: 0.1, density: 0.8 },  // 右上区域
+    { x: 0.2, y: 0.7, radius: 0.1, density: 0.8 },  // 左下区域
+    { x: 0.8, y: 0.7, radius: 0.1, density: 0.8 },  // 右下区域
+    { x: 0.5, y: 0.5, radius: 0.2, density: 1.0 }   // 中心区域
+  ];
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -51,7 +69,7 @@ export default function PixelBlastBackground() {
       const dx = x - centerX;
       const dy = y - centerY;
       const distance = Math.sqrt(dx * dx + dy * dy);
-      
+
       // 设置消失速度
       let decay;
       if (isBackground) {
@@ -63,14 +81,14 @@ export default function PixelBlastBackground() {
         const distanceFactor = distance / maxDistance;
         decay = 0.008 + distanceFactor * 0.012;
       }
-      
+
       // 增加背景粒子的运动速度，使其更明显
       const speed = isBackground ? 
         Math.random() * 0.8 + 0.3 : // 增加背景粒子速度
         (isPolygon ? Math.random() * 0.3 + 0.05 : Math.random() * 0.3 + 0.1);
-      
+
       const angle = Math.random() * Math.PI * 2;
-      
+
       return {
         x,
         y,
@@ -86,14 +104,45 @@ export default function PixelBlastBackground() {
       };
     };
 
+    // 在特定区域内随机生成位置
+    const getRandomPositionInAreas = (): { x: number, y: number } => {
+      // 根据密度权重选择一个区域
+      const totalDensity = particleAreas.reduce((sum, area) => sum + area.density, 0);
+      let random = Math.random() * totalDensity;
+
+      let selectedArea: ParticleArea | undefined;
+      for (const area of particleAreas) {
+        random -= area.density;
+        if (random <= 0) {
+          selectedArea = area;
+          break;
+        }
+      }
+
+      if (!selectedArea) {
+        selectedArea = particleAreas[0];
+      }
+
+      // 在选中的区域内生成随机位置（使用极坐标确保在圆形区域内均匀分布）
+      const angle = Math.random() * Math.PI * 2;
+      const distance = Math.sqrt(Math.random()) * selectedArea.radius;
+
+      // 转换为画布坐标（selectedArea的x,y是相对值，乘以画布宽高）
+      const x = selectedArea.x * canvas.width + Math.cos(angle) * distance * canvas.width;
+      const y = selectedArea.y * canvas.height + Math.sin(angle) * distance * canvas.height;
+
+      return { x, y };
+    };
+
     // 再定义 initBackgroundParticles 函数
     const initBackgroundParticles = () => {
       particlesRef.current = [];
       // 增加初始背景粒子数量
       for (let i = 0; i < 20; i++) {
+        const position = getRandomPositionInAreas();
         const particle = createParticle(
-          Math.random() * canvas.width,
-          Math.random() * canvas.height,
+          position.x,
+          position.y,
           0, 0, false, true
         );
         // 增加初始速度，使粒子明显运动
@@ -112,16 +161,16 @@ export default function PixelBlastBackground() {
     const drawCross = (x: number, y: number, size: number, color: string, alpha: number) => {
       const halfSize = size / 2;
       const thirdSize = size / 6;
-      
+
       ctx.save();
       ctx.fillStyle = color;
       ctx.globalAlpha = alpha;
-      
+
       // 横线
       ctx.fillRect(x - halfSize, y - thirdSize, size, thirdSize * 2);
       // 竖线
       ctx.fillRect(x - thirdSize, y - halfSize, thirdSize * 2, size);
-      
+
       ctx.restore();
     };
 
@@ -141,7 +190,7 @@ export default function PixelBlastBackground() {
       for (let i = 0, j = vertices.length - 1; i < vertices.length; j = i++) {
         const xi = vertices[i].x, yi = vertices[i].y;
         const xj = vertices[j].x, yj = vertices[j].y;
-        
+
         const intersect = ((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
         if (intersect) inside = !inside;
       }
@@ -150,42 +199,16 @@ export default function PixelBlastBackground() {
 
     // 创建新的背景粒子
     const createNewBackgroundParticle = (fromEdge: boolean = true) => {
-      let x, y;
-      
-      if (fromEdge) {
-        // 从边缘生成
-        const side = Math.floor(Math.random() * 4);
-        switch (side) {
-          case 0: // 顶部
-            x = Math.random() * canvas.width;
-            y = -10;
-            break;
-          case 1: // 右侧
-            x = canvas.width + 10;
-            y = Math.random() * canvas.height;
-            break;
-          case 2: // 底部
-            x = Math.random() * canvas.width;
-            y = canvas.height + 10;
-            break;
-          default: // 左侧
-            x = -10;
-            y = Math.random() * canvas.height;
-        }
-      } else {
-        // 在画布内部随机位置生成
-        x = Math.random() * canvas.width;
-        y = Math.random() * canvas.height;
-      }
-      
-      const particle = createParticle(x, y, 0, 0, false, true);
-      
+      const position = getRandomPositionInAreas();
+
+      const particle = createParticle(position.x, position.y, 0, 0, false, true);
+
       // 设置更随机的初始速度
       const angle = Math.random() * Math.PI * 2;
       const speed = Math.random() * 0.6 + 0.3;
       particle.vx = Math.cos(angle) * speed;
       particle.vy = Math.sin(angle) * speed;
-      
+
       particlesRef.current.push(particle);
     };
 
@@ -194,7 +217,7 @@ export default function PixelBlastBackground() {
       const particleCount = 120;
       const radius = 150;
       const sides = 7 + Math.floor(Math.random() * 5);
-      
+
       // 计算多边形的顶点
       const vertices = [];
       for (let i = 0; i < sides; i++) {
@@ -204,34 +227,34 @@ export default function PixelBlastBackground() {
         const y = centerY + Math.sin(angle) * randomRadius;
         vertices.push({ x, y });
       }
-      
+
       // 在多边形区域内生成粒子 - 使用密度梯度
       for (let i = 0; i < particleCount; i++) {
         const densityFactor = Math.random();
         const targetDistance = densityFactor * radius * 0.8;
-        
+
         let x, y;
         let inside = false;
         let attempts = 0;
-        
+
         while (!inside && attempts < 100) {
           const angle = Math.random() * Math.PI * 2;
           const distanceVariation = (Math.random() - 0.5) * radius * 0.2;
           const actualDistance = Math.max(0, targetDistance + distanceVariation);
-          
+
           x = centerX + Math.cos(angle) * actualDistance;
           y = centerY + Math.sin(angle) * actualDistance;
-          
+
           inside = pointInPolygon(x, y, vertices);
           attempts++;
         }
-        
+
         if (!inside) {
           x = centerX + (Math.random() - 0.5) * radius * 1.6;
           y = centerY + (Math.random() - 0.5) * radius * 1.6;
           inside = pointInPolygon(x, y, vertices);
         }
-        
+
         if (inside) {
           const particle = createParticle(x, y, centerX, centerY, true, false);
           const angle = Math.random() * Math.PI * 2;
@@ -245,7 +268,7 @@ export default function PixelBlastBackground() {
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
+
       const particles = particlesRef.current;
 
       // 更新粒子位置
@@ -277,7 +300,7 @@ export default function PixelBlastBackground() {
       // 移除死亡的粒子
       const deadParticles = particles.filter(particle => particle.life <= 0);
       particlesRef.current = particles.filter(particle => particle.life > 0);
-      
+
       // 为每个死亡的背景粒子创建一个新的背景粒子
       deadParticles.forEach(particle => {
         if (particle.isBackground) {

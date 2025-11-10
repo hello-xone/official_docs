@@ -26,32 +26,32 @@
       "developers": {
         "title": "开始构建 ↗",
         "type": "menu",
-        "href": "/developers/ready",
+        "href": "/developers/zh/ready",
         "items": {
           "ready": {
             "title": "开发者资源",
             "type": "page",
-            "href": "/developers/ready"
+            "href": "/developers/zh/ready"
           },
           "rpc": {
             "title": "RPC 节点",
             "type": "page",
-            "href": "/developers/rpc"
+            "href": "/developers/zh/rpc"
           },
           "testnet": {
             "title": "测试网",
             "type": "page",
-            "href": "/developers/testnet"
+            "href": "/developers/zh/testnet"
           },
           "explorers": {
             "title": "区块浏览器",
             "type": "page",
-            "href": "/developers/explorers"
+            "href": "/developers/zh/explorers"
           },
           "faucets": {
             "title": "水龙头",
             "type": "page",
-            "href": "/developers/faucets"
+            "href": "/developers/zh/faucets"
           },
           "architecture": {
             "title": "架构",
@@ -60,44 +60,44 @@
               "account": {
                 "title": "账户",
                 "type": "page",
-                "href": "/developers/architecture/account"
+                "href": "/developers/architecture/zh/account"
               },
               "transaction": {
                 "title": "交易",
                 "type": "page",
-                "href": "/developers/architecture/transaction"
+                "href": "/developers/architecture/zh/transaction"
               },
               "replay": {
                 "title": "重放保护",
                 "type": "page",
-                "href": "/developers/architecture/replay"
+                "href": "/developers/architecture/zh/replay"
               }
             }
           },
           "guide": {
             "title": "快速开始",
             "type": "page",
-            "href": "/developers/guide"
+            "href": "/developers/zh/guide"
           },
           "tools": {
             "title": "开发工具",
             "type": "page",
-            "href": "/developers/tools"
+            "href": "/developers/zh/tools"
           },
           "token": {
             "title": "跨链资产",
             "type": "page",
-            "href": "/developers/token"
+            "href": "/developers/zh/token"
           },
           "contracts": {
             "title": "核心合约",
             "type": "page",
-            "href": "/developers/contracts"
+            "href": "/developers/zh/contracts"
           },
           "jsonrpc": {
             "title": "Json RPC ↗",
             "type": "page",
-            "href": "/openapi/overview"
+            "href": "/openapi/zh/overview"
           },
           "operators": {
             "title": "节点运维",
@@ -110,34 +110,34 @@
                   "quick-start": {
                     "title": "快速开始",
                     "type": "page",
-                    "href": "/developers/operators/start/quick-start"
+                    "href": "/developers/operators/start/zh/quick-start"
                   },
                   "docker-run": {
                     "title": "Docker 启动",
                     "type": "page",
-                    "href": "/developers/operators/start/docker-run"
+                    "href": "/developers/operators/start/zh/docker-run"
                   },
                   "using-snapshots": {
                     "title": "使用快照",
                     "type": "page",
-                    "href": "/developers/operators/start/using-snapshots"
+                    "href": "/developers/operators/start/zh/using-snapshots"
                   },
                   "background-operation": {
                     "title": "后台运行",
                     "type": "page",
-                    "href": "/developers/operators/start/background-operation"
+                    "href": "/developers/operators/start/zh/background-operation"
                   }
                 }
               },
               "practices": {
                 "title": "最佳实践",
                 "type": "page",
-                "href": "/developers/operators/practices"
+                "href": "/developers/operators/zh/practices"
               },
               "monitoring": {
                 "title": "监控与告警",
                 "type": "page",
-                "href": "/developers/operators/monitoring"
+                "href": "/developers/operators/zh/monitoring"
               }
             }
           },
@@ -148,31 +148,31 @@
               "erc20": {
                 "title": "ERC-20: 同质化代币",
                 "type": "page",
-                "href": "/developers/standard/erc20"
+                "href": "/developers/standard/zh/erc20"
               },
               "erc721": {
                 "title": "ERC-721: NFT",
                 "type": "page",
-                "href": "/developers/standard/erc721"
+                "href": "/developers/standard/zh/erc721"
               },
               "erc1155": {
                 "title": "ERC-1155: NFT",
                 "type": "page",
-                "href": "/developers/standard/erc1155"
+                "href": "/developers/standard/zh/erc1155"
               }
             }
           },
           "display": {
             "title": "展示资产",
             "type": "page",
-            "href": "/developers/display"
+            "href": "/developers/zh/display"
           }
         }
       },
       "jsonrpc": {
         "title": "Json RPC ↗",
         "type": "page",
-        "href": "/openapi/overview"
+        "href": "/openapi/zh/overview"
       },
       "gateway": {
         "title": "网关 ↗",

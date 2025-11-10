@@ -41,6 +41,11 @@ const config: DocsThemeConfig = {
       return {
         titleTemplate: '%s | Xone Docs'
       }
+    }else {
+      return {
+        title: 'WelCome', // 这里设置首页标题
+        titleTemplate: null
+      }
     }
   },
 
@@ -93,7 +98,7 @@ const config: DocsThemeConfig = {
     
     return (
       <>
-        {!isHome && <PixelBlastBackground />}
+        {/* {!isHome && <PixelBlastBackground />} */}
         {children}
       </>
     );

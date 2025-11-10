@@ -233,3 +233,8 @@ html.dark aside a[href="/developers/tools/safety/solidityscan"]::after {
   }
 }
 
+.email-subscription{
+  .focus\:ring-primary:focus{
+    --tw-ring-color:hsl(0deg 100% 46.67% / 0%) !important;
+  }
+}

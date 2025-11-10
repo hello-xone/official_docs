@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next';
 const DynamicLangLink = ({ 
   children, 
   className, 
-  basePath = '/bvi',
-  subPath = '/readme',
+  basePath = '',
+  subPath = '',
   ...props 
 }) => {
   const { i18n } = useTranslation();

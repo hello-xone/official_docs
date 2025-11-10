@@ -4,6 +4,7 @@ import { asArray } from '@lib/as-array'
 import { useEffect, useMemo, useState } from 'react'
 import { useIsMobile } from '@/components/hooks/useIsMobile'
 import dynamic from "next/dynamic";
+import { useTranslation } from 'react-i18next';
 
 type PAGProps = {
   src: string;
@@ -23,7 +24,8 @@ export default function Blog({ initialArticles = [], initialTags = [] }: { initi
   const isMobile = useIsMobile(768)
   const [showAnim, setShowAnim] = useState(false)
   const [visibleCount, setVisibleCount] = useState(0)
-
+  const { t } = useTranslation();
+  
   const { allTags, articles } = useMemo(() => {
     let filtered = initialArticles
     if (tagsFilter.length > 0) {
@@ -80,7 +82,7 @@ export default function Blog({ initialArticles = [], initialTags = [] }: { initi
         )}
         <div className="container relative z-10 px-4 pt-10 mx-auto mt-10 text-center md:px-6 lg:pt-44 md:-mt-16">
           <h1 className="text-4xl font-bold tracking-tight text-black sm:text-6xl md:text-white dark:text-white">
-            Learn about our latest developments
+            {t('blog.title1')}
           </h1>
         </div>
 
