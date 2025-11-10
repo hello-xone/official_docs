@@ -1,0 +1,18 @@
+import { Space } from "@mantine/core";
+import { Meta } from "@/components/Meta";
+
+<Meta
+  title="Xone 事件日志信息 | dRPC"
+/>
+
+## 事件日志
+
+提供智能合约发出的事件日志，用于跟踪代币转移和状态变更。
+
+[eth_getLogs](/openapi/eventlogs/eth_getLogs) : 根据指定的筛选条件检索日志。\
+[eth_newFilter](/openapi/eventlogs/eth_newFilter) : 仅付费层级可用。创建新筛选器以监控事件。\
+[eth_getFilterChanges](/openapi/eventlogs/eth_getFilterChanges) : 仅付费层级可用。检索自上次检查以来活动筛选器的变更。\
+[eth_uninstallFilter](/openapi/eventlogs/eth_uninstallFilter) : 卸载活动筛选器。\
+[eth_getFilterLogs](/openapi/eventlogs/eth_getFilterLogs) : 仅付费层级可用。从先前创建的筛选器中获取日志。
+
+这些方法对于监控 Xone 上的智能合约活动至关重要。

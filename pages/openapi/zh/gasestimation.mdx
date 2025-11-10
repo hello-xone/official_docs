@@ -1,0 +1,18 @@
+import { Space } from "@mantine/core";
+import { Meta } from "@/components/Meta";
+
+<Meta
+  title="Xone Gas 估算信息 | dRPC"
+/>
+
+## Gas 估算
+
+估算交易的 Gas 费用，并提供历史和当前的 Gas 价格数据。
+
+[eth_feeHistory](/openapi/gasestimation/eth_feeHistory) : 检索一段时间内区块的历史 Gas 费用数据。 \
+[eth_estimateGas](/openapi/gasestimation/eth_estimateGas) : 估算执行交易所需的 Gas 量。 \
+[eth_gasPrice](/openapi/gasestimation/eth_gasPrice) : 返回网络当前的 Gas 价格。 \
+[eth_createAccessList](/openapi/gasestimation/eth_createAccessList) : 生成访问列表以优化 Gas 成本。 \
+[eth_maxPriorityFeePerGas](/openapi/gasestimation/eth_maxPriorityFeePerGas) : 检索每单位 Gas 的最大优先费用。
+
+这些方法有助于优化在 Xone 上的交易成本。

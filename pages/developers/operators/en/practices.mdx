@@ -1,0 +1,116 @@
+import NodeOperatore from '@/components/NodeOperatore'
+import { Callout } from 'nextra/components';
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Link} from "@nextui-org/react";
+import DynamicLangLink from "@/components/LangLink.tsx";
+
+# Best Practices — Xone Chain Node Configuration
+
+To ensure optimal performance and reliability, this document serves as a one‑stop guide for individuals or organizations who wish to operate on the Xone Chain network. It will help you get up and running quickly while maintaining the network’s security, stability, and decentralization.
+
+## What Is a Node Operator?
+
+A **Node Operator** is an instance of blockchain node software responsible for:
+
+* **Receiving & Validating** transactions and blocks broadcast on the network
+* **Synchronizing & Storing** the global state data
+* **Packaging & Broadcasting** new blocks once transactions have been validated (in staking or validator mode)
+
+## Prerequisites
+
+Selecting the right node type for your Xone Chain use case—whether for transaction processing or state queries—is critical. You should choose between the **minimum** and **recommended** hardware profiles based on your throughput and concurrency needs, and pair this with proper system tuning and monitoring to ensure your full node operates stably and efficiently on mainnet.
+
+<NodeOperatore />
+
+<Callout type="warning" emoji="⚠️">
+  Listed here are the minimum configuration requirements for operation. You can choose the **best configuration** based on your actual business needs.
+</Callout>
+
+## Network Options
+
+Network parameters may vary slightly depending on environment. For detailed settings, please refer to the:
+
+<div className="overflow-x-auto">
+  <Table key={new Date().getTime()} removeWrapper aria-label="json prc endpoint table" className="mt-2">
+    <TableHeader>
+      <TableColumn key="Network">Network</TableColumn>
+      <TableColumn key="Endpoint">RPC Endpoint</TableColumn>
+      <TableColumn key="id">Chain ID</TableColumn>
+    </TableHeader>
+    <TableBody>
+      <TableRow key="1">
+        <TableCell>Xone Mainnet</TableCell>
+        <TableCell>
+        `https://rpc.xone.org`\
+        `wss://rpc.xone.org`
+        </TableCell>
+        <TableCell>`0xe89`(3721)</TableCell>
+      </TableRow>
+      <TableRow key="2">
+        <TableCell>Xone Testnet</TableCell>
+        <TableCell>
+        `https://rpc-testnet.xone.plus`\
+        `https://rpc-testnet.xone.org`\
+        `https://rpc-testnet.knight.center`\
+        `wss://rpc-testnet.xone.org`
+        </TableCell>
+        <TableCell>`0x20352b3`(33772211)</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</div>
+
+## Responsibilities
+
+* **Block Validation:** Receive network‑broadcast transactions and blocks, validate them according to consensus rules, and update local chain state.
+* **Data Services:** Maintain a local database and respond to JSON‑RPC/WebSocket queries for DApps, block explorers, and other clients.
+* **Consensus Participation:** In staking or validator mode, propose blocks and cast votes in rounds to secure consensus during forks.
+* **Operations & Maintenance:** Monitor node health, logs, and key metrics; promptly address issues such as network forks, hard‑fork upgrades, or storage bloat.
+
+## Troubleshooting
+
+* Verify your **chain ID** and config file paths are correct.
+* Ensure your `config.toml` matches the latest release.
+* **Do not** use boot nodes on testnets—it’s unnecessary.
+* Removing the `geth/nodes` and `geth/nodekey` directories may resolve certain startup errors.
+* Re‑download a fresh snapshot and retry if syncing stalls.
+
+## Monitoring Metrics & Alerts
+
+To maintain healthy node operation, monitor these key metrics (see our <DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/developers/operators' subPath='/monitoring'>best‑practices guide</DynamicLangLink> for more):
+
+* **Tx Pool Alert:** Fires when the transaction pool exceeds 5,000 pending transactions.
+* **Block Import Time Alert:** Activates if block import time exceeds 3 seconds.
+* **RPC Latency Alert:** Triggers when RPC response latency exceeds 100 ms.
+
+## Security & High‑Availability Best Practices
+
+To maximize key security, minimize compromise risks, and maintain high availability—even during hardware failures or network jitter—follow these guidelines:
+
+### Private Key Management: Hardware Wallets & HSM
+
+* **Dual‑Key Scheme:** Validators hold two separate keys—one for transaction signing and one for block signing.
+* **Hardware Isolation:** Never store private keys or mnemonics on an internet‑connected server. Use a hardware wallet (e.g., Ledger, Trezor) or an HSM (Hardware Security Module) for key generation, storage, and signing.
+* **Remote‑Attack Mitigation:** HSMs greatly reduce exposure to malware and remote theft by ensuring keys never leave the secure boundary.
+
+### RPC Access Control
+
+* **No Public Exposure:** Do not expose your full node’s JSON‑RPC/WebSocket ports to the public internet.
+* **Access Whitelist:** Employ firewalls or IP whitelists to allow only trusted hosts to connect.
+* **Reverse Proxy / Load Balancer:** If you must serve RPC externally, place Nginx, Traefik, or a similar proxy in front for additional authentication and rate‑limiting.
+
+### Mnemonic & Key Storage
+
+* **Mnemonic Confidentiality:** Your 24‑word mnemonic is the sole credential for accessing your XOC; never share it via any online channel.
+* **Offline Storage:** Generate and record your mnemonic in an air‑gapped environment, then store it in fire‑ and water‑proof media (e.g., a metal plate) or a secured vault.
+
+### Software Sources & Version Updates
+
+* **Official Channels Only:** Download node binaries exclusively from the Xone Chain GitHub Releases page, official website, or verified package repositories; always verify SHA256/PGP signatures.
+* **Timely Upgrades:** Regularly check for new releases and apply security patches to mitigate known vulnerabilities.
+
+### Backup Nodes & Failover
+
+* **Archive Mode:** Run backup nodes with `--syncmode full --gcmode archive` to retain the entire history for auditing and debugging.
+* **Graceful Shutdown:** Use `systemctl stop xone-node` or send `SIGTERM` to allow the node to persist its state before exiting.
+* **Proactive Monitoring:** Deploy <Link className='text-primaryHue' isExternal showAnchorIcon href="https://prometheus.io/">Prometheus</Link>, <Link className='text-primaryHue' isExternal showAnchorIcon href="https://grafana.com/">Grafana</Link>, and <Link className='text-primaryHue' isExternal showAnchorIcon href="https://prometheus.io/docs/alerting/latest/alertmanager/">Alertmanager</Link> to track sync height, block import times, RPC latency, and other critical metrics, and configure alerts accordingly.
+* **Automatic Failover:** Integrate <Link className='text-primaryHue' isExternal showAnchorIcon href="https://keepalived.readthedocs.io/en/latest/introduction.html">Keepalived</Link>, <Link className='text-primaryHue' isExternal showAnchorIcon href="https://www.haproxy.org/">HAProxy</Link>, or similar tools to implement master‑backup failover and traffic switchover.

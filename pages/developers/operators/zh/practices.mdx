@@ -1,0 +1,116 @@
+import NodeOperatore from '@/components/NodeOperatore'
+import { Callout } from 'nextra/components';
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Link} from "@nextui-org/react";
+import DynamicLangLink from "@/components/LangLink.tsx";
+
+# 最佳实践 — Xone Chain 节点配置
+
+为确保最佳性能和可靠性，本文档旨在为希望在 Xone Chain 网络上运行的个体或组织提供一站式指南。它将帮助您快速上手，同时维护网络的安全性、稳定性和去中心化特性。
+
+## 什么是节点运营商？
+
+**节点运营商** 是负责运行区块链节点软件的实例，其主要职责包括：
+
+*   **接收和验证** 网络上广播的交易和区块
+*   **同步和存储** 全局状态数据
+*   **打包和广播** 新区块（在质押或验证器模式下，交易验证通过后）
+
+## 前置要求
+
+为您的 Xone Chain 用例（无论是用于交易处理还是状态查询）选择合适的节点类型至关重要。您应根据吞吐量和并发需求，在**最低**和**推荐**硬件配置之间进行选择，并配合适当的系统调优和监控，以确保您的全节点在主网上稳定高效地运行。
+
+<NodeOperatore />
+
+<Callout type="warning" emoji="⚠️">
+  此处列出的是运行所需的最低配置要求。您可以根据实际业务需求选择**最佳配置**。
+</Callout>
+
+## 网络选项
+
+网络参数可能因环境而异。详细设置请参考：
+
+<div className="overflow-x-auto">
+  <Table key={new Date().getTime()} removeWrapper aria-label="json prc endpoint table" className="mt-2">
+    <TableHeader>
+      <TableColumn key="Network">网络</TableColumn>
+      <TableColumn key="Endpoint">RPC 端点</TableColumn>
+      <TableColumn key="id">链 ID</TableColumn>
+    </TableHeader>
+    <TableBody>
+      <TableRow key="1">
+        <TableCell>Xone 主网</TableCell>
+        <TableCell>
+        `链接8`\
+        `wss://rpc.xone.org`
+        </TableCell>
+        <TableCell>`0xe89`(3721)</TableCell>
+      </TableRow>
+      <TableRow key="2">
+        <TableCell>Xone 测试网</TableCell>
+        <TableCell>
+        `链接4`\
+        `链接9`\
+        `链接5`\
+        `wss://rpc-testnet.xone.org`
+        </TableCell>
+        <TableCell>`0x20352b3`(33772211)</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</div>
+
+## 职责
+
+*   **区块验证：** 接收网络广播的交易和区块，根据共识规则进行验证，并更新本地链状态。
+*   **数据服务：** 维护本地数据库，并响应 DApps、区块浏览器和其他客户端的 JSON-RPC/WebSocket 查询。
+*   **共识参与：** 在质押或验证器模式下，提议区块并在分叉时参与轮次投票以保障共识安全。
+*   **运维：** 监控节点健康状况、日志和关键指标；及时处理问题，如网络分叉、硬分叉升级或存储膨胀。
+
+## 故障排除
+
+*   验证您的**链 ID** 和配置文件路径是否正确。
+*   确保您的 `config.toml` 文件与最新版本匹配。
+*   **请勿**在测试网上使用引导节点——这是不必要的。
+*   删除 `geth/nodes` 和 `geth/nodekey` 目录可能解决某些启动错误。
+*   如果同步停滞，请重新下载全新的快照并重试。
+
+## 监控指标与告警
+
+为维持节点健康运行，请监控以下关键指标（更多信息请参阅我们的 <DynamicLangLink className='text-primaryHue' isExternal showAnchorIcon basePath='/developers/operators' subPath='/monitoring'>最佳实践指南</DynamicLangLink>）：
+
+*   **交易池告警：** 当交易池中待处理交易超过 5,000 笔时触发。
+*   **区块导入时间告警：** 如果区块导入时间超过 3 秒则激活。
+*   **RPC 延迟告警：** 当 RPC 响应延迟超过 100 毫秒时触发。
+
+## 安全性与高可用性最佳实践
+
+为最大化密钥安全性、最小化泄露风险并保持高可用性（即使在硬件故障或网络抖动期间），请遵循以下指南：
+
+### 私钥管理：硬件钱包与 HSM
+
+*   **双密钥方案：** 验证器持有两个独立的密钥——一个用于交易签名，一个用于区块签名。
+*   **硬件隔离：** 切勿将私钥或助记词存储在连接互联网的服务器上。使用硬件钱包（如 Ledger、Trezor）或 HSM（硬件安全模块）进行密钥的生成、存储和签名。
+*   **远程攻击缓解：** HSM 通过确保密钥永不离开安全边界，极大地减少了恶意软件和远程盗窃的暴露风险。
+
+### RPC 访问控制
+
+*   **禁止公开暴露：** 不要将您全节点的 JSON-RPC/WebSocket 端口暴露给公共互联网。
+*   **访问白名单：** 使用防火墙或 IP 白名单，仅允许受信任的主机连接。
+*   **反向代理 / 负载均衡器：** 如果必须对外提供 RPC 服务，请在节点前放置 Nginx、Traefik 或类似代理，以提供额外的身份验证和速率限制。
+
+### 助记词与密钥存储
+
+*   **助记词保密：** 您的 24 词助记词是访问您 XOC 的唯一凭证；切勿通过任何在线渠道分享它。
+*   **离线存储：** 在隔离网络的环境中生成并记录您的助记词，然后将其存储在防火防水的介质（例如金属板）或安全的保险库中。
+
+### 软件来源与版本更新
+
+*   **仅使用官方渠道：** 仅从 Xone Chain GitHub Releases 页面、官方网站或经过验证的软件包仓库下载节点二进制文件；务必验证 SHA256/PGP 签名。
+*   **及时升级：** 定期检查新版本发布，并应用安全补丁以缓解已知漏洞。
+
+### 备份节点与故障转移
+
+*   **归档模式：** 运行备份节点时使用 `--syncmode full --gcmode archive` 参数，以保留完整历史记录用于审计和调试。
+*   **优雅关闭：** 使用 `systemctl stop xone-node` 或发送 `SIGTERM` 信号，允许节点在退出前持久化其状态。
+*   **主动监控：** 部署 <Link className='text-primaryHue' isExternal showAnchorIcon href="链接6">Prometheus</Link>、<Link className='text-primaryHue' isExternal showAnchorIcon href="链接1">Grafana</Link> 和 <Link className='text-primaryHue' isExternal showAnchorIcon href="链接6docs/alerting/latest/alertmanager/">Alertmanager</Link> 来跟踪同步高度、区块导入时间、RPC 延迟和其他关键指标，并相应配置告警。
+*   **自动故障转移：** 集成 <Link className='text-primaryHue' isExternal showAnchorIcon href="链接2">Keepalived</Link>、<Link className='text-primaryHue' isExternal showAnchorIcon href="链接3">HAProxy</Link> 或类似工具，以实现主备故障转移和流量切换。

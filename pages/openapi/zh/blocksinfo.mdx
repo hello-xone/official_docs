@@ -1,0 +1,22 @@
+import { Space } from "@mantine/core";
+import { Meta } from "@/components/Meta";
+
+<Meta
+  title="Xone 区块信息 | dRPC"
+/>
+
+## 区块信息
+
+从指定的 Xone 区块检索详细信息，包括交易、收据和区块数据。这些方法提供对特定区块的区块详情、交易数量和执行结果的洞察。
+
+[eth_blockNumber](/openapi/blocksinfo/eth_blockNumber) : 检索最新的区块号。 \
+[eth_getBlockByHash](/openapi/blocksinfo/eth_getBlockByHash) : 通过区块哈希获取区块详情。 \
+[eth_getBlockByHash#full](/openapi/blocksinfo/eth_getBlockByHashfull) : 通过哈希返回完整的区块详情。 \
+[eth_getBlockByNumber](/openapi/blocksinfo/eth_getBlockByNumber) : 通过区块号检索区块详情。 \
+[eth_getBlockByNumber#full](/openapi/blocksinfo/eth_getBlockByNumberfull) : 通过区块号获取完整的区块详情。 \
+[eth_newBlockFilter](/openapi/blocksinfo/eth_newBlockFilter) : 仅付费层级可用。设置过滤器以跟踪新区块。 \
+[eth_getBlockReceipts](/openapi/blocksinfo/eth_getBlockReceipts) : 检索区块的交易收据。 \
+[eth_getBlockTransactionCountByHash](/openapi/blocksinfo/eth_getBlockTransactionCountByHash) : 通过区块哈希返回区块中的交易数量。 \
+[eth_getBlockTransactionCountByNumber](/openapi/blocksinfo/eth_getBlockTransactionCountByNumber) : 通过区块号检索区块的交易数量。
+
+这些方法为跟踪和分析 Xone 网络上的区块链活动提供了全面的工具。

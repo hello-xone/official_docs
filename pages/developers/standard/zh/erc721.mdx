@@ -1,0 +1,168 @@
+import { Steps } from 'nextra/components';
+import { Link, Code } from "@nextui-org/react";
+import { Callout } from 'nextra/components'
+import ImageViewer from '@components/ImageViewer';
+
+# 部署 ERC-721 NFT 合集
+
+本指南提供在 **Xone Chain** 上部署 ERC-721（NFT）代币的分步说明，用于创建独特的 **水果 NFT 合集**。每个 NFT 代表一种独特的水果，非常适合收藏品、游戏或创意项目。
+
+"水果"合集将具有：
+
+- 总供应量：6 个 NFT
+- 初始供应量：0
+- 需要用户自行铸造 NFT
+
+## 前提条件
+
+1. 配置好 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://metamask.io/">MetaMask 钱包</Link> 以连接 Xone Chain 网络。
+2. 打开 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://remix.ethereum.org">Remix IDE</Link>。
+3. 准备测试用 XOC（Xone Chain 测试代币）用于支付 Gas 费。使用 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://faucet.xone.org/">Xone 水龙头</Link> 获取免费代币。
+4. 注册 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://www.pinata.cloud/">Pinata</Link> 账户，如果您有自己的存储服务器，可以跳过此步骤。
+5. 下载 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/hello-xone/official_docs/raw/refs/heads/main/public/zip/fruit.zip">水果</Link> NFT 压缩文件。
+
+![erc721](public/images/fruit_collection.png)
+
+## 开始操作
+<Steps>
+### 步骤 1：创建水果 NFT 合约
+1. 打开 Remix IDE，在 `contracts` 文件夹下创建一个新文件，命名为 `FruitNFT.sol`。
+2. 将以下代码添加到文件中：
+
+```js copy showLineNumbers filename="FruitNFT.sol"
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.22;
+ 
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+ 
+contract FruitNFT is ERC721URIStorage, Ownable {
+    constructor() ERC721("FruitNFT", "FRUIT") Ownable(msg.sender) {}
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenIds;
+    uint256 public constant MAX_SUPPLY = 6;
+ 
+    function createCollectible(string memory tokenURI) public onlyOwner returns (uint256) {
+        require(_tokenIds.current() < MAX_SUPPLY, "All NFTs have been minted");
+        _tokenIds.increment();
+        uint256 newItemId = _tokenIds.current()-1;
+        _mint(msg.sender, newItemId);
+        _setTokenURI(newItemId, tokenURI);
+        return newItemId;
+    }
+}
+
+```
+<ImageViewer src="/images/Create ERC-721.png" alt="创建 ERC-721" />
+
+### 步骤 2：编译智能合约
+
+1. 点击左侧边栏的【**Solidity 编译器**】标签页。
+
+2. 选择合适的编译器版本 (0.8.x)。例如：`0.8.26+commit.8a97fa7a`。
+
+3. 点击【**Advanced Configurations**】以展开高级设置。
+
+4. 选择 EVM 版本为【**Paris**】。
+
+5. 启用优化（默认为 200）。
+
+6. 点击【**Compile FruitNFT.sol**】按钮。确保没有编译错误。
+
+<ImageViewer src="/images/Create ERC-721_1.png" alt="创建 ERC-721_1" />
+
+### 步骤 3：部署智能合约
+
+1. 在 Remix 中导航到【**部署和运行交易**】标签页。
+
+2. 在 **环境** 下拉菜单中，选择 **Injected Provider - MetaMask** 以将 Remix 连接到您的 MetaMask 钱包。
+
+3. 从下拉菜单中选择 FruitNFT 合约。
+
+4. 点击【**Deploy**】并在您的 MetaMask 钱包中确认交易。
+
+<ImageViewer src="/images/Create ERC-721_2.png" alt="创建 ERC-721_2" />
+
+### 步骤 4：查看合约地址
+
+确认后，您将在 Remix 控制台中看到已部署的合约地址。让我们看一下我们构建的演示：<Link className='text-primaryHue' isExternal showAnchorIcon href="https://testnet.xonescan.com/token/0x2BEe15B258964564efF99b22C98AD9cd8c30B842">FruitNFT</Link>
+
+<ImageViewer src="/images/Create ERC-721_3.png" alt="创建 ERC-721_3" />
+
+### 步骤 5：使用 Pinata.cloud 存储 NFT 元数据
+
+1. 注册并登录 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://www.pinata.cloud/">Pinata</Link>。如果您还没有账户，请先注册。
+
+2. 在 Pinata 仪表板中点击【**Upload**】，然后选择【**Folder**】。
+
+3. 上传【**FruitNFT**】源文件。
+
+<ImageViewer src="/images/Create ERC-721_4.png" alt="创建 ERC-721_4" />
+
+<Callout emoji="💡">
+  记下此 CID URL <Code color="default">https://orange-cheap-pony-550.mypinata.cloud/ipfs/QmfXqRkyu3qYdYz5zWaFTaHNYqPBtUY7Q7MWPiu3An377q/</Code>，它将在铸造 NFT 时使用。
+</Callout>
+
+4. 创建元数据 JSON 文件
+
+创建一个具有以下结构的 JSON 文件。不知道如何创建？下载 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/hello-xone/official_docs/raw/refs/heads/main/public/zip/FruitNFT_metadata.zip">FruitNFT</Link> 元数据源文件。
+
+```js showLineNumbers copy filename="example.js"
+{
+  "name": "FruitNFT #0",
+  "description": "这是一个苹果。",
+  "image": "https://orange-cheap-pony-550.mypinata.cloud/ipfs/QmfXqRkyu3qYdYz5zWaFTaHNYqPBtUY7Q7MWPiu3An377q/apple.png"
+}
+```
+
+将元数据 JSON 上传到 Pinata.cloud
+
+<ImageViewer src="/images/Create ERC-721_5.png" alt="创建 ERC-721_5" />
+
+### 步骤 6：使用元数据铸造 NFT
+
+1. 调用 `createCollectible` 函数。
+
+2. 输入存储在 Pinata 上的元数据的 TokenURI（例如，如果您想铸造 FruitNFT #0：<Code color="default">JSON 图片 URL</Code>）。
+
+3. 点击【**Transact**】并在您的 MetaMask 钱包中确认交易。
+
+<ImageViewer src="/images/Create ERC-721_6.png" alt="创建 ERC-721_6" />
+
+4. 在 Xone 浏览器上查看 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://testnet.xonescan.com/token/0x2BEe15B258964564efF99b22C98AD9cd8c30B842/instance/0">FruitNFT #0</Link>。
+
+<ImageViewer src="/images/Create ERC-721_7.png" alt="创建 ERC-721_7" />
+
+### 步骤 7：将 NFT 添加到 MetaMask
+
+1. 打开 MetaMask 并点击【**Import NFTs**】。
+
+2. 粘贴 NFT 合约地址（本例中为 `0x2BEe15B258964564efF99b22C98AD9cd8c30B842`）。
+
+3. 输入已创建的 NFT 代币 ID（本例中为 `0`）。
+
+4. 确认后，点击【**Import**】。
+
+5. 如果您的地址拥有此 NFT，您将在 **NFTs** 列表中看到它。
+
+<ImageViewer src="/images/Create ERC-721_9.png" alt="创建 ERC-721_9" />
+
+### 步骤 8：恭喜！您已成功掌握 ERC-721 合约的创建。
+
+FruitNFT 系列演示，<Link className='text-primaryHue' isExternal showAnchorIcon href="https://testnet.xonescan.com/token/0x2BEe15B258964564efF99b22C98AD9cd8c30B842">去看看吧</Link>。
+
+<ImageViewer src="/images/Create ERC-721_8.png" alt="创建 ERC-721_8" />
+
+</Steps>
+
+## 演示资源
+
+- <Link className='text-primaryHue' isExternal showAnchorIcon href="https://testnet.xonescan.com/token/0x2BEe15B258964564efF99b22C98AD9cd8c30B842">FruitNFT 智能合约</Link>
+
+- <Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/hello-xone/official_docs/raw/refs/heads/main/public/zip/fruit.zip">FruitNFT 图片</Link>
+
+- <Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/hello-xone/official_docs/raw/refs/heads/main/public/zip/FruitNFT_metadata.zip">FruitNFT 元数据</Link>
+
+- Pinata URL：<Link className='text-primaryHue' isExternal showAnchorIcon href="https://orange-cheap-pony-550.mypinata.cloud/ipfs/QmfXqRkyu3qYdYz5zWaFTaHNYqPBtUY7Q7MWPiu3An377q/">FruitNFT 图片</Link>、<Link className='text-primaryHue' isExternal showAnchorIcon href="https://orange-cheap-pony-550.mypinata.cloud/ipfs/QmXGc33dnMYLfQoWZanYdFT64HwKLwmJ1AcUKAy7ypJmbo/">元数据</Link>

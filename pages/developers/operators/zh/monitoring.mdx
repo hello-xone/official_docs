@@ -1,0 +1,168 @@
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Link} from "@nextui-org/react";
+import { Callout } from 'nextra/components'
+import ContactInfo from "@/components/ContactInfo";
+
+# 监控指标与告警
+
+为了实时监控节点状态并在出现问题的第一时间及时响应，建议结合 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://prometheus.io/">Prometheus</Link>、<Link className='text-primaryHue' isExternal showAnchorIcon href="https://grafana.com/">Grafana</Link> 和 <Link className='text-primaryHue' isExternal showAnchorIcon href="https://prometheus.io/">Alertmanager</Link>，并基于以下关键维度配置监控和告警规则。
+
+## 指标概览（示例）
+
+<div className="overflow-x-auto">
+  <Table removeWrapper aria-label="Xone 节点监控指标" className="mt-2">
+    <TableHeader>
+      <TableColumn>指标名称</TableColumn>
+      <TableColumn>描述</TableColumn>
+      <TableColumn>Prometheus 表达式</TableColumn>
+    </TableHeader>
+    <TableBody>
+      <TableRow key="1">
+        <TableCell>内存池深度</TableCell>
+        <TableCell>待处理交易数量，反映节点积压情况</TableCell>
+        <TableCell>xone_mempool_tx_count</TableCell>
+      </TableRow>
+      <TableRow key="2">
+        <TableCell>区块导入时长</TableCell>
+        <TableCell>从接收到新区块到写入本地数据库的时间</TableCell>
+        <TableCell>xone_block_import_duration_seconds</TableCell>
+      </TableRow>
+      <TableRow key="3">
+        <TableCell>RPC 延迟（95分位数）</TableCell>
+        <TableCell>客户端通过 HTTP/WS 发送 RPC 请求到收到响应的时间（p95）</TableCell>
+        <TableCell>
+          histogram_quantile(0.95, sum(rate(xone_rpc_request_duration_seconds_bucket[5m])) by (le))
+        </TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</div>
+
+## 推荐阈值与告警策略
+
+<div className="overflow-x-auto">
+  <Table removeWrapper aria-label="Xone 节点告警规则" className="mt-2">
+    <TableHeader>
+      <TableColumn>告警名称</TableColumn>
+      <TableColumn>表达式</TableColumn>
+      <TableColumn>持续时间</TableColumn>
+      <TableColumn>严重级别</TableColumn>
+      <TableColumn>建议操作</TableColumn>
+    </TableHeader>
+    <TableBody>
+      <TableRow key="1">
+        <TableCell>内存池过高</TableCell>
+        <TableCell>xone_mempool_tx_count &gt; 5000</TableCell>
+        <TableCell>2分钟</TableCell>
+        <TableCell>警告</TableCell>
+        <TableCell>检查区块生产是否滞后；验证网络是否拥堵</TableCell>
+      </TableRow>
+      <TableRow key="2">
+        <TableCell>区块导入缓慢</TableCell>
+        <TableCell>rate(xone_block_import_duration_seconds_sum[5m]) / rate(xone_block_import_duration_seconds_count[5m]) &gt; 3</TableCell>
+        <TableCell>1分钟</TableCell>
+        <TableCell>严重</TableCell>
+        <TableCell>检查 I/O 性能；调查 GC 或数据库索引问题</TableCell>
+      </TableRow>
+      <TableRow key="3">
+        <TableCell>RPC 延迟过高</TableCell>
+        <TableCell>histogram_quantile(0.95, sum(rate(xone_rpc_request_duration_seconds_bucket[5m])) by (le)) &gt; 0.1</TableCell>
+        <TableCell>5分钟</TableCell>
+        <TableCell>警告</TableCell>
+        <TableCell>优化 RPC 端点配置；检查依赖服务健康状况</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</div>
+
+<Callout type="warning">
+  **注意事项**
+
+  - **持续时间：** 仅当指标在指定持续时间内持续超过阈值时才会触发告警，以避免因短期波动导致的误报。
+
+  - **严重级别：** 可在 Alertmanager 中路由到不同的通知渠道（例如，Slack 警告频道 vs 电子邮件）。
+
+  - **建议操作：** 每个告警应包含可操作的故障排除指南，以便快速诊断和解决。
+</Callout>
+
+## 代码示例
+
+```yaml showLineNumbers copy
+groups:
+  - name: xone-node-alerts
+    interval: 30s
+    rules:
+      # 内存池过高
+      - alert: HighMempool
+        expr: xone_mempool_tx_count > 5000
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High mempool depth on {{ $labels.instance }}"
+          description: |
+            内存池大小超过 5000 已持续 2 分钟以上。
+            请检查区块生产是否滞后或是否存在网络拥堵。
+
+      # 区块导入缓慢
+      - alert: SlowBlockImport
+        expr: rate(xone_block_import_duration_seconds_sum[5m])
+              / rate(xone_block_import_duration_seconds_count[5m]) > 3
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Slow block import detected on {{ $labels.instance }}"
+          description: |
+            区块导入平均时长超过 3 秒已持续 1 分钟以上。
+            请检查 I/O 性能、GC 或数据库索引问题。
+
+      # RPC 延迟过高
+      - alert: HighRPCLatency
+        expr: histogram_quantile(0.95,
+                sum(rate(xone_rpc_request_duration_seconds_bucket[5m])) by (le)) > 0.1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High RPC latency on {{ $labels.instance }}"
+          description: |
+            95 分位数 RPC 延迟超过 100 毫秒已持续 5 分钟以上。
+            请优化 RPC 端点配置或检查依赖服务的健康状况。
+```
+
+## 告警路由与通知
+
+### 路由示例
+```yaml showLineNumbers copy
+route:
+  group_by: ['alertname', 'severity']
+  routes:
+    - match:
+        severity: critical
+      receiver: ops-team-email
+    - match_re:
+        severity: warning|info
+      receiver: slack-alerts
+```
+
+### 推荐通知渠道：
+- **严重：** 电子邮件 + 短信（或电话）
+- **警告：** Slack/Teams，通过 Webhook 发送到运维平台
+- **信息：** Grafana 仪表板标记，电子邮件摘要
+
+## 可视化与诊断
+
+1.  **Grafana 仪表板**
+
+    *   实时可视化内存池深度、区块导入时长分布和 RPC 延迟百分位数曲线。
+    *   与系统级指标（CPU、内存、磁盘 I/O、网络吞吐量）关联分析，进行综合研判。
+
+2.  **常见故障排查流程**
+
+    *   **内存池过大** → 检查区块生产延迟（`xone_block_import_duration_seconds`）和区块高度差。
+    *   **区块导入缓慢** → 验证磁盘 I/O 性能（`node_disk_io_time_seconds`）并查看 GC 日志。
+    *   **RPC 延迟高** → 对比共识客户端和执行客户端指标，识别资源争用或网络抖动。
+
+通过以上配置，您将能够在最短时间内感知节点异常，快速定位瓶颈并恢复稳定——确保为 Xone Chain 网络提供持续可靠的节点服务。
+
+<ContactInfo />
