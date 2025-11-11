@@ -1,7 +1,5 @@
 {
-  "xone": {
-    "title": "What is Xone?"
-  },
+  "xone": "What is Xone?",
   "console": {
     "title": "Roadmap",
     "href": "/roadmap",
@@ -17,9 +15,9 @@
   "gas": "Gas Fees",
   "nodes": "Nodes",
   "modules": "Modules",
-  "block": "Block",
-  "transaction": "Transaction",
-  "epoch": "Epoch",
+  "block":"Block",
+  "transaction":"Transaction",
+  "epoch":"Epoch",
   "-- ACTIVE": {
     "type": "separator",
     "title": "ACTIVE"
@@ -37,7 +35,7 @@
   "dapp": "Submit DApp",
   "audit": "Audit Report",
   "wiki": "White Paper",
-
+  
   "-- TERMS & CONDITIONS": {
     "type": "separator",
     "title": "TERMS & CONDITIONS"

@@ -34,6 +34,11 @@ const config: DocsThemeConfig = {
   docsRepositoryBase: 'https://github.com/hello-xone/official_docs',
 
   primaryHue,
+  
+  i18n: [
+    { locale: 'en', text: 'English' },
+    { locale: 'zh', text: '中文' },
+  ],
 
   useNextSeoProps() {
     const { asPath } = useRouter()
