@@ -21,6 +21,7 @@ module.exports = withNextra({
     locales: ['en', 'zh'],
     defaultLocale: 'en'
   },
+  trailingSlash: true,
   webpack(config) {
 
     const allowedSvgRegex = /\.svg$/;
@@ -38,16 +39,34 @@ module.exports = withNextra({
   },
   async redirects() {
     return [
+      // 根路径重定向到默认语言
+      {
+        source: '/',
+        destination: '/en',
+        permanent: false
+      },
+      // 开发者页面重定向
       {
         source: '/developers/en',
-        destination: '/developers/en/ready',
+        destination: '/en/developers/ready',
         permanent: false
       },
       {
         source: '/developers/zh',
-        destination: '/developers/zh/ready',
+        destination: '/zh/developers/ready',
         permanent: false,
       },
+      // 添加更多语言根路径重定向
+      {
+        source: '/en',
+        destination: '/en',
+        permanent: false
+      },
+      {
+        source: '/zh', 
+        destination: '/zh',
+        permanent: false
+      }
     ]
   },
   images: {

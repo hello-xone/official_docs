@@ -3,7 +3,7 @@ export default {
   description: "The decentralized Layer-1 blockchain platform based on the Ethereum protocol uses leading behavioral value incentives (BVI) to ensure that every interaction of every user participating in Xone will create value, and every contribution will be rewarded.",
   openGraph: {
     type: "xone_docs",
-    locale: "en_zh",
+    locale: "zh_en",
     url: "https://docs.xone.plus",
     title: "Xone Docs | Let’s Embrace The Future Together!",
     description: "The decentralized Layer-1 blockchain platform based on the Ethereum protocol uses leading behavioral value incentives (BVI) to ensure that every interaction of every user participating in Xone will create value, and every contribution will be rewarded.",
