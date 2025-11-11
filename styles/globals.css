@@ -197,20 +197,23 @@ html.js-focus-visible.light .scalar-app .relative.z-context .rounded .shadow-bor
 
 /* === Menu badges (visual tags) === */
 /* Study => Ended */
-aside a[href="/study/early_unlock"] {
+aside a[href="/developers/tools/safety/solidityscan"],
+aside a[href="/developers/tools/attest/eas"],
+aside a[href="/roadmap"] {
   display: flex;
   align-items: center;
   justify-content: start;
 }
 
-aside a[href="/study/early_unlock"]::after
-{
+aside a[href="/developers/tools/safety/solidityscan"]::after,
+aside a[href="/developers/tools/attest/eas"]::after {
   display: inline-block;
   border-radius: 9999px;
 }
 
 /* Study/Grants => Updated */
-aside a[href="/study/early_unlock"]::after
+aside a[href="/developers/tools/safety/solidityscan"]::after,
+aside a[href="/developers/tools/attest/eas"]::after
 {
   content: "Updated";
   color: #000000;
@@ -221,8 +224,8 @@ aside a[href="/study/early_unlock"]::after
 }
 
 /* Dark mode tweaks */
-html.dark aside a[href="/study/early_unlock"]::after
-{
+html.dark aside a[href="/developers/tools/safety/solidityscan"]::after,
+html.dark aside a[href="/developers/tools/attest/eas"]::after {
   color: #fff;
   background-color: #45D483;
 }
