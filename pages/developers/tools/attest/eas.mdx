@@ -141,13 +141,14 @@ const schemaUID = "0x123..."; // Registered schema hash
 
 const tx = await eas.attest({
   schema: schemaUID,
+  data:  { 
   recipient: "0xRecipientAddress",
   expirationTime: 0,
   revocable: true,
   refUID: ethers.ZeroHash,
   data: ethers.AbiCoder.defaultAbiCoder().encode(["string"], ["Verified by Xone"]),
-  value: 0,
-});
+  value: 0
+}});
 ```
 
 ### 3. Query an Attestation
