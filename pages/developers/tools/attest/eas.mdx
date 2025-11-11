@@ -1,0 +1,219 @@
+import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Link, Image} from "@nextui-org/react";
+import EASContract from "@components/EASContract";
+
+# Ethereum Attestation Service (EAS) on Xone Chain
+
+**<Link className='text-primaryHue' isExternal showAnchorIcon href="https://attest.org/">Ethereum Attestation Service (EAS)</Link>** is a protocol for creating and verifying **signed statements**—
+
+> “X claims Y about Z.”
+
+<br/>
+How do we decide **who** and **what** to trust?
+
+<br/>
+Our digital and on-chain worlds are filled with both genuine and deceptive information.
+
+<br/>
+We need a shared, verifiable foundation — a universal way to **prove authenticity**, **verify claims**, and **establish trust** in every interaction.
+
+<br/>
+Whenever you need to **prove** or **verify** something, **attestations** play a critical role.
+
+<br/>
+In the age of misinformation, verifying facts and ensuring authenticity have become essential not only for individuals but also for institutions and decentralized systems.
+
+## Everyday Attestations
+
+In the physical world, attestations happen constantly:
+
+* A **notary** attests that you signed a document.
+* A **doctor** attests to your health.
+* A **university** attests to your degree.
+* A **bank** attests that you qualify for a loan.
+* A **guarantor** attests that they will cover your obligation if you default.
+* Even a **friend** attests that they trust or recommend you.
+
+<br/>
+Yet online, such attestations remain fragmented and unstandardized — often stored in **centralized databases** vulnerable to alteration or deletion.
+
+## Decentralized Trust with EAS
+
+**<Link className='text-primaryHue' isExternal showAnchorIcon href="https://attest.org/">Ethereum Attestation Service (EAS)</Link>** solves this problem by providing a **universal, decentralized protocol for attestations**.
+
+<br/>
+Instead of relying on a centralized authority or mutable server, attestations are created and stored **on-chain**, secured by cryptographic signatures and consensus.
+
+<br/>
+Through **smart contracts** on **<Link className='text-primaryHue' isExternal showAnchorIcon href="https://xone.org/">Xone Chain</Link>**, <Link className='text-primaryHue' isExternal showAnchorIcon href="https://attest.org/">EAS</Link> ensures that once an attestation is made, it is **tamper-resistant**, **verifiable by anyone**, and **auditable for life**.
+
+<br/>
+This decentralized design eliminates single points of failure and minimizes the risk of manipulation or falsification — a security model that has been **proven and validated through years of operation** across multiple EVM networks.
+
+## Why It Matters
+
+<Link className='text-primaryHue' isExternal showAnchorIcon href="https://attest.org/">EAS</Link> bridges **human trust** and **machine verifiability**.
+
+<br/>
+It allows any entity — individual, organization, or contract — to make and verify cryptographically signed claims that are composable and interoperable across the Web3 ecosystem.
+
+<br/>
+With attestations on **<Link className='text-primaryHue' isExternal showAnchorIcon href="https://xone.org/">Xone Chain</Link>**, developers and users can:
+
+* **Prove identity and compliance:** link BVI-verified DID or KYC/KYB credentials to on-chain actions.
+* **Certify authenticity:** confirm that assets, transactions, or data sources are legitimate.
+* **Provide financial guarantees:** record verifiable loan guarantees, performance bonds, or custody obligations between parties.
+* **Signal trust and reputation:** represent governance participation, voting history, or creditworthiness.
+* **Verify cross-chain proofs:** export attestations to other chains through header/state bridging or attester federation.
+
+<br/>
+**<Link className='text-primaryHue' isExternal showAnchorIcon href="https://attest.org/">EAS</Link> turns human statements into verifiable digital trust** — replacing fragile, centralized proofs with **decentralized, immutable attestations**.
+
+<br/>
+Within the Xone ecosystem, <Link className='text-primaryHue' isExternal showAnchorIcon href="https://attest.org/">EAS</Link> forms a foundational layer for **identity, compliance, RWA provenance, and contractual assurance**, empowering developers and organizations to build safer, transparent, and trust-native applications.
+
+## How EAS Works
+
+<Link className='text-primaryHue' isExternal showAnchorIcon href="https://attest.org/">EAS</Link> standardizes five core components that together define a universal language of trust for Web3:
+
+<div className="overflow-x-auto">
+<Table removeWrapper aria-label="Example static collection table" className="mt-2">
+  <TableHeader>
+    <TableColumn>**Component**</TableColumn>
+    <TableColumn>**Description**</TableColumn>
+  </TableHeader>
+  <TableBody>
+    <TableRow key="1">
+      <TableCell>**Schemas**</TableCell>
+      <TableCell>Typed statement definitions with clearly structured fields. They describe *what* can be attested.</TableCell>
+    </TableRow>
+    <TableRow key="2">
+      <TableCell>**Attestations**</TableCell>
+      <TableCell>Instances under a schema — created by **attesters** about **recipients**. Each attestation has a unique UID and optional metadata.</TableCell>
+    </TableRow>
+    <TableRow key="3">
+      <TableCell>**Resolvers**</TableCell>
+      <TableCell>Optional contracts that validate or gate attestations (e.g., apply fees, check allowlists, or reference external conditions).</TableCell>
+    </TableRow>
+    <TableRow key="4">
+      <TableCell>**Revocations**</TableCell>
+      <TableCell>The act of withdrawing or invalidating a previously issued attestation.</TableCell>
+    </TableRow>
+    <TableRow key="5">
+      <TableCell>**Off-chain Attestations**</TableCell>
+      <TableCell>EIP-712-signed payloads that can later be verified or settled on-chain, enabling gas-efficient workflows.</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+</div>
+
+<br/>
+These standards allow any dApp or protocol on <Link className='text-primaryHue' isExternal showAnchorIcon href="https://xone.org/">Xone</Link> to **compose trust statements** that are readable, portable, and verifiable across the ecosystem.
+
+## Contract
+
+<EASContract />
+
+<br/>
+> The deployed contracts follow the **official <Link className='text-primaryHue' isExternal showAnchorIcon href="https://attest.org/">EAS</Link> open-source implementation** and are fully compatible with the public SDK and APIs.
+>
+> The **<Link className='text-primaryHue' isExternal showAnchorIcon href="https://xonescan.com/eas">EAS Browser on Xone</Link>** is **community-developed**, offering on-chain attestation search and visualization for both Mainnet and Testnet.
+
+## Example Integration
+
+### 1. Initialize
+
+```js showLineNumbers copy
+import { ethers } from "ethers";
+import EAS_ABI from "./EAS_ABI.json";
+
+const provider = new ethers.JsonRpcProvider("https://rpc.xone.org");
+const eas = new ethers.Contract(
+  "0xF1F8D5bD252d96c2F6C22afaf04d704BCEEFCC69",
+  EAS_ABI,
+  provider
+);
+```
+
+### 2. Create an Attestation
+
+```js showLineNumbers copy
+const schemaUID = "0x123..."; // Registered schema hash
+
+const tx = await eas.attest({
+  schema: schemaUID,
+  recipient: "0xRecipientAddress",
+  expirationTime: 0,
+  revocable: true,
+  refUID: ethers.ZeroHash,
+  data: ethers.AbiCoder.defaultAbiCoder().encode(["string"], ["Verified by Xone"]),
+  value: 0,
+});
+```
+
+### 3. Query an Attestation
+
+```js showLineNumbers copy
+const data = await eas.getAttestation(tx.uid);
+console.log(data);
+```
+
+## Why Attest Matters for Xone
+
+At its core, **<Link className='text-primaryHue' isExternal showAnchorIcon href="https://xone.org/">Xone</Link> is built on verifiable interactions** — every asset, identity, and transaction should be trustworthy by design.
+
+<br/>
+<Link className='text-primaryHue' isExternal showAnchorIcon href="https://attest.org/">EAS</Link> (Ethereum Attestation Service) extends this foundation by introducing a **universal attestation layer** that allows any claim, credential, or agreement to be **cryptographically proven and verified on-chain**.
+
+<br/>
+In traditional systems, proof and certification rely on centralized authorities that can be altered, forged, or revoked without transparency.
+
+<br/>
+With <Link className='text-primaryHue' isExternal showAnchorIcon href="https://attest.org/">EAS</Link> on **<Link className='text-primaryHue' isExternal showAnchorIcon href="https://xone.org/">Xone Chain</Link>**, attestations become **immutable digital proofs**, recorded by smart contracts and auditable by anyone — ensuring accountability, authenticity, and long-term integrity across all layers of the ecosystem.
+
+<br/>
+<Link className='text-primaryHue' isExternal showAnchorIcon href="https://attest.org/">EAS</Link> strengthens Xone’s modular identity and compliance framework, powering **trust-native infrastructure** for DeFi, RWA, DAO, and institutional applications.
+
+<div className="overflow-x-auto">
+<Table removeWrapper aria-label="Example static collection table" className="mt-2">
+  <TableHeader>
+    <TableColumn>**Domain**</TableColumn>
+    <TableColumn>**Example Use Cases**</TableColumn>
+  </TableHeader>
+  <TableBody>
+    <TableRow key="1">
+      <TableCell>**Identity & Compliance**</TableCell>
+      <TableCell>BVI/DID-backed KYC/KYB attestations, travel-rule signals, sanctions screening proofs, and verified organizational credentials.</TableCell>
+    </TableRow>
+    <TableRow key="2">
+      <TableCell>**RWA & Payments**</TableCell>
+      <TableCell>Asset provenance attestations, custody and escrow confirmations, credit or risk-grade proofs, and investor eligibility verifications.</TableCell>
+    </TableRow>
+    <TableRow key="3">
+      <TableCell>**Guarantee & Obligation**</TableCell>
+      <TableCell>On-chain guarantees, performance bonds, or insurance attestations linking guarantors and recipients in verifiable contracts.</TableCell>
+    </TableRow>
+    <TableRow key="4">
+      <TableCell>**Developer UX**</TableCell>
+      <TableCell>Replace bespoke allowlists with reusable attestations — one unified standard for defining “who may do what” across all dApps.</TableCell>
+    </TableRow>
+    <TableRow key="5">
+      <TableCell>**Cross-Chain Interoperability**</TableCell>
+      <TableCell>Export and verify attestations across chains using bridged headers, state proofs, or federated attester networks.</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+</div>
+
+<br/>
+**<Link className='text-primaryHue' isExternal showAnchorIcon href="https://attest.org/">EAS</Link> transforms trust itself into a composable on-chain primitive** — turning reputation, compliance, and responsibility into verifiable data.
+
+<br/>
+For <Link className='text-primaryHue' isExternal showAnchorIcon href="https://xone.org/">Xone</Link>, this means an ecosystem where **users, institutions, and smart contracts interact through verifiable truth**, not unverified assumptions.
+
+## Resources
+
+* <Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.attest.org/docs/welcome">Official EAS Documentation</Link>
+* <Link className='text-primaryHue' isExternal showAnchorIcon href="https://github.com/ethereum-attestation-service">EAS GitHub Repository</Link>
+* <Link className='text-primaryHue' isExternal showAnchorIcon href="https://docs.attest.org/docs/developer-tools/eas-sdk">EAS SDK</Link>
+* <Link className='text-primaryHue' isExternal showAnchorIcon href="https://xonescan.com/eas">Xone Community EAS Browser</Link>
+

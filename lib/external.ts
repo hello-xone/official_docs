@@ -23,7 +23,7 @@ export const EXTERNAL_LINKS = {
   Github: "https://github.com/hello-xone/",
   Telegram: "https://t.me/hello_xonechain",
   Twitter: "https://x.com/xone_chain",
-  Discord: "https://discord.gg/SzTaqpns",
+  Discord: "https://discord.gg/UtFzuKNZ",
   Youtube: "https://www.youtube.com/@HelloXone",
   Reddit: "https://www.reddit.com/r/XoneChain/",
   Medium: "https://medium.com/@xone_chain",
