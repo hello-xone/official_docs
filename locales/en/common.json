@@ -56,7 +56,8 @@
     "switch_language": "Language",
     "confirm": "Confirm",
     "cancel": "Cancel",
-    "aibtn": "Ask AI"
+    "aibtn": "Ask AI",
+    "later": "Later"
   },
   "app": {
     "title": "Xone Docs"

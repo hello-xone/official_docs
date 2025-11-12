@@ -56,7 +56,8 @@
     "switch_language": "语言",
     "confirm": "确认",
     "cancel": "取消",
-    "aibtn": "Ask AI"
+    "aibtn": "Ask AI",
+    "later": "之后"
   },
   "app": {
     "title": "Xone 文档"

@@ -14,7 +14,7 @@ function LinkItem(l: FooterLink, key: number) {
       <div key={key} className="flex items-center gap-2 text-default-600">
         <span className="text-sm">{t(l.name)}</span>
         <span className="text-[12px] rounded-full border border-[#ff04204d] px-2 py-0.5 text-[#FF0420]">
-          Later
+          {t('actions.later')}
         </span>
       </div>
     );
