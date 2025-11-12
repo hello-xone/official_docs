@@ -39,7 +39,9 @@ const config: DocsThemeConfig = {
   //   { locale: "en", text: "English" },
   //   { locale: "zh", text: "中文" },
   // ],
-
+  search: {
+    placeholder: 'Search documentation...',
+  },
   useNextSeoProps() {
     const { asPath } = useRouter();
     if (asPath !== "/") {
