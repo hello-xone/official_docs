@@ -3,6 +3,7 @@ const nextra = require('nextra');
 const withNextra = nextra({
   theme: 'nextra-theme-docs',
   themeConfig: './theme.config.tsx',
+  unstable_flexsearch: false, // 禁用 FlexSearch
   latex: {
     renderer: 'katex',
     options: {
@@ -19,7 +20,8 @@ module.exports = withNextra({
   },
   i18n: {
     locales: ['en', 'zh'],
-    defaultLocale: 'en'
+    defaultLocale: 'en',
+    localeDetection: false,
   },
   trailingSlash: true,
   webpack(config) {
@@ -39,7 +41,6 @@ module.exports = withNextra({
   },
   async redirects() {
     return [
-      // 开发者页面重定向
       {
         source: '/developers/en',
         destination: '/en/developers/ready',

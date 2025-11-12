@@ -13,10 +13,26 @@ export const getCurrentLanguage = (): string => {
 
 
 
-export function ensureI18nInitialized() {
-  if (i18n.isInitialized) return i18n;
-  // 只在客户端初始化
-  if (typeof window === 'undefined') return i18n;
+export function ensureI18nInitialized(initialLang?: string) {
+  if (typeof window === 'undefined') {
+    return i18n;
+  }
+
+  const savedLanguage = getCurrentLanguage();
+  const selectedLanguage = initialLang ?? savedLanguage;
+
+  // 如果提供了初始语言，确保 localStorage 同步
+  if (initialLang && initialLang !== savedLanguage) {
+    localStorage.setItem('i18nextLng', initialLang);
+  }
+
+  if (i18n.isInitialized) {
+    if (initialLang && i18n.language !== initialLang) {
+      i18n.changeLanguage(initialLang);
+    }
+    return i18n;
+  }
+
   i18n
     .use(initReactI18next)
     .init({
@@ -24,7 +40,7 @@ export function ensureI18nInitialized() {
         en: { translation: en },
         zh: { translation: zh },
       },
-      lng: getCurrentLanguage(),
+      lng: selectedLanguage,
       fallbackLng: 'en',
       supportedLngs: ['en', 'zh'],
       interpolation: { escapeValue: false },

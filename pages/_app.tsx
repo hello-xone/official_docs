@@ -12,17 +12,20 @@ import SidebarDevelopersHide from '@/components/SidebarDevelopersHide';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import * as React from "react";
 import { ensureI18nInitialized } from '@/i18n';
+import { useRouter } from 'next/router';
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
   const [isClientReady, setIsClientReady] = React.useState(false);
   
   React.useEffect(() => {
     // Initialize i18n and set flag when ready
-    ensureI18nInitialized();
+    const initialLanguage = router.locale ?? 'en';
+    ensureI18nInitialized(initialLanguage);
     setIsClientReady(true);
-  }, []);
+  }, [router.locale]);
   
   // For server-side rendering, return a minimal shell
   if (typeof window === 'undefined') {

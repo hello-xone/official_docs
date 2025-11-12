@@ -37,7 +37,7 @@ const LanguageSwitcher: React.FC = () => {
 
   React.useEffect(() => {
     const initializeLanguage = async () => {
-      await ensureI18nInitialized();
+      await ensureI18nInitialized(router.locale ?? undefined);
 
       // 获取当前路由的语言和保存的语言
       const routerLocale = router.locale;
