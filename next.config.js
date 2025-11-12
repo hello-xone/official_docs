@@ -3,7 +3,6 @@ const nextra = require('nextra');
 const withNextra = nextra({
   theme: 'nextra-theme-docs',
   themeConfig: './theme.config.tsx',
-  unstable_flexsearch: false, // 禁用 FlexSearch
   latex: {
     renderer: 'katex',
     options: {
