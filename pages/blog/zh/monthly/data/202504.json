@@ -1,0 +1,30 @@
+[
+  {
+    "banner": "/blog/monthly/april_2025/swap.png",
+    "logo": "https://swapx.exchange/favicon.ico",
+    "title": "SwapX",
+    "description": "SwapX Protocol · Your decentralized gateway to fiat, crypto & NFTs across chains.",
+    "href": "https://swapx.exchange/en"
+  },
+  {
+    "banner": "/blog/monthly/april_2025/rainlink.png",
+    "logo": "https://rainlink.co/favicon.ico",
+    "title": "Rainlink",
+    "description": "RainLink Bridge | Omni-Chain Interoperability Layer: Connecting multiple blockchains, powering secure cross-chain liquidity for assets and messages.",
+    "href": "https://rainlink.co"
+  },
+  {
+    "banner": "/blog/monthly/april_2025/tokenup.png",
+    "logo": "https://www.tokenup.org/favicon.ico",
+    "title": "TokenUp",
+    "description": "TokenUp Wallet | The only wallet you need: best option for Web3, NFTs, and DeFi.",
+    "href": "https://www.tokenup.org/en"
+  },
+  {
+    "banner": "/blog/monthly/april_2025/settlement.png",
+    "logo": "https://www.payout.plus/asset/img/logo.svg",
+    "title": "Settlement",
+    "description": "Seamless Web3 Payments. Settled.",
+    "href": "https://www.payout.plus/"
+  }
+]

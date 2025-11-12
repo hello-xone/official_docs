@@ -4,7 +4,6 @@ import { sortByDateDesc } from './sort-by-date';
 
 export const getAllBlogs = (allPages: any) => {
   const blogFolder = allPages.find(item => item.name === 'blog' && item.route === '/blog' && item.children );
-  console.log(blogFolder,'blogFolder-----------')
 
   let blogs = [];
   const getBlogs = (folder) => {

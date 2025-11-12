@@ -9,7 +9,8 @@
   },
   "study": {
     "title": "学习 📖",
-    "type": "page"
+    "type": "page",
+    "href": "/study/en/xone/"
   },
   "bvi": {
     "title": "什么是 BVI 🎯",
