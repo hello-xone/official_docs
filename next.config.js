@@ -39,12 +39,7 @@ module.exports = withNextra({
   },
   async redirects() {
     return [
-      // 根路径重定向到默认语言
-      {
-        source: '/',
-        destination: '/en',
-        permanent: false
-      },
+      
       // 开发者页面重定向
       {
         source: '/developers/en',
