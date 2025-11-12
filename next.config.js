@@ -56,6 +56,17 @@ module.exports = withNextra({
         destination: '/zh/developers/ready',
         permanent: false,
       },
+      // 添加更多语言根路径重定向
+      {
+        source: '/en',
+        destination: '/en',
+        permanent: false
+      },
+      {
+        source: '/zh', 
+        destination: '/zh',
+        permanent: false
+      }
     ]
   },
   images: {
