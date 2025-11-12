@@ -1,32 +1,32 @@
 {
-  "ready": "Ready Build",
+  "ready": "构建就绪",
   "-- Xone Chian": {
     "type": "separator",
-    "title": "Xone Chain"
+    "title": "Xone 链"
   },
-  "rpc": "RPC Endpoints",
-  "testnet": "Testnet",
-  "explorers": "Block Explorers",
-  "faucets": "Faucets",
-  "architecture": "Architecture",
+  "rpc": "RPC 端点",
+  "testnet": "测试网",
+  "explorers": "区块浏览器",
+  "faucets": "水龙头",
+  "architecture": "体系架构",
 
   "-- DEVELOPERS": {
     "type": "separator",
-    "title": "Developers"
+    "title": "开发者"
   },
-  "guide": "Getting Started",
-  "tools": "Developer Kit",
-  "token": "Bridge Tokens",
-  "contracts": "Major Contracts",
+  "guide": "入门指南",
+  "tools": "开发工具包",
+  "token": "跨链通证",
+  "contracts": "主要合约",
   "console": {
     "title": "Json RPC ↗",
-    "href": "/openapi/overview",
+    "href": "/openapi/zh/overview",
     "newWindow": false
   },
-  "operators": "Node Operators",
-  "standard": "Standard",
+  "operators": "节点运营商",
+  "standard": "标准规范",
   "verify": {
-    "title": "Verify Contracts ↗",
+    "title": "验证合约 ↗",
     "href": "https://docs.blockscout.com/devs/verification",
     "newWindow": true
   }

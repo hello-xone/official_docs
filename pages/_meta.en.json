@@ -172,7 +172,7 @@
       "jsonrpc": {
         "title": "Json RPC ↗",
         "type": "page",
-        "href": "/openapi/overview"
+        "href": "/openapi/en/overview"
       },
       "gateway": {
         "title": "Gateway ↗",
