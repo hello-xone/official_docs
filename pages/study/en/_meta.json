@@ -1,5 +1,16 @@
 {
-  "xone": "What is Xone?",
+  "en": {
+    "type": "page",
+    "display": "hidden"
+  },
+  "zh": {
+    "type": "page",
+    "display": "hidden"
+  },
+  "xone": {
+    "title": "What is Xone?",
+    "href": "/study/en/xone"
+  },
   "console": {
     "title": "Roadmap",
     "href": "/roadmap",
@@ -10,40 +21,106 @@
     "type": "separator",
     "title": "IDEA"
   },
-  "account": "Xone Account",
-  "xoc": "XOC",
-  "gas": "Gas Fees",
-  "nodes": "Nodes",
-  "modules": "Modules",
-  "block":"Block",
-  "transaction":"Transaction",
-  "epoch":"Epoch",
+  "account": {
+    "title": "Xone Account",
+    "href": "/study/en/account"
+  },
+  "xoc": {
+    "title": "XOC",
+    "href": "/study/en/xoc"
+  },
+  "gas": {
+    "title": "Gas Fees",
+    "href": "/study/en/gas"
+  },
+  "nodes": {
+    "title": "Nodes",
+    "href": "/study/en/nodes"
+  },
+  "modules": {
+    "title": "Modules",
+    "href": "/study/en/modules"
+  },
+  "block": {
+    "title": "Block",
+    "href": "/study/en/block"
+  },
+  "transaction": {
+    "title": "Transaction",
+    "href": "/study/en/transaction"
+  },
+  "epoch": {
+    "title": "Epoch",
+    "href": "/study/en/epoch"
+  },
   "-- ACTIVE": {
     "type": "separator",
     "title": "ACTIVE"
   },
-  "release": "Coin Release",
-  "grants": "Grant Program",
+  "release": {
+    "title": "Coin Release",
+    "href": "/study/en/release"
+  },
+  "grants": {
+    "title": "Grant Program",
+    "href": "/study/en/grants"
+  },
 
   "-- RESOURCE": {
     "type": "separator",
     "title": "RESOURCE"
   },
-  "media": "Media Kit",
-  "contribut": "Contribute To US",
-  "bug": "Bounty Hunter",
-  "dapp": "Submit DApp",
-  "audit": "Audit Report",
-  "wiki": "White Paper",
-  
+  "media": {
+    "title": "Media Kit",
+    "href": "/study/en/media"
+  },
+  "contribut": {
+    "title": "Contribute To US",
+    "href": "/study/en/contribut"
+  },
+  "bug": {
+    "title": "Bounty Hunter",
+    "href": "/study/en/bug"
+  },
+  "dapp": {
+    "title": "Submit DApp",
+    "href": "/study/en/dapp"
+  },
+  "audit": {
+    "title": "Audit Report",
+    "href": "/study/en/audit"
+  },
+  "wiki": {
+    "title": "White Paper",
+    "href": "/study/en/wiki"
+  },
+
   "-- TERMS & CONDITIONS": {
     "type": "separator",
     "title": "TERMS & CONDITIONS"
   },
-  "cookie": "Cookie Policy",
-  "privacy": "Privacy Policy",
-  "service": "Service Agreement",
-  "candidate_statement": "Candidate Statement",
-  "grant_terms": "Grant Terms & Conditions",
-  "disclaimer": "Disclaimer"
+  "cookie": {
+    "title": "Cookie Policy",
+    "href": "/study/en/cookie"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "href": "/study/en/privacy"
+  },
+  "service": {
+    "title": "Service Agreement",
+    "href": "/study/en/service"
+  },
+  "candidate_statement": {
+    "title": "Candidate Statement",
+    "href": "/study/en/candidate_statement"
+  },
+  "grant_terms": {
+    "title": "Grant Terms & Conditions",
+    "href": "/study/en/grant_terms"
+  },
+  "disclaimer": {
+    "title": "Disclaimer",
+    "href": "/study/en/disclaimer"
+  }
 }

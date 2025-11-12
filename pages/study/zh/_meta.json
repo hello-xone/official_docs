@@ -1,4 +1,12 @@
 {
+  "en": {
+    "type": "page",
+    "display": "hidden"
+  },
+  "zh": {
+    "type": "page",
+    "display": "hidden"
+  },
   "xone": "什么是Xone?",
   "console": {
     "title": "路线图",
@@ -12,42 +20,105 @@
   },
   "account": {
     "title": "Xone账户",
-    "component": "./zh/account"
+    "href": "/study/zh/account"
   },
-  "xoc": "XOC代币",
-  "gas": "燃气费",
-  "nodes": "节点",
-  "modules": "模块",
-  "block": "区块",
-  "transaction": "交易",
-  "epoch": "纪元",
+  "xoc": {
+    "title": "XOC代币",
+    "href": "/study/zh/xoc"
+  },
+  "gas": {
+    "title": "燃气费",
+    "href": "/study/zh/gas"
+  },
+  "nodes": {
+    "title": "节点",
+    "href": "/study/zh/nodes"
+  },
+  "modules": {
+    "title": "模块",
+    "href": "/study/zh/modules"
+  },
+  "block": {
+    "title": "区块",
+    "href": "/study/zh/block"
+  },
+  "transaction": {
+    "title": "交易",
+    "href": "/study/zh/transaction"
+  },
+  "epoch": {
+    "title": "纪元",
+    "href": "/study/zh/epoch"
+  },
 
   "-- ACTIVE": {
     "type": "separator",
     "title": "活跃阶段"
   },
-  "release": "代币发布",
-  "grants": "资助计划",
+  "release": {
+    "title": "代币发布",
+    "href": "/study/zh/release"
+  },
+  "grants": {
+    "title": "资助计划",
+    "href": "/study/zh/grants"
+  },
 
   "-- RESOURCE": {
     "type": "separator",
     "title": "资源"
   },
-  "media": "媒体资料包",
-  "contribut": "贡献我们",
-  "bug": "赏金猎人",
-  "dapp": "提交DApp",
-  "audit": "审计报告",
-  "wiki": "白皮书",
+  "media": {
+    "title": "媒体资料包",
+    "href": "/study/zh/media"
+  },
+  "contribut": {
+    "title": "贡献我们",
+    "href": "/study/zh/contribut"
+  },
+  "bug": {
+    "title": "赏金猎人",
+    "href": "/study/zh/bug"
+  },
+  "dapp": {
+    "title": "提交DApp",
+    "href": "/study/zh/dapp"
+  },
+  "audit": {
+    "title": "审计报告",
+    "href": "/study/zh/audit"
+  },
+  "wiki": {
+    "title": "白皮书",
+    "href": "/study/zh/wiki"
+  },
 
   "-- TERMS & CONDITIONS": {
     "type": "separator",
     "title": "条款与条件"
   },
-  "cookie": "Cookie政策",
-  "privacy": "隐私政策",
-  "service": "服务协议",
-  "candidate_statement": "候选人声明",
-  "grant_terms": "资助条款与条件",
-  "disclaimer": "免责声明"
+  "cookie": {
+    "title": "Cookie政策",
+    "href": "/study/zh/cookie"
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "href": "/study/zh/privacy"
+  },
+  "service": {
+    "title": "服务协议",
+    "href": "/study/zh/service"
+  },
+  "candidate_statement": {
+    "title": "候选人声明",
+    "href": "/study/zh/candidate_statement"
+  },
+  "grant_terms": {
+    "title": "资助条款与条件",
+    "href": "/study/zh/grant_terms"
+  },
+  "disclaimer": {
+    "title": "免责声明",
+    "href": "/study/zh/disclaimer"
+  }
 }
