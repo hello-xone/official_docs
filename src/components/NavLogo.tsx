@@ -1,8 +1,8 @@
 'use client'
 
-import { useIsDarkMode } from '@components/hooks/useIsDarkMode'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
+import { useIsDarkMode } from '@/components/hooks/useIsDarkMode'
 import { XoneLogo } from './XoneLogo'
 
 interface Props {

@@ -14,6 +14,26 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primaryHue: {
+          DEFAULT: `hsl(${primaryHue}, 100%, 50%)`,
+          light: `hsl(${primaryHue}, 100%, 70%)`,
+          dark: `hsl(${primaryHue}, 100%, 30%)`,
+        },
+        grd: {
+          50: '#fff0f0',
+          100: '#ffdddd',
+          200: '#ffc0c0',
+          300: '#ff9494',
+          400: '#ff5757',
+          500: '#ff2323',
+          600: '#ed0000',
+          700: '#d70000',
+          800: '#b10303',
+          900: '#920a0a',
+          950: '#500000',
+        },
+      },
       animation: {
         blob: 'blob 12s infinite',
         orbit: 'orbit calc(var(--duration)*1s) linear infinite',
@@ -47,26 +67,6 @@ module.exports = {
       fontFamily: {
         sans: ['Graphik', 'sans-serif'],
         serif: ['Merriweather', 'serif'],
-      },
-      colors: {
-        primaryHue: {
-          DEFAULT: `hsl(${primaryHue}, 100%, 50%)`,
-          light: `hsl(${primaryHue}, 100%, 70%)`,
-          dark: `hsl(${primaryHue}, 100%, 30%)`,
-        },
-        grd: {
-          50: '#fff0f0',
-          100: '#ffdddd',
-          200: '#ffc0c0',
-          300: '#ff9494',
-          400: '#ff5757',
-          500: '#ff2323',
-          600: '#ed0000',
-          700: '#d70000',
-          800: '#b10303',
-          900: '#920a0a',
-          950: '#500000',
-        },
       },
     },
   },

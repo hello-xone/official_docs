@@ -1,29 +1,30 @@
-import { format } from 'date-fns';
-import { asArray } from './as-array';
-import { sortByDateDesc } from './sort-by-date';
+import { format } from 'date-fns'
+import { asArray } from './as-array'
+import { sortByDateDesc } from './sort-by-date'
 
 export const getAllBlogs = (allPages: any) => {
-  const blogFolder = allPages.find(item => item.name === 'blog' && item.route === '/blog' && item.children );
+  const blogFolder = allPages.find(item => item.name === 'blog' && item.route === '/blog' && item.children)
 
-  let blogs = [];
+  let blogs = []
   const getBlogs = (folder) => {
     if (folder.children) {
       folder.children.forEach(child => {
         if (child.children) {
-          getBlogs(child);
-        } else {
-          blogs.push(child);
+          getBlogs(child)
         }
-      });
+        else {
+          blogs.push(child)
+        }
+      })
     }
-  };
+  }
 
-  getBlogs(blogFolder);
+  getBlogs(blogFolder)
 
   return blogs.map(blog => {
-    const { title, description, tags, authors, image, date , updateDate , thumbnail } =
-      blog.frontMatter;
-    const { route = '' } = blog;
+    const { title, description, tags, authors, image, date, updateDate, thumbnail }
+      = blog.frontMatter
+    const { route = '' } = blog
 
     // if (title.length > 70) {
     //   throw new Error(
@@ -59,7 +60,7 @@ export const getAllBlogs = (allPages: any) => {
       date: format(new Date(date), 'y-MM-dd'),
       thumbnail,
       updateDate: updateDate ? format(new Date(updateDate), 'y-MM-dd') : null,
-    };
+    }
   })
-  .sort(sortByDateDesc);
+    .sort(sortByDateDesc)
 }
