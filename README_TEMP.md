@@ -1,0 +1,18 @@
+## 📢 最新提交记录 (Branch: `feature-auto-readme`)
+
+* **[bd5b8a5]** fix: test feature-auto-readme - lijieQAQ (2025-11-14)
+* **[1dec7ab]** fix: test feature-auto-readme - lijieQAQ (2025-11-14)
+* **[2095df5]** fix: test feature-auto-readme - lijieQAQ (2025-11-14)
+* **[b941447]** fix: Fix syntax errors - Mangosago (2025-11-14)
+* **[c21b21d]** fix: EAS Create an Attestation - Mangosago (2025-11-11)
+* **[a41cd7a]** fix: Update DC Link - Mangosago (2025-11-07)
+* **[2b9d34d]** Update: Add Solidityscan Docs - Mangosago (2025-10-29)
+* **[e32d7d0]** Update: Add Waiver Operation Video - Mangosago (2025-10-24)
+* **[39d9002]** fix: Update Status - Mangosago (2025-10-24)
+* **[464e28c]** fix: dev test - lijieQAQ (2025-10-24)
+* **[8f4474d]** fix: dev test - lijieQAQ (2025-10-24)
+* **[b1dcaaf]** Update: Add Early Unlock Docs - Mangosago (2025-10-23)
+* **[05b1924]** fix: Update DC Link - Mangosago (2025-10-22)
+* **[dee9723]** Update quick-start.mdx - xone-ddd (2025-10-22)
+* **[e7e6d83]** Update quick-start.mdx - xone-ddd (2025-10-22)
+---
