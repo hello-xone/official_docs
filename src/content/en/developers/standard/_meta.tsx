@@ -1,0 +1,7 @@
+import type { MetaRecord } from 'nextra'
+
+export default {
+  erc20: 'ERC-20: Fungible Tokens',
+  erc721: 'ERC-721: NFT',
+  erc1155: 'ERC-1155: NFT',
+} satisfies MetaRecord

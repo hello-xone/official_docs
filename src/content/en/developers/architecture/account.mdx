@@ -1,0 +1,140 @@
+---
+description: >-
+  Accounts are essential components in the Xone Chain, built on the same
+  principles as Ethereum's account system. They...
+keywords: Accounts
+---
+# Accounts
+
+Accounts are essential components in the [Xone](https://xone.org/) Chain, built on the same principles as Ethereum's account system. They serve as entities that hold balances, execute transactions, and interact with smart contracts.
+
+## 1. Overview of Accounts
+
+In the [Xone](https://xone.org/), accounts are used to:
+- Store XOC tokens and other on-chain assets.
+- Sign and send transactions.
+- Interact with smart contracts and other decentralized applications (DApps).
+
+Accounts in [Xone](https://xone.org/) follow the Ethereum Virtual Machine (EVM) model, ensuring compatibility with the broader Ethereum ecosystem.
+
+## 2. Account Types
+
+### 2.1 Externally Owned Accounts (EOAs)
+
+**Controlled By:** A private key held by the account owner.
+
+**Purpose:**
+- Initiates transactions such as token transfers or contract calls.
+- Does not contain code or logic, serving only as a basic entity for holding funds.
+
+**Key Characteristics:**
+- Associated with a public-private key pair.
+- Transactions must be signed using the private key.
+- Requires gas for transactions initiated.
+
+```json showLineNumbers copy filename="EOA Transfer Transaction.json"
+{
+  "from": "0xSenderAddress",
+  "to": "0xRecipientAddress",
+  "value": "1000000000000000000", // 1 XOC in wei
+  "gas": 21000,
+  "gasPrice": "20000000000"
+}
+```
+### 2.2 Contract Accounts
+
+**Controlled By:** Smart contract logic deployed on the blockchain.
+- Executes predefined logic when triggered by a transaction or internal message.
+- Used for applications like DeFi, NFTs, and DAOs.
+
+**Key Characteristics:**
+- Contains code and state.
+- Cannot independently initiate transactions; it only reacts to external inputs.
+- Executes logic defined in its bytecode.
+
+```json showLineNumbers copy filename="Contract Interaction.json"
+{
+  "from": "0xUserAddress",
+  "to": "0xContractAddress",
+  "data": "0xa9059cbb0000000000000000000000000xRecipientAddress0000000000000000000000000000000000000000000001",
+  "gas": 60000
+}
+```
+
+## 3. Account Address
+
+### 3.1 Address Format
+
+[Xone](https://xone.org/) accounts use the same Ethereum hexadecimal address format:
+- 20-byte address represented as a hexadecimal string prefixed with 0x.
+
+```json showLineNumbers copy filename="Example.json"
+0x1234567890abcdef1234567890abcdef12345678
+```
+
+### 3.2 Address Generation
+
+An account address is derived from the public key using the Keccak-256 hashing algorithm:
+1. Generate a public-private key pair.
+2. Hash the public key using Keccak-256.
+3. Take the last 20 bytes of the hash as the address.
+
+## 4. Account Functionality
+### 4.1 Transaction Signing
+Transactions initiated by an EOA must be signed with its private key. This ensures:
+
+1. Authenticity: Verifies the transaction is authorized by the account owner.
+2. Integrity: Prevents tampering with the transaction data.
+
+```json showLineNumbers copy filename="Signing a Transaction.json"
+Transaction Hash: 0xTransactionHash
+Signature: 0xSignature
+```
+
+### 4.2 Nonce Management
+
+A nonce is a counter that ensures transactions are processed sequentially and prevents replay attacks.
+
+**How It Works:**
+- Each transaction from an account must include a nonce.
+- The nonce starts at 0 and increments with each processed transaction.
+- If a transaction with an incorrect nonce is submitted, it is rejected.
+
+### 4.3 Multisignature Accounts
+
+Accounts requiring multiple signatures to authorize transactions.
+- Used by DAOs or joint ventures to manage shared funds securely.
+
+**Example:** 3-of-5 Multisig: Three of the five key holders must sign for the transaction to be valid.
+
+### 4.4 Contract-Based Account Logic
+**Account Abstraction:**
+
+- Smart contracts can be used to enhance account functionality, such as enabling account recovery or implementing dynamic fee structures.
+
+## 5. Account Creation
+### 5.1 Creating an EOA
+EOAs are created by generating a public-private key pair using wallet software like MetaMask or Ledger.
+
+Steps to Create an EOA:
+1. Open a wallet application.
+2. Select "Create New Account."
+3. Securely back up the private key or seed phrase provided by the wallet.
+
+## 5.2 Deploying a Contract Account
+Contract accounts are created by deploying a smart contract to the blockchain.
+
+```js showLineNumbers copy filename="Contract Deployment Using ethers.js"
+const Contract = await ethers.getContractFactory("MyContract");
+const contract = await Contract.deploy();
+console.log(`Contract deployed at address: ${contract.address}`);
+```
+
+## 6. Security Considerations
+### 6.1 Private Key Management
+- Store private keys in secure environments (e.g., hardware wallets or encrypted files).
+- Use multi-factor authentication where possible.
+
+### 6.2 Smart Contract Security
+- Audit contract logic to minimize vulnerabilities.
+- Implement fail-safes to handle unexpected contract failures.
