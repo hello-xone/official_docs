@@ -1,4 +1,4 @@
-export function sortByDateDesc(left, right) {
+export function sortByDateDesc(left: any, right: any) {
   const date1 = new Date(left.date)
   const date2 = new Date(right.date)
   if (date1 > date2) {

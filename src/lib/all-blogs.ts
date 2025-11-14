@@ -3,12 +3,12 @@ import { asArray } from './as-array'
 import { sortByDateDesc } from './sort-by-date'
 
 export const getAllBlogs = (allPages: any) => {
-  const blogFolder = allPages.find(item => item.name === 'blog' && item.route === '/blog' && item.children)
+  const blogFolder = allPages.find((item: any) => item.name === 'blog' && item.route === '/blog' && item.children)
 
-  let blogs = []
-  const getBlogs = (folder) => {
+  let blogs: any[] = []
+  const getBlogs = (folder: any) => {
     if (folder.children) {
-      folder.children.forEach(child => {
+      folder.children.forEach((child: any) => {
         if (child.children) {
           getBlogs(child)
         }
@@ -25,30 +25,6 @@ export const getAllBlogs = (allPages: any) => {
     const { title, description, tags, authors, image, date, updateDate, thumbnail }
       = blog.frontMatter
     const { route = '' } = blog
-
-    // if (title.length > 70) {
-    //   throw new Error(
-    //     `SEO issue: The title "${title}" is too long, should be less than 70 characters - route ${route}`,
-    //   );
-    // }
-
-    // if (title.length < 20) {
-    //   throw new Error(
-    //     `SEO issue: The title "${title}" is too short, should be more than 20 characters - route ${route}`,
-    //   );
-    // }
-
-    // if (description.length > 160) {
-    //   throw new Error(
-    //     `SEO issue: The description "${description}" is too long, should be less than 160 characters, not ${description.length}, route "${route}"`,
-    //   );
-    // }
-
-    // if (description.length < 50) {
-    //   throw new Error(
-    //     `SEO issue: The description "${description}" is too short, should be more than 50 characters, not ${description.length}, route "${route}"`,
-    //   );
-    // }
 
     return {
       title,
