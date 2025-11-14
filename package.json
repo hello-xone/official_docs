@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "seo:preview": "node scripts/update-seo.js --dry-run",
+    "generate:readme": "./scripts/generate_readme.sh",    "seo:preview": "node scripts/update-seo.js --dry-run",
     "seo:update": "node scripts/update-seo.js",
     "links:preview": "node scripts/add-xone-links.js --dry-run",
     "links:update": "node scripts/add-xone-links.js"
