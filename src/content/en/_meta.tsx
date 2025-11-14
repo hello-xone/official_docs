@@ -10,7 +10,7 @@ export default {
       toc: false,
     },
   },
-  introduction: {
+  study: {
     type: 'page',
     title: 'Study 📖',
     theme: {
@@ -18,21 +18,29 @@ export default {
       toc: false,
     },
   },
-  docs: {
+  bvi: {
     title: 'What is BVI 🎯',
     type: 'page',
+    theme: {
+      navbar: true,
+      toc: false,
+    },
   },
   pages: {
     title: 'Developers 🔧',
     type: 'menu',
     items: {
-      about: {
-        title: 'About',
-        href: '/about',
+      developers: {
+        title: 'Build Xone ↗',
+        href: '/developers/ready',
       },
-      contact: {
-        title: 'Contact Us',
-        href: 'mailto:hi@example.com',
+      jsonrpc: {
+        title: 'Json RPC ↗',
+        href: '/openapi/overview',
+      },
+      gateway: {
+        title: 'Gateway ↗',
+        href: '/gateway',
       },
     },
   },
