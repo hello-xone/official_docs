@@ -25,7 +25,13 @@ const AddNetworkButton = ({ network }) => {
               chainId: "0xe89", // 3721 转 16 进制
               chainName: "Xone Mainnet",
               nativeCurrency: { name: "XOC", symbol: "XOC", decimals: 18 },
-              rpcUrls: ["https://rpc.xone.org"],
+              rpcUrls: [
+                "https://rpc.xone.org",
+                "https://rpc-node-1.xone.org",
+                "https://rpc-node-2.xone.org",
+                "https://rpc-node-3.xone.org",
+                "https://rpc-node-4.xone.org",
+              ],
               blockExplorerUrls: ["https://xonescan.com/"],
             };
 

@@ -22,6 +22,10 @@ const NetworkTable = () => {
         networkName: "Xone Mainnet",
         rpcUrls: [
             "https://rpc.xone.org",
+            "https://rpc-node-1.xone.org",
+            "https://rpc-node-2.xone.org",
+            "https://rpc-node-3.xone.org",
+            "https://rpc-node-4.xone.org",
             "wss://rpc.xone.org",
         ],
         chainId: 3721,
