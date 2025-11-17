@@ -10,6 +10,10 @@ const withNextra = createWithNextra({
  * @type {import("next").NextConfig}
  */
 export default withNextra({
+  // 启用 MDX 组件支持
+  experimental: {
+    mdxRs: true,
+  },
   images: {
     unoptimized: true,
   },

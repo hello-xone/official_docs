@@ -1,6 +1,5 @@
 import { iconsPlugin } from '@egoist/tailwindcss-icons'
 
-const { heroui } = require('@heroui/react')
 
 /** *  @type {import('tailwindcss').Config} */
 
@@ -72,6 +71,5 @@ module.exports = {
   },
   plugins: [
     iconsPlugin(), // ✅ 使用 iconsPlugin
-    heroui(),
   ],
 }
