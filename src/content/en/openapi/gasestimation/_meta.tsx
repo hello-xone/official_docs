@@ -1,0 +1,9 @@
+import type { MetaRecord } from 'nextra'
+
+export default {
+  eth_feeHistory: 'eth_feeHistory',
+  eth_estimateGas: 'eth_estimateGas',
+  eth_gasPrice: 'eth_gasPrice',
+  eth_createAccessList: 'eth_createAccessList',
+  eth_maxPriorityFeePerGas: 'eth_maxPriorityFeePerGas',
+} satisfies MetaRecord

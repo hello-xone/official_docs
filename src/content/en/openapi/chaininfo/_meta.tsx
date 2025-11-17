@@ -1,0 +1,11 @@
+import type { MetaRecord } from 'nextra'
+
+export default {
+  eth_chainId: 'eth_chainId',
+  eth_protocolVersion: 'eth_protocolVersion',
+  net_listening: 'net_listening',
+  net_version: 'net_version',
+  net_peerCount: 'net_peerCount',
+  eth_syncing: 'eth_syncing',
+  eth_hashrate: 'eth_hashrate',
+} satisfies MetaRecord

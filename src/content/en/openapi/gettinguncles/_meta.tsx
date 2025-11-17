@@ -1,0 +1,8 @@
+import type { MetaRecord } from 'nextra'
+
+export default {
+  eth_getUncleByBlockHashAndIndex: 'eth_getUncleByBlockHashAndIndex',
+  eth_getUncleByBlockNumberAndIndex: 'eth_getUncleByBlockNumberAndIndex',
+  eth_getUncleCountByBlockHash: 'eth_getUncleCountByBlockHash',
+  eth_getUncleCountByBlockNumber: 'eth_getUncleCountByBlockNumber',
+} satisfies MetaRecord
