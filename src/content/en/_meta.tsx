@@ -26,13 +26,6 @@ export default {
       toc: false,
     },
   },
-  blog: {
-    title: 'Blog 📚',
-    type: 'page',
-    theme: {
-      layout: 'full',
-    },
-  },
   developers: {
     title: 'Developers 🔧',
     type: 'menu',
@@ -49,6 +42,13 @@ export default {
         title: 'Gateway ↗',
         href: '/developers/gateway',
       },
+    },
+  },
+  blog: {
+    title: 'Blog 📚',
+    type: 'page',
+    theme: {
+      layout: 'full',
     },
   },
   forum: {
