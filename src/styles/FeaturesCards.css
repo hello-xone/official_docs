@@ -1,0 +1,73 @@
+/* 定义公共样式 */
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.w-3\/5 {
+  width: 60%;
+}
+
+.sm\:w-3\/4 {
+  @media (min-width: 640px) {
+    width: 75%;
+  }
+}
+
+.lg\:w-2\/5 {
+  @media (min-width: 1024px) {
+    width: 40%;
+  }
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-md {
+  font-size: 1rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.top-6 {
+  top: 1.5rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
+.text-small {
+  font-size: 0.875rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  padding: 1rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.card-body {
+  padding: 1rem;
+}

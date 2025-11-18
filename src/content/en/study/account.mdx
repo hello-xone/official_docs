@@ -4,3 +4,71 @@ description: >-
   (Ethereum Virtual Machine) and Cosmos SDK...
 keywords: Xone Account
 ---
+import FeatureCard from '@/components/XCard/FeatureCard.tsx'
+
+# Xone Account
+
+The Account structure on [Xone](https://xone.org/) Chain offers seamless integration with both EVM (Ethereum Virtual Machine) and Cosmos SDK functionalities, creating a unified model for managing assets, executing transactions, and interacting with decentralized applications across multiple chains. This account model ensures compatibility with Ethereum-based smart contracts while leveraging the modularity of Cosmos.
+
+## Key Features of Xone Account
+<div class="mt-2 md:mt-6 flex gap-3 overflow-x-auto py-6 px-6">
+  <FeatureCard title="Unified Address Format">
+    Accounts utilize a single address format that is functional across both EVM and Cosmos SDK. This design allows users to interact with Cosmos modules and EVM smart contracts using one consistent address, eliminating the need for separate accounts.
+  </FeatureCard>
+
+  <FeatureCard title="Dual Functionality">
+    The account model supports native Cosmos SDK operations (like staking, governance, and IBC transfers) alongside EVM-specific actions (such as deploying contracts and transferring tokens). This versatility enables comprehensive interactions from a single account structure, streamlining user experience.
+  </FeatureCard>
+
+  <FeatureCard title="Cross-Chain Compatibility">
+    Built to integrate with the interoperability bridge, accounts support smooth asset and data transfers between [Xone](https://xone.org/) Chain and other blockchains within both Cosmos and Ethereum ecosystems, making them ideal for multi-chain applications and DeFi use cases.
+  </FeatureCard>
+
+  <FeatureCard title="Enhanced Security">
+    Accounts are safeguarded by options like multi-signature and account recovery protocols. These additional layers of protection make them suitable for users and organizations with high security needs.
+  </FeatureCard>
+
+  <FeatureCard title="Privacy-Enhanced Transactions">
+    Privacy features, including zk-SNARKs and stealth addresses, allow for confidential transactions directly from accounts, offering high levels of privacy and anonymity across chains.
+  </FeatureCard>
+</div>
+
+
+## Account Structure
+
+[Xone](https://xone.org/) Accounts are built on a multi-layer architecture that enables both EVM and Cosmos SDK compatibility:
+
+- **Cosmos Layer:** Manages native transactions (e.g., staking, governance) and cross-chain operations using the Cosmos SDK.
+
+- **EVM Layer:** Handles Ethereum-compatible transactions, including smart contract deployments, token transfers, and DApp interactions.
+
+Each [Xone](https://xone.org/) Account can store assets and data across both layers, providing a single point of access for all blockchain activities on [Xone](https://xone.org/) Chain.
+
+## Account Creation and Management
+
+Users can create and manage [Xone](https://xone.org/) Accounts through wallets that support Cosmos SDK and EVM compatibility (e.g., MetaMask, Keplr). The account is accessed via a private key, which enables signing and sending transactions across Cosmos and EVM environments seamlessly.
+
+## Xone Account Operations
+
+- **Token Transfers:**
+Transfer native [Xone](https://xone.org/) tokens or EVM-compatible tokens within the [Xone](https://xone.org/) ecosystem or across supported blockchains via the cross-chain bridge.
+
+- **Smart Contract Interactions:**
+Execute Ethereum-based smart contracts and interact with DApps on the EVM layer directly from the [Xone](https://xone.org/) Account.
+
+- **Governance Participation:**
+Vote in network governance.
+
+## EIP-155: Replay Protection
+
+To protect users from malicious replays of transactions across different networks, [Xone](https://xone.org/) Chain integrates **EIP-155 replay protection** directly into its protocol. Each transaction includes a distinct **chain ID** and **nonce**, which collectively ensure that transactions are valid only within the designated network. This mechanism prevents any [Xone](https://xone.org/) Chain transaction from being mistakenly or maliciously duplicated on other EVM-compatible or Cosmos-based chains.
+
+The chain ID uniquely identifies the [Xone](https://xone.org/) network, signaling to validators that the transaction is intended exclusively for this environment. Paired with the nonce, which uniquely increments with each user transaction, this system effectively blocks replays by rejecting duplicate transactions across networks. By embedding EIP-155 replay protection at the protocol level, the network reinforces the integrity of cross-chain transfers and mitigates risks associated with unauthorized duplicates.
+
+For users engaged with multiple blockchain ecosystems, this protection is critical. It ensures that assets and data remain confined to their intended chain, eliminating the potential for unintended exposure or security vulnerabilities when moving assets across different networks.
+
+
+
+
+
+
