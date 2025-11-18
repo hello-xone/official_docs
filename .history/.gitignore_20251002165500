@@ -1,0 +1,17 @@
+.next
+.DS_Store
+node_modules
+.pnpm-debug.log
+.yarn.lock
+.vercel
+wrangler.toml
+
+.idea
+.vscode
+*.log
+.env
+.env.local
+.env.*.local
+dist
+out
+.history

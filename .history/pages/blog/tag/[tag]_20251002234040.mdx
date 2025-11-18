@@ -1,0 +1,14 @@
+---
+  title: "Tag"
+  layout: "full"
+  toc: false
+  pagination: false
+  sidebar: false
+---
+
+import Blog from "../components/BlogIndex";
+import { getAllPages } from 'nextra/context'
+
+export default function Page() {
+  return <Blog {...props} />
+}
