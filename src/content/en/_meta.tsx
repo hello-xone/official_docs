@@ -26,29 +26,29 @@ export default {
       toc: false,
     },
   },
-  pages: {
-    title: 'Developers 🔧',
-    type: 'menu',
-    items: {
-      developers: {
-        title: 'Build Xone ↗',
-        href: '/developers/ready',
-      },
-      jsonrpc: {
-        title: 'Json RPC ↗',
-        href: '/openapi/overview',
-      },
-      gateway: {
-        title: 'Gateway ↗',
-        href: '/gateway',
-      },
-    },
-  },
   blog: {
     title: 'Blog 📚',
     type: 'page',
     theme: {
       layout: 'full',
+    },
+  },
+  developers: {
+    title: 'Developers 🔧',
+    type: 'menu',
+    items: {
+      build_xone: {
+        title: 'Build Xone ↗',
+        href: '/developers/ready',
+      },
+      json_rpc: {
+        title: 'Json RPC ↗',
+        href: '/developers/openapi/overview',
+      },
+      gateway: {
+        title: 'Gateway ↗',
+        href: '/developers/gateway',
+      },
     },
   },
   forum: {
@@ -60,5 +60,13 @@ export default {
     title: 'Dynamic 🎉',
     type: 'page',
     href: 'https://lu.ma/xone',
+  },
+  roadmap: {
+    title: 'Roadmap',
+    type: 'page',
+    display: 'hidden',
+    theme: {
+      layout: 'full',
+    },
   },
 } satisfies MetaRecord
