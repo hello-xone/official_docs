@@ -15,7 +15,6 @@ export default {
     title: 'Study 📖',
     theme: {
       navbar: true,
-      toc: false,
     },
   },
   bvi: {
@@ -23,7 +22,6 @@ export default {
     type: 'page',
     theme: {
       navbar: true,
-      toc: false,
     },
   },
   developers: {
