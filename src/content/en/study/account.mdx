@@ -4,33 +4,65 @@ description: >-
   (Ethereum Virtual Machine) and Cosmos SDK...
 keywords: Xone Account
 ---
-import FeatureCard from '@/components/XCard/FeatureCard.tsx'
+import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Button} from "@/components/XCard/index.tsx";
 
 # Xone Account
 
 The Account structure on [Xone](https://xone.org/) Chain offers seamless integration with both EVM (Ethereum Virtual Machine) and Cosmos SDK functionalities, creating a unified model for managing assets, executing transactions, and interacting with decentralized applications across multiple chains. This account model ensures compatibility with Ethereum-based smart contracts while leveraging the modularity of Cosmos.
 
 ## Key Features of Xone Account
+
 <div class="mt-2 md:mt-6 flex gap-3 overflow-x-auto py-6 px-6">
-  <FeatureCard title="Unified Address Format">
-    Accounts utilize a single address format that is functional across both EVM and Cosmos SDK. This design allows users to interact with Cosmos modules and EVM smart contracts using one consistent address, eliminating the need for separate accounts.
-  </FeatureCard>
-
-  <FeatureCard title="Dual Functionality">
-    The account model supports native Cosmos SDK operations (like staking, governance, and IBC transfers) alongside EVM-specific actions (such as deploying contracts and transferring tokens). This versatility enables comprehensive interactions from a single account structure, streamlining user experience.
-  </FeatureCard>
-
-  <FeatureCard title="Cross-Chain Compatibility">
-    Built to integrate with the interoperability bridge, accounts support smooth asset and data transfers between [Xone](https://xone.org/) Chain and other blockchains within both Cosmos and Ethereum ecosystems, making them ideal for multi-chain applications and DeFi use cases.
-  </FeatureCard>
-
-  <FeatureCard title="Enhanced Security">
-    Accounts are safeguarded by options like multi-signature and account recovery protocols. These additional layers of protection make them suitable for users and organizations with high security needs.
-  </FeatureCard>
-
-  <FeatureCard title="Privacy-Enhanced Transactions">
-    Privacy features, including zk-SNARKs and stealth addresses, allow for confidential transactions directly from accounts, offering high levels of privacy and anonymity across chains.
-  </FeatureCard>
+  <Card className="flex-shrink-0 w-3/5 sm:w-3/4 lg:w-2/5 flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**Unified Address Format**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Accounts utilize a single address format that is functional across both EVM and Cosmos SDK. This design allows users to interact with Cosmos modules and EVM smart contracts using one consistent address, eliminating the need for separate accounts.</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 w-3/5 sm:w-3/4 lg:w-2/5 flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**Dual Functionality**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>The account model supports native Cosmos SDK operations (like staking, governance, and IBC transfers) alongside EVM-specific actions (such as deploying contracts and transferring tokens). This versatility enables comprehensive interactions from a single account structure, streamlining user experience.</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 w-3/5 sm:w-3/4 lg:w-2/5 flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**Cross-Chain Compatibility**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Built to integrate with the interoperability bridge, accounts support smooth asset and data transfers between [Xone](https://xone.org/) Chain and other blockchains within both Cosmos and Ethereum ecosystems, making them ideal for multi-chain applications and DeFi use cases.</p>
+    </CardBody>
+  </Card>
+  <Card className="flex-shrink-0 w-3/5 sm:w-3/4 lg:w-2/5 flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**Enhanced Security**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Accounts are safeguarded by options like multi-signature and account recovery protocols. These additional layers of protection make them suitable for users and organizations with high security needs.</p>
+    </CardBody>
+  </Card>  
+  <Card className="flex-shrink-0 w-3/5 sm:w-3/4 lg:w-2/5 flex-col">
+    <CardHeader className="flex top-6 gap-2">
+      <div className="flex flex-col">
+        <p className="text-md">**Privacy-Enhanced Transactions**</p>
+      </div>
+    </CardHeader>
+    <CardBody className="px-3 pt-0 pb-3 text-small">
+      <p>Privacy features, including zk-SNARKs and stealth addresses, allow for confidential transactions directly from accounts, offering high levels of privacy and anonymity across chains.</p>
+    </CardBody>
+  </Card>
 </div>
 
 
