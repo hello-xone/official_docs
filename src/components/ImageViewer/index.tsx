@@ -23,7 +23,7 @@ const ImageViewer = ({ src, alt, className, style }: { src: string, alt: string,
   }
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: MouseEvent) => {
       if (overlayRef.current && overlayRef.current === event.target) {
         handleClose()
       }
@@ -36,7 +36,7 @@ const ImageViewer = ({ src, alt, className, style }: { src: string, alt: string,
   }, [])
 
   useEffect(() => {
-    const handleKeyDown = (event) => {
+    const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape' && isOpen) {
         handleClose()
       }
