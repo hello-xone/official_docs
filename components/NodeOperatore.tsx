@@ -5,9 +5,9 @@ const NodeOperatore = () => {
         name: "Full Node",
         CPU: "4 cores",
         memory: "8 GB RAM",
-        os: "Ubuntu 22.04 or later",
+        os: "Ubuntu 24.04 or later",
         network: "Symmetric 100 Mbps",
-        disk: "≥ 1.5 TB available (adjust based on log & data volume)",
+        disk: "≥ 2.5 TB available (adjust based on log & data volume)",
     };
 
     const ArchiveNode = {
