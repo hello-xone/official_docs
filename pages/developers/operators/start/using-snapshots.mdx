@@ -23,11 +23,11 @@ sudo apt install -y lz4 wget
   <Tabs.Tab>
     ```bash showLineNumbers copy
     # Snapshot date: recommended to use yesterday’s date, format YYYYMMDD
-    SNAP_DATE=$(curl -s https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/latest-version-snapshot.txt)
+    SNAP_DATE=$(curl -s https://xone-mainnet.s3.ap-southeast-1.amazonaws.com/latest-version-snapshot.txt)
 
     # Snapshot filename and download URL
     SNAP_FILE="snapshot-${SNAP_DATE}.tar.lz4"
-    SNAP_URL="https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/snapshots/${SNAP_FILE}"
+    SNAP_URL="https://xone-mainnet.s3.ap-southeast-1.amazonaws.com/snapshots/${SNAP_FILE}"
 
     # Data directory (same as used during init)
     DATA_DIR="${HOME}/.xone"
@@ -36,11 +36,11 @@ sudo apt install -y lz4 wget
   <Tabs.Tab>
     ```bash showLineNumbers copy
     # Snapshot date: recommended to use yesterday’s date, format YYYYMMDD
-    SNAP_DATE=$(curl -s https://xone-testnet-files.s3.ap-southeast-1.amazonaws.com/latest-version-snapshot.txt)
+    SNAP_DATE=$(curl -s https://xone-testnet-file.s3.ap-southeast-1.amazonaws.com/latest-version-snapshot.txt)
 
     # Snapshot filename and download URL
     SNAP_FILE="snapshot-${SNAP_DATE}.tar.lz4"
-    SNAP_URL="https://xone-testnet-files.s3.ap-southeast-1.amazonaws.com/snapshots/${SNAP_FILE}"
+    SNAP_URL="https://xone-testnet-file.s3.ap-southeast-1.amazonaws.com/snapshots/${SNAP_FILE}"
 
     # Data directory (same as used during init)
     DATA_DIR="${HOME}/.xone"
