@@ -64,7 +64,7 @@ In any directory, create a file named `docker_run.sh` and paste the following:
 #!/bin/sh
 
 # —— Fetch the latest version number dynamically ——
-LATEST_VERSION=$(curl -s https://xone-mainnet-files.s3.ap-southeast-1.amazonaws.com/latest-version.txt)
+LATEST_VERSION=$(curl -s https://xone-mainnet.s3.ap-southeast-1.amazonaws.com/latest-version.txt)
 
 # —— Modify these variables as needed ——
 IMAGE_URL="xonechain/xoned:${LATEST_VERSION}"   # Node image and version (auto-updated)
